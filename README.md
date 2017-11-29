@@ -13,3 +13,4 @@ Yours isn't here? Send us your pull request.
 * [0nse/now_playing](https://github.com/0nse/now_playing): Output the currently scrobbling song
 * [dakuten/taskwarrior-polybar](https://github.com/dakuten/taskwarrior-polybar): merely just a script showing the most urgent task and allowing it to be marked done
 * [https://github.com/quelotic/polybarModules](quelotic/polybarModules): scripts for mail and caffeine
+* [https://github.com/vyp/scripts](vyp/scripts): A script to show focused, occupied, free and urgent herbstluftwm tags in polybar
