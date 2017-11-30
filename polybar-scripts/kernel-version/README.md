@@ -3,7 +3,7 @@
 A script that shows the running kernel version.
 
 
-## module config
+## Module
 
 ```
 [module/kernel-version]
