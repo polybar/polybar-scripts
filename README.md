@@ -1,8 +1,10 @@
 # polybar-scripts
 
-This is a community project. We collect scripts for polybar!
+This is a community project. We write and collect scripts for polybar!
 
 To find out how to write and use your own scripts, read the [polybar wiki](https://github.com/jaagr/polybar/wiki). This repository is not an exact blueprint. I guess every script has to be customized to make your polybar unique.
+
+We cannot guarantee that all scripts will work because many scripts are written for very specific purposes. But we're trying.
 
 Yours isn't here? Send us your pull request.
 
