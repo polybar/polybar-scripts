@@ -1,4 +1,4 @@
-# Script: openvpn-running
+# Script: openvpn-isrunning
 
 A script that shows if OpenVPN is running.
 
@@ -6,7 +6,7 @@ A script that shows if OpenVPN is running.
 ## Module
 
 ```
-[module/openvpn-running]
+[module/openvpn-isrunning]
 type = custom/script
 exec = pgrep openvpn
 interval = 5
