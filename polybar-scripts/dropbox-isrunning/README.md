@@ -10,8 +10,5 @@ A script that shows if the dropbox client is running. You can also start and sto
 type = custom/script
 exec = ~/polybar-scripts/dropbox-isrunning.sh
 interval = 5
-label = vpn
-format-prefix = "# "
-click-left = ~/.config/polybar/dropbox toggle
-tail = true
+click-left = ~/polybar-scripts/dropbox-isrunning.sh toggle
 ```
