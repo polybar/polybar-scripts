@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 url="your url here"
 
@@ -6,8 +6,13 @@ url="your url here"
 icon="# "
 
 # Set prefix icon color with and without unread messages
-unread_color="#e06c75"
-read_color="#e0e0e0"
+color_read="#e0e0e0"
+color_unread="#e06c75"
 
 unread=$(curl -s "$url" | jq '.["data"]["children"] | length ')
-(( "$unread" > "0" )) && echo "%{F$unread_color}$icon $unread" || echo "%{F$read_color}$icon $unread"
+
+if [ "$unread" -gt 0 ]; then
+   echo "%{F$color_unread}$icon $unread"
+else
+   echo "%{F$color_read}$icon $unread"
+fi
