@@ -1,6 +1,6 @@
 # Script: hint-chess
 
-{ A short description of what your script does. Perhaps a few words about the dependencies and requirements, if necessary }
+A small script that indicates whether you need to move. You obviously need a Chess.com account.
 
 
 ## Module
