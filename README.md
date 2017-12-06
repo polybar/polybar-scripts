@@ -18,10 +18,10 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 
 ## Development
 
-It's a good idea to look at the skeleton.
+It's a good idea to look at the [skeleton](skeleton/).
 
 Most scripts are shell scripts. Use ShellCheck to check the code for possible errors. A good start to try [ShellCheck](https://www.shellcheck.net/) is their website.
 
-Use # as icon replacement in your scripts. Everyone use anoter icon font. So let the user decide which icon he wants to use.
+Use `#` as icon replacement in your scripts. Everyone use anoter icon font. So let the user decide which icon he wants to use.
 
 Remove your colors unless they have a special function. This way scripts remain customizable.
