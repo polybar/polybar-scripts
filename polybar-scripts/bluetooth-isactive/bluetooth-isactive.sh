@@ -1,12 +1,10 @@
 #!/bin/sh
 
-icon_enabled="#"
-icon_disabled="#"
 status=$(systemctl is-active bluetooth.service)
 
 if [ "$status" = "active" ]
 then
-	echo "$icon_enabled"
+	echo "#1"
 else
-	echo "$icon_disabled"
+	echo "#2"
 fi
