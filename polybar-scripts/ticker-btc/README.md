@@ -12,7 +12,7 @@ A script that displays the current bitcoin price.
 ## Module
 
 ```
-[module/{ name }]
+[module/ticker-btc]
 type = custom/script
 exec = ~/polybar-scripts/ticker-btc.sh
 interval = 600
