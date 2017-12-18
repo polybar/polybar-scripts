@@ -7,6 +7,17 @@ This repository is not an exact blueprint. I guess every script has to be custom
 Your script isn't here yet? You have ideas to extend the scripts or descriptions? Send us your pull request.
 
 
+## all colors are beautiful
+
+[![updates-arch](polybar-scripts/updates-arch/screenshots/1.png)](polybar-scripts/updates-arch/)
+[![temp-percore-colorful](polybar-scripts/temp-percore-colorful/screenshots/1.png)](polybar-scripts/temp-percore-colorful/)
+[![temp-percore-colorful](polybar-scripts/temp-percore-colorful/screenshots/2.png)](polybar-scripts/temp-percore-colorful/)
+[![hint-chess](polybar-scripts/hint-chess/screenshots/1.png)](polybar-scripts/hint-chess/)
+[![inbox-reddit](polybar-scripts/inbox-reddit/screenshots/1.png)](polybar-scripts/inbox-reddit/)
+[![openvpn-isrunning](polybar-scripts/openvpn-isrunning/screenshots/1.png)](polybar-scripts/openvpn-isrunning/)
+[![temp-percore](polybar-scripts/temp-percore/screenshots/1.png)](polybar-scripts/temp-percore/)
+
+
 ## See also these other user repositories:
 
 * [vyachkonovalov/polybar-gmail](https://github.com/vyachkonovalov/polybar-gmail): A Polybar module to show unread messages from Gmail
