@@ -1,8 +1,5 @@
 # polybar-scripts
 
-![scripts](https://img.shields.io/badge/scripts-11-green.svg)
-![contributors](https://img.shields.io/github/contributors/x70b1/polybar-scripts.svg)
-
 This is a community project. We write and collect scripts for Polybar! To find out how to write and use your own scripts, read [Polybars wiki](https://github.com/jaagr/polybar/wiki).
 
 This repository is not an exact blueprint. I guess every script has to be customized to make your Polybar unique. We cannot guarantee that all scripts will work because many scripts are written for very specific purposes. But we're trying.
