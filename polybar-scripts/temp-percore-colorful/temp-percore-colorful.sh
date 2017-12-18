@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Get information from cores temp thanks to sensors
-rawData=$( sensors | grep Core | awk '{print substr($3, 2, length($3)-5)}' )
-tempCore=($rawData)
+rawData=$(sensors | grep Core | awk '{print substr($3, 2, length($3)-5)}')
+tempCore=("$rawData")
 
 # Define constants:
 degree="°C"
