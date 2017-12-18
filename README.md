@@ -17,6 +17,7 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![openvpn-isrunning](polybar-scripts/openvpn-isrunning/screenshots/1.png)](polybar-scripts/openvpn-isrunning/)
 [![temp-percore](polybar-scripts/temp-percore/screenshots/1.png)](polybar-scripts/temp-percore/)
 [![temp-percore](polybar-scripts/inbox-imap/screenshots/1.png)](polybar-scripts/inbox-imap/)
+[![ticker-btc](polybar-scripts/ticker-btc/screenshots/1.png)](polybar-scripts/ticker-btc/)
 
 
 ## See also these other user repositories:
