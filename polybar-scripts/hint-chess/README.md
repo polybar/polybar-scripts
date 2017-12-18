@@ -1,6 +1,13 @@
 # Script: hint-chess
 
-A small script that indicates whether you need to move. You obviously need a Chess.com account.
+A small script that indicates whether you need to move.
+
+
+## Dependencies
+
+* `curl`
+* `jq`
+* obviously a chess.com account
 
 
 ## Module
