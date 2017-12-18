@@ -8,6 +8,7 @@ Type Reddit JSON URL from [reddit.com/prefs/feeds/](https://www.reddit.com/prefs
 ## Dependencies
 
 * `curl`
+* `jq`
 
 
 ## Module
