@@ -29,6 +29,7 @@ fi
 if isRunning; then
     echo "#1"
     exit 0
+else
+    echo "#2"
+    exit 0
 fi
-echo "#2"
-exit 0
