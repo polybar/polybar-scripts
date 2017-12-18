@@ -1,6 +1,11 @@
 # Script: { name }
 
-{ A short description of what your script does. Perhaps a few words about the dependencies and requirements, if necessary }
+{ A short description of what your script does. }
+
+
+## Dependencies
+
+{ Perhaps a few words about the dependencies and requirements, if necessary }
 
 
 ## Module
