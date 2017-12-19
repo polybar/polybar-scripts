@@ -1,4 +1,4 @@
-# Script: ticker-btceur
+# Script: ticker-etheur
 
 A script that displays the current Ethereum price.
 
