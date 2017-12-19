@@ -19,7 +19,7 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![temp-percore](polybar-scripts/inbox-imap/screenshots/1.png)](polybar-scripts/inbox-imap/)
 [![ticker-btceur](polybar-scripts/ticker-btceur/screenshots/1.png)](polybar-scripts/ticker-btceur/)
 [![battery-combined-tlp](polybar-scripts/battery-combined-tlp/screenshots/1.png)](polybar-scripts/battery-combined-tlp/)
-
+[![openweathermap-fullfeatured](polybar-scripts/openweathermap-fullfeatured/screenshots/1.png)](polybar-scripts/openweathermap-fullfeatured/)
 
 
 ## See also these other user repositories:
