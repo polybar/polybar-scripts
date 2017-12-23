@@ -1,35 +1,18 @@
 #!/bin/sh
 
-pid=$(pgrep -x "dropbox")
-
-isRunning() {
-    if pgrep -x "dropbox" > /dev/null; then
-        return 0
-    else
-        return 1
-    fi
-}
-
-if [ $# -gt 0 ]; then
-    case "$1" in
-        toggle)
-            if isRunning; then
-                kill "$pid";
-                exit 0
-            fi
+case "$1" in
+    --toggle)
+        if [ "$(pgrep -x dropbox)" ]; then
+            pkill dropbox
+        else
             dropbox &
+        fi
         ;;
-        *)
-            echo "error: wrong argument";
-            exit 1
+    *)
+        if [ "$(pgrep -x dropbox)" ]; then
+            echo "#1"
+        else
+            echo "#2"
+        fi
         ;;
-    esac
-fi
-
-if isRunning; then
-    echo "#1"
-    exit 0
-else
-    echo "#2"
-    exit 0
-fi
+esac
