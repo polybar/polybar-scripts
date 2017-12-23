@@ -10,5 +10,5 @@ A simple script that allows you to toggle compton and shows if it is running.
 type = custom/script
 exec = ~/polybar-scripts/hint-compton.sh
 interval = 5
-click-left = ~/polybar-scripts/hint-github.sh --toggle
+click-left = ~/polybar-scripts/hint-compton.sh --toggle
 ```
