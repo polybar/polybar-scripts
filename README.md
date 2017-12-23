@@ -29,6 +29,7 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 * [dakuten/taskwarrior-polybar](https://github.com/dakuten/taskwarrior-polybar): merely just a script showing the most urgent task and allowing it to be marked done
 * [quelotic/polybarModules](https://github.com/quelotic/polybarModules): scripts for mail and caffeine
 * [vyp/scripts](https://github.com/vyp/scripts): A script to show focused, occupied, free and urgent herbstluftwm tags in polybar
+* [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
 
 
 ## Development
