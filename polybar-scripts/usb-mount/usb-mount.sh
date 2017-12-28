@@ -22,11 +22,11 @@ case "$1" in
             unmounted=$(echo $devices | jq -r '.blockdevices[]  | select(.name == "'$unmounted'") | .vendor')
             unmounted=$(echo $unmounted | tr -d ' ')
 
-            output="$output $unmounted   "
+            output="$output# $unmounted   "
         done
 
         for mounted in $(echo $devices | jq -r '.blockdevices[] | select(.type == "part") | select(.rm == "1") | select(.mountpoint != null) | .size'); do
-            output="$output $mounted   "
+            output="$output# $mounted   "
         done
 
         echo "$output"
