@@ -99,12 +99,6 @@ if (bat0Max == ''):
 if (bat1Max == ''):
     sys.exit("battery 1 not found")
 
-# convert ac to boolean
-if (int(ac) == 0):
-    ac = False
-else:
-    ac = True
-
 # convert to percent
 bat0Percent = (int(bat0) / int(bat0Max)) * 100
 bat1Percent = (int(bat1) / int(bat1Max)) * 100
@@ -112,7 +106,7 @@ bat1Percent = (int(bat1) / int(bat1Max)) * 100
 batPercent = (bat0Percent + bat1Percent) / 2
 
 # printing prefix
-if (ac == True):
+if (ac != 0):
     prefix = '#1'
 else:
     if (int(batPercent) >= 85):
