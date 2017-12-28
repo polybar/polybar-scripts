@@ -106,8 +106,12 @@ bat1Percent = (int(bat1) / int(bat1Max)) * 100
 batPercent = (bat0Percent + bat1Percent) / 2
 
 # printing prefix
-if (ac != 0):
+if (int(ac) != 0):
     prefix = '#1'
+
+    if (int(batPercent) >= 97):
+        print(prefix)
+
 else:
     if (int(batPercent) >= 85):
         prefix = '#21'
@@ -120,4 +124,4 @@ else:
     else:
         prefix = '#25'
 
-print(" " + prefix + "  " + str(int(batPercent)) + " %")
+    print(prefix + "  " + str(int(batPercent)) + " %")
