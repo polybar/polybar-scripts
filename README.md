@@ -20,6 +20,8 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![ticker-btceur](polybar-scripts/ticker-btceur/screenshots/1.png)](polybar-scripts/ticker-btceur/)
 [![battery-combined-tlp](polybar-scripts/battery-combined-tlp/screenshots/1.png)](polybar-scripts/battery-combined-tlp/)
 [![openweathermap-fullfeatured](polybar-scripts/openweathermap-fullfeatured/screenshots/1.png)](polybar-scripts/openweathermap-fullfeatured/)
+[![usb-mount](polybar-scripts/usb-mount/screenshots/1.png)](polybar-scripts/usb-mount/)
+[![usb-mount](polybar-scripts/usb-mount/screenshots/2.png)](polybar-scripts/usb-mount/)
 
 
 ## See also these other user repositories:
