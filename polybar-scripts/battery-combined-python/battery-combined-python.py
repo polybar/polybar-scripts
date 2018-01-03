@@ -105,7 +105,7 @@ bat1Percent = (int(bat1) / int(bat1Max)) * 100
 
 batPercent = (bat0Percent + bat1Percent) / 2
 
-# printing prefix
+# printing
 if (int(ac) != 0):
     prefix = '#1'
 
@@ -124,4 +124,4 @@ else:
     else:
         prefix = '#25'
 
-    print(prefix + "  " + str(int(batPercent)) + " %")
+print(prefix + " " + str(int(batPercent)) + " %")
