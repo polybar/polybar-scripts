@@ -27,6 +27,7 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![redshift-temperature](polybar-scripts/redshift-temperature/screenshots/1.png)](polybar-scripts/redshift-temperature/)
 [![hint-projecthamster](polybar-scripts/hint-projecthamster/screenshots/1.png)](polybar-scripts/hint-projecthamster/)
 [![news-arch](polybar-scripts/news-arch/screenshots/1.png)](polybar-scripts/news-arch/)
+[![player-moc](polybar-scripts/player-moc/screenshots/1.png)](polybar-scripts/player-moc/)
 
 
 
