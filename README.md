@@ -24,7 +24,8 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![usb-mount](polybar-scripts/usb-mount/screenshots/2.png)](polybar-scripts/usb-mount/)
 [![openweathermap-simple](polybar-scripts/openweathermap-simple/screenshots/1.png)](polybar-scripts/openweathermap-simple/)
 [![openweathermap-detailed](polybar-scripts/openweathermap-detailed/screenshots/1.png)](polybar-scripts/openweathermap-detailed/)
-[![openweathermap-detailed](polybar-scripts/redshift-temperature/screenshots/1.png)](polybar-scripts/redshift-temperature/)
+[![redshift-temperature](polybar-scripts/redshift-temperature/screenshots/1.png)](polybar-scripts/redshift-temperature/)
+[![hint-projecthamster](polybar-scripts/hint-projecthamster/screenshots/1.png)](polybar-scripts/hint-projecthamster/)
 
 
 ## See also these other user repositories:
