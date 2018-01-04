@@ -1,7 +1,6 @@
 #!/bin/sh
 
 get_icon() {
-
     case $1 in
         01d) icon="";;
         01n) icon="";;
@@ -23,7 +22,6 @@ get_icon() {
     esac
 
     echo $icon
-
 }
 
 get_duration() {
@@ -32,9 +30,8 @@ get_duration() {
 
 }
 
-
-KEY="d8ddffc0cbd9549e5fa776027f04cbc5"
-CITY="6940463"
+KEY=""
+CITY=""
 UNITS="metric"
 SYMBOL="°"
 
