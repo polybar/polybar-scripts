@@ -17,6 +17,7 @@ SYMBOL="°"
 
 * [OpenWeatherMap-Key](https://openweathermap.org/appid)
 * [weather-icons](https://github.com/erikflowers/weather-icons)
+* `jq`
 
 
 ## Module
