@@ -30,7 +30,6 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![player-moc](polybar-scripts/player-moc/screenshots/1.png)](polybar-scripts/player-moc/)
 
 
-
 ## See also these other user repositories:
 
 * [vyachkonovalov/polybar-gmail](https://github.com/vyachkonovalov/polybar-gmail): A Polybar module to show unread messages from Gmail
