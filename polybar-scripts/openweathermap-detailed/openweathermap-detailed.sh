@@ -32,7 +32,8 @@ SYMBOL="°"
 weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&id=$CITY&units=$UNITS")
 # weather=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&id=$CITY&units=$UNITS&cnt=1")
 
+weather_desc=$(echo "$weather" | jq -r ".weather[].description")
 weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
 weather_icon=$(echo "$weather" | jq -r ".weather[].icon")
 
-echo "$(get_icon "$weather_icon")" $weather_temp$SYMBOL
+echo "$(get_icon "$weather_icon")" $weather_desc, $weather_temp$SYMBOL

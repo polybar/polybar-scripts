@@ -1,8 +1,8 @@
-Script: openweathermap-detailed
+# Script: openweathermap-detailed
 
 A weather script that displays some weather information.
 
-It shows icons and temperatures for the current weather. The script can be easily modified to display a forecast. Look at the commented out line.
+It shows icons, temperatures and text for the current weather. The script can be easily modified to display a forecast. Look at the commented out line.
 
 Change these values:
 ```
