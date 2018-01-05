@@ -24,12 +24,6 @@ get_icon() {
     echo $icon
 }
 
-get_duration() {
-
-    date --date="@$1" -u +%H:%M
-
-}
-
 KEY=""
 CITY=""
 UNITS="metric"
