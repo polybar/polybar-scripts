@@ -2,14 +2,14 @@
 
 case "$1" in
     --toggle)
-        if [ "$(pgrep -x dropbox)" ]; then
-            pkill dropbox
+        if [ "$(pgrep dropbox)" ]; then
+            pkill -f dropbox
         else
             dropbox &
         fi
         ;;
     *)
-        if [ "$(pgrep -x dropbox)" ]; then
+        if [ "$(pgrep dropbox)" ]; then
             echo "#1"
         else
             echo "#2"
