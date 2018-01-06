@@ -14,8 +14,7 @@ cmusstatus=$(cmus-remote -C status)
 grep position <<< "$cmusstatus" 1>/dev/null 2>&1
 if [ ! $? -eq 0 ]; then exit; fi
 
-strindex() {- [Uptime](#uptime)
-
+strindex() {
   x="${1%%$2*}"
   [[ "$x" = "$1" ]] && echo -1 || echo "${#x}"
 }
