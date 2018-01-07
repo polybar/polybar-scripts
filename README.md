@@ -27,12 +27,8 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![redshift-temperature](polybar-scripts/redshift-temperature/screenshots/1.png)](polybar-scripts/redshift-temperature/)
 [![hint-projecthamster](polybar-scripts/hint-projecthamster/screenshots/1.png)](polybar-scripts/hint-projecthamster/)
 [![news-arch](polybar-scripts/news-arch/screenshots/1.png)](polybar-scripts/news-arch/)
-[![player-moc](polybar-scripts/player-moc/screenshots/1.png)](polybar-scripts/player-moc/)
-[![hint-pomodoro](polybar-scripts/hint-pomodoro/screenshots/1.png)](polybar-scripts/hint-pomodoro/)
 [![hint-trash](polybar-scripts/hint-trash/screenshots/1.png)](polybar-scripts/hint-trash/)
-[![player-cmus](polybar-scripts/player-cmus/screenshots/1.png)](polybar-scripts/player-cmus/)
 [![player-mpris](polybar-scripts/player-mpris/screenshots/1.png)](polybar-scripts/player-mpris/)
-[![player-qmmp](polybar-scripts/player-qmmp/screenshots/1.png)](polybar-scripts/player-qmmp/)
 
 
 ## See also these other user repositories:
