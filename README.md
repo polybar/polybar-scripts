@@ -26,7 +26,6 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![openweathermap-detailed](polybar-scripts/openweathermap-detailed/screenshots/1.png)](polybar-scripts/openweathermap-detailed/)
 [![redshift-temperature](polybar-scripts/redshift-temperature/screenshots/1.png)](polybar-scripts/redshift-temperature/)
 [![hint-projecthamster](polybar-scripts/hint-projecthamster/screenshots/1.png)](polybar-scripts/hint-projecthamster/)
-[![news-arch](polybar-scripts/news-arch/screenshots/1.png)](polybar-scripts/news-arch/)
 [![hint-trash](polybar-scripts/hint-trash/screenshots/1.png)](polybar-scripts/hint-trash/)
 [![player-mpris](polybar-scripts/player-mpris/screenshots/1.png)](polybar-scripts/player-mpris/)
 
