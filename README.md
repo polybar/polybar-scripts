@@ -6,7 +6,7 @@ To find out how to write and use your own scripts, read [Polybars wiki](https://
 
 This repository is not an exact blueprint. I guess every script has to be customized to make your Polybar unique. We cannot guarantee that all scripts will work because many scripts are written for very specific purposes. But we're trying.
 
-Your script isn't here yet? You have ideas to extend the scripts or descriptions? Send us your pull request.
+Your script isn't here yet? You have ideas to extend the scripts or descriptions? Send us your pull request or join us on freenode's `#polybar`.
 
 
 ## all colors are beautiful
