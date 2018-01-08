@@ -1,6 +1,8 @@
 # Script: battery-combined-python
 
-A Python script that shows the battery status. It supports two rechargeable batteries and changing icons.
+A Python script that shows the battery status.
+
+It supports two rechargeable batteries and changing icons.
 
 
 ## Module
