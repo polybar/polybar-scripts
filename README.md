@@ -18,7 +18,7 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![inbox-reddit](polybar-scripts/inbox-reddit/screenshots/1.png)](polybar-scripts/inbox-reddit/)
 [![openvpn-isrunning](polybar-scripts/openvpn-isrunning/screenshots/1.png)](polybar-scripts/openvpn-isrunning/)
 [![temp-percore](polybar-scripts/temp-percore/screenshots/1.png)](polybar-scripts/temp-percore/)
-[![temp-percore](polybar-scripts/inbox-imap/screenshots/1.png)](polybar-scripts/inbox-imap/)
+[![inbox-imap-python](polybar-scripts/inbox-imap-python/screenshots/1.png)](polybar-scripts/inbox-imap-python/)
 [![ticker-btceur](polybar-scripts/ticker-btceur/screenshots/1.png)](polybar-scripts/ticker-btceur/)
 [![battery-combined-tlp](polybar-scripts/battery-combined-tlp/screenshots/1.png)](polybar-scripts/battery-combined-tlp/)
 [![openweathermap-fullfeatured](polybar-scripts/openweathermap-fullfeatured/screenshots/1.png)](polybar-scripts/openweathermap-fullfeatured/)

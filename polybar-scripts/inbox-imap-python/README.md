@@ -1,4 +1,4 @@
-# Script: inbox-imap
+# Script: inbox-imap-python
 
 A script that shows if there are unread mails in your IMAP inbox.
 
@@ -8,8 +8,8 @@ For Gmail, you must allow [less secure apps](https://myaccount.google.com/securi
 ## Module
 
 ```
-[module/inbox-imap]
+[module/inbox-imap-python]
 type = custom/script
-exec = ~/polybar-scripts/inbox-imap.py
+exec = ~/polybar-scripts/inbox-imap-python.py
 interval = 60
 ```
