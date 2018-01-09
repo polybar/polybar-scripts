@@ -3,9 +3,9 @@
 SERVER=""
 NETRC=".netrc"
 
-inbox=$(curl -sf --netrc-file "$NETRC" -X "STATUS INBOX (UNSEEN)" imaps://"$SERVER"/INBOX | cut -d " " -f 5 | tr -d ")" | tr -d "\r")
+inbox=$(curl -sf --netrc-file "$NETRC" -X "FETCH 1:* FLAGS" imaps://"$SERVER"/INBOX | grep -vic seen)
 
-if [ $? -eq 0 ] && [ "$inbox" -ne 0 ]; then
+if [ "$inbox" -gt 0 ]; then
     echo "# $inbox"
 else
     echo ""
