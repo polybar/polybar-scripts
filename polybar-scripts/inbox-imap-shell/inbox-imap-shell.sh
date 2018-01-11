@@ -4,9 +4,9 @@ SERVER=""
 USER=""
 PASS=""
 
-inbox=$(curl -sf -u "$USER":"$PASS" -X "FETCH 1:* FLAGS" imaps://"$SERVER"/INBOX | grep -vic seen)
+inbox=$(curl -sf -u "$USER":"$PASS" -X "STATUS INBOX (UNSEEN)" imaps://"$SERVER"/INBOX | tr -d -c "[:digit:]")
 
-if [ "$inbox" -gt 0 ]; then
+if [ "$inbox" ] && [ "$inbox" -gt 0 ]; then
     echo "# $inbox"
 else
     echo ""
