@@ -30,33 +30,33 @@ if [ -f "$path_battery_1/energy_full" ]; then
     battery_max_1=$(cat "$path_battery_1/energy_full")
 fi
 
-battery_level=$(expr $battery_level_0 + $battery_level_1)
-battery_max=$(expr $battery_max_0 + $battery_max_1)
+battery_level=$(("$battery_level_0 + $battery_level_1"))
+battery_max=$(("$battery_max_0 + $battery_max_1"))
 
-battery_percent=$(expr $battery_level \* 100)
-battery_percent=$(expr $battery_percent / $battery_max)
+battery_percent=$((" $battery_level * 100"))
+battery_percent=$(("$battery_percent / $battery_max"))
 
-if [ $ac -eq 1 ]; then
+if [ "$ac" -eq 1 ]; then
     icon="#1"
 
-    if [ $battery_percent -gt 97 ]; then
-        echo $icon
+    if [ "$battery_percent" -gt 97 ]; then
+        echo "$icon"
     else
-        echo $icon $battery_percent "%"
+        echo "$icon $battery_percent %"
 fi
 
 else
-    if [ $battery_percent -gt 85 ]; then
+    if [ "$battery_percent" -gt 85 ]; then
         icon="#21"
-    elif [ $battery_percent -gt 60 ]; then
+    elif [ "$battery_percent" -gt 60 ]; then
         icon="#22"
-    elif [ $battery_percent -gt 35 ]; then
+    elif [ "$battery_percent" -gt 35 ]; then
         icon="#23"
-    elif [ $battery_percent -gt 10 ]; then
+    elif [ "$battery_percent" -gt 10 ]; then
         icon="#24"
     else
         icon="#25"
     fi
 
-    echo $icon $battery_percent "%"
+    echo "$icon $battery_percent %"
 fi
