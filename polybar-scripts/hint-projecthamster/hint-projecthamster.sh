@@ -1,9 +1,9 @@
 #!/bin/sh
 
-activity=$(hamster current 2> /dev/null | cut -d' ' -f 3- | sed 's/@.* / - /')
+activity=$(hamster current 2> /dev/null | cut -d " " -f 3- | sed 's/@.* / - /')
 
 if [ -n "$activity" ]; then
-    echo "%{F#B48EAD} $activity"
+    echo "$activity"
 else
-    echo "%{F#65737E} No Activity"
+    echo "No Activity"
 fi
