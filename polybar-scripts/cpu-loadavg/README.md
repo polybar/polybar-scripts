@@ -1,6 +1,6 @@
 # Script: cpu-loadavg
 
-A shell script which displays the cpu loadavg. It is simple. Very simple.
+A shell script which displays the cpu loadavg. It is a simple script. Very simple.
 
 
 ## Module

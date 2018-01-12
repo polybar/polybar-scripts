@@ -1,3 +1,3 @@
 #!/bin/sh
 
-uptime | grep -ohe 'load average[s:][: ].*' | sed 's/,//g' | awk '{print $3" "$4" "$5}'
+awk '{print $1" "$2" "$3}' < /proc/loadavg
