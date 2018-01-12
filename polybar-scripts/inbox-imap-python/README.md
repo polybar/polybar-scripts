@@ -1,6 +1,6 @@
 # Script: inbox-imap-python
 
-A script that shows if there are unread mails in your IMAP inbox.
+A script that shows if there are unread mails in your IMAPs inbox.
 
 For Gmail, you must allow [less secure apps](https://myaccount.google.com/security#connectedapps).
 
