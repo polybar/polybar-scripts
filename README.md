@@ -27,7 +27,7 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![openweathermap-simple](polybar-scripts/openweathermap-simple/screenshots/1.png)](polybar-scripts/openweathermap-simple/)
 [![openweathermap-detailed](polybar-scripts/openweathermap-detailed/screenshots/1.png)](polybar-scripts/openweathermap-detailed/)
 [![redshift-temperature](polybar-scripts/redshift-temperature/screenshots/1.png)](polybar-scripts/redshift-temperature/)
-[![hint-projecthamster](polybar-scripts/hint-projecthamster/screenshots/1.png)](polybar-scripts/hint-projecthamster/)
+[![info-projecthamster](polybar-scripts/hint-projecthamster/screenshots/1.png)](polybar-scripts/hint-projecthamster/)
 [![hint-trash](polybar-scripts/hint-trash/screenshots/1.png)](polybar-scripts/hint-trash/)
 [![player-mpris](polybar-scripts/player-mpris/screenshots/1.png)](polybar-scripts/player-mpris/)
 

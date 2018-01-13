@@ -1,4 +1,4 @@
-# Script: hint-projecthamster
+# Script: info-projecthamster
 
 This script displays Hamster Time Tracker information.
 
@@ -6,8 +6,8 @@ This script displays Hamster Time Tracker information.
 ## Module
 
 ```
-[module/hint-projecthamster]
+[module/info-projecthamster]
 type = custom/script
-exec = ~/polybar-scripts/hint-projecthamster.sh
+exec = ~/polybar-scripts/info-projecthamster.sh
 interval = 5
 ```
