@@ -10,6 +10,4 @@ A script that shows if OpenVPN is running.
 type = custom/script
 exec = pgrep openvpn
 interval = 5
-label = vpn
-format-prefix = "# "
 ```
