@@ -16,7 +16,7 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![temp-percore-colorful](polybar-scripts/temp-percore-colorful/screenshots/2.png)](polybar-scripts/temp-percore-colorful/)
 [![hint-chess](polybar-scripts/hint-chess/screenshots/1.png)](polybar-scripts/hint-chess/)
 [![inbox-reddit](polybar-scripts/inbox-reddit/screenshots/1.png)](polybar-scripts/inbox-reddit/)
-[![openvpn-isrunning](polybar-scripts/openvpn-isrunning/screenshots/1.png)](polybar-scripts/openvpn-isrunning/)
+[![isrunning-openvpn](polybar-scripts/isrunning-openvpn/screenshots/1.png)](polybar-scripts/isrunning-openvpn/)
 [![temp-percore](polybar-scripts/temp-percore/screenshots/1.png)](polybar-scripts/temp-percore/)
 [![inbox-imap-python](polybar-scripts/inbox-imap-python/screenshots/1.png)](polybar-scripts/inbox-imap-python/)
 [![ticker-btceur](polybar-scripts/ticker-btceur/screenshots/1.png)](polybar-scripts/ticker-btceur/)
