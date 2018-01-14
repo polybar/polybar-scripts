@@ -9,6 +9,7 @@ case "$1" in
         fi
         ;;
     *)
-        wmname
+        wmname=$(wmname)
+        echo "# $wmname"
         ;;
 esac
