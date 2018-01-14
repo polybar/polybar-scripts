@@ -1,4 +1,4 @@
-# Script: cpu-loadavg
+# Script: system-cpu-loadavg
 
 A shell script which displays the cpu loadavg. It is a simple script. Very simple.
 
@@ -6,8 +6,8 @@ A shell script which displays the cpu loadavg. It is a simple script. Very simpl
 ## Module
 
 ```
-[module/ cpu-loadavg]
+[module/system-cpu-loadavg]
 type = custom/script
-exec = ~/polybar-scripts/cpu-loadavg.sh
+exec = ~/polybar-scripts/system-cpu-loadavg.sh
 interval = 5
 ```
