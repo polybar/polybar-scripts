@@ -27,7 +27,7 @@ fi
 
 ```
 ## Module
-
+* Click left will open the nvidia-settings program.
 ```
 [module/bbswitch_show]
 type = custom/script
