@@ -1,4 +1,4 @@
-# Script: temp-percore
+# Script: system-cpu-temppercore
 
 A script that displays the temperature for each core.
 
@@ -11,9 +11,9 @@ You need [lm_sensors](https://archlinux.org/packages/lm_sensors). See the wiki t
 ## Module
 
 ```
-[module/temp-percore]
+[module/system-cpu-temppercore]
 type = custom/script
-exec = ~/polybar-scripts/temp-percore.sh
+exec = ~/polybar-scripts/system-cpu-temppercore.sh
 interval = 60
 exec-if = sensors
 ```
