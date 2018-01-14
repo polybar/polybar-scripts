@@ -8,7 +8,7 @@ You can add an icon in the script where it is # 1 and # 2, or edit it any way yo
 
 
 ## Dependencies
-* [bbswitch](https://github.com/Bumblebee-Project/bbswitch)
+* [bbswitch](https://github.com/Bumblebee-Project/bbswitch) ( You can find the program in the repository of your respective distribution.)
 
 ## Script
 ```
