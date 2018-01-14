@@ -1,6 +1,6 @@
 # Script: pulseaudio-simple
 
-A script that shows the pulseaudio volume.
+A script that shows the PulseAudio volume.
 
 
 ## Dependencies
