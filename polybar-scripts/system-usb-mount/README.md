@@ -1,4 +1,4 @@
-# Script: usb-mount
+# Script: system-usb-mount
 
 A small script that shows your mounted and not mounted removable devices.
 
@@ -17,10 +17,10 @@ The mount option has a feature: You can also start a file manager and open the d
 ## Module
 
 ```
-[module/usb-mount]
+[module/system-usb-mount]
 type = custom/script
-exec = ~/polybar-scripts/usb-mount.sh
+exec = ~/polybar-scripts/system-usb-mount.sh
 interval = 5
-click-left = ~/polybar-scripts/usb-mount.sh --mount
-click-right = ~/polybar-scripts/usb-mount.sh --unmount
+click-left = ~/polybar-scripts/system-usb-mount.sh --mount
+click-right = ~/polybar-scripts/system-usb-mount.sh --unmount
 ```
