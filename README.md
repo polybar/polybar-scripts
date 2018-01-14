@@ -24,7 +24,7 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 [![system-usb-mount](polybar-scripts/system-usb-mount/screenshots/2.png)](polybar-scripts/system-usb-mount/)
 [![openweathermap-simple](polybar-scripts/openweathermap-simple/screenshots/1.png)](polybar-scripts/openweathermap-simple/)
 [![openweathermap-detailed](polybar-scripts/openweathermap-detailed/screenshots/1.png)](polybar-scripts/openweathermap-detailed/)
-[![redshift-temperature](polybar-scripts/redshift-temperature/screenshots/1.png)](polybar-scripts/redshift-temperature/)
+[![info-redshift-temp](polybar-scripts/info-redshift-temp/screenshots/1.png)](polybar-scripts/info-redshift-temp/)
 [![info-projecthamster](polybar-scripts/info-projecthamster/screenshots/1.png)](polybar-scripts/info-projecthamster/)
 [![hint-trash](polybar-scripts/hint-trash/screenshots/1.png)](polybar-scripts/hint-trash/)
 [![player-mpris](polybar-scripts/player-mpris/screenshots/1.png)](polybar-scripts/player-mpris/)
