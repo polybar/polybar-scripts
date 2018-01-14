@@ -1,4 +1,4 @@
-# Script: hint-chess
+# Script: notification-chess
 
 A small script that indicates whether you need to move.
 
@@ -13,9 +13,9 @@ A small script that indicates whether you need to move.
 ## Module
 
 ```
-[module/hint-chess]
+[module/notification-chess]
 type = custom/script
-exec = ~/polybar-scripts/hint-chess.sh
+exec = ~/polybar-scripts/notification-chess.sh
 interval = 10
 click-left = xdg-open https://www.chess.com/goto_ready_game & disown
 ```
