@@ -1,8 +1,8 @@
-# Script: temp-percore-colorful
+# Script: system-cpu-temppercore-colorful
 
 A script that displays the temperature for each core in different colors.
 
-This is an extension of [temp-percore](../temp-percore/).
+This is an extension of [system-cpu-temppercore](../system-cpu-temppercore/).
 
 
 ## Dependencies
@@ -13,9 +13,9 @@ You need [lm_sensors](https://archlinux.org/packages/lm_sensors). See the wiki t
 ## Module
 
 ```
-[module/temp-percore-colorful]
+[module/system-cpu-temppercore-colorful]
 type = custom/script
-exec = ~/polybar-scripts/temp-percore-colorful.sh
+exec = ~/polybar-scripts/system-cpu-temppercore-colorful.sh
 interval = 60
 exec-if = sensors
 ```
