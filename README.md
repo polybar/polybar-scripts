@@ -12,8 +12,6 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 ## all colors are beautiful
 
 [![updates-arch](polybar-scripts/updates-arch/screenshots/1.png)](polybar-scripts/updates-arch/)
-[![system-cpu-temppercore-colorful](polybar-scripts/system-cpu-temppercore-colorful/screenshots/1.png)](polybar-scripts/system-cpu-temppercore-colorful/)
-[![system-cpu-temppercore-colorful](polybar-scripts/system-cpu-temppercore-colorful/screenshots/2.png)](polybar-scripts/system-cpu-temppercore-colorful/)
 [![notification-chess](polybar-scripts/notification-chess/screenshots/1.png)](polybar-scripts/notification-chess/)
 [![inbox-reddit](polybar-scripts/inbox-reddit/screenshots/1.png)](polybar-scripts/inbox-reddit/)
 [![isrunning-openvpn](polybar-scripts/isrunning-openvpn/screenshots/1.png)](polybar-scripts/isrunning-openvpn/)
