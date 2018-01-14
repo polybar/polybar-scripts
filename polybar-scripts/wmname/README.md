@@ -5,7 +5,8 @@ This script prints the value of the environment variable wmname
 ## Dependencies
 
 The BSPWM window manger, and maybe some more, has some problems with java scaling
-To solve this you can change the environment variable wmname in something different
+To solve this you can change the environment variable wmname in something different.
+See here: https://wiki.archlinux.org/index.php/java#Impersonate_another_window_manager
 
 Dependencies: wmname
 
