@@ -1,4 +1,4 @@
-# Script: uptime-pretty
+# Script: system-uptime-pretty
 
 A shell script which displays the output of `uptime --pretty` in a minimal fashion.
 
@@ -10,8 +10,8 @@ The default output of `uptime --pretty` is formatted as `up 2 days, 1 hour, 35 m
 ## Module
 
 ```
-[module/uptime-pretty]
+[module/system-uptime-pretty]
 type = custom/script
-exec = ~/polybar-scripts/uptime-pretty.sh
+exec = ~/polybar-scripts/system-uptime-pretty.sh
 interval = 30
 ```
