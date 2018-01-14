@@ -8,6 +8,6 @@ A script that shows if OpenVPN is running.
 ```
 [module/isrunning-openvpn]
 type = custom/script
-exec = pgrep openvpn
+exec = ~/polybar-scripts/isrunning-openvpn.sh
 interval = 5
 ```
