@@ -1,4 +1,4 @@
-# Script: hint-github
+# Script: notification-github
 
 A small script that shows your GitHub notifications.
 
@@ -14,8 +14,8 @@ Generate a token at `GitHub Settings` > `Developer settings` > `Personal access 
 ## Module
 
 ```
-[module/hint-github]
+[module/notification-github]
 type = custom/script
-exec = ~/polybar-scripts/hint-github.sh
+exec = ~/polybar-scripts/notification-github.sh
 interval = 60
 ```
