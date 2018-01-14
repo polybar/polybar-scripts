@@ -2,7 +2,7 @@
 
 A shell script created to be used as a module for polybar,
 will tell if the nvidia card is in use or not.
-You can add an icon in the script where it is # 1 and # 2, or edit it any way you like.
+You can add an icon in the script where it is #1 and #2, or edit it any way you like.
 
 * Only for notebook users with a dedicated NVIDIA card and an Intel graphics card.
 
