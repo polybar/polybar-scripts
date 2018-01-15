@@ -43,8 +43,7 @@ if [ "$ac" -eq 1 ]; then
         echo "$icon"
     else
         echo "$icon $battery_percent %"
-fi
-
+    fi
 else
     if [ "$battery_percent" -gt 85 ]; then
         icon="#21"
