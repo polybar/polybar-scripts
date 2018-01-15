@@ -26,7 +26,12 @@ get_icon() {
 
 get_duration() {
 
-    date --date="@$1" -u +%H:%M
+    osname=$(uname -s)
+    
+    case $osname in
+        *BSD) date -r "$1" -u +%H:%M;;
+        *) date --date="@$1" -u +%H:%M;;
+    esac
 
 }
 
