@@ -29,10 +29,23 @@ CITY=""
 UNITS="metric"
 SYMBOL="°"
 
-weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&id=$CITY&units=$UNITS")
-# weather=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&id=$CITY&units=$UNITS&cnt=1")
+if [ ! -z $CITY ]; then
+    weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&id=$CITY&units=$UNITS")
+    # weather=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&id=$CITY&units=$UNITS&cnt=1")
+else
+    location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
 
-weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
-weather_icon=$(echo "$weather" | jq -r ".weather[].icon")
+    if [ ! -z "$location" ]; then
+        location_lat="$(echo "$location" | jq '.location.lat')"
+        location_lon="$(echo "$location" | jq '.location.lng')"
 
-echo "$(get_icon "$weather_icon")" $weather_temp$SYMBOL
+        weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
+    fi
+fi
+
+if [ ! -z "$weather" ]; then
+    weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
+    weather_icon=$(echo "$weather" | jq -r ".weather[].icon")
+
+    echo "$(get_icon "$weather_icon")" "$weather_temp$SYMBOL"
+fi
