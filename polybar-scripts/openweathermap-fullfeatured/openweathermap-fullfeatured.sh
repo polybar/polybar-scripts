@@ -27,7 +27,7 @@ get_icon() {
 get_duration() {
 
     osname=$(uname -s)
-    
+
     case $osname in
         *BSD) date -r "$1" -u +%H:%M;;
         *) date --date="@$1" -u +%H:%M;;
@@ -40,8 +40,20 @@ CITY=""
 UNITS="metric"
 SYMBOL="°"
 
-current=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&id=$CITY&units=$UNITS")
-forecast=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&id=$CITY&units=$UNITS&cnt=1")
+if [ ! -z $CITY ]; then
+    current=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&id=$CITY&units=$UNITS")
+    forecast=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&id=$CITY&units=$UNITS&cnt=1")
+else
+    location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
+
+    if [ ! -z "$location" ]; then
+        location_lat="$(echo "$location" | jq '.location.lat')"
+        location_lon="$(echo "$location" | jq '.location.lng')"
+
+        current=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
+        forecast=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS&cnt=1")
+    fi
+fi
 
 if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
     current_temp=$(echo "$current" | jq ".main.temp" | cut -d "." -f 1)
@@ -73,5 +85,4 @@ if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
     fi
 
     echo "$(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL   $daytime"
-
 fi
