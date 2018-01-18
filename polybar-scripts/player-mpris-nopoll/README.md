@@ -1,6 +1,6 @@
 # Music Player - Basic track info (MPRIS) - No Poll
-![mpris playing](https://i.imgur.com/qmUHgMW.png)
-![mpris paused](https://i.imgur.com/d6zqu1E.png)
+![mpris playing](screenshots/playing.png)
+![mpris paused](screenshots/paused.png)
 
 This script displays the current track and the play-pause status without
 polling. Information is obtained by listening to MPRIS events, so it is updated
