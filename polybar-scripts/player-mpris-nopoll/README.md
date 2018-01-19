@@ -1,6 +1,7 @@
 # Script: player-mpris-nopoll
 
 ![mpris playing](screenshots/1.png)
+
 ![mpris paused](screenshots/2.png)
 
 This script displays the current track and the play-pause status without polling.
