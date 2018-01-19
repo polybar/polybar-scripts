@@ -2,6 +2,7 @@
 
 { A short description of what your script does. }
 
+{ Screenshots }
 
 ## Dependencies
 
