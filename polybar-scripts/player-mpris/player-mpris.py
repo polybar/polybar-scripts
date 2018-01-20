@@ -9,6 +9,7 @@ from gi.repository import Playerctl, GLib
 
 MUSIC_ICON = '#1'
 PAUSE_ICON = '#2'
+PLAYER_CLOSED_ICON = '#3'
 
 
 class PlayerStatus:
@@ -39,7 +40,7 @@ class PlayerStatus:
                 break
 
             except:
-                self._print_flush('')
+                self._print_flush(PLAYER_CLOSED_ICON)
                 time.sleep(2)
 
     def _on_metadata(self, player, e):
