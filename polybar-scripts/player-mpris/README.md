@@ -1,6 +1,11 @@
 # Script: player-mpris
 
-A small script that shows the current track.
+This script displays the current track and the play-pause status without polling.
+Information is obtained by listening to MPRIS events, so it is updated instantaneously on change.
+
+![mpris playing](screenshots/1.png)
+
+![mpris paused](screenshots/2.png)
 
 
 ## Dependencies
@@ -9,12 +14,11 @@ A small script that shows the current track.
 
 
 ## Module
-
-```
+```ini
 [module/player-mpris]
 type = custom/script
-exec = ~/polybar-scripts/player-mpris.sh
-interval = 3
+exec = ~/polybar-scripts/player-mpris.py
+tail = true
 click-left = playerctl previous
 click-right = playerctl next
 click-middle = playerctl play-pause
