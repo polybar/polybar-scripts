@@ -15,6 +15,7 @@ fi
 ```
 
 ## Module
+
 ```ini
 [module/qmmp]
 type = custom/script

@@ -1,4 +1,4 @@
-# Script: pulseaudio-fullfeatured
+# Script: pulseaudio-tail
 
 A script to control PulseAudio very easy and fast.
 
@@ -14,13 +14,13 @@ Maybe `pavucontrol` is a good idea. In the example it is opened with a right mou
 
 ## Module
 
-```
-[module/pulseaudio-fullfeatured]
+```ini
+[module/pulseaudio-tail]
 type = custom/script
-exec = ~/polybar-scripts/pulseaudio-fullfeatured.sh
+exec = ~/polybar-scripts/pulseaudio-tail.sh
 tail = true
 click-right = exec pavucontrol &
-click-left = ~/polybar-scripts/pulseaudio-fullfeatured.sh --mute
-scroll-up = ~/polybar-scripts/pulseaudio-fullfeatured.sh --up
-scroll-down = ~/polybar-scripts/pulseaudio-fullfeatured.sh --down
+click-left = ~/polybar-scripts/pulseaudio-tail.sh --mute
+scroll-up = ~/polybar-scripts/pulseaudio-tail.sh --up
+scroll-down = ~/polybar-scripts/pulseaudio-tail.sh --down
 ```

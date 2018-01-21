@@ -4,6 +4,8 @@ A shell script that shows the battery status.
 
 It uses TLP and requires root privileges. Note that the icon doesn't change.
 
+![battery-combined-tlp](screenshots/1.png)
+
 
 ## Dependencies
 
@@ -19,7 +21,7 @@ user ALL=(ALL) NOPASSWD: /usr/bin/tlp-stat
 
 ## Module
 
-```
+```ini
 [module/battery-combined-tlp]
 type = custom/script
 exec = ~/polybar-scripts/battery-combined-tlp.sh

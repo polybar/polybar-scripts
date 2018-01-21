@@ -5,7 +5,7 @@ A script that shows if the dropbox client is running. You can also start and sto
 
 ## Module
 
-```
+```ini
 [module/dropbox-isrunning]
 type = custom/script
 exec = ~/polybar-scripts/dropbox-isrunning.sh

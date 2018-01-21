@@ -4,6 +4,8 @@ A script that shows if there are updates for Arch Linux and AUR updates.
 
 See also [updates-arch](../updates-arch) and [updates-arch-aur](../updates-arch-aur).
 
+![updates-arch-combined](screenshots/1.png)
+
 
 ## Dependencies
 
@@ -14,7 +16,7 @@ At the moment `trizen` and `cower` are documented. Take a look at the script to 
 
 ## Module
 
-```
+```ini
 [module/updates-arch-combined]
 type = custom/script
 exec = ~/polybar-scripts/updates-arch-combined.sh

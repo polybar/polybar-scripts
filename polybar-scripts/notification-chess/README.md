@@ -2,6 +2,8 @@
 
 A small script that indicates whether you need to move.
 
+![notification-chess](screenshots/1.png)
+
 
 ## Dependencies
 
@@ -12,7 +14,7 @@ A small script that indicates whether you need to move.
 
 ## Module
 
-```
+```ini
 [module/notification-chess]
 type = custom/script
 exec = ~/polybar-scripts/notification-chess.sh

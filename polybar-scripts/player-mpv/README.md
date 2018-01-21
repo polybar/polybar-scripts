@@ -18,6 +18,7 @@ echo -n "$FULL"
 ```
 
 ## Module
+
 ```ini
 [module/mpv]
 type = custom/script

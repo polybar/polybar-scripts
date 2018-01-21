@@ -12,7 +12,7 @@ This script actually use POP3s. `curl` can also handle unencrypted POP3. You onl
 
 ## Module
 
-```
+```ini
 [module/inbox-pop3-shell]
 type = custom/script
 exec = ~/polybar-scripts/inbox-pop3-shell.sh

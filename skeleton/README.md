@@ -2,7 +2,8 @@
 
 { A short description of what your script does. }
 
-{ Screenshots }
+![skeleton](screenshots/1.png)
+
 
 ## Dependencies
 
@@ -11,7 +12,7 @@
 
 ## Module
 
-```
+```ini
 [module/{ name }]
 type = custom/script
 exec = ~/polybar-scripts/{ name }.sh

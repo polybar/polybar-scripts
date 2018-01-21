@@ -16,7 +16,7 @@ The login data is stored in a `.netrc`. This is more secure because the password
 
 ## Module
 
-```
+```ini
 [module/inbox-imap-shellnetrc]
 type = custom/script
 exec = ~/polybar-scripts/inbox-imap-shellnetrc.sh

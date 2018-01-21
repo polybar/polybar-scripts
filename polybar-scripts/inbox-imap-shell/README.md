@@ -14,7 +14,7 @@ This script actually use IMAPs. `curl` can also handle unencrypted IMAP. You onl
 
 ## Module
 
-```
+```ini
 [module/inbox-imap-shell]
 type = custom/script
 exec = ~/polybar-scripts/inbox-imap-shell.sh

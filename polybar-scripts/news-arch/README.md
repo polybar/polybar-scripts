@@ -10,7 +10,7 @@ A Python script that shows Arch Linux RSS news.
 
 ## Module
 
-```
+```ini
 [module/news-arch]
 type = custom/script
 exec = ~/polybar-scripts/news-arch.py
