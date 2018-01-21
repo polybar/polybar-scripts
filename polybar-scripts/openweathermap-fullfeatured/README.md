@@ -8,7 +8,7 @@ If `CITY` is left empty, the location is retrieved via the Mozilla Location API.
 
 Change these values:
 
-```
+```sh
 KEY=""
 CITY=""
 UNITS="metric"
