@@ -7,7 +7,7 @@ The BSPWM window manger, and maybe some more, has some problems with java scalin
 
 ## Dependencies
 
-`wmname`
+* `wmname`
 
 
 ## Module
