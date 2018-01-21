@@ -12,22 +12,23 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 ## all colors are beautiful
 
 [![updates-arch-combined](polybar-scripts/updates-arch-combined/screenshots/1.png)](polybar-scripts/updates-arch-combined/)
+[![system-cpu-temppercore](polybar-scripts/system-cpu-temppercore/screenshots/1.png)](polybar-scripts/system-cpu-temppercore/)
 [![notification-chess](polybar-scripts/notification-chess/screenshots/1.png)](polybar-scripts/notification-chess/)
 [![inbox-reddit](polybar-scripts/inbox-reddit/screenshots/1.png)](polybar-scripts/inbox-reddit/)
 [![isrunning-openvpn](polybar-scripts/isrunning-openvpn/screenshots/1.png)](polybar-scripts/isrunning-openvpn/)
-[![system-cpu-temppercore](polybar-scripts/system-cpu-temppercore/screenshots/1.png)](polybar-scripts/system-cpu-temppercore/)
 [![inbox-imap-python](polybar-scripts/inbox-imap-python/screenshots/1.png)](polybar-scripts/inbox-imap-python/)
-[![ticker-btceur](polybar-scripts/ticker-btceur/screenshots/1.png)](polybar-scripts/ticker-btceur/)
-[![battery-combined-tlp](polybar-scripts/battery-combined-tlp/screenshots/1.png)](polybar-scripts/battery-combined-tlp/)
 [![openweathermap-fullfeatured](polybar-scripts/openweathermap-fullfeatured/screenshots/1.png)](polybar-scripts/openweathermap-fullfeatured/)
+[![ticker-btceur](polybar-scripts/ticker-btceur/screenshots/1.png)](polybar-scripts/ticker-btceur/)
+[![player-mpris-simple](polybar-scripts/player-mpris-simple/screenshots/1.png)](polybar-scripts/player-mpris-simple/)
+[![battery-combined-tlp](polybar-scripts/battery-combined-tlp/screenshots/1.png)](polybar-scripts/battery-combined-tlp/)
+[![info-projecthamster](polybar-scripts/info-projecthamster/screenshots/1.png)](polybar-scripts/info-projecthamster/)
 [![system-usb-mount](polybar-scripts/system-usb-mount/screenshots/1.png)](polybar-scripts/system-usb-mount/)
 [![system-usb-mount](polybar-scripts/system-usb-mount/screenshots/2.png)](polybar-scripts/system-usb-mount/)
 [![openweathermap-simple](polybar-scripts/openweathermap-simple/screenshots/1.png)](polybar-scripts/openweathermap-simple/)
 [![openweathermap-detailed](polybar-scripts/openweathermap-detailed/screenshots/1.png)](polybar-scripts/openweathermap-detailed/)
+[![player-mpris-tail](polybar-scripts/player-mpris-tail/screenshots/1.png)](polybar-scripts/player-mpris-tail/)
 [![info-redshift-temp](polybar-scripts/info-redshift-temp/screenshots/1.png)](polybar-scripts/info-redshift-temp/)
-[![info-projecthamster](polybar-scripts/info-projecthamster/screenshots/1.png)](polybar-scripts/info-projecthamster/)
 [![hint-trash](polybar-scripts/hint-trash/screenshots/1.png)](polybar-scripts/hint-trash/)
-[![player-mpris](polybar-scripts/player-mpris/screenshots/1.png)](polybar-scripts/player-mpris/)
 
 
 ## See also these other user repositories:
