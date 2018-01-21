@@ -2,6 +2,8 @@
 
 A script that displays the current Bitcoin price.
 
+![ticker-btceur](screenshots/1.png)
+
 
 ## Dependencies
 

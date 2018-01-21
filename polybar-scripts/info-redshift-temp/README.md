@@ -2,6 +2,8 @@
 
 This script displays the current color temperature.
 
+![info-redshift](screenshots/1.png)
+
 
 ## Module
 

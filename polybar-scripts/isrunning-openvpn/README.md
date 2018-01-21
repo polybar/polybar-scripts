@@ -2,6 +2,8 @@
 
 A script that shows if OpenVPN is running.
 
+![isrunning-openvpn](screenshots/1.png)
+
 
 ## Module
 

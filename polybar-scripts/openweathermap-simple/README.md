@@ -7,12 +7,15 @@ It shows icons and temperatures for the current weather. The script can be easil
 If `CITY` is left empty, the location is retrieved via the Mozilla Location API.  
 
 Change these values:
+
 ```
 KEY=""
 CITY=""
 UNITS="metric"
 SYMBOL="°"
 ```
+
+![openweathermap-simple](screenshots/1.png)
 
 
 ## Dependencies

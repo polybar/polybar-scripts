@@ -4,6 +4,8 @@ A script that shows if there are updates for Arch Linux and AUR updates.
 
 See also [updates-arch](../updates-arch) and [updates-arch-aur](../updates-arch-aur).
 
+![updates-arch-combined](screenshots/1.png)
+
 
 ## Dependencies
 

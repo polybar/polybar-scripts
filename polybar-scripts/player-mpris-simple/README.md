@@ -1,6 +1,8 @@
-# Script: player-mpris
+# Script: player-mpris-simple
 
 A small script that shows the current track.
+
+![player-mpris-simple](screenshots/1.png)
 
 
 ## Dependencies
@@ -11,9 +13,9 @@ A small script that shows the current track.
 ## Module
 
 ```
-[module/player-mpris]
+[module/player-mpris-simple]
 type = custom/script
-exec = ~/polybar-scripts/player-mpris.sh
+exec = ~/polybar-scripts/player-mpris-simple.sh
 interval = 3
 click-left = playerctl previous
 click-right = playerctl next

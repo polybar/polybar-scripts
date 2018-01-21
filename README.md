@@ -11,7 +11,7 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 
 ## all colors are beautiful
 
-[![updates-arch](polybar-scripts/updates-arch/screenshots/1.png)](polybar-scripts/updates-arch/)
+[![updates-arch-combined](polybar-scripts/updates-arch-combined/screenshots/1.png)](polybar-scripts/updates-arch-combined/)
 [![notification-chess](polybar-scripts/notification-chess/screenshots/1.png)](polybar-scripts/notification-chess/)
 [![inbox-reddit](polybar-scripts/inbox-reddit/screenshots/1.png)](polybar-scripts/inbox-reddit/)
 [![isrunning-openvpn](polybar-scripts/isrunning-openvpn/screenshots/1.png)](polybar-scripts/isrunning-openvpn/)

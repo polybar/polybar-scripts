@@ -2,6 +2,8 @@
 
 A small script that indicates whether you need to move.
 
+![notification-chess](screenshots/1.png)
+
 
 ## Dependencies
 

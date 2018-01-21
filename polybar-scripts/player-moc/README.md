@@ -8,7 +8,7 @@ You can also control mocp.
 ## Module
 
 ```
-[module/uptime-pretty]
+[module/player-mocy]
 type = custom/script
 exec = ~/polybar-scripts/player-moc.py
 interval = 5

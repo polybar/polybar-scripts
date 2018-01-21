@@ -2,6 +2,8 @@
 
 This script displays Hamster Time Tracker information.
 
+![onfo-projecthamster](screenshots/1.png)
+
 
 ## Module
 

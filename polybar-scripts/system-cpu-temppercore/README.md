@@ -2,6 +2,8 @@
 
 A script that displays the temperature for each core.
 
+![system-cpu-temppercore](screenshots/1.png)
+
 
 ## Dependencies
 

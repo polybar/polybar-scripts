@@ -2,7 +2,8 @@
 
 { A short description of what your script does. }
 
-{ Screenshots }
+![skeleton](screenshots/1.png)
+
 
 ## Dependencies
 
