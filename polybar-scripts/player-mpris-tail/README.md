@@ -1,10 +1,10 @@
-# Script: player-mpris-nopoll
+# Script: player-mpris-tail
 
 This script displays the current track and the play-pause status without polling. Information is obtained by listening to MPRIS events, so it is updated instantaneously on change.
 
-![player-mpris-nopoll](screenshots/1.png)
+![player-mpris-tail](screenshots/1.png)
 
-![player-mpris-nopoll](screenshots/2.png)
+![player-mpris-tail](screenshots/2.png)
 
 
 ## Dependencies
@@ -15,9 +15,9 @@ This script displays the current track and the play-pause status without polling
 ## Module
 
 ```ini
-[module/player-mpris-nopoll]
+[module/player-mpris-tail]
 type = custom/script
-exec = ~/polybar-scripts/player-mpris-nopoll.py
+exec = ~/polybar-scripts/player-mpris-tail.py
 tail = true
 click-left = playerctl previous
 click-right = playerctl next
