@@ -12,7 +12,7 @@ A small script that shows the current track.
 
 ## Module
 
-```
+```ini
 [module/player-mpris-simple]
 type = custom/script
 exec = ~/polybar-scripts/player-mpris-simple.sh

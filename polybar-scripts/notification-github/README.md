@@ -13,7 +13,7 @@ Generate a token at `GitHub Settings` > `Developer settings` > `Personal access 
 
 ## Module
 
-```
+```ini
 [module/notification-github]
 type = custom/script
 exec = ~/polybar-scripts/notification-github.sh

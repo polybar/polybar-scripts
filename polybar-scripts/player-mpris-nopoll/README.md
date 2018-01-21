@@ -13,6 +13,7 @@ This script displays the current track and the play-pause status without polling
 
 
 ## Module
+
 ```ini
 [module/player-mpris-nopoll]
 type = custom/script

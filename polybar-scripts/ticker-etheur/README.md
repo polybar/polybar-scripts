@@ -11,7 +11,7 @@ A script that displays the current Ethereum price.
 
 ## Module
 
-```
+```ini
 [module/ticker-etheur]
 type = custom/script
 exec = ~/polybar-scripts/ticker-etheur.sh

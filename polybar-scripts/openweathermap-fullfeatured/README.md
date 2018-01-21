@@ -27,13 +27,14 @@ SYMBOL="°"
 
 ## Module
 
-```
+```ini
 [bar/polybar]
 ...
 font-2 = Weather Icons:size=12;1
 ...
+```
 
-
+```ini
 [module/openweathermap-fullfeatured]
 type = custom/script
 exec = ~/polybar-scripts/openweathermap-fullfeatured.sh

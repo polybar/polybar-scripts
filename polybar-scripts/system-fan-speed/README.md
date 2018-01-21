@@ -10,7 +10,7 @@ You need [lm_sensors](https://archlinux.org/packages/lm_sensors). See the wiki t
 
 ## Module
 
-```
+```ini
 [module/system-fan-speed]
 type = custom/script
 exec = ~/polybar-scripts/system-fan-speed.sh

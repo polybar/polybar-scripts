@@ -7,8 +7,8 @@ You can also control mocp.
 
 ## Module
 
-```
-[module/player-mocy]
+```ini
+[module/player-moc]
 type = custom/script
 exec = ~/polybar-scripts/player-moc.py
 interval = 5

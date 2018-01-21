@@ -12,7 +12,7 @@ You need [lm_sensors](https://archlinux.org/packages/lm_sensors). See the wiki t
 
 ## Module
 
-```
+```ini
 [module/system-cpu-temppercore]
 type = custom/script
 exec = ~/polybar-scripts/system-cpu-temppercore.sh

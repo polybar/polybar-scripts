@@ -12,7 +12,7 @@
 
 ## Module
 
-```
+```ini
 [module/{ name }]
 type = custom/script
 exec = ~/polybar-scripts/{ name }.sh

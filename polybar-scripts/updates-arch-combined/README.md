@@ -16,7 +16,7 @@ At the moment `trizen` and `cower` are documented. Take a look at the script to 
 
 ## Module
 
-```
+```ini
 [module/updates-arch-combined]
 type = custom/script
 exec = ~/polybar-scripts/updates-arch-combined.sh

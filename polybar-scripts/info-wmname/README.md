@@ -12,7 +12,7 @@ The BSPWM window manger, and maybe some more, has some problems with java scalin
 
 ## Module
 
-```
+```ini
 [module/info-wmname]
 type = custom/script
 exec = ~/polybar-scripts/info-wmname.sh

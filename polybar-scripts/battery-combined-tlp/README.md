@@ -21,7 +21,7 @@ user ALL=(ALL) NOPASSWD: /usr/bin/tlp-stat
 
 ## Module
 
-```
+```ini
 [module/battery-combined-tlp]
 type = custom/script
 exec = ~/polybar-scripts/battery-combined-tlp.sh

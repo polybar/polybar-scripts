@@ -9,7 +9,7 @@ For Gmail, you must allow [less secure apps](https://myaccount.google.com/securi
 
 ## Module
 
-```
+```ini
 [module/inbox-imap-python]
 type = custom/script
 exec = ~/polybar-scripts/inbox-imap-python.py

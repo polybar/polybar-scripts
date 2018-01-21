@@ -9,7 +9,7 @@ The default output of `uptime --pretty` is formatted as `up 2 days, 1 hour, 35 m
 
 ## Module
 
-```
+```ini
 [module/system-uptime-pretty]
 type = custom/script
 exec = ~/polybar-scripts/system-uptime-pretty.sh

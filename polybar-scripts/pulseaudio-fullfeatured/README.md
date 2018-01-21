@@ -14,7 +14,7 @@ Maybe `pavucontrol` is a good idea. In the example it is opened with a right mou
 
 ## Module
 
-```
+```ini
 [module/pulseaudio-fullfeatured]
 type = custom/script
 exec = ~/polybar-scripts/pulseaudio-fullfeatured.sh

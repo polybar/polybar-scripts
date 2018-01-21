@@ -12,7 +12,7 @@ This only will work for notebook users with a dedicated NVIDIA card and an Intel
 
 ## Module
 
-```
+```ini
 [module/system-nvidia-bbswitch]
 type = custom/script
 exec = ~/polybar-scripts/system-nvidia-bbswitch.sh

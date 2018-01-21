@@ -8,7 +8,7 @@ If `CITY` is left empty, the location is retrieved via the Mozilla Location API.
 
 Change these values:
 
-```
+```sh
 KEY=""
 CITY=""
 UNITS="metric"
@@ -27,13 +27,14 @@ SYMBOL="°"
 
 ## Module
 
-```
+```ini
 [bar/polybar]
 ...
 font-2 = Weather Icons:size=12;1
 ...
+```
 
-
+```ini
 [module/openweathermap-simple]
 type = custom/script
 exec = ~/polybar-scripts/openweathermap-simple.sh

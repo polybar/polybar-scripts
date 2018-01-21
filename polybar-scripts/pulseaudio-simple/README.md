@@ -10,7 +10,7 @@ A script that shows the PulseAudio volume.
 
 ## Module
 
-```
+```ini
 [module/pulseaudio-simple]
 type = custom/script
 exec = ~/polybar-scripts/pulseaudio-simple.sh

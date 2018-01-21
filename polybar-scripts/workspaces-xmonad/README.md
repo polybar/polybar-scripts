@@ -7,13 +7,15 @@ You may adjust `eventLogHook` according to your preferences.
 
 ## Module
 
-```
+```ini
 [module/workspaces-xmonad]
 type = custom/script
 exec = tail -F /tmp/.xmonad-workspace-log
 exec-if = [ -p /tmp/.xmonad-workspace-log ]
 tail = true
+```
 
+```ini
 [module/title-xmonad]
 type = custom/script
 exec = tail -F /tmp/.xmonad-title-log

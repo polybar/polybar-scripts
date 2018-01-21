@@ -15,7 +15,7 @@ Type Reddit JSON URL from [reddit.com/prefs/feeds/](https://www.reddit.com/prefs
 
 ## Module
 
-```
+```ini
 [module/inbox-reddit]
 type = custom/script
 exec = ~/polybar-scripts/inbox-reddit.sh

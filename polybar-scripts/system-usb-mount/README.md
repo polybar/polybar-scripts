@@ -19,7 +19,7 @@ The mount option has a feature: You can also start a file manager and open the d
 
 ## Module
 
-```
+```ini
 [module/system-usb-mount]
 type = custom/script
 exec = ~/polybar-scripts/system-usb-mount.sh

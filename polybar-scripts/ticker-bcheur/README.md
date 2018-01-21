@@ -11,7 +11,7 @@ A script that displays the current Bitcoin Cash price.
 
 ## Module
 
-```
+```ini
 [module/ticker-bcheur]
 type = custom/script
 exec = ~/polybar-scripts/ticker-bcheur.sh

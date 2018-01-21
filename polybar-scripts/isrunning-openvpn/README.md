@@ -7,7 +7,7 @@ A script that shows if OpenVPN is running.
 
 ## Module
 
-```
+```ini
 [module/isrunning-openvpn]
 type = custom/script
 exec = ~/polybar-scripts/isrunning-openvpn.sh
