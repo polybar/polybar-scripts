@@ -16,7 +16,8 @@ interval = 10
 
 ## Troubleshooting
 
-To show the MySQL Server status, the script must own a file in /opt/lampp/var/MySQL.
-To solve this I edited the xampp script in /opt/lampp/ in the startMySQL() function, ![MySQL Troubleshooting](screenshots/xampp-mysql.png) <br>
-The sleep is imported because the file need some time to create.
-The file is owned by the mysql user. May you can fix that problem on Otherwise. This is only one solution.
+To show the MySQL Server status, the script must own a file in /opt/lampp/var/MySQL. To solve this I edited the xampp script in /opt/lampp/ in the startMySQL() function.
+
+![MySQL Troubleshooting](screenshots/xampp-mysql.png)
+
+The sleep is imported because the file need some time to create. The file is owned by the mysql user. May you can fix that problem on Otherwise. This is only one solution.
