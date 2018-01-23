@@ -1,6 +1,6 @@
 # Script: info-xampp
 
-The Script prints the status of [XAMPP](https://www.apachefriends.org/de/index.html) services (Apache, MySQL, ProFTPD) if they are running. Otherwise, the script prints nothing.
+The Script prints the status of [XAMPP](https://www.apachefriends.org/de/index.html) services (Apache, MySQL, ProFTPD) if they are running.
 
 ![info-xampp](screenshots/1.png)
 
