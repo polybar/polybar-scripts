@@ -11,7 +11,7 @@ The Script prints the status of [XAMPP](https://www.apachefriends.org/de/index.h
 [module/info-xampp]
 type = custom/script
 exec = ~/polybar-scripts/info-xampp.sh
-interval =
+interval = 10
 ```
 
 ## Troubleshooting
