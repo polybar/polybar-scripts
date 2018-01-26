@@ -1,10 +1,10 @@
 #!/bin/bash
 # Check if OfflineIMAP is running, and start in background if not
-OI_PID=`pgrep offlineimap`
+OI_PID=$(pgrep offlineimap)
 if [ -z "$OI_PID" ]; then
     echo "Not running. Starting"
     nohup offlineimap > /tmp/offlineimap.log &
 else
     echo "Running. Terminating . . ."
-    kill $OI_PID
+    kill "$OI_PID"
 fi
