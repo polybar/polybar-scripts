@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ "$(pgrep -x redshift)" ]; then
-    temp=$(redshift -p 2> /dev/null | grep temp | cut -d " " -f 2 | tr -d "[:alpha:]")
+    temp=$(redshift -p 2> /dev/null | grep temp | cut -d " " -f 3 | tr -d "[:alpha:]")
 
     if [ -z "$temp" ]; then
         echo "%{F#65737E} #"
