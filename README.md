@@ -9,6 +9,18 @@ This repository is not an exact blueprint. I guess every script has to be custom
 Your script isn't here yet? You have ideas to extend the scripts or descriptions? Send us your pull request or join us on freenode's `#polybar`.
 
 
+## Hall of Fame
+
+Is this your first time here? You should definitely take a look at these scripts:
+
+* [battery-combined-udev](polybar-scripts/battery-combined-udev)
+* [openweathermap-fullfeatured](polybar-scripts/openweathermap-fullfeatured)
+* [player-mpris-tail](polybar-scripts/player-mpris-tail)
+* [pulseaudio-tail](polybar-scripts/pulseaudio-tail)
+* [system-usb-udev](polybar-scripts/system-usb-udev)
+* [updates-arch-combined](polybar-scripts/updates-arch-combined)
+
+
 ## all colors are beautiful
 
 [![updates-arch-combined](polybar-scripts/updates-arch-combined/screenshots/1.png)](polybar-scripts/updates-arch-combined/)
