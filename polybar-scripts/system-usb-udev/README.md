@@ -1,6 +1,6 @@
-# Script: system-usb-mount
+# Script: system-usb-udev
 
-A small script that shows your mounted and not mounted removable devices. This is an extended version of [system-usb-udev](../system-usb-udev).
+A small script that shows your mounted and not mounted removable devices. This is an extended version of [system-usb-mount](../system-usb-mount).
 
 Click left to mount all removable devices. Click right to unmount the devices. The removable devices are then turned off with `udisksctl power-off`.
 
@@ -26,7 +26,7 @@ Also change the file path in line `#23`.
 ## Module
 
 ```ini
-[module/system-usb-mount]
+[module/system-usb-udev]
 type = custom/script
 exec = ~/polybar-scripts/system-usb-udev.sh
 tail = true
