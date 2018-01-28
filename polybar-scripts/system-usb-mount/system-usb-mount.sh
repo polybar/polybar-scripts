@@ -20,16 +20,32 @@ case "$1" in
         ;;
     *)
         output=""
+        counter=0
+
         for unmounted in $(echo "$devices" | jq -r '.blockdevices[]  | select(.type == "part") | select(.rm == "1") | select(.mountpoint == null) | .name'); do
             unmounted=$(echo "$unmounted" | tr -d "[:digit:]")
             unmounted=$(echo "$devices" | jq -r '.blockdevices[]  | select(.name == "'"$unmounted"'") | .vendor')
             unmounted=$(echo "$unmounted" | tr -d ' ')
 
-            output="$output# $unmounted   "
+            if [ $counter -eq 0 ]; then
+                space=""
+            else
+                space="   "
+            fi
+            counter=$((counter + 1))
+
+            output="$output$space#1 $unmounted"
         done
 
         for mounted in $(echo "$devices" | jq -r '.blockdevices[] | select(.type == "part") | select(.rm == "1") | select(.mountpoint != null) | .size'); do
-            output="$output# $mounted   "
+            if [ $counter -eq 0 ]; then
+                space=""
+            else
+                space="   "
+            fi
+            counter=$((counter + 1))
+
+            output="$output$space#2 $mounted"
         done
 
         echo "$output"
