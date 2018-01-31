@@ -1,18 +1,18 @@
 #!/bin/sh
 
-if /opt/lampp/xampp status | grep -q "Apache...ok"; then
+if /./opt/lampp/xampp status | grep -q "Apache is running."; then
 	status_apache="#11"
 else
 	status_apache="#12"
 fi
 
-if opt/lampp/xampp status |grep -q "MySQL...ok"; then
+if /./opt/lampp/xampp status |grep -q "MySQL is running."; then
 	status_mysql="#21"
 else
 	status_mysql="#22"
 fi
 
-if /opt/lampp/xampp status | grep -q "ProFTPD...ok"; then
+if /./opt/lampp/xampp status | grep -q "ProFTPD is running."; then
 	status_ftp="#31"
 else
 	status_ftp="#32"
