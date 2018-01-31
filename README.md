@@ -41,7 +41,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-xampp](polybar-scripts/info-xampp/screenshots/1.png)](polybar-scripts/info-xampp/)
 [![player-mpris-tail](polybar-scripts/player-mpris-tail/screenshots/1.png)](polybar-scripts/player-mpris-tail/)
 [![info-redshift-temp](polybar-scripts/info-redshift-temp/screenshots/1.png)](polybar-scripts/info-redshift-temp/)
-[![hint-trash](polybar-scripts/hint-trash/screenshots/1.png)](polybar-scripts/hint-trash/)
+[![info-trash](polybar-scripts/info-trash/screenshots/1.png)](polybar-scripts/info-trash/)
 
 
 ## See also these other user repositories:
