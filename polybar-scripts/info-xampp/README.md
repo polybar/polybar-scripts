@@ -5,6 +5,15 @@ The Script prints the status of [XAMPP](https://www.apachefriends.org/de/index.h
 ![info-xampp](screenshots/1.png)
 
 
+## Dependencies
+
+Create a sudo rule  to allow you user to read the status information.
+
+```ini
+username    ALL = NOPASSWD: /opt/lampp/xampp
+```
+
+
 ## Module
 
 ```ini
@@ -13,11 +22,3 @@ type = custom/script
 exec = ~/polybar-scripts/info-xampp.sh
 interval = 10
 ```
-
-## Troubleshooting
-
-To show the MySQL Server status, the script must own a file in /opt/lampp/var/MySQL. To solve this I edited the xampp script in /opt/lampp/ in the startMySQL() function.
-
-![MySQL Troubleshooting](screenshots/xampp-mysql.png)
-
-The sleep is imported because the file need some time to create. The file is owned by the mysql user. May you can fix that problem on Otherwise. This is only one solution.
