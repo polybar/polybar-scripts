@@ -1,11 +1,6 @@
 # Script: isrunning-offlineimap
 
-A script that shows if offlineimap is running.
-
-
-## Dependencies & Tips
-
-The scripts require you to have setup offlineimap yourself.
+A script that shows if offlineimap is running. The scripts require you to have setup offlineimap yourself.
 
 
 ## Module
