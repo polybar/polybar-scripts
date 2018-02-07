@@ -1,0 +1,22 @@
+# Script: info-hackspeed
+
+A small script that shows the keystrokes per minute. Happy Hacking!
+
+
+## Dependencies
+
+* `xorg-xinput`
+
+They have to set up your keyboard. Replace in line #6 `AT Translated Set 2 keyboard` wit your own keyboard description. You can find out your keyboard with `xinput list --short`.
+
+Change `hackspeed_cache` to change the path of the hackspeed cache file.
+
+
+## Module
+
+```ini
+[module/info-hackspeed]
+type = custom/script
+exec = ~/polybar-scripts/info-hackspeed.sh
+tail = true
+```
