@@ -47,5 +47,5 @@ if [ ! -z "$weather" ]; then
     weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
     weather_icon=$(echo "$weather" | jq -r ".weather[].icon")
 
-    echo "$(get_icon "$weather_icon")" "$weather_temp$SYMBOL"
+    echo "$(get_icon "$weather_icon")" %{T-}"$weather_temp$SYMBOL"
 fi
