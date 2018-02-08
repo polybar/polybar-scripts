@@ -2,6 +2,8 @@
 
 A small script that shows the keystrokes per minute. Happy Hacking!
 
+![hackspeedinfo-hac](screenshots/1.png)
+
 
 ## Dependencies
 
