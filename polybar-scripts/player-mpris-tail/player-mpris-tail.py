@@ -66,6 +66,11 @@ class PlayerStatus:
                 self._player.on('play', self._on_play)
                 self._player.on('pause', self._on_pause)
                 self._player.on('exit', self._on_exit)
+                status = self._player.get_property('status')
+                if status == 'Playing':
+                    self._icon = MUSIC_ICON
+                elif status == 'Paused':
+                    self._icon = PAUSE_ICON
                 self._on_metadata(self._player, self._player.get_property('metadata'))
                 break
 
