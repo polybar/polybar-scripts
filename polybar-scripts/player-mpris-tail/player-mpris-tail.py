@@ -2,6 +2,7 @@
 
 import time
 import sys
+import subprocess
 
 import gi
 gi.require_version('Playerctl', '1.0')
@@ -11,10 +12,33 @@ MUSIC_ICON = '#1'
 PAUSE_ICON = '#2'
 PLAYER_CLOSED_ICON = '#3'
 
+def listPlayers():
+    return [
+        playername.split('"')[1].split('.')[-1]
+        for playername
+        in subprocess.getoutput(
+            'dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep org.mpris.MediaPlayer2'
+        ).split("\n")
+    ]
+
+def getPlayerStatus(playername):
+    return subprocess.getoutput(
+        'playerctl --player="%s" status' % playername
+    )
+
+def getActivePlayer():
+    playing = [ player for player in listPlayers() if getPlayerStatus(player) == 'Playing' ]
+    paused  = [ player for player in listPlayers() if getPlayerStatus(player) == 'Paused' ]
+    if len(playing):
+        return playing[0]
+    if len(paused):
+        return paused[0]
 
 class PlayerStatus:
     def __init__(self):
         self._player = None
+        self._player_class = None
+        self._player_name = None
         self._icon = PAUSE_ICON
 
         self._last_artist = None
@@ -32,11 +56,17 @@ class PlayerStatus:
     def _init_player(self):
         while True:
             try:
-                self._player = Playerctl.Player()
+                self._player_name = getActivePlayer()
+                self._player_class = Playerctl.Player()
+                if self._player_name:
+                    self._player = self._player_class.new(self._player_name)
+                else:
+                    self._player = self._player_class.new()
                 self._player.on('metadata', self._on_metadata)
                 self._player.on('play', self._on_play)
                 self._player.on('pause', self._on_pause)
                 self._player.on('exit', self._on_exit)
+                self._on_metadata(self._player, self._player.get_property('metadata'))
                 break
 
             except:
