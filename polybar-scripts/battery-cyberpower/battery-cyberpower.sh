@@ -24,10 +24,6 @@ battery_print() {
     fi
 
     ac=0
-    battery_level_0=0
-    battery_level_1=0
-    battery_max_0=0
-    battery_max_1=0
 
     if [ "$battery_ac" == "Utility Power" ]; then
         ac=1
