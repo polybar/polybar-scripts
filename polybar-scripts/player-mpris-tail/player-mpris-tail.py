@@ -27,12 +27,15 @@ def getPlayerStatus(playername):
     )
 
 def getActivePlayer():
-    playing = [ player for player in listPlayers() if getPlayerStatus(player) == 'Playing' ]
-    paused  = [ player for player in listPlayers() if getPlayerStatus(player) == 'Paused' ]
+    players = [ { 'name': player, 'status': getPlayerStatus(player) } for player in listPlayers() ]
+    playing = [ player['name'] for player in players if player['status'] == 'Playing' ]
+    paused  = [ player['name'] for player in players if player['status'] == 'Paused' ]
     if len(playing):
-        return playing[0]
+        return playing[-1]
     if len(paused):
-        return paused[0]
+        return paused[-1]
+    if len(players):
+        return players[-1]['name']
 
 class PlayerStatus:
     def __init__(self):
