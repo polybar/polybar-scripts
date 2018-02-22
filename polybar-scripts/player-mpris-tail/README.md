@@ -19,7 +19,7 @@ This script displays the current track and the play-pause status without polling
 type = custom/script
 exec = ~/polybar-scripts/player-mpris-tail.py
 tail = true
-click-left = playerctl previous
-click-right = playerctl next
-click-middle = playerctl play-pause
+click-left = ~/polybar-scripts/player-ctrl.sh previous
+click-right = ~/polybar-scripts/player-ctrl.sh next
+click-middle = ~/polybar-scripts/player-ctrl.sh play-pause
 ```
