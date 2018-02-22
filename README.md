@@ -56,6 +56,13 @@ Is this your first time here? You should definitely take a look at these scripts
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
 
 
+##  Setup
+
+* Save the script of your choice somewhere at `~/.config/polybar/`
+* Copy the module settings into your configuration file
+* Replace the appropriate icon strings in the script (e.g. replace `#1` with `🎉`).
+
+
 ## Development
 
 It's a good idea to look at the [skeleton](skeleton/).
