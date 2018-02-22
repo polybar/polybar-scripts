@@ -35,7 +35,7 @@ def getActivePlayer():
     if len(paused):
         return paused[-1]
     if len(players)
-        return players.name[-1]
+        return players[-1]['name']
 
 class PlayerStatus:
     def __init__(self):
