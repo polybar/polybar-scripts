@@ -33,3 +33,8 @@ You may have to set up your keyboard. Set the environment variable KEYBOARD_ID (
 * `INTERVAL`: amount of seconds to gather data. Default: 20
 * `LAYOUT`: keyboard layout, to be able to only count letters and numbers. Currently supported are `qwerty` and `azerty`. If you have a different layout, please contribute a condition for it! See the script's source code. Use the special value `dontcare` to count all keys, not just letters and numbers. Default: `qwerty`
 
+To set these configuration options, pass them as environment variables. The recommended way to achieve this is to change the `exec` line in your Polybar configuration:
+```ini
+exec = INTERVAL=10 ICON=⌨ METRIC=wpm ~/polybar-scripts/info-hackspeed.sh
+```
+

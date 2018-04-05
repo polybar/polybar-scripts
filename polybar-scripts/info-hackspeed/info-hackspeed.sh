@@ -1,27 +1,41 @@
 #!/bin/sh
 
-KEYBOARD_ID="AT Translated Set 2 keyboard"
+if [ -z "$KEYBOARD_ID" ]; then
+	KEYBOARD_ID="AT Translated Set 2 keyboard"
+fi
 
 # cpm: characters per minute
 # wpm: words per minute (1 word = 5 characters)
-METRIC=cpm
-ICON="#"
-FORMAT="$ICON %d $METRIC"
+if [ -z "$METRIC" ]; then
+	METRIC=cpm
+fi
 
-INTERVAL=20
+if [ -z "$ICON" ]; then
+	ICON="#"
+fi
 
-# If you have a keyboard layout that is not listed here yet, create a condition
-# yourself. $3 is the key index. Use `xinput test "AT Translated Set 2 keyboard"`
-# to see key codes in real time.  Be sure to open a pull request for your
-# layout's condition!
-LAYOUT=qwerty
+if [ -z "$FORMAT" ]; then
+	FORMAT="$ICON %d $METRIC"
+fi
 
-case "$LAYOUT" in
-	qwerty) CONDITION='($3 >= 10 && $3 <= 19) || ($3 >= 24 && $3 <= 33) || ($3 >= 37 && $3 <= 53) || ($3 >= 52 && $3 <= 58)'; ;;
-	azerty) CONDITION='($3 >= 10 && $3 <= 19) || ($3 >= 24 && $3 <= 33) || ($3 >= 37 && $3 <= 54) || ($3 >= 52 && $3 <= 57)'; ;;
-	dontcare) CONDITION='$3 == $3'; ;; # Just register all key presses, not only letters and numbers
-	*) echo "Unsupported layout \"$LAYOUT\""; exit 1; ;;
-esac
+if [ -z "$INTERVAL" ]; then
+	INTERVAL=20
+fi
+
+# If you have a keyboard layout that is not listed here yet, create a condition yourself. $3 is the key index.
+# Use `xinput test "AT Translated Set 2 keyboard"` to see key codes in real time.
+# Be sure to open a pull request for your layout's condition!
+if [ -z "$LAYOUT" ]; then
+	LAYOUT=qwerty
+fi
+if [ -z "$CONDITION" ]; then
+	case "$LAYOUT" in
+		qwerty) CONDITION='($3 >= 10 && $3 <= 19) || ($3 >= 24 && $3 <= 33) || ($3 >= 37 && $3 <= 53) || ($3 >= 52 && $3 <= 58)'; ;;
+		azerty) CONDITION='($3 >= 10 && $3 <= 19) || ($3 >= 24 && $3 <= 33) || ($3 >= 37 && $3 <= 54) || ($3 >= 52 && $3 <= 57)'; ;;
+		dontcare) CONDITION='$3 == $3'; ;; # Just register all key presses, not only letters and numbers
+		*) echo "Unsupported layout \"$LAYOUT\""; exit 1; ;;
+	esac
+fi
 
 
 
@@ -50,7 +64,7 @@ while true; do
 	# cleared.
 	lines=$(stat --format %s "$hackspeed_cache")
 
-	# Truncate the cache file so that in the next iteration, we count only new
+	# Truncate the cache file so that in the next iteration, we only count new
 	# keypresses
 	printf '' > "$hackspeed_cache"
 
