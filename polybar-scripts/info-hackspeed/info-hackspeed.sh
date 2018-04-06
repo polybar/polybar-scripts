@@ -32,7 +32,7 @@ if [ -z "$CONDITION" ]; then
 	case "$LAYOUT" in
 		qwerty) CONDITION='($3 >= 10 && $3 <= 19) || ($3 >= 24 && $3 <= 33) || ($3 >= 37 && $3 <= 53) || ($3 >= 52 && $3 <= 58)'; ;;
 		azerty) CONDITION='($3 >= 10 && $3 <= 19) || ($3 >= 24 && $3 <= 33) || ($3 >= 37 && $3 <= 54) || ($3 >= 52 && $3 <= 57)'; ;;
-		dontcare) CONDITION='$3 == $3'; ;; # Just register all key presses, not only letters and numbers
+		dontcare) CONDITION='1'; ;; # Just register all key presses, not only letters and numbers
 		*) echo "Unsupported layout \"$LAYOUT\""; exit 1; ;;
 	esac
 fi
