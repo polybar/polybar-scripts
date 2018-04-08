@@ -23,7 +23,7 @@ tail = true
 
 ## Setup
 
-You may have to set up your keyboard. Set the environment variable `KEYBOARD_ID` (see Configuration below) or change the default value in the script. You can find your keyboard description with `xinput list --short`.
+If after 20 seconds the value stays at 0 even though you're typing, you may have to configure the name of your keyboard. Change the setting `KEYBOARD_ID` (see Configuration below) in the script. You can find your keyboard description with `xinput list --short`.
 
 
 ## Configuration
