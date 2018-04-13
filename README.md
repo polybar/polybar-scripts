@@ -1,5 +1,7 @@
 # polybar-scripts
 
+[![Build Status](https://travis-ci.org/x70b1/polybar-scripts.svg?branch=master)](https://travis-ci.org/x70b1/polybar-scripts)
+
 This is a community project. We write and collect scripts for Polybar!
 
 To find out how to write and use your own scripts, read [Polybars wiki](https://github.com/jaagr/polybar/wiki).
