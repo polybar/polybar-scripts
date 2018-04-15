@@ -1,17 +1,13 @@
 language: c
 
-addons:
-    apt:
-        packages:
-            - cabal-install
-            - ghc
-
 install:
-    - cabal update
-    - cabal install shellcheck
+  - scversion="stable"
+  - wget "https://storage.googleapis.com/shellcheck/shellcheck-$scversion.linux.x86_64.tar.xz"
+  - tar --xz -xvf "shellcheck-$scversion.linux.x86_64.tar.xz"
+  - shellcheck() { "shellcheck-$scversion/shellcheck" "$@"; }
 
 before_script:
-    - ~/.cabal/bin/shellcheck -V
+    - shellcheck --version
 
 script:
-    - ~/.cabal/bin/shellcheck -s sh polybar-scripts/*/*.sh
+    - shellcheck polybar-scripts/*/*.sh
