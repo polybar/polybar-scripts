@@ -1,6 +1,7 @@
 # polybar-scripts
 
 [![Build Status](https://travis-ci.org/x70b1/polybar-scripts.svg?branch=master)](https://travis-ci.org/x70b1/polybar-scripts)
+![license](https://img.shields.io/github/license/x70b1/polybar-scripts.svg)
 
 This is a community project. We write and collect scripts for Polybar!
 
