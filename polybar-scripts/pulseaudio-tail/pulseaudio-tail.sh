@@ -15,9 +15,9 @@ volume_mute() {
 }
 
 volume_print() {
-    if [ "$(pacmd list-sinks | grep active | head -n 1 | grep speaker)" ]; then
+    if pacmd list-sinks | grep active | head -n 1 | grep -q speaker; then
         icon="#1"
-    elif [ "$(pacmd list-sinks | grep active | head -n 1 | grep headphones)" ]; then
+    elif pacmd list-sinks | grep active | head -n 1 | grep headphones; then
         icon="#2"
     else
         icon="#3"
