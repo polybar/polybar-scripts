@@ -65,14 +65,3 @@ Is this your first time here? You should definitely take a look at these scripts
 * Save the script of your choice somewhere at `~/.config/polybar/`
 * Copy the module settings into your configuration file
 * Replace the appropriate icon strings in the script (e.g. replace `#1` with `🎉`).
-
-
-## Development
-
-It's a good idea to look at the [skeleton](skeleton/).
-
-Most scripts are shell scripts. Use ShellCheck to check the code for possible errors. A good start to try [ShellCheck](https://www.shellcheck.net/) is their website.
-
-Use `#` or `#1`, `#2` .. as icon replacement in your scripts. Everyone use another icon font. So let the user decide which icon he wants to use.
-
-Remove your colors unless they have a special function. This way scripts remain customizable.
