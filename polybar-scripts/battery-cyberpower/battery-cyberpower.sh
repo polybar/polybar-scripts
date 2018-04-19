@@ -1,7 +1,4 @@
 #!/bin/sh
-# 
-# Note that this script needs to be able to run pwrstat as root,
-# adjust your system (e.g. sudoers file) as needed.
 
 ICON_AC="#1"
 ICON_BATTERY_FULL="#21"
@@ -68,27 +65,3 @@ while true; do
     sleep 30 &
     wait
 done
-
-
-# Example output from pwrstat.
-# This is from pwrstat version 1.3.2
-#
-# The UPS information shows as following:
-# 
-#         Properties:
-#                 Model Name................... CP1500EPFCLCD
-#                 Firmware Number.............. CRMGQ2000064
-#                 Rating Voltage............... 230 V
-#                 Rating Power................. 900 Watt
-# 
-#         Current UPS status:
-#                 State........................ Normal
-#                 Power Supply by.............. Utility Power
-#                 Utility Voltage.............. 230 V
-#                 Output Voltage............... 230 V
-#                 Battery Capacity............. 100 %
-#                 Remaining Runtime............ 36 min.
-#                 Load......................... 198 Watt(22 %)
-#                 Line Interaction............. None
-#                 Test Result.................. Unknown
-#                 Last Power Event............. None
