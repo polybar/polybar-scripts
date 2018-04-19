@@ -10,7 +10,7 @@ You can also control mocp.
 ```ini
 [module/player-moc]
 type = custom/script
-exec = ~/polybar-scripts/player-moc.py
+exec = ~/polybar-scripts/player-moc.sh
 interval = 5
 click-left = mocp -f
 click-right = mocp -r
