@@ -53,9 +53,9 @@ while true; do
 
 	# The shell only does integer operations, so make sure to first multiply and
 	# then divide
-	value=$(($lines * $multiply_by / $divide_by))
+	value=$((lines * multiply_by / divide_by))
 
-	printf "$FORMAT\n" "$value"
+	printf "$FORMAT\\n" "$value"
 
 	sleep $INTERVAL
 done
