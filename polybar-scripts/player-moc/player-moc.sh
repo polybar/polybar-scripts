@@ -15,7 +15,7 @@
 #        %b         Bitrate
 #        %r         Rate
 
-if [ $(mocp -Q %state) != "STOP" ]
+if [ "$(mocp -Q %state)" != "STOP" ]
 then
     echo "$(mocp -Q %song) - $(mocp -Q %album)"
 else 
