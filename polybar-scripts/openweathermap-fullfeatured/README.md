@@ -4,7 +4,7 @@ A weather script that shows a lot of information.
 
 It shows icons and temperatures for the current weather and the 3 hour forecast. It displays information about the next sunrise or sunset.
 
-If `CITY` is left empty, the location is retrieved via the Mozilla Location API.  
+If `CITY` is left empty, the location is retrieved via the Mozilla Location API. An ID must be specified here. For example ID of Berlin is `2950159`.
 
 Change these values:
 

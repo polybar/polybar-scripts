@@ -4,7 +4,7 @@ A weather script that displays some weather information.
 
 It shows icons, temperatures and text for the current weather. The script can be easily modified to display a forecast. Look at the commented out line.
 
-If `CITY` is left empty, the location is retrieved via the Mozilla Location API.  
+If `CITY` is left empty, the location is retrieved via the Mozilla Location API. An ID must be specified here. For example ID of Berlin is `2950159`.
 
 Change these values:
 
