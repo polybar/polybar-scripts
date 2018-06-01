@@ -1,6 +1,6 @@
 #!/bin/sh
 
-gpu=$(intel_gpu_frequency --get)
+gpu=$(sudo intel_gpu_frequency --get)
 
 gpu_cur=$(echo "$gpu" | grep cur | awk '{ print $2 }')
 gpu_max=$(echo "$gpu" | grep max | awk '{ print $2 }')
