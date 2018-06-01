@@ -3,6 +3,11 @@
 A script that shows if there are updates for Arch Linux.
 
 
+## Dependencies
+
+* `pacman-contrib`
+
+
 ## Module
 
 ```ini
