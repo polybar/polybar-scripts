@@ -1,6 +1,6 @@
 # Script: system-nvidia-smi
 
-A script that shows the NVIDIA GPU consumption.
+A script that shows the NVIDIA GPU utilization.
 
 
 ## Dependencies
@@ -14,5 +14,5 @@ A script that shows the NVIDIA GPU consumption.
 [module/system-nvidia-smi]
 type = custom/script
 exec = ~/polybar-scripts/system-nvidia-smi.sh
-tail = true
+interval = 10
 ```
