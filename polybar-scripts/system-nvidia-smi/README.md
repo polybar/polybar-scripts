@@ -16,3 +16,18 @@ type = custom/script
 exec = ~/polybar-scripts/system-nvidia-smi.sh
 interval = 10
 ```
+
+## Configuration
+
+There are several `--query-gpu=` values.
+Use nvidia-smi `--help-query-gpu` for a complete list and description.
+The most notable are:
+`fan.speed`
+`memory.used`
+`memory.total`
+`driver_version`
+`power.draw`
+`pstate`
+
+If you don't need custom labelling use this instead:
+`nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader`
