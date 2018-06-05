@@ -1,6 +1,6 @@
 # Script: system-nvidia-smi
 
-A script that shows the NVIDIA GPU consumption.
+A script that shows the NVIDIA GPU utilization.
 
 
 ## Dependencies
@@ -14,5 +14,20 @@ A script that shows the NVIDIA GPU consumption.
 [module/system-nvidia-smi]
 type = custom/script
 exec = ~/polybar-scripts/system-nvidia-smi.sh
-tail = true
+interval = 10
 ```
+
+## Configuration
+
+There are several `--query-gpu=` values.
+Use nvidia-smi `--help-query-gpu` for a complete list and description.
+The most notable are:
+`fan.speed`
+`memory.used`
+`memory.total`
+`driver_version`
+`power.draw`
+`pstate`
+
+If you don't need custom labelling use this instead:
+`nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader`
