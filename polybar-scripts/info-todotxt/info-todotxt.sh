@@ -2,10 +2,12 @@
 
 duetoday=$(grep -c "$(date -I)" ~/todo.txt)
 dueweek=0
+weekday=0
 
-for i in $(echo {0..7}day); do
-    dueweek=$((dueweek + $(grep -c "$(date -I --date="$i")" ~/todo.txt)))
-done   
+while [ "$weekday" -le 7 ]; do
+    dueweek=$((dueweek + $(grep -c "$(date -I --date="$weekday day")" ~/todo.txt)))
+    weekday=$(( weekday + 1 ))
+done
 
 if [ "$dueweek" -gt 0 ]; then
    echo "#1 $duetoday $dueweek"
