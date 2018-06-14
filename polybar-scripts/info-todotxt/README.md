@@ -11,5 +11,4 @@ A script that shows todo.txt items due. The first column shows items due today, 
 type = custom/script
 exec = ~/polybar-scripts/info-todotxt.sh
 interval = 60
-...
 ```
