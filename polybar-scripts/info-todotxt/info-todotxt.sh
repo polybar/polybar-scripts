@@ -1,11 +1,11 @@
 #!/bin/sh
 
-duetoday=$(grep -c "$(date -I)" ~/todo.txt)
+duetoday=$(grep "due:$(date -I)" ~/todo.txt | grep -c -v "x")
 dueweek=0
 weekday=0
 
 while [ "$weekday" -le 7 ]; do
-    dueweek=$((dueweek + $(grep -c "$(date -I --date="$weekday day")" ~/todo.txt)))
+    dueweek=$((dueweek + $(grep "due:$(date -I --date="$weekday day")" ~/todo.txt | grep -c -v "x")))
     weekday=$(( weekday + 1 ))
 done
 
