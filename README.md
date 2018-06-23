@@ -60,6 +60,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [quelotic/polybarModules](https://github.com/quelotic/polybarModules): scripts for mail and caffeine
 * [vyp/scripts](https://github.com/vyp/scripts): A script to show focused, occupied, free and urgent herbstluftwm tags in polybar
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
+* [DanaruDev/UnseenMail](https://framagit.org/DanaruDev/UnseenMail): Polybar Python script for viewing unread email from multi accounts and multi protocols (IMAP, GmailAPI)
 
 
 ##  Setup
