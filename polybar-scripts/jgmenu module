@@ -1,0 +1,9 @@
+;change the line below in your jgmenurc file from 1 to 0
+;stay alive = 0
+
+[module/jgmenu]
+type = custom/text
+content = "MENU "
+content-foreground = ${colors.foreground}
+content-background = ${colors.background}
+click-left = exec jgmenu
