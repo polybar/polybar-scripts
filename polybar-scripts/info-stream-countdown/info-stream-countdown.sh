@@ -20,7 +20,7 @@ function updateAuth() {
 }
 
 function checkReauth() {
-	if [[ ! -f "$filePath/$streamer.har" || "$(($(date +%s)-$(date +%s -r $filePath/$streamer.har)))" -gt 3300 ]]; then # Checks if auth from HAR is about to or has expired
+	if [[ ! -f "$filePath/$streamer.har" || "$(($(date +%s)-$(date +%s -r "$filePath/$streamer.har")))" -gt 3300 ]]; then # Checks if auth from HAR is about to or has expired
 		updateAuth
 	fi
 }
