@@ -29,7 +29,8 @@ function updateData() {
 	auth=$(jq -r '.["log"]["entries"][]["request"] | select(.url=="https://xt.streamlabs.com/api/v5/twitch-extensions/countdown/settings") | select(.method=="GET") | .["headers"][] | select(.name=="authorization") | .value' "$filePath/$streamer.har") # Gets authorization from HAR
 	countdownData=$(curl -s https://xt.streamlabs.com/api/v5/twitch-extensions/countdown/settings -H "Authorization: $auth") # Curl settings from streamlabs API
 	days=$(echo "$countdownData" | jq -r '.["enabled"] | keys[] as $k | "\($k), \(.[$k])" | select(endswith("true"))' | cut -d ',' -f1) # List all days streamer is streaming
-
+    [[ -n "$1" ]] && days=$(echo "$days" | sed "/$1/d")
+    
 	closestDay="8days" # Further than any possible stream value
 	for i in $days; do
 	    dayUnixTime=$(date +%s --date="$i")
@@ -42,6 +43,7 @@ function updateData() {
 	minute=$(echo "$countdownData" | jq -r ".[\"$closestDay\"][][\"mm\"]")
 	timeZone=$(echo "$countdownData" | jq '.["timezone"]') # Get timezone
 	streamTime=$(date +%s --date="TZ=$timeZone $closestDay $hour:$minute") # Get Unix time of the stream time, also factoring in timezone
+	[[ "$(date +%s)" -gt "$streamTime" ]] && updateData "$closestDay" # Admittedly messy patch to ignore if past today's scheduled stream
 }
 
 function main() {
@@ -54,9 +56,13 @@ function main() {
 		checkReauth
 		sleep 1
 	done
+	checkLive
+	updateAuth
+	updateData
+	main
 }
 
+checkLive
 checkReauth
 updateData
-checkLive
-while true; do main; done
+main
