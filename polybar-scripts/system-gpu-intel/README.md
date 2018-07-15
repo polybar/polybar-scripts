@@ -6,6 +6,7 @@ A script that shows the Intel GPU consumption. It is calculated on the current f
 ## Dependencies
 
 * `intel_gpu_frequency` from `intel-gpu-tools`
+* `bc`
 
 
 ## Configuration
