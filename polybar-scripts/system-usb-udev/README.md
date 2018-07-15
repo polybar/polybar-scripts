@@ -18,6 +18,9 @@ This script is able to display device changes in real time. For this udev is bei
 * `jq`
 * `udisks2`
 
+
+## Configuration
+
 Copy `95-usb.rules` to `/etc/udev/rules.d/95-usb.rules`. Make sure that the paths in the file have been modified properly.
 
 Also change the file path in line `#38`.
