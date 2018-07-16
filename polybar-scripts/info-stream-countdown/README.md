@@ -13,6 +13,7 @@ If you want to be show the seconds on the counter, you may uncomment the "showSe
 ## Dependencies
 
 * Chromium: Required to gather data from Twitch page.
+* [chrome-har-capturer](https://github.com/cyrus-and/chrome-har-capturer)
 * `jq`
 * Username of Twitch Streamer
 * Twitch Client ID
