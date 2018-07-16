@@ -63,6 +63,6 @@ function main() {
 }
 
 checkLive
-checkReauth
+updateAuth
 updateData
 main
