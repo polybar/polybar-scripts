@@ -5,12 +5,12 @@ The Script prints the status of [XAMPP](https://www.apachefriends.org/de/index.h
 ![info-xampp](screenshots/1.png)
 
 
-## Dependencies
+## Configuration
 
-Create a sudo rule  to allow you user to read the status information.
+You may need to add `xampp` command to the `/etc/sudoers` NOPASSWD of your user:
 
 ```ini
-username    ALL = NOPASSWD: /opt/lampp/xampp
+user ALL=(ALL) NOPASSWD: /opt/lampp/xampp
 ```
 
 
