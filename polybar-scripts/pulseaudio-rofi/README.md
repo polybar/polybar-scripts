@@ -1,6 +1,8 @@
 # Script: pulseaudio-rofi
 
-This script displays the current volume for input/output. Allows to adjust volume, mute. Uses rofi menu to change current output/input devices.
+This script displays the current volume for input/output.
+
+Allows to adjust volume, mute. Uses rofi menu to change current output/input devices.
 
 ![pulseaudio-rofi](screenshots/1.png)
 
@@ -20,18 +22,18 @@ This script displays the current volume for input/output. Allows to adjust volum
 type = custom/script
 exec = ~/.config/polybar/pulseaudio-rofi.sh --output_volume_listener
 tail = true
-click-right = ~/.config/polybar/pulseaudio-rofi.sh --output
-click-left = ~/.config/polybar/pulseaudio-rofi.sh --mute
-scroll-up =  ~/.config/polybar/pulseaudio-rofi.sh --volume_up
-scroll-down = ~/.config/polybar/pulseaudio-rofi.sh --volume_down
+click-right = ~/polybar-scripts/pulseaudio-rofi.sh --output
+click-left = ~/polybar-scripts/pulseaudio-rofi.sh --mute
+scroll-up =  ~/polybar-scripts/pulseaudio-rofi.sh --volume_up
+scroll-down = ~/polybar-scripts/pulseaudio-rofi.sh --volume_down
 ```
 ```ini
 [module/pulseaudio-rofi-input]
 type = custom/script
 exec = ~/.config/polybar/pulseaudio-rofi.sh --input_volume_listener
 tail = true
-click-right = ~/.config/polybar/pulseaudio-rofi.sh --input
-click-left = ~/.config/polybar/pulseaudio-rofi.sh --mute_source
-scroll-up =  ~/.config/polybar/pulseaudio-rofi.sh --volume_source_up
-scroll-down = ~/.config/polybar/pulseaudio-rofi.sh --volume_source_down
+click-right = ~/polybar-scripts/pulseaudio-rofi.sh --input
+click-left = ~/polybar-scripts/pulseaudio-rofi.sh --mute_source
+scroll-up =  ~/polybar-scripts/pulseaudio-rofi.sh --volume_source_up
+scroll-down = ~/polybar-scripts/pulseaudio-rofi.sh --volume_source_down
 ```
