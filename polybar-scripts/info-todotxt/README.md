@@ -4,6 +4,7 @@ A script that shows todo.txt items due. The first column shows items due today, 
 
 ![todotxt](screenshots/1.png)
 
+
 ## Module
 
 ```ini
