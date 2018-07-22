@@ -30,5 +30,5 @@ date="$(date +"%a %d %H:%M")"
 type = custom/script
 exec = ~/polybar-scripts/popup-calendar.sh
 interval = 5
-click-left = ~/polybar-scripts/popup-calendar.sh click
+click-left = ~/polybar-scripts/popup-calendar.sh --popup
 ```
