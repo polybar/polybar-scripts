@@ -1,21 +1,19 @@
 # Script: popup-calendar
 
-Script that shows date and when clicked it opens small popup calendar with Yad
+A small script that displays the date and opens a small popup calendar with YAD when clicked.
 
 ![popup-calendar](screenshots/1.png)
 
 
 ## Dependencies
 
-* [Yad](https://sourceforge.net/projects/yad-dialog/)
-* xdotool
+* [`yad`](https://sourceforge.net/projects/yad-dialog/)
+* `xdotool`
 
 
 ## Configuration
 
-For top panel set `bottom=0`, for bottom panel `bottom=1`.
-
-Example:
+Change these values if you want:
 
 ```sh
 width=200
@@ -31,6 +29,6 @@ date="$(date +"%a %d %H:%M")"
 [module/popup-calendar]
 type = custom/script
 exec = ~/polybar-scripts/popup-calendar.sh
-interval = 1
+interval = 5
 click-left = ~/polybar-scripts/popup-calendar.sh click
 ```
