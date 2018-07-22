@@ -1,8 +1,8 @@
-# Script: date-calendar
+# Script: popup-calendar
 
 Script that shows date and when clicked it opens small popup calendar with Yad
 
-![date-calendar](screenshots/1.png)
+![popup-calendar](screenshots/1.png)
 
 
 ## Dependencies
@@ -28,9 +28,9 @@ date="$(date +"%a %d %H:%M")"
 ## Module
 
 ```ini
-[module/date-calendar]
+[module/popup-calendar]
 type = custom/script
-exec = ~/polybar-scripts/date-calendar.sh
+exec = ~/polybar-scripts/popup-calendar.sh
 interval = 1
-click-left = ~/polybar-scripts/date-calendar.sh click
+click-left = ~/polybar-scripts/popup-calendar.sh click
 ```
