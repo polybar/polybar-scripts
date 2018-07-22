@@ -22,6 +22,12 @@ bottom=0
 date="$(date +"%a %d %H:%M")"
 ```
 
+If you use a tiling window manager you should enable floating for `yad`. This example is for `i3wm`:
+
+```ini
+for_window [class="Yad"] floating enable
+```
+
 
 ## Module
 
