@@ -62,15 +62,19 @@ battery_print() {
     fi
 }
 
+path_pid="/home/user/.config/polybar/battery-combined-udev.pid"
+
 case "$1" in
     --update)
-        pid=$(pgrep -xf "/bin/sh /home/user/.config/polybar/battery-combined-udev.sh")
+        pid=$(cat $path_pid)
 
         if [ "$pid" != "" ]; then
             kill -10 "$pid"
         fi
         ;;
     *)
+        echo $$ > $path_pid
+
         trap exit INT
         trap "echo" USR1
 
