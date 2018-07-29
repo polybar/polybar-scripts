@@ -51,6 +51,8 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-redshift-temp](polybar-scripts/info-redshift-temp/screenshots/1.png)](polybar-scripts/info-redshift-temp/)
 [![info-trash](polybar-scripts/info-trash/screenshots/1.png)](polybar-scripts/info-trash/)
 [![pulseaudio-rofi](polybar-scripts/pulseaudio-rofi/screenshots/1.png)](polybar-scripts/pulseaudio-rofi/)
+[![info-twitch-countdown](polybar-scripts/info-twitch-countdown/screenshots/1.png)](polybar-scripts/info-twitch-countdown/)
+[![info-twitch-countdown](polybar-scripts/info-twitch-countdown/screenshots/2.png)](polybar-scripts/info-twitch-countdown/)
 
 
 ## See also these other user repositories:
