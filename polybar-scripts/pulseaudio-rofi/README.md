@@ -5,7 +5,6 @@ This script displays the current volume for input/output.
 Allows to adjust volume, mute. Uses rofi menu to change current output/input devices.
 
 ![pulseaudio-rofi](screenshots/1.png)
-
 ![pulseaudio-rofi](screenshots/2.png)
 
 

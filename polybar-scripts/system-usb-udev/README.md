@@ -9,7 +9,6 @@ The mount option has a feature: You can also start a file manager and open the d
 This script is able to display device changes in real time. For this udev is being used.
 
 ![system-usb-mount](screenshots/1.png)
-
 ![system-usb-mount](screenshots/2.png)
 
 
