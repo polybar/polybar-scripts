@@ -50,6 +50,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![player-mpris-tail](polybar-scripts/player-mpris-tail/screenshots/1.png)](polybar-scripts/player-mpris-tail/)
 [![info-redshift-temp](polybar-scripts/info-redshift-temp/screenshots/1.png)](polybar-scripts/info-redshift-temp/)
 [![info-trash](polybar-scripts/info-trash/screenshots/1.png)](polybar-scripts/info-trash/)
+[![pulseaudio-rofi](polybar-scripts/pulseaudio-rofi/screenshots/1.png)](polybar-scripts/pulseaudio-rofi/)
 
 
 ## See also these other user repositories:
