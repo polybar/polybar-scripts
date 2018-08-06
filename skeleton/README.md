@@ -10,6 +10,11 @@
 { Perhaps a few words about the dependencies and requirements, if necessary }
 
 
+## Configuration
+
+{ Perhaps a few words about the configuration, if necessary }
+
+
 ## Module
 
 ```ini

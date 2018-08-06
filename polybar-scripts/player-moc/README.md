@@ -1,8 +1,6 @@
 # Script: player-moc
 
-A small Script that shows the current song.
-
-You can also control mocp.
+A small script that shows the current song. You can also control mocp.
 
 
 ## Module
@@ -10,8 +8,8 @@ You can also control mocp.
 ```ini
 [module/player-moc]
 type = custom/script
-exec = ~/polybar-scripts/player-moc.py
-interval = 5
+exec = ~/polybar-scripts/player-moc.sh
+interval = 3
 click-left = mocp -f
 click-right = mocp -r
 click-middle = mocp -P

@@ -12,9 +12,11 @@ It uses TLP and requires root privileges. Note that the icon doesn't change.
 * `tlp`
 
 
+## Configuration
+
 You may need to add `tlp-stat` command to the `/etc/sudoers` NOPASSWD of your user:
 
-```
+```ini
 user ALL=(ALL) NOPASSWD: /usr/bin/tlp-stat
 ```
 

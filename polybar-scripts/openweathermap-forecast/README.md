@@ -4,7 +4,17 @@ A weather script that displays a weather forecast.
 
 It shows icons and temperatures for the current weather and the 3 hour forecast.
 
-If `CITY` is left empty, the location is retrieved via the Mozilla Location API.  
+
+## Dependencies
+
+* [OpenWeatherMap-Key](https://openweathermap.org/appid)
+* [weather-icons](https://github.com/erikflowers/weather-icons)
+* `jq`
+
+
+## Configuration
+
+If `CITY` is left empty, the location is retrieved via the Mozilla Location API. An ID must be specified here. For example ID of Berlin is `2950159`.
 
 Change these values:
 
@@ -14,13 +24,6 @@ CITY=""
 UNITS="metric"
 SYMBOL="°"
 ```
-
-
-## Dependencies
-
-* [OpenWeatherMap-Key](https://openweathermap.org/appid)
-* [weather-icons](https://github.com/erikflowers/weather-icons)
-* `jq`
 
 
 ## Module

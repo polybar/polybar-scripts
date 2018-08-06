@@ -9,7 +9,6 @@ The mount option has a feature: You can also start a file manager and open the d
 This script is able to display device changes in real time. For this udev is being used.
 
 ![system-usb-mount](screenshots/1.png)
-
 ![system-usb-mount](screenshots/2.png)
 
 
@@ -18,9 +17,12 @@ This script is able to display device changes in real time. For this udev is bei
 * `jq`
 * `udisks2`
 
+
+## Configuration
+
 Copy `95-usb.rules` to `/etc/udev/rules.d/95-usb.rules`. Make sure that the paths in the file have been modified properly.
 
-Also change the file path in line `#23`.
+Also change the file path in line `#45`.
 
 
 ## Module

@@ -35,12 +35,14 @@ usb_print() {
 }
 
 usb_update() {
-    pid=$(pgrep -xf "/bin/sh /home/user/.config/polybar/system-usb-udev.sh")
+    pid=$(cat "$path_pid")
 
     if [ "$pid" != "" ]; then
         kill -10 "$pid"
     fi
 }
+
+path_pid="/home/user/.config/polybar/system-usb-udev.pid"
 
 case "$1" in
     --update)
@@ -74,6 +76,8 @@ case "$1" in
         usb_update
         ;;
     *)
+        echo $$ > $path_pid
+
         trap exit INT
         trap "echo" USR1
 
