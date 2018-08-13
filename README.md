@@ -66,6 +66,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
 * [DanaruDev/UnseenMail](https://framagit.org/DanaruDev/UnseenMail): Polybar Python script for viewing unread email from multi accounts
 * [drdeimos/polybar_another_battery](https://github.com/drdeimos/polybar_another_battery): Simple battery charge level watcher with notifications (libnotify)
+* [zemmsoares/polynews](https://github.com/zemmsoares/polynews): read news on your polybar
 
 
 ##  Setup
