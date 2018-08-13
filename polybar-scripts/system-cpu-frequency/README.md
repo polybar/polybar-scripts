@@ -3,6 +3,11 @@
 A shell script which displays the cpu frequency.
 
 
+## Dependencies
+
+* `cpupower`
+
+
 ## Module
 
 ```ini
