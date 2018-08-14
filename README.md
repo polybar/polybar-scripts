@@ -1,5 +1,6 @@
 # polybar-scripts
 
+[![Build Status](https://travis-ci.org/x70b1/polybar-scripts.svg?branch=master)](https://travis-ci.org/x70b1/polybar-scripts)
 [![GitHub contributors](https://img.shields.io/github/contributors/x70b1/polybar-scripts.svg)](https://github.com/x70b1/polybar-scripts/graphs/contributors)
 [![license](https://img.shields.io/github/license/x70b1/polybar-scripts.svg)](https://github.com/x70b1/polybar-scripts/blob/master/LICENSE)
 
