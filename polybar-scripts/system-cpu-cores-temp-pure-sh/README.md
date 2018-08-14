@@ -24,13 +24,13 @@ WARN_COLOR='#AC3C71'
 
 ```ini
 [colors]
-warning = #AC3C71
+icon = #AC3C71
 
 [module/cores_temp]
 type = custom/script
 exec = ~/.config/polybar/scripts/cpu_cores_temp.sh
 interval=5
 format-prefix = " "
-format-prefix-foreground = ${colors.warning}
+format-prefix-foreground = ${colors.icon}
 ...
 ```
