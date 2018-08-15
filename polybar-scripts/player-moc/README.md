@@ -12,5 +12,5 @@ exec = ~/polybar-scripts/player-moc.sh
 interval = 3
 click-left = mocp -f
 click-right = mocp -r
-click-middle = mocp -P
+click-middle = mocp -G
 ```
