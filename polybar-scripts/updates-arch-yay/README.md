@@ -15,7 +15,7 @@ of those the user selects.
 
 ## Dependencies
 
-Requires 'yay'.
+Requires `yay`.
 
 Optional left and right click actions required:
   * `i3wm`, window manager
