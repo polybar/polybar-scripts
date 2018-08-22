@@ -5,6 +5,14 @@ Includes optional click actions to display a notification of available updates
 and another to display a GUI list of available packages and trigger the update
 of those the user selects.
 
+## Screenshot Previews
+### Module
+![Polybar Module With Updates](https://i.imgur.com/ZMap2mN.png)
+
+### Package Update GUI
+![Package Update GUI](https://i.imgur.com/mXIdvvf.png)
+
+
 ## Dependencies
 
 Requires 'yay'.
