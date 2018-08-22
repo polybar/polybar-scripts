@@ -1,7 +1,9 @@
 # Script: updates-arch-yay
 
 A script that shows the total available updates for Arch Linux using `yay`.
-
+Includes optional click actions to display a notification of available updates
+and another to display a GUI list of available packages and trigger the update
+of those the user selects.
 
 ## Dependencies
 
