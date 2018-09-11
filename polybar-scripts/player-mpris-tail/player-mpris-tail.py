@@ -38,7 +38,7 @@ def getActivePlayer():
         return players[-1]['name']
 
 class PlayerStatus:
-    def __init__(self):
+    def __init__(self, fmt='{icon}  {artist} - {title}'):
         self._player = None
         self._player_class = None
         self._player_name = None
@@ -48,6 +48,8 @@ class PlayerStatus:
         self._last_title = None
 
         self._last_status = ''
+
+        self._format = fmt
 
     def show(self):
         self._init_player()
@@ -100,7 +102,9 @@ class PlayerStatus:
 
     def _print_song(self):
         self._print_flush(
-            '{}  {} - {}'.format(self._icon, self._artist, self._title))
+            self._format.format(icon = self._icon,
+                                artist = self._artist,
+                                title = self._title))
 
     """
     Seems to assure print() actually prints when no terminal is connected
@@ -112,4 +116,7 @@ class PlayerStatus:
             sys.stdout.flush()
             self._last_status = status
 
-PlayerStatus().show()
+if len(sys.argv) == 2:
+    PlayerStatus(sys.argv[1]).show()
+else:
+    PlayerStatus().show()
