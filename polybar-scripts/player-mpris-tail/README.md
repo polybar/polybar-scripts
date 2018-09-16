@@ -42,14 +42,14 @@ Argument | Description | Default
 -b or --blacklist | Blacklist / Ignore the given player
 -f or --format    | Use the given `format` string                               | `{icon} {artist} - {title}`
 --truncate-text   | Use the given string as the end of truncated text           | `…`
---icon-playing    | Use the given text as the playing icon                      | ``
---icon-paused     | Use the given text as the paused icon                       | ``
---icon-stopped    | Use the given text as the stopped icon                      | ``
+--icon-playing    | Use the given text as the playing icon                      | `⏵`
+--icon-paused     | Use the given text as the paused icon                       | `⏸`
+--icon-stopped    | Use the given text as the stopped icon                      | `⏹`
 --icon-none       | Use the given text as the icon for when no player is active | ``
 
 ## Formatting
 
-Tags can be printed by surrounding them with `{` and `}`. Polybar formatting can also be given and will be passed through, including substituded tags and formatters.
+Tags can be printed by surrounding them with `{` and `}`. Polybar formatting can also be given and will be passed through, including substituted tags and formatters.
 
 ### Tags
 
@@ -60,10 +60,10 @@ Tag | Description
 artist        | The artist of the current track
 album         | The album of the current track
 title         | The title of the current track
-track         | The track of the current track
+track         | The track number of the current track
 length        | The length of the current track
 genre         | The genre of the current track
-disc          | The disc of the current track
+disc          | The disc number of the current track
 date          | The date of the current track
 year          | The year of the current track
 cover         | The URL of the cover of the current track
@@ -81,7 +81,7 @@ Formatter | Argument | Description | Example | Output
 ---|---|---|---|---
 `tag` | | Only pring the string if `tag` exists            | `{:album: on {album}:}` | ` on Album Name`
 w     | Number | Limit the width of the string to `number` | `{:w3:Hello:}`          | `Hel`
-t     | Number | Truncate width of the string to `number`. If the string is shorter than `number` it is printed as given, else the string is truncated and appended a truncator text | `{:t3:Hello:}` | `He…`
+t     | Number | Truncate width of the string to `number`. If the string is shorter than or equal to `number` it is printed as given, else the string is truncated and appended a truncator text | `{:t3:Hello:}` | `He…`
 
 
 ## Dependencies
@@ -100,7 +100,7 @@ exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {artist} - {title}'
 tail = true
 label = %output%
 ```
-Example: ` Artist - Title`
+Example: `⏵ Artist - Title`
 
 ### Basic output + mouse controls
 ```ini
@@ -113,7 +113,7 @@ click-left = ~/polybar-scripts/player-mpris-tail.py previous
 click-right = ~/polybar-scripts/player-mpris-tail.py next
 click-middle = ~/polybar-scripts/player-mpris-tail.py play-pause
 ```
-Example: ` Artist - Title`
+Example: `⏵ Artist - Title`
 
 ### Output using formatters
 
@@ -128,7 +128,7 @@ click-right = ~/polybar-scripts/player-mpris-tail.py next
 click-middle = ~/polybar-scripts/player-mpris-tail.py play-pause
 ```
 
-Example: ` Artis… - Titl…` or ` Titl…`
+Example: `⏵ Artis… - Titl…` or `⏵ Titl…`
 
 
 ### Output using formatters and Polybar action handlers
@@ -136,21 +136,21 @@ Example: ` Artis… - Titl…` or ` Titl…`
 ```ini
 [module/player-mpris-tail]
 type = custom/script
-exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {:artist:t18:{artist}:}{:artist: - :}{:t20:{title}:}  %{A1:~/polybar-scripts/player-mpris-tail.py previous:}  %{A} %{A1:~/polybar-scripts/player-mpris-tail.py play-pause:} {icon-reversed} %{A} %{A1:~/polybar-scripts/player-mpris-tail.py next:}  %{A}'
+exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {:artist:t18:{artist}:}{:artist: - :}{:t20:{title}:}  %{A1:~/polybar-scripts/player-mpris-tail.py previous:} ⏮ %{A} %{A1:~/polybar-scripts/player-mpris-tail.py play-pause:} {icon-reversed} %{A} %{A1:~/polybar-scripts/player-mpris-tail.py next:} ⏭ %{A}'
 tail = true
 label = %output%
 ```
 
-Example: ` Artis… - Titl…        ` or ` Titl…        ` or ` Titl…        `
+Example: `⏵ Artis… - Titl…   ⏮  ⏸  ⏭ ` or `⏵ Titl…   ⏮  ⏸  ⏭ ` or `⏸ Titl…   ⏮  ⏵  ⏭ `
 
 ### Output using formatters, Polybar action handlers and blacklisting
 
 ```ini
 [module/player-mpris-tail]
 type = custom/script
-exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {:artist:t18:{artist}:}{:artist: - :}{:t20:{title}:}  %{A1:~/polybar-scripts/player-mpris-tail.py previous -b vlc -b plasma-browser-integration:}  %{A} %{A1:~/polybar-scripts/player-mpris-tail.py play-pause -b vlc -b plasma-browser-integration:} {icon-reversed} %{A} %{A1:~/polybar-scripts/player-mpris-tail.py next -b vlc -b plasma-browser-integration:}  %{A}' -b vlc -b plasma-browser-integration
+exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {:artist:t18:{artist}:}{:artist: - :}{:t20:{title}:}  %{A1:~/polybar-scripts/player-mpris-tail.py previous -b vlc -b plasma-browser-integration:} ⏮ %{A} %{A1:~/polybar-scripts/player-mpris-tail.py play-pause -b vlc -b plasma-browser-integration:} {icon-reversed} %{A} %{A1:~/polybar-scripts/player-mpris-tail.py next -b vlc -b plasma-browser-integration:} ⏭ %{A}' -b vlc -b plasma-browser-integration
 tail = true
 label = %output%
 ```
 
-Example: ` Artis… - Titl…        ` or ` Titl…        ` or ` Titl…        `
+Example: `⏵ Artis… - Titl…   ⏮  ⏸  ⏭ ` or `⏵ Titl…   ⏮  ⏸  ⏭ ` or `⏸ Titl…   ⏮  ⏵  ⏭ `
