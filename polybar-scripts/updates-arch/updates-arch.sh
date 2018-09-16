@@ -1,9 +1,9 @@
 #!/bin/sh
 
 updates=0
-if [ -n "$(which yay 2> /dev/null)" ]; then
+if [ -n "$(command -v yay)" ]; then
     updates=$(yay -Qu --repo --quiet | wc -l)
-elif [ -n "$(which checkupdates 2> /dev/null)" ]; then
+elif [ -n "$(command -v checkupdates)" ]; then
     updates=$(checkupdates 2> /dev/null | wc -l)
 else
     updates=$(pacman -Qu --quiet | wc -l)
