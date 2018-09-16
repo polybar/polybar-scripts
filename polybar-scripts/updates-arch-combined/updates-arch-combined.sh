@@ -1,15 +1,29 @@
 #!/bin/sh
 
-if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
+updates=0
+if [ -n "$(command -v yay)" ]; then
+    updates=$(yay -Qu --quiet | wc -l)
+else
     updates_arch=0
-fi
+    if [ -n "$(command -v checkupdates)" ]; then
+        updates_arch=$(checkupdates 2> /dev/null | wc -l)
+    else
+        updates_arch=$(pacman -Qu --quiet | wc -l)
+    fi
 
-# if ! updates_aur=$(cower -u 2> /dev/null | wc -l); then
-if ! updates_aur=$(trizen -Su --aur --quiet | wc -l); then
     updates_aur=0
-fi
+    if [ -n "$(command -v trizen)" ]; then
+        if ! updates_aur=$(trizen -Su --aur --quiet | wc -l); then
+            updates_aur=0
+        fi
+    elif [ -n "$(command -v cower)" ]; then
+        if ! updates_aur=$(cower -u 2> /dev/null | wc -l); then
+            updates_aur=0
+        fi
+    fi
 
-updates=$(("$updates_arch" + "$updates_aur"))
+    updates=$(("$updates_arch" + "$updates_aur"))
+fi
 
 if [ "$updates" -gt 0 ]; then
     echo "# $updates"
