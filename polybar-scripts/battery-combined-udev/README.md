@@ -7,11 +7,11 @@ It supports two rechargeable batteries and changing icons. It works even if only
 This script is able to display power supply changes in real time. For this udev is being used.
 
 
-## Dependencies
+## Configuration
 
 Copy `95-battery.rules` to `/etc/udev/rules.d/95-battery.rules`. Make sure that the paths in the file have been modified properly.
 
-Also change the file path in line `#67`.
+Also change the file path in line `#65`.
 
 
 ## Module

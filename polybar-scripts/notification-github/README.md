@@ -2,13 +2,16 @@
 
 A small script that shows your GitHub notifications.
 
-Generate a token at `GitHub Settings` > `Developer settings` > `Personal access tokens`.
-
 
 ## Dependencies
 
 * `curl`
 * `jq`
+
+
+## Configuration
+
+Generate a token at `GitHub Settings` > `Developer settings` > `Personal access tokens`.
 
 
 ## Module

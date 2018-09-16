@@ -46,10 +46,10 @@ fi
 
 if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
     current_temp=$(echo "$current" | jq ".main.temp" | cut -d "." -f 1)
-    current_icon=$(echo "$current" | jq -r ".weather[].icon")
+    current_icon=$(echo "$current" | jq -r ".weather[0].icon")
 
     forecast_temp=$(echo "$forecast" | jq ".list[].main.temp" | cut -d "." -f 1)
-    forecast_icon=$(echo "$forecast" | jq -r ".list[].weather[].icon")
+    forecast_icon=$(echo "$forecast" | jq -r ".list[].weather[0].icon")
 
     if [ "$current_temp" -gt "$forecast_temp" ]; then
         trend=""

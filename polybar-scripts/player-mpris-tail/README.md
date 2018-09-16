@@ -3,7 +3,6 @@
 This script displays the current track and the play-pause status without polling. Information is obtained by listening to MPRIS events, so it is updated instantaneously on change.
 
 ![player-mpris-tail](screenshots/1.png)
-
 ![player-mpris-tail](screenshots/2.png)
 
 

@@ -1,4 +1,4 @@
-# Script: info-archnews
+# Script: news-archlinux
 
 A Python script that shows Arch Linux RSS news.
 
@@ -11,8 +11,8 @@ A Python script that shows Arch Linux RSS news.
 ## Module
 
 ```ini
-[module/news-arch]
+[module/news-archlinux]
 type = custom/script
-exec = ~/polybar-scripts/info-archnews.py
+exec = ~/polybar-scripts/news-archlinux.py
 interval = 600
 ```

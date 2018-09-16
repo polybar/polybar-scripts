@@ -6,7 +6,7 @@ if [ -n "$(which yay 2> /dev/null)" ]; then
 else
     updates_arch=0
     if [ -n "$(which checkupdates 2> /dev/null)" ]; then
-        updates_arch=$(checkupdates | wc -l)
+        updates_arch=$(checkupdates 2> /dev/null | wc -l)
     else
         updates_arch=$(pacman -Qu --quiet | wc -l)
     fi
