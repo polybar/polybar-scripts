@@ -1,11 +1,18 @@
 #!/bin/sh
 
+prepend="# "
 yay_command="yay -Qu --quiet"
 
 if [ "$1" == "arch" ]; then
   yay_command="$yay_command --repo"
+  shift
 elif [ "$1" == "aur" ]; then
   yay_command="$yay_command --aur"
+  shift
+fi
+
+if [ -n "$1" ]; then
+  prepend="$2 "
 fi
 
 updates="$($yay_command 2> /dev/null)"
@@ -18,7 +25,7 @@ else
 fi
 
 if [ "$updates" -gt 0 ]; then
-    echo "# $updates"
+    echo "${prepend}${updates}"
 else
     echo ""
 fi
