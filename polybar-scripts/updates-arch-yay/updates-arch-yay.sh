@@ -3,10 +3,10 @@
 prepend="# "
 yay_command="yay -Qu --quiet"
 
-if [ "$1" == "arch" ]; then
+if [ "$1" = "arch" ]; then
   yay_command="$yay_command --repo"
   shift
-elif [ "$1" == "aur" ]; then
+elif [ "$1" = "aur" ]; then
   yay_command="$yay_command --aur"
   shift
 fi
