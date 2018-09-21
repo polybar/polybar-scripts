@@ -12,7 +12,7 @@ elif [ "$1" == "aur" ]; then
 fi
 
 if [ -n "$1" ]; then
-  prepend="$2 "
+  prepend="$1 "
 fi
 
 updates="$($yay_command 2> /dev/null)"
