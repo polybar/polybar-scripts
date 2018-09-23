@@ -2,7 +2,7 @@
 
 A small script that shows the current song. 
 
-![player-cmus](screenshots/1.png) ![player-cmus-pause](screenshots/2.png)
+![player-cmus](screenshots/1.png)
 
 
 ## Module
