@@ -6,7 +6,7 @@ Options to only monitor GUI applications or only processes exist. Users can add 
 
 Arbitrary program counts can be combined, for example, the vim/nvim or chrome/chromium counts can be added together and the total displayed.
 
-![info-softwarecounter](info-softwarecounter.png)
+![info-softwarecounter](screenshots/1.png)
 
 
 ## Dependencies
