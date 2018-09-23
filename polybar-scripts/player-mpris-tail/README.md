@@ -88,8 +88,9 @@ t     | Number | Truncate width of the string to `number`. If the string is shor
 
 ## Dependencies
 
-* [dbus-python](https://pypi.org/project/dbus-python/)
-* [pygobject](https://pypi.org/project/PyGObject/)
+* `python-dbus`
+* `python-gobject`
+* `python-gi`
 
 
 ## Module
