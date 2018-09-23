@@ -4,35 +4,34 @@ import subprocess
 import sys
 from collections import Counter, OrderedDict
 
-# Font from:
-# ttf-material-design-icons-git (https://materialdesignicons.com/)
 
-# Update GUIs
+# update GUIs
 GUI = True
 
-# Update processes
+# update processes
 PROCESS = True
 
-# Program/process names and corresponding gylphs.
+
+# program/process names and corresponding gylphs
 guis = OrderedDict({
-    'terminals': '',
-    'chromes': '',
-    'firefox': '',
-    'skypeforlinux': '',
-    'filemanager': '蝹',
-    'remote-desktop': '',
-    'pdfviewer': '',
-    'image': '',
+    'terminals': '#',
+    'chromes': '#',
+    'firefox': '#',
+    'skypeforlinux': '#',
+    'filemanager': '#',
+    'remote-desktop': '#',
+    'pdfviewer': '#',
+    'image': '#',
 })
 
 processes = OrderedDict({
-    'vims': '',
-    'ssh': '',
-    'updater': '練',
+    'vims': '#',
+    'ssh': '#',
+    'updater': '#',
 })
 
-# Combine counts of program/process names in the tuple.  The resulting glpyh used will
-# be that of the corresponding key.
+# combine counts of program/process names in the tuple
+# the resulting glpyh used will be that of the corresponding key
 combine_guis = {
     'terminals': ('termite', 'terminator', 'urxvt'),
     'chromes': ('chromium', 'chrome'),
@@ -47,7 +46,6 @@ combine_proccesses = {
     'updater': ('pacman', 'yay', 'trizen', 'yaourt'),
 }
 
-################################################################################
 
 gui_output = ''
 process_output = ''
@@ -55,7 +53,6 @@ process_output = ''
 if GUI:
 
     def get_running_guis():
-        # From https://askubuntu.com/questions/728157/how-to-get-the-list-of-running-gui-applications-in-the-unity-launcher
         try:
             listed = sys.argv[1]
         except IndexError:
@@ -64,7 +61,7 @@ if GUI:
         get = lambda cmd: subprocess.check_output(cmd).decode("utf-8").strip()
 
         def check_wtype(w_id):
-            # check the type of window; only list "NORMAL" windows
+            # check the type of window, only list "NORMAL" windows
             return "_NET_WM_WINDOW_TYPE_NORMAL" in get(["xprop", "-id", w_id])
 
         def get_process(w_id):
@@ -80,10 +77,10 @@ if GUI:
 
         return validprocs
 
-    # Get list of running GUI programs.
+    # get list of running GUI programs
     gui_counts = Counter(get_running_guis())
 
-    # Combine programs in program combine list.
+    # combine programs in program combine list
     for k, lst in combine_guis.items():
         count = 0
         for i in lst:
@@ -94,7 +91,7 @@ if GUI:
         if count:
             gui_counts[k] += count
 
-    # Generate program output.
+    # generate program output
     for k, v in guis.items():
         try:
             c = gui_counts[k]
@@ -119,13 +116,13 @@ if PROCESS:
 
         return dict(counts)
 
-    # Count running proccesses.
+    # count running proccesses
     process_counts = get_running_proc(processes.keys())
     combine_counts = get_running_proc(
         list(sum(combine_proccesses.values(), ())))
     process_counts.update(combine_counts)
 
-    # Combine processes in process combine list.
+    # combine processes in process combine list
     for k, lst in combine_proccesses.items():
         count = 0
         for i in lst:
@@ -136,7 +133,7 @@ if PROCESS:
         if count:
             process_counts[k] += count
 
-    # Generate process output.
+    # generate process output
     for k, v in processes.items():
         try:
             c = process_counts[k]
