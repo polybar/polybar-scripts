@@ -6,15 +6,15 @@ The format of the output can be defined by passing an `-f` or `--format` argumen
 
 Players can be blacklisted by passing a `-b` or `--blacklist` argument. As an example, VLC can be blacklisted by passing `-b vlc`. To get a list of the current running players (and their status), run the script as `player-mpris-tail.py list`.
 
-![player-mpris-tail](screenshots/1.png)
-![player-mpris-tail](screenshots/2.png)
+![player-mpris-tail](screenshots/1.png) ![player-mpris-tail](screenshots/2.png)
+
 
 ## Commands
 
 The current player can be controlled by passing one of the following commands:
 
 Command | Description
----|--- 
+---|---
 play       | Play the current track
 pause      | Pause the currently playing track
 play-pause | Play the current track or unpause it if currently paused
@@ -32,23 +32,26 @@ current  | Print the currently detected player and its status
 list     | List the detected players and their status
 metadata | Print the metadata object for the current track
 
+
 ## Arguments
 
 The following arguments are supported:
 
 Argument | Description | Default
 ---|---|---
--b or --blacklist | Blacklist / Ignore the given player
--f or --format    | Use the given `format` string                               | `{icon} {artist} - {title}`
+-b, --blacklist   | Blacklist / Ignore the given player
+-f, --format      | Use the given `format` string                               | `{icon} {artist} - {title}`
 --truncate-text   | Use the given string as the end of truncated text           | `…`
 --icon-playing    | Use the given text as the playing icon                      | `⏵`
 --icon-paused     | Use the given text as the paused icon                       | `⏸`
 --icon-stopped    | Use the given text as the stopped icon                      | `⏹`
 --icon-none       | Use the given text as the icon for when no player is active | ``
 
+
 ## Formatting
 
 Tags can be printed by surrounding them with `{` and `}`. Polybar formatting can also be given and will be passed through, including substituted tags and formatters.
+
 
 ### Tags
 
@@ -78,7 +81,7 @@ The following formatters are supported:
 
 Formatter | Argument | Description | Example | Output
 ---|---|---|---|---
-`tag` | | Only pring the string if `tag` exists            | `{:album: on {album}:}` | ` on Album Name`
+`tag` | | Only print the string if `tag` exists            | `{:album: on {album}:}` | ` on Album Name`
 w     | Number | Limit the width of the string to `number` | `{:w3:Hello:}`          | `Hel`
 t     | Number | Truncate width of the string to `number`. If the string is shorter than or equal to `number` it is printed as given, else the string is truncated and appended a truncator text | `{:t3:Hello:}` | `He…`
 
@@ -101,6 +104,7 @@ label = %output%
 ```
 Example: `⏵ Artist - Title`
 
+
 ### Basic output + mouse controls
 ```ini
 [module/player-mpris-tail]
@@ -114,8 +118,8 @@ click-middle = ~/polybar-scripts/player-mpris-tail.py play-pause
 ```
 Example: `⏵ Artist - Title`
 
-### Output using formatters
 
+### Output using formatters
 ```ini
 [module/player-mpris-tail]
 type = custom/script
@@ -131,7 +135,6 @@ Example: `⏵ Artis… - Titl…` or `⏵ Titl…`
 
 
 ### Output using formatters and Polybar action handlers
-
 ```ini
 [module/player-mpris-tail]
 type = custom/script
@@ -142,8 +145,8 @@ label = %output%
 
 Example: `⏵ Artis… - Titl…   ⏮  ⏸  ⏭ ` or `⏵ Titl…   ⏮  ⏸  ⏭ ` or `⏸ Titl…   ⏮  ⏵  ⏭ `
 
-### Output using formatters, Polybar action handlers and blacklisting
 
+### Output using formatters, Polybar action handlers and blacklisting
 ```ini
 [module/player-mpris-tail]
 type = custom/script
