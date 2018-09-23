@@ -1,4 +1,4 @@
-# info-softwarecounter
+# Script: info-softwarecounter
 
 A script that counts the number of specified running software including GUIs and processes.
 
@@ -18,7 +18,7 @@ Arbitrary program counts can be combined, for example, the vim/nvim or chrome/ch
 ## Module
 
 ```
-[module/program-counter]
+[module/info-softwarecounter]
 type = custom/script
 exec = ~/polybar-scripts/info-softwarecounter.py
 interval = 10
