@@ -2,6 +2,7 @@
 
 HOST=127.43.12.64
 
+exec 2> /dev/null
 rtt=$(ping $HOST -c 1 | sed -rn 's/.*time=([0-9]{1,})\.?[0-9]{0,} ms.*/\1/p')
 
 if [ "$rtt" -lt 50 ]; then
