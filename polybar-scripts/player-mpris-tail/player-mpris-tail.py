@@ -6,7 +6,7 @@ from operator import itemgetter
 import argparse
 import re
 from urllib.parse import unquote
-
+import time
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
 DBusGMainLoop(set_as_default=True)
@@ -221,6 +221,8 @@ class Player:
                 self.metadata['cover'] = re.sub(SAFE_TAG_REGEX, """\1\1""", cover)
             else:
                 self.metadata['cover'] = ''
+
+            self.metadata['duration'] = _getDuration(self.metadata['length']) 
     
     def onMetadataChanged(self, track_id, metadata):
         self.refreshMetadata()
@@ -324,6 +326,10 @@ def _getProperty(properties, property, default = None):
         return _dbusValueToPython(value)
     else:
         return value
+
+def _getDuration(t: int):
+        seconds = t / 1000000
+        return time.strftime("%M:%S", time.gmtime(seconds))
 
 
 class CleanSafeDict(dict):
