@@ -192,7 +192,7 @@ class Player:
             ICON_PAUSED if self.status == 'playing' else
             ICON_PLAYING
         )
-
+    
     def _parseMetadata(self):
         if self._metadata != None:
             artist = _getProperty(self._metadata, 'xesam:artist', [''])
