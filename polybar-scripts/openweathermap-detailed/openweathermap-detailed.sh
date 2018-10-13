@@ -29,9 +29,11 @@ CITY=""
 UNITS="metric"
 SYMBOL="°"
 
+API="https://api.openweathermap.org/data/2.5"
+
 if [ ! -z $CITY ]; then
-    weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&id=$CITY&units=$UNITS")
-    # weather=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&id=$CITY&units=$UNITS&cnt=1")
+    weather=$(curl -sf "$API/weather?appid=$KEY&id=$CITY&units=$UNITS")
+    # weather=$(curl -sf "$API/forecast?appid=$KEY&id=$CITY&units=$UNITS&cnt=1")
 else
     location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
 
@@ -39,7 +41,7 @@ else
         location_lat="$(echo "$location" | jq '.location.lat')"
         location_lon="$(echo "$location" | jq '.location.lng')"
 
-        weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
+        weather=$(curl -sf "$API/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
     fi
 fi
 
