@@ -32,8 +32,14 @@ SYMBOL="°"
 API="https://api.openweathermap.org/data/2.5"
 
 if [ ! -z $CITY ]; then
-    weather=$(curl -sf "$API/weather?appid=$KEY&id=$CITY&units=$UNITS")
-    # weather=$(curl -sf "$API/forecast?appid=$KEY&id=$CITY&units=$UNITS&cnt=1")
+    if [ "$CITY" -eq "$CITY" ] 2>/dev/null; then
+        CITY_PARAM="id=$CITY"
+    else
+        CITY_PARAM="q=$CITY"
+    fi
+
+    weather=$(curl -sf "$API/weather?appid=$KEY&$CITY_PARAM&units=$UNITS")
+    # weather=$(curl -sf "$API/forecast?appid=$KEY&$CITY_PARAM&units=$UNITS&cnt=1")
 else
     location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
 
