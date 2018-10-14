@@ -8,15 +8,15 @@ get_default_sink() {
 }
 
 volume_up() {
-    pactl set-sink-volume $sink +1%
+    pactl set-sink-volume "$sink" +1%
 }
 
 volume_down() {
-    pactl set-sink-volume $sink -1%
+    pactl set-sink-volume "$sink" -1%
 }
 
 volume_mute() {
-    pactl set-sink-mute $sink toggle
+    pactl set-sink-mute "$sink" toggle
 }
 
 volume_print() {
@@ -29,12 +29,12 @@ volume_print() {
         icon="#3"
     fi
 
-    muted=$(pamixer --sink $sink --get-mute)
+    muted=$(pamixer --sink "$sink" --get-mute)
 
     if [ "$muted" = true ]; then
         echo "$icon --"
     else
-        echo "$icon $(pamixer --sink $sink --get-volume)"
+        echo "$icon $(pamixer --sink "$sink" --get-volume)"
     fi
 }
 
@@ -42,9 +42,9 @@ listen() {
     volume_print
 
     pactl subscribe | while read -r event; do
-        if echo "$event" | grep -q "sink\ #$sink$"; then
+        if echo "$event" | grep -q "sink #$sink$"; then
             volume_print
-        elif [ "$use_default_sink" ] && echo "$event" | grep -q "'change'\ on\ server"; then
+        elif [ "$use_default_sink" ] && echo "$event" | grep -q "'change' on server"; then
             get_default_sink
             volume_print
         fi
