@@ -1,21 +1,22 @@
 # Script: openvpn-status
 
-Show the running openvpn config file
+A script that shows if OpenVPN is running and which configuration file it uses.
 
-![VPN down](screenshots/1.png)
+![openvpn-status](screenshots/1.png)
+![openvpn-status](screenshots/2.png)
 
-![VPN connected](screenshots/2.png)
 
 ## Configuration
 
-* Config files must have an extension, e.g. `.ovpn`.
-* Config files must in a folder, e.g. `/etc/openvpn/conf.d`.
+* The configuration files must have an extension, e.g. `.ovpn`.
+* The configuration files must be stored in a directory, e.g. `/etc/openvpn/conf.d`.
 
-Launch your vpn using the following command:
+Launch OpenVPN with the following command:
 
 ```
 openvpn --daemon --auth-nocache --cd "/etc/openvpn/conf.d" --config "UK-Southampton.ovpn"
 ```
+
 
 ## Module
 
