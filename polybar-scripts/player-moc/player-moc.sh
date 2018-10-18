@@ -2,6 +2,7 @@
 
 if [ "$(mocp -Q %state)" != "STOP" ];then
     SONG=$(mocp -Q %song)
+    
     if [ -z "$SONG" ]; then
         basename "$(mocp -Q %file)"
     else
