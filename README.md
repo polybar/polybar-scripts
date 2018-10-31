@@ -73,5 +73,6 @@ Is this your first time here? You should definitely take a look at these scripts
 ##  Setup
 
 * Save the script of your choice somewhere at `~/.config/polybar/`.
+* Don't forget to make the script executable: `chmod +x ~/.config/polybar/script.sh`.
 * Copy the module settings into your configuration file.
 * Replace the appropriate icon strings in the script (e.g. replace `#1` with `🎉`).
