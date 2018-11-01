@@ -5,9 +5,9 @@ This script shows some information about the current ICE train of Deutsche Bahn.
 ![info-wifionice](screenshots/1.png)
 
 
-## Configuration
+## Dependencies
 
-You have to be logged in to the Wifi `WIFIonICE`.
+* You have to be logged in to the local SSID `WIFIonICE`.
 
 
 ## Module
