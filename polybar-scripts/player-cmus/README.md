@@ -5,7 +5,7 @@ A script that displays information about the current track (artist, title, posit
 ![player-cmus](screenshots/1.png)
 
 
-##Module
+## Module
 
 ```ini
 [module/player-cmus]
