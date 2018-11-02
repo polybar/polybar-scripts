@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 
 status=$(cmus-remote -Q | grep status | awk -F\  '{print $2}')
 title=$(cmus-remote -Q | grep title | awk -F\  '{$1=$2=""; print $0}')
