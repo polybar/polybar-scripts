@@ -7,19 +7,19 @@ position=$(cmus-remote -Q | grep position | awk -F\  '{print $2}')
 duration=$(cmus-remote -Q | grep duration | awk -F\  '{print $2}')
 
 (( 'pos_minutes = position / 60' ))
-pos_minutes=$(printf "%02d" $pos_minutes) 
+pos_minutes=$(printf "%02d" "$pos_minutes") 
 (( 'pos_seconds = position % 60' ))
-pos_seconds=$(printf "%02d" $pos_seconds) 
+pos_seconds=$(printf "%02d" "$pos_seconds") 
 
 (( 'dur_minutes = duration / 60' ))
-dur_minutes=$(printf "%02d" $dur_minutes) 
+dur_minutes=$(printf "%02d" "$dur_minutes") 
 (( 'dur_seconds = duration % 60' ))
-dur_seconds=$(printf "%02d" $dur_seconds) 
+dur_seconds=$(printf "%02d" "$dur_seconds") 
 
 if [ "$status" == 'stopped' ]
 then
 	echo "$status"
 elif [ "$status" == 'playing' ] || [ "$status" == 'paused' ] 
 then
-	echo "$status" \| "$artist" - "$title" \| "$pos_minutes":"$pos_seconds" \/ "$dur_minutes":"$dur_seconds"
+	echo "$status" \| "$artist" - "$title" \| "$pos_minutes":"$pos_seconds" / "$dur_minutes":"$dur_seconds"
 fi
