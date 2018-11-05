@@ -17,7 +17,7 @@ if [ "$(echo "$wifionice" | jq .connection)" = "true" ]; then
     station_track=$(echo "$station" | jq -r '.track.actual')
 
     station_arrival=$(echo "$station" | jq -r '.timetable.scheduledArrivalTime')
-    station_arrival=$(date --date="@$((station_arrival / 1000))" -u +%H:%M)
+    station_arrival=$(date --date="@$((station_arrival / 1000))" +%H:%M)
 
     station_delay=$(echo "$station" | jq -r '.timetable.arrivalDelay')
     if [ ! -z "$station_delay" ]; then
