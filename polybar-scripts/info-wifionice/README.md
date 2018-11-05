@@ -16,5 +16,5 @@ This script shows some information about the current ICE train of Deutsche Bahn.
 [module/info-wifionice]
 type = custom/script
 exec = ~/polybar-scripts/info-wifionice.sh
-interval = 60
+interval = 10
 ```
