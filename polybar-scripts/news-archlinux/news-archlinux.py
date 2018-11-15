@@ -1,6 +1,7 @@
 #!/usr/bin/python
-import feedparser
+from feedparser import parse
 
-d = feedparser.parse("https://www.archlinux.org/feeds/news/")
-print(d.entries[0].title)
-print(d.entries[1].title)
+URL = 'https://www.archlinux.org/feeds/news/'
+ENTRIES = 1
+
+[print(x.title) for x in parse(URL).entries[:ENTRIES]]
