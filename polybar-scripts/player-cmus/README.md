@@ -1,6 +1,6 @@
 # Script: player-cmus
 
-A small script that shows the current song.
+A script that displays information about the current track (artist, title, position, duration).
 
 ![player-cmus](screenshots/1.png)
 
@@ -15,5 +15,5 @@ exec-if = cmus-remote -Q
 interval = 5
 click-left = cmus-remote -n
 click-right = cmus-remote -r
-click-middle = ~/polybar-scripts/player-cmus.sh --toggle
+click-middle = cmus-remote -u
 ```

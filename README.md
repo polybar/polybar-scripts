@@ -54,6 +54,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![pulseaudio-rofi](polybar-scripts/info-softwarecounter/screenshots/1.png)](polybar-scripts/info-softwarecounter/)
 [![info-twitch-countdown](polybar-scripts/info-twitch-countdown/screenshots/1.png)](polybar-scripts/info-twitch-countdown/)
 [![info-twitch-countdown](polybar-scripts/info-twitch-countdown/screenshots/2.png)](polybar-scripts/info-twitch-countdown/)
+[![player-cmus](polybar-scripts/player-cmus/screenshots/1.png)](polybar-scripts/player-cmus/)
 [![info-todotxt](polybar-scripts/info-todotxt/screenshots/1.png)](polybar-scripts/info-todotxt/)
 [![info-wifionice](polybar-scripts/info-wifionice/screenshots/1.png)](polybar-scripts/info-wifionice/)
 
