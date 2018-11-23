@@ -1,19 +1,28 @@
-# Script: anyconnect-status
+# Script: vpn-anyconnect-status
 
-Checks if an interface named `cscotun` exists, if not display a red `VPN DISCONNECTED` message. If connected, displays it's IP address.
+A small script to show the anyconnect status.
 
-![connected](screenshots/connected.png)
-![disconnected](screenshots/disconnected.png)
+If an interface named `cscotun` exists the IP address will be displayed. Otherwise it displays `VPN DISCONNECTED`.
 
-## Glyph
+![vpn-anyconnect-status](screenshots/1.png)
+![vpn-anyconnect-status](screenshots/2.png)
 
-Like that glyph? It's 賓 from [FantasqueSansMono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FantasqueSansMono/Regular/complete)
+
+## Dependencies
+
+* `ifconfig`
+
+
+## Configuration
+
+You like that icon? It's `賓` from [FantasqueSansMono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FantasqueSansMono/Regular/complete).
+
 
 ## Module
 
 ```ini
-[module/vpn]
+[module/vpn-anyconnect-status]
 type = custom/script
 exec = ~/bin/vpnstatus.sh
-interval = 3.0
+interval = 5
 ```
