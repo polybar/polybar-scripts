@@ -1,9 +1,9 @@
-# Script: openvpn-status
+# Script: vpn-openvpn-status
 
 A script that shows if OpenVPN is running and which configuration file it uses.
 
-![openvpn-status](screenshots/1.png)
-![openvpn-status](screenshots/2.png)
+![vpn-openvpn-status](screenshots/1.png)
+![vpn-openvpn-status](screenshots/2.png)
 
 
 ## Configuration
@@ -21,8 +21,8 @@ openvpn --daemon --auth-nocache --cd "/etc/openvpn/conf.d" --config "UK-Southamp
 ## Module
 
 ```ini
-[module/openvpn]
+[module/vpn-openvpn-status]
 type = custom/script
-exec = ~/polybar-scripts/openvpn-status.sh
+exec = ~/polybar-scripts/vpn-openvpn-status.sh
 interval = 5
 ```
