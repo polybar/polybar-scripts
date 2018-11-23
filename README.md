@@ -31,7 +31,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![updates-arch-combined](polybar-scripts/updates-arch-combined/screenshots/1.png)](polybar-scripts/updates-arch-combined/)
 [![system-cpu-temppercore](polybar-scripts/system-cpu-temppercore/screenshots/1.png)](polybar-scripts/system-cpu-temppercore/)
 [![notification-chess](polybar-scripts/notification-chess/screenshots/1.png)](polybar-scripts/notification-chess/)
-[![inbox-reddit](polybar-scripts/inbox-reddit/screenshots/1.png)](polybar-scripts/inbox-reddit/)
+[![notification-reddit](polybar-scripts/notification-reddit/screenshots/1.png)](polybar-scripts/notification-reddit/)
 [![vpn-openvpn-isrunning](polybar-scripts/vpn-openvpn-isrunning/screenshots/1.png)](polybar-scripts/vpn-openvpn-isrunning/)
 [![inbox-imap-python](polybar-scripts/inbox-imap-python/screenshots/1.png)](polybar-scripts/inbox-imap-python/)
 [![openweathermap-fullfeatured](polybar-scripts/openweathermap-fullfeatured/screenshots/1.png)](polybar-scripts/openweathermap-fullfeatured/)
