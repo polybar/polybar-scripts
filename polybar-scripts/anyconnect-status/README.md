@@ -1,4 +1,4 @@
-# Script: vpn-anyconnect-status
+# Script: anyconnect-status
 
 Checks if an interface named `cscotun` exists, if not display a red `VPN DISCONNECTED` message. If connected, displays it's IP address.
 
