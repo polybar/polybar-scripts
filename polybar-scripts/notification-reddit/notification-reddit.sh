@@ -1,15 +1,12 @@
 #!/bin/sh
 
-url="your url here"
-unread=$(curl -sf "$url" | jq '.["data"]["children"] | length')
+URL=""
+USERAGENT="polybar-scripts/notification-reddit:v1.0 u/reddituser"
 
-case "$unread" in
-    ''|*[!0-9]*)
-	unread=0
-esac;
+notifications=$(curl -sf --user-agent "$USERAGENT" "$URL" | jq '.["data"]["children"] | length')
 
-if [ "$unread" -gt 0 ]; then
-   echo "#1 $unread"
+if [ "$notifications" -gt 0 ]; then
+    echo "#1  $notifications"
 else
-   echo "#2"
+    echo "#2"
 fi
