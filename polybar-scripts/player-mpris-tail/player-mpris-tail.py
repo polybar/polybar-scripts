@@ -2,6 +2,7 @@
 
 import sys
 import dbus
+import os
 from operator import itemgetter
 import argparse
 import re
@@ -234,10 +235,12 @@ class Player:
                 self.metadata['length'] = int(length)
             else:
                 self.metadata['length'] = 0
-            self.metadata['genre']  = _getProperty(self._metadata, 'xesam:genre', '')
-            self.metadata['disc']   = _getProperty(self._metadata, 'xesam:discNumber', '')
-            self.metadata['date']   = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:contentCreated', ''))
-            self.metadata['year']   = re.sub(SAFE_TAG_REGEX, """\1\1""", self.metadata['date'][0:4])
+            self.metadata['genre']    = _getProperty(self._metadata, 'xesam:genre', '')
+            self.metadata['disc']     = _getProperty(self._metadata, 'xesam:discNumber', '')
+            self.metadata['date']     = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:contentCreated', ''))
+            self.metadata['year']     = re.sub(SAFE_TAG_REGEX, """\1\1""", self.metadata['date'][0:4])
+            self.metadata['url']      = _getProperty(self._metadata, 'xesam:url', '')
+            self.metadata['filename'] = os.path.basename(self.metadata['url'])
             cover = _getProperty(self._metadata, 'xesam:artUrl', '')
             if not len(cover):
                 cover = _getProperty(self._metadata, 'mpris:artUrl', '')
@@ -276,6 +279,12 @@ class Player:
         formatlen = match.group('formatlen')
         text = match.group('text')
         tag_found = False
+        reversed_tag = False
+        
+        if tag.startswith('-'):
+            tag = tag[1:]
+            reversed_tag = True
+        
         if format is None:
             tag_is_format_match = re.match(FORMAT_TAG_REGEX, tag)
             if tag_is_format_match:
@@ -294,6 +303,9 @@ class Player:
         if tag_found is False and tag in metadata and len(metadata[tag]):
             tag_found = True
 
+        if reversed_tag:
+            tag_found = not tag_found
+
         if tag_found:
             return text
         else:
@@ -301,18 +313,17 @@ class Player:
 
     def printStatus(self):
         if self.status in [ 'playing', 'paused' ]:
-            if self.metadata['title']:
-                metadata = { **self.metadata, 'icon': self.icon, 'icon-reversed': self.icon_reversed }
-                # replace metadata tags in text
-                text = re.sub(FORMAT_REGEX, lambda match: self._statusReplace(match, metadata), FORMAT_STRING)
-                # restore polybar tag formatting and replace any remaining metadata tags after that
-                try:
-                    text = re.sub(r'􏿿p􏿿(.*?)􏿿p􏿿(.*?)􏿿p􏿿(.*?)􏿿p􏿿', r'%{\1}\2%{\3}', text.format_map(CleanSafeDict(**metadata)))
-                except:
-                    print("Invalid format string")
-                self._print(text)
-            return
-        self._print(ICON_STOPPED)
+            metadata = { **self.metadata, 'icon': self.icon, 'icon-reversed': self.icon_reversed }
+            # replace metadata tags in text
+            text = re.sub(FORMAT_REGEX, lambda match: self._statusReplace(match, metadata), FORMAT_STRING)
+            # restore polybar tag formatting and replace any remaining metadata tags after that
+            try:
+                text = re.sub(r'􏿿p􏿿(.*?)􏿿p􏿿(.*?)􏿿p􏿿(.*?)􏿿p􏿿', r'%{\1}\2%{\3}', text.format_map(CleanSafeDict(**metadata)))
+            except:
+                print("Invalid format string")
+            self._print(text)
+        else:
+            self._print(ICON_STOPPED)
 
 
 def _dbusValueToPython(value):
@@ -384,7 +395,7 @@ parser.add_argument('-b', '--blacklist', help="ignore a player by it's bus name.
                     action='append',
                     metavar="BUS_NAME",
                     default=[])
-parser.add_argument('-f', '--format', default='{icon} {artist} - {title}')
+parser.add_argument('-f', '--format', default='{icon} {:artist:{artist} - :}{:title:{title}:}{:-title:{filename}:}')
 parser.add_argument('--truncate-text', default='…')
 parser.add_argument('--icon-playing', default='⏵')
 parser.add_argument('--icon-paused', default='⏸')
