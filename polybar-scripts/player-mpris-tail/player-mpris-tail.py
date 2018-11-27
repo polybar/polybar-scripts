@@ -24,6 +24,10 @@ class PlayerManager:
         self._session_bus = dbus.SessionBus()
         self._last_status = ''
         self.players = {}
+
+        self.print_queue = []
+        self.connected = False
+        
         self.refreshPlayerList()
 
         if self._connect:
@@ -53,9 +57,12 @@ class PlayerManager:
         player_bus_names = [ bus_name for bus_name in self._session_bus.list_names() if self.busNameIsAPlayer(bus_name) ]
         for player_bus_name in player_bus_names:
             self.addPlayer(player_bus_name)
+        if self.connected != True:
+            self.connected = True
+            self.printQueue()
 
     def addPlayer(self, bus_name, owner = None):
-        player = Player(self._session_bus, bus_name, owner = owner, connect = self._connect)
+        player = Player(self._session_bus, bus_name, owner = owner, connect = self._connect, _print = self.print)
         self.players[player.owner] = player
         
     def removePlayer(self, owner):
@@ -65,7 +72,7 @@ class PlayerManager:
             _printFlush(ICON_NONE)
 
     def changePlayerOwner(self, bus_name, old_owner, new_owner):
-        player = Player(self._session_bus, bus_name, owner = new_owner, connect = self._connect)
+        player = Player(self._session_bus, bus_name, owner = new_owner, connect = self._connect, _print = self.print)
         self.players[new_owner] = player
         del self.players[old_owner]
     
@@ -91,12 +98,26 @@ class PlayerManager:
         ]
         return self.players[playing_players[0]] if playing_players else None
 
+    def print(self, status, player):
+        if self.connected:
+            current_player = self.getCurrentPlayer()
+            if (current_player == None or current_player.owner == player.owner):
+                _printFlush(status)
+        else:
+            self.print_queue.append([status, player])
+    
+    def printQueue(self):
+        for args in self.print_queue:
+            self.print(args[0], args[1])
+        self.print_queue.clear()
+
 
 class Player:
-    def __init__(self, session_bus, bus_name, owner = None, connect = True):
+    def __init__(self, session_bus, bus_name, owner = None, connect = True, _print = None):
         self._session_bus = session_bus
         self.bus_name = bus_name
         self._disconnecting = False
+        self.__print = _print
 
         self.metadata = {
             'artist' : '',
@@ -192,6 +213,9 @@ class Player:
             ICON_PAUSED if self.status == 'playing' else
             ICON_PLAYING
         )
+    
+    def _print(self, status):
+        self.__print(status, self)
 
     def _parseMetadata(self):
         if self._metadata != None:
@@ -286,9 +310,9 @@ class Player:
                     text = re.sub(r'􏿿p􏿿(.*?)􏿿p􏿿(.*?)􏿿p􏿿(.*?)􏿿p􏿿', r'%{\1}\2%{\3}', text.format_map(CleanSafeDict(**metadata)))
                 except:
                     print("Invalid format string")
-                _printFlush(text)
+                self._print(text)
             return
-        _printFlush(ICON_STOPPED)
+        self._print(ICON_STOPPED)
 
 
 def _dbusValueToPython(value):
