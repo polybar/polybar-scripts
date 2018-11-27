@@ -23,11 +23,11 @@ class PlayerManager:
         self.blacklist = blacklist
         self._connect = connect
         self._session_bus = dbus.SessionBus()
-        self._last_status = ''
         self.players = {}
 
         self.print_queue = []
         self.connected = False
+        self.player_states = {}
         
         self.refreshPlayerList()
 
@@ -100,10 +100,14 @@ class PlayerManager:
         return self.players[playing_players[0]] if playing_players else None
 
     def print(self, status, player):
+        self.player_states[player.bus_name] = status
+
         if self.connected:
             current_player = self.getCurrentPlayer()
-            if (current_player == None or current_player.owner == player.owner):
-                _printFlush(status)
+            if current_player != None:
+                _printFlush(self.player_states[current_player.bus_name])
+            else:
+                _printFlush(ICON_STOPPED)
         else:
             self.print_queue.append([status, player])
     
@@ -224,7 +228,7 @@ class Player:
             if len(artist):
                 self.metadata['artist'] = re.sub(SAFE_TAG_REGEX, """\1\1""", artist[0])
             else:
-                self.metadata['artist'] = '';
+                self.metadata['artist'] = ''
             self.metadata['album']  = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:album', ''))
             self.metadata['title']  = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:title', ''))
             self.metadata['track']  = _getProperty(self._metadata, 'xesam:trackNumber', '')
