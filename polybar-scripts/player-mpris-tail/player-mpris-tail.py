@@ -7,7 +7,7 @@ from operator import itemgetter
 import argparse
 import re
 from urllib.parse import unquote
-
+import time
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
 DBusGMainLoop(set_as_default=True)
@@ -196,18 +196,36 @@ class Player:
 
     def _parseMetadata(self):
         if self._metadata != None:
-            self.metadata['artist']   = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:artist', [''])[0])
-            self.metadata['album']    = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:album', ''))
-            self.metadata['title']    = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:title', ''))
-            self.metadata['track']    = _getProperty(self._metadata, 'xesam:trackNumber', '')
-            self.metadata['length']   = _getProperty(self._metadata, 'xesam:length', '')
+            artist = _getProperty(self._metadata, 'xesam:artist', [''])
+            if len(artist):
+                self.metadata['artist'] = re.sub(SAFE_TAG_REGEX, """\1\1""", artist[0])
+            else:
+                self.metadata['artist'] = '';
+            self.metadata['album']  = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:album', ''))
+            self.metadata['title']  = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:title', ''))
+            self.metadata['track']  = _getProperty(self._metadata, 'xesam:trackNumber', '')
+            length = str(_getProperty(self._metadata, 'xesam:length', ''))
+            if not len(length):
+                length = str(_getProperty(self._metadata, 'mpris:length', ''))
+            if len(length):
+                self.metadata['length'] = int(length)
+            else:
+                self.metadata['length'] = 0
             self.metadata['genre']    = _getProperty(self._metadata, 'xesam:genre', '')
             self.metadata['disc']     = _getProperty(self._metadata, 'xesam:discNumber', '')
             self.metadata['date']     = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:contentCreated', ''))
             self.metadata['year']     = re.sub(SAFE_TAG_REGEX, """\1\1""", self.metadata['date'][0:4])
             self.metadata['url']      = _getProperty(self._metadata, 'xesam:url', '')
             self.metadata['filename'] = os.path.basename(self.metadata['url'])
-            self.metadata['cover']    = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:artUrl', ''))
+            cover = _getProperty(self._metadata, 'xesam:artUrl', '')
+            if not len(cover):
+                cover = _getProperty(self._metadata, 'mpris:artUrl', '')
+            if len(cover):
+                self.metadata['cover'] = re.sub(SAFE_TAG_REGEX, """\1\1""", cover)
+            else:
+                self.metadata['cover'] = ''
+
+            self.metadata['duration'] = _getDuration(self.metadata['length']) 
     
     def onMetadataChanged(self, track_id, metadata):
         self.refreshMetadata()
@@ -319,6 +337,10 @@ def _getProperty(properties, property, default = None):
         return _dbusValueToPython(value)
     else:
         return value
+
+def _getDuration(t: int):
+        seconds = t / 1000000
+        return time.strftime("%M:%S", time.gmtime(seconds))
 
 
 class CleanSafeDict(dict):
