@@ -20,7 +20,7 @@ if [ "$(echo "$wifionice" | jq .connection)" = "true" ]; then
     station_arrival=$(date --date="@$((station_arrival / 1000))" +%H:%M)
 
     station_delay=$(echo "$station" | jq -r '.timetable.arrivalDelay')
-    if [ ! -z "$station_delay" ]; then
+    if [ -n "$station_delay" ]; then
         station_delay=" %{F#d60606}($station_delay)%{F-}"
     else
         station_delay=""

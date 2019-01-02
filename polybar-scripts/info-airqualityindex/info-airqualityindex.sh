@@ -5,12 +5,12 @@ CITY=""
 
 API="https://api.waqi.info/feed"
 
-if [ ! -z $CITY ]; then
+if [ -n "$CITY" ]; then
     aqi=$(curl -sf "$API/$CITY/?token=$TOKEN")
 else
     location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
 
-    if [ ! -z "$location" ]; then
+    if [ -n "$location" ]; then
         location_lat="$(echo "$location" | jq '.location.lat')"
         location_lon="$(echo "$location" | jq '.location.lng')"
 
@@ -18,7 +18,7 @@ else
     fi
 fi
 
-if [ ! -z "$aqi" ]; then
+if [ -n "$aqi" ]; then
     if [ "$(echo "$aqi" | jq -r '.status')" = "ok" ]; then
         aqi=$(echo "$aqi" | jq '.data.aqi')
 
