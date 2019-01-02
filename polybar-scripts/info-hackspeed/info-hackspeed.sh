@@ -1,4 +1,5 @@
 #!/bin/sh
+# shellcheck disable=SC2016,SC2059
 
 KEYBOARD_ID="AT Translated Set 2 keyboard"
 
