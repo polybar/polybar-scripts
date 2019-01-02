@@ -1,13 +1,13 @@
 #!/bin/sh
 
 if info=$(cmus-remote -Q 2> /dev/null); then
-	status=$(echo "$info" | grep status | awk -F\  '{print $2}')
+	status=$(echo "$info" | grep -v "set " | grep -v "tag " | grep "status " | cut -d ' ' -f 2)
 
 	if [ "$status" = "playing" ] || [ "$status" = "paused" ]; then
-		title=$(echo "$info" | grep title | awk -F\  '{$1=$2=""; print $0}' | sed 's|^[[:blank:]]*||g')
-		artist=$(echo "$info" | grep '[[:space:]]artist' | awk -F\  '{$1=$2=""; print $0}' | sed 's|^[[:blank:]]*||g')
-		position=$(echo "$info" | grep position | awk -F\  '{print $2}')
-		duration=$(echo "$info" | grep duration | awk -F\  '{print $2}')
+		title=$(echo "$info" | grep -v 'set ' | grep " title " | cut -d ' ' -f 3-)
+		artist=$(echo "$info" | grep -v 'set ' | grep " artist " | cut -d ' ' -f 3-)
+		position=$(echo "$info" | grep -v "set " | grep -v "tag " | grep "position " | cut -d ' ' -f 2)
+		duration=$(echo "$info" | grep -v "set " | grep -v "tag " | grep "duration " | cut -d ' ' -f 2)
 
 		pos_minutes=$(printf "%02d" $(("$position" / 60)))
 		pos_seconds=$(printf "%02d" $(("$position" % 60)))
