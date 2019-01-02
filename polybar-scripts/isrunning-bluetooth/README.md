@@ -1,4 +1,4 @@
-# Script: isactive-bluetooth
+# Script: isrunning-bluetooth
 
 A script that shows if bluetooth is on or off.
 
@@ -6,8 +6,8 @@ A script that shows if bluetooth is on or off.
 ## Module
 
 ```ini
-[module/isactive-bluetooth]
+[module/isrunning-bluetooth]
 type = custom/script
-exec = ~/polybar-scripts/isactive-bluetooth.sh
+exec = ~/polybar-scripts/isrunning-bluetooth.sh
 interval = 10
 ```
