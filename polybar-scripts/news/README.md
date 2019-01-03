@@ -26,7 +26,7 @@ modules-left = news ...
 Configure the module (see below) and then restart polybar.
 
 ## Dependencies
-This script requires [bash](https://www.gnu.org/software/bash/), Python 3 and the feedparser module (install it with `pip3 install --user feedparser` or with your packages manager). Alternately you can use ([rsstool](https://sourceforge.net/projects/rsstool/files/rsstool-1.0.0-linux.tar.gz/download) and [wget](https://www.gnu.org/s/wget/).
+This script requires [bash](https://www.gnu.org/software/bash/), Python 3 and the feedparser module (install it with `pip3 install --user feedparser` or with your packages manager). Alternately you can use [rsstool](https://sourceforge.net/projects/rsstool/files/rsstool-1.0.0-linux.tar.gz/download) and [wget](https://www.gnu.org/s/wget/).
 
 ## Configuration
 Edit the file `~/config/polybar/scripts/news/news.conf` and set up the right Python 3 interpreter if you do not use rsstool.
@@ -42,7 +42,7 @@ Click on the news headline on the bar to open the relative web page in your brow
 
 
 ## Module
-The provided `install.sh` script configure polybar automatically with the following code:
+The provided `install.sh` script configures polybar automatically with the following code:
 
 ```
 [module/news]
@@ -52,5 +52,4 @@ exec = ~/.config/polybar/scripts/news/news.sh
 click-left = ~/.config/polybar/scripts/news/news.sh url
 ; Unicode Character U+F09E (use Font Awesome)
 ;format-prefix = " "
-...
 ```
