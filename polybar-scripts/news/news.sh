@@ -87,7 +87,7 @@ setup() {
 
     # override default values
     if [ -f "${news_conf}" ]; then
-        # shellcheck source=news.conf
+        # shellcheck source=news.conf disable=SC1091
         . "${news_conf}"
     fi
 
