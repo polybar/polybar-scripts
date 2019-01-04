@@ -74,7 +74,7 @@ download_rss() {
             --txt --input-file="${feeds}" --sdesc \
             --template2="${rss_tpl}" > /dev/null 2>&1
     else
-        ${python_cmd} "${rss_py} ${feeds} ${feed_file}"
+        ${python_cmd} "${rss_py}" "${feeds}" "${feed_file}"
     fi
     rm "${rss_lock}"
     )
