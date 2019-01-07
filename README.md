@@ -72,6 +72,8 @@ Is this your first time here? You should definitely take a look at these scripts
 * [DanaruDev/UnseenMail](https://framagit.org/DanaruDev/UnseenMail): Polybar Python script for viewing unread email from multi accounts
 * [drdeimos/polybar_another_battery](https://github.com/drdeimos/polybar_another_battery): Simple battery charge level watcher with notifications (libnotify)
 * [zemmsoares/polynews](https://github.com/zemmsoares/polynews): read news on your polybar
+* [nivit/polybar-module-earthquake](https://github.com/nivit/polybar-module-earthquake): Polybar module for showing the latest seismic event on Earth
+* [polybar-module-news](https://github.com/nivit/polybar-module-news): This polybar module displays RSS/Atom feeds
 
 
 ##  Setup
