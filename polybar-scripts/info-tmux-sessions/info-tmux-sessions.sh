@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-
+#! /bin/sh
 # early abort if there is no server running
 # !!! this requires double brackets or success will return an error
 ! [[ $(tmux ls 2>/dev/null) ]] && printf 'tmux: none' && exit 0

@@ -7,10 +7,6 @@ Reports the state of tmux sessions on the local machine.
 * with no server running
 ![info-tmux-sessions](screenshots/2.png)
 
-## Dependencies
-
-* `tmux`
-
 ## Module
 
 ```ini
