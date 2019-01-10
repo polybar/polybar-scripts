@@ -1,8 +1,8 @@
 # Script: pulseaudio-tail
 
-A script to control PulseAudio very easy and fast.
+A script to control PulseAudio.
 
-The script uses polybar's tail function to display the adjustments in real time.
+The script uses polybar's tail function to display the adjustments in real time. Please note that there is already a polybar module [`pulseaudio`](https://github.com/jaagr/polybar/wiki/Module:-pulseaudio) for this task.
 
 
 ## Dependencies

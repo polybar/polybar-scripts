@@ -16,7 +16,7 @@ It shows icons and temperatures for the current weather and the 3 hour forecast.
 
 ## Configuration
 
-If `CITY` is left empty, the location is retrieved via the Mozilla Location API. An ID must be specified here. For example ID of Berlin is `2950159`.
+If `CITY` is left empty, the location is retrieved via the Mozilla Location API. `CITY` can either be a city ID (e.g. ID of Berlin is `2950159`), city name (e.g. `Berlin`) or city name + country code (e.g. `Berlin,DE`).
 
 Change these values:
 

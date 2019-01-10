@@ -1,12 +1,7 @@
 #!/usr/bin/python
+from feedparser import parse
 
-import feedparser
-from subprocess import call
-import re
-import textwrap
+URL = 'https://www.archlinux.org/feeds/news/'
+ENTRIES = 1
 
-d = feedparser.parse("https://www.archlinux.org/feeds/news/")
-
-for f in range(0, 1):
-    print(d.entries[f].title)
-    xy = d.entries[f].title
+[print(x.title) for x in parse(URL).entries[:ENTRIES]]
