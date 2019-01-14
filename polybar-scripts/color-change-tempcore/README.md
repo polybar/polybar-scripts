@@ -2,7 +2,10 @@
 
 A script that displays the temperature follows the color change.
 
-![cpu-temppercore-follows-color](screenshots/1.png)
+![cpu-temppercore-follows-color-1](screenshots/1.png)
+![cpu-temppercore-follows-color-2](screenshots/2.png)
+![cpu-temppercore-follows-color-3](screenshots/3.png)
+![cpu-temppercore-follows-color-4](screenshots/4.png)
 
 
 ## Dependencies
