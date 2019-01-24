@@ -16,7 +16,7 @@ and let you know what updates are available by clicking the icon.
 
 ## Configuration
 
-You may want to change the coordinates depending on your icon position. By default is x=25,y=25 (top left corner).
+You may want to change the dialog box position depending on where is your icon located. By default is x=25,y=25 (top left corner).
 
 ## Module
 
