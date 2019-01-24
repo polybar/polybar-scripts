@@ -12,7 +12,7 @@ n_updates=$(("$n_updates_arch" + "$n_updates_aur"))
 
 case "$1" in
     --updates)
-	if [ $n_updates == 0 ]; then
+	if [ $n_updates -eq 0 ]; then
 		yad --text "System is up to date" --fixed --close-on-unfocus --no-buttons \
 			--posx=$x --posy=$y > /dev/null
 	else
@@ -22,10 +22,10 @@ case "$1" in
 	fi
 	;;
     *)  
-	if [ "$n_updates" == 0 ]; then
-    	    echo " "
+	if [ "$n_updates" -eq 0 ]; then
+    	    echo "#1 "
 	else
-    	    echo " $n_updates"
+    	    echo "#2 $n_updates"
 	fi
 	;;
 esac
