@@ -74,6 +74,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [zemmsoares/polynews](https://github.com/zemmsoares/polynews): read news on your polybar
 * [nivit/polybar-module-earthquake](https://github.com/nivit/polybar-module-earthquake): Polybar module for showing the latest seismic event on Earth
 * [polybar-module-news](https://github.com/nivit/polybar-module-news): This polybar module displays RSS/Atom feeds
+* [polybar-kdeconnect](https://github.com/HackeSta/polybar-kdeconnect): KDEConnect module for Polybar
 
 
 ##  Setup
