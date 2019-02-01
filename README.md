@@ -26,6 +26,14 @@ Is this your first time here? You should definitely take a look at these scripts
 * [info-hackspeed](polybar-scripts/info-hackspeed)
 
 
+##  Setup
+
+* Save the script of your choice somewhere at `~/.config/polybar/`.
+* Don't forget to make the script executable: `chmod +x ~/.config/polybar/script.sh`.
+* Copy the module settings into your configuration file.
+* Replace the appropriate icon strings in the script (e.g. replace `#1` with `🎉`).
+
+
 ## all colors are beautiful
 
 [![updates-arch-combined](polybar-scripts/updates-arch-combined/screenshots/1.png)](polybar-scripts/updates-arch-combined/)
@@ -75,11 +83,3 @@ Is this your first time here? You should definitely take a look at these scripts
 * [nivit/polybar-module-earthquake](https://github.com/nivit/polybar-module-earthquake): Polybar module for showing the latest seismic event on Earth
 * [nivit/polybar-module-news](https://github.com/nivit/polybar-module-news): This polybar module displays RSS/Atom feeds
 * [HackeSta/polybar-kdeconnect](https://github.com/HackeSta/polybar-kdeconnect): KDEConnect module for Polybar
-
-
-##  Setup
-
-* Save the script of your choice somewhere at `~/.config/polybar/`.
-* Don't forget to make the script executable: `chmod +x ~/.config/polybar/script.sh`.
-* Copy the module settings into your configuration file.
-* Replace the appropriate icon strings in the script (e.g. replace `#1` with `🎉`).
