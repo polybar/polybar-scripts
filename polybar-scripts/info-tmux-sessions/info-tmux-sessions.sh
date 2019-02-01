@@ -1,26 +1,21 @@
 #! /bin/sh
-# early abort if there is no server running
-# !!! this requires double brackets or success will return an error
-! [[ $(tmux ls 2>/dev/null) ]] && printf 'tmux: none' && exit 0
 
-# DLM stores the delimiter for the session names
-# change this var for a custom seperator
-readonly DLM=' | '
+if sessionlist=$(tmux ls); then
+    printf "# "
 
-# make sure sessions is empty
-[[ -n $sessions ]] && unset sessions
+    echo "$sessionlist" | while read -r line; do
+        session=$(echo "$line" | cut -d ':' -f 1)
 
-while read -r -a line; do    # pull the name from head of each line
-  sesh="${line[0]}"          # tmp var
-  # pop the ':' off or add attached to the session name 
-  [[ ${line[-1]} != '(attached)' ]] && sessions+=( "${sesh//:/}" ) \
-    || sessions+=( "${sesh}<attached>" ) 
-done <<< "$(tmux ls)"
+        if echo "$line" | grep -q "(attached)"; then
+            status="(a)"
+        else
+            status=""
+        fi
 
-printf 'tmux: '
+        printf "%s%s " "$session" "$status"
+    done
 
-set -- "${sessions[@]}" # set new positional params
-
-printf "%s" "$1"
-shift
-printf "%s" "${@/#/$DLM}"
+    printf "\n"
+else
+    printf "# none\n"
+fi
