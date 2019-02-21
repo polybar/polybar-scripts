@@ -1,15 +1,17 @@
 # Script: updates-fedora
 
-Checks updates for fedora, and if they're ready or not.  
-This script uses colors to show if the updates are staged or ready.  
-By default, red=staged, green=ready for installation
+A script that shows if there are updates for Fedora or `dnf` based distributions.
 
-This script also requires some modifications, which you can find in the script itself.  
-One of which is adding `%users ALL=(ALL) NOPASSWD:/usr/bin/dnf upgrade` to your `/etc/sudoers` file.
+![updates-fedora](screenshots/1.png)
 
 
-![update](screenshots/update.png)
+## Configuration
 
+You may need to add the `dnf` command to the `/etc/sudoers` NOPASSWD of your user:
+
+```
+user ALL=(ALL) NOPASSWD: /usr/bin/dnf
+```
 
 ## Module
 
@@ -17,8 +19,5 @@ One of which is adding `%users ALL=(ALL) NOPASSWD:/usr/bin/dnf upgrade` to your 
 [module/updates-fedora]
 type = custom/script
 exec = ~/polybar-scripts/updates-fedora.sh
-format = #  <label>
-label = %output%
 interval = 600
-...
 ```
