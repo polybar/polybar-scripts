@@ -1,15 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #
 # If `xbps-install -Sun` returns an error saying it failed to initialize libxbps
 # you may need to add this script to your sudoers file so you can run it with sudo
 
-updates=$(/usr/bin/xbps-install -Sun 2> /dev/null | wc -l)
-
-if [[ -z "$updates" ]] || [[ "$updates" -eq '0' ]]; then
-    exit 1
-#elif (( "$updates" > 99 )); then
-#    updates='99+'
+if ! updates=$(/usr/bin/xbps-install -Sun 2> /dev/null | wc -l); then
+    updates=0
 fi
 
-echo "$updates"
-exit 0
+if [ "$updates" -gt 0 ]; then
+    echo "# $updates"
+else
+    echo ""
+fi
