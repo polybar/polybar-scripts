@@ -5,11 +5,11 @@
 
 updates=$(/usr/bin/xbps-install -Sun 2> /dev/null | wc -l)
 
-if [[ -z $updates ]] || [[ $updates -eq '0' ]]; then
+if [[ -z "$updates" ]] || [[ "$updates" -eq '0' ]]; then
     exit 1
-#elif (( $updates > 99 )); then
+#elif (( "$updates" > 99 )); then
 #    updates='99+'
 fi
 
-echo $updates
+echo "$updates"
 exit 0
