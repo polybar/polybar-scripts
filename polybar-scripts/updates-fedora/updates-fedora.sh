@@ -1,33 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-# Count staged updates
-count=$(dnf check-update --refresh -q | awk NF | wc -l)
+dnf=$(dnf upgrade --refresh --assumeno 2> /dev/null)
 
-# Check if staged updates are actual upgrades yet
-# to make this part work, add:
-#
-# %users ALL=(ALL) NOPASSWD:/usr/bin/dnf upgrade
-#
-# to /etc/sudoers
+upgrade=$(echo "$dnf" | grep '^Upgrade' | awk '{ print $2 }')
+install=$(echo "$dnf" | grep '^Install' | awk '{ print $2 }')
 
-(sudo dnf upgrade --refresh --assumeno | grep -q "Nothing")
-can_update=$?
+updates=$(( upgrade + install ))
 
-# Change the status color
-if [ "$can_update" -eq 0 ]; then
-    # Updates are not available yet, they're only staged
-    # -> red light
-    color="a62a23"
+if [ "$updates" -gt 0 ]; then
+    echo "# $updates"
 else
-    # Updates are completely available!
-    # -> green light
-    color="23a62a"
-fi
-
-if [ "$count" -eq 0 ]; then
-    # No updates available at all, hide the module
     echo ""
-else
-    # Staged or "real" updates available, show module
-    echo "%{F#$color} $count"
 fi
