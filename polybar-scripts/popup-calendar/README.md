@@ -25,7 +25,7 @@ DATE="$(date +"%a %d %H:%M")"
 If you use a tiling window manager you should enable floating for `yad-calendar`. This example is for `i3wm`:
 
 ```ini
-for_window [class="yad-calendar"] floating enable
+for_window [class="Yad" title="yad-calendar"] floating enable
 ```
 
 
