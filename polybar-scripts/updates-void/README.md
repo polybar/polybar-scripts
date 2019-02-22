@@ -1,23 +1,22 @@
 # Script: updates-void
-See number of updates available on Void Linux.
+
+A script that shows if there are updates for Void Linux.
+
 
 ## Configuration
-If `xbps-install -Sun` returns 'ERROR: Failed to initialize libxbps: Permission denied' this module won't work.
-To fix that you'll need to add updates-void.sh to your sudoers file:
+
+You may need to add the `xbps-install` command to the `/etc/sudoers` NOPASSWD of your user:
 
 ```
-username ALL=(ALL) NOPASSWD: /home/username/polybar-scripts/updates-void.sh
-```
-and change the module to use `sudo`:
-```
-exec = sudo ~/polybar-scripts/updates-void.sh
+user ALL=(ALL) NOPASSWD: /usr/bin/xbps-install
 ```
 
 
 ## Module
+
 ```ini
 [module/updates-void]
 type = custom/script
 exec = ~/polybar-scripts/updates-void.sh
-interval = 180
+interval = 20
 ```
