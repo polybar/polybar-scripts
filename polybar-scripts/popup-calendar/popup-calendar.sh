@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 BAR_HEIGHT=22
 YAD_WIDTH=200
@@ -11,16 +11,16 @@ case "$1" in
     eval "$(xdotool getdisplaygeometry --shell)"
 
     # X
-    if ((X + 35 + YAD_WIDTH / 2 > WIDTH)); then #Right side
+    if [ "$((X + 35 + YAD_WIDTH / 2))" -gt "$WIDTH" ]; then #Right side
         : $((pos_x = WIDTH - 35 - YAD_WIDTH))
-    elif ((X - YAD_WIDTH / 2 < 1)); then #Left side
+    elif [ "$((X - YAD_WIDTH / 2))" -lt 1 ]; then #Left side
         : $((pos_x = 10))
     else #Center
         : $((pos_x = X - YAD_WIDTH / 2))
     fi
 
     # Y
-    if ((Y + YAD_HEIGHT > HEIGHT)); then #Bottom
+    if [ "$((Y + YAD_HEIGHT))" -gt "$HEIGHT" ]; then #Bottom
         : $((pos_y = HEIGHT - BAR_HEIGHT - YAD_HEIGHT))
     else #Top
         : $((pos_y = Y + BAR_HEIGHT))
