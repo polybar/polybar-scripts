@@ -1,25 +1,27 @@
 #!/bin/sh
 
-### Leave this variable unset if you want to use the default sink
-#sink=0
-
-get_default_sink() {
+update_sink() {
     sink=$(pacmd list-sinks | sed -n '/\* index:/ s/.*: //p')
 }
 
 volume_up() {
+    update_sink
     pactl set-sink-volume "$sink" +1%
 }
 
 volume_down() {
+    update_sink
     pactl set-sink-volume "$sink" -1%
 }
 
 volume_mute() {
+    update_sink
     pactl set-sink-mute "$sink" toggle
 }
 
 volume_print() {
+    update_sink
+
     active_port=$(pacmd list-sinks | sed -n "/index: $sink/,/index:/p" | grep active)
     if echo "$active_port" | grep -q speaker; then
         icon="#1"
@@ -42,19 +44,12 @@ listen() {
     volume_print
 
     pactl subscribe | while read -r event; do
-        if echo "$event" | grep -q "sink #$sink$"; then
-            volume_print
-        elif [ "$use_default_sink" ] && echo "$event" | grep -q "'change' on server"; then
-            get_default_sink
+        if echo "$event" | grep -qv "Client"; then
             volume_print
         fi
     done
 }
 
-if [ -z "$sink" ]; then
-    use_default_sink=true
-    get_default_sink
-fi
 case "$1" in
     --up)
         volume_up
