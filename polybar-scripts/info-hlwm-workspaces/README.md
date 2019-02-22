@@ -1,21 +1,18 @@
 # Script: info-hlwm-workspaces
 
-Displays all herbstluftwm workspaces with support for all workspace states 
-(focused, visible, occupied, empty, urgent).
+Displays all herbstluftwm workspaces with support for all workspace states (`focused`, `visible`, `occupied`, `empty`, `urgent`).
 
-![Sample Workspace List](screenshots/1.png)
+![info-hlwm-workspaces](screenshots/1.png)
+
 
 ## Dependencies
 
 * `herbstluftwm` running as your WM
 
+
 ## Configuration
 
-On its own the script is pretty plain as there are no colors. There are a
-bunch of <kbd>TODO</kbd> comments where you can `echo` 
-[Formatting Tags](https://github.com/jaagr/polybar/wiki/Formatting#format-tags)
-for certain workspace state to make it more colorful and help you actually
-distinguish the different states.
+On its own the script is pretty plain as there are no colors. There are a bunch of <kbd>TODO</kbd> comments where you can `echo` [Formatting Tags](https://github.com/jaagr/polybar/wiki/Formatting#format-tags) for certain workspace state to make it more colorful and help you actually distinguish the different states.
 
 
 ## Module
