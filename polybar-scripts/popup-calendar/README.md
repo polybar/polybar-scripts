@@ -16,16 +16,16 @@ A small script that displays the date and opens a small popup calendar with YAD 
 Change these values if you want:
 
 ```sh
+BAR_HEIGHT=22
 YAD_WIDTH=200
 YAD_HEIGHT=200
-BOTTOM=false
 DATE="$(date +"%a %d %H:%M")"
 ```
 
-If you use a tiling window manager you should enable floating for `yad`. This example is for `i3wm`:
+If you use a tiling window manager you should enable floating for `yad-calendar`. This example is for `i3wm`:
 
 ```ini
-for_window [class="Yad"] floating enable
+for_window [class="yad-calendar"] floating enable
 ```
 
 
