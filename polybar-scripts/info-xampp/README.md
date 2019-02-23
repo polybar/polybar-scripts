@@ -7,7 +7,7 @@ The Script prints the status of [XAMPP](https://www.apachefriends.org/de/index.h
 
 ## Configuration
 
-You may need to add `xampp` command to the `/etc/sudoers` NOPASSWD of your user:
+You may need to add the `xampp` command to the `/etc/sudoers` NOPASSWD of your user:
 
 ```ini
 user ALL=(ALL) NOPASSWD: /opt/lampp/xampp
