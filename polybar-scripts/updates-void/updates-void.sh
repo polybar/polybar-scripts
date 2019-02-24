@@ -1,10 +1,10 @@
 #!/bin/sh
 
-if ! updates=$(/usr/bin/xbps-install -Sun 2> /dev/null | wc -l); then
-    updates=0
+if sudo /usr/bin/xbps-install -S > /dev/null 2>&1; then
+    updates=$(/usr/bin/xbps-install -un 2> /dev/null | wc -l)
 fi
 
-if [ "$updates" -gt 0 ]; then
+if [ -n "$updates" ] && [ "$updates" -gt 0 ]; then
     echo "# $updates"
 else
     echo ""
