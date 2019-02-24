@@ -11,7 +11,7 @@ A script that shows the Intel GPU consumption. It is calculated on the current f
 
 ## Configuration
 
-You may need to add the `intel_gpu_frequency` command to the `/etc/sudoers` NOPASSWD of your user:
+You have to add the `intel_gpu_frequency` command to the `/etc/sudoers` NOPASSWD of your user:
 
 ```
 user ALL=(ALL) NOPASSWD: /usr/bin/intel_gpu_frequency

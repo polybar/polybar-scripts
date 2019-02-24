@@ -7,7 +7,7 @@ A script that shows if there are updates for Fedora or `dnf` based distributions
 
 ## Configuration
 
-You may need to add the `dnf` command to the `/etc/sudoers` NOPASSWD of your user:
+You have to add the `dnf` command to the `/etc/sudoers` NOPASSWD of your user:
 
 ```
 user ALL=(ALL) NOPASSWD: /usr/bin/dnf

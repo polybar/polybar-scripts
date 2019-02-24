@@ -12,7 +12,11 @@ This script is able to display power supply changes in real time.
 
 ## Configuration
 
-It requires access to run `pwrstat` as root, so you may need to adjust your system to allow this (for example `sudo`).
+You have to add the `pwrstat` command to the `/etc/sudoers` NOPASSWD of your user:
+
+```ini
+user ALL=(ALL) NOPASSWD: /usr/bin/pwrstat
+```
 
 
 ## Module
