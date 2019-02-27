@@ -6,6 +6,13 @@ A script that shows status of chosen Wireguard connection and allows easy contro
 
 
 ## Configuration
+You have to add the `wg` and `wg-quick` command to the `/etc/sudoers` NOPASSWD of your user:
+
+**IMPORTANT** replace `user` with your username
+```ini
+user ALL=(ALL) NOPASSWD: /usr/bin/wg
+user ALL=(ALL) NOPASSWD: /usr/bin/wg-quick
+```
 
 ```sh
 CONFIG_PATH=~/wg/wireguard.conf
