@@ -10,15 +10,10 @@ CONNECTED_TEXT="up"
 DISCONNECTED_ICON="#2 VPN:"
 DISCONNECTED_TEXT="down"
 
-is_exists() {
-    if [ ! -f $CONFIG_PATH ]; then
-        echo "$DISCONNECTED_ICON Config file not found"
-        exit 0
-    fi
-}
+
+CONFIG_NAME=$(basename "${CONFIG_PATH%.*}")
 
 check() {
-    CONFIG_NAME=$(basename "${CONFIG_PATH%.*}")
     WG_RESULT=$(sudo wg show "$CONFIG_NAME" 2>/dev/null | head -n 1 | awk '{print $NF }')
 
     if [ "$WG_RESULT" = "$CONFIG_NAME" ]; then
@@ -55,7 +50,11 @@ toggle() {
     status
 }
 
-is_exists
+if [ ! -f $CONFIG_PATH ]; then
+    echo "$DISCONNECTED_ICON Config file not found"
+    exit 0
+fi
+
 case "$1" in
 --toggle)
     toggle
