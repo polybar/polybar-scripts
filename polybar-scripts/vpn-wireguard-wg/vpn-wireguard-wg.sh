@@ -10,13 +10,14 @@ CONNECTED_TEXT="up"
 DISCONNECTED_ICON="#2 VPN:"
 DISCONNECTED_TEXT="down"
 
-check() {
-    if [ -f $CONFIG_PATH ]; then
-        EXIST=true
-    else
-        EXIST=false
+is_exists() {
+    if [ ! -f $CONFIG_PATH ]; then
+        echo "$DISCONNECTED_ICON Config file not found"
+        exit 0
     fi
+}
 
+check() {
     CONFIG_NAME=$(basename "${CONFIG_PATH%.*}")
     WG_RESULT=$(sudo wg show "$CONFIG_NAME" 2>/dev/null | head -n 1 | awk '{print $NF }')
 
@@ -29,36 +30,32 @@ check() {
 
 status() {
     check
-    if $EXIST; then
-        if $CONNECTED; then
-            if $SHOW_NAME; then
-                CONNECTED_TEXT=$CONFIG_NAME
-            fi
-                echo "$CONNECTED_ICON $CONNECTED_TEXT"
-        else
-            echo "$DISCONNECTED_ICON $DISCONNECTED_TEXT"
+
+    if $CONNECTED; then
+        if $SHOW_NAME; then
+            CONNECTED_TEXT=$CONFIG_NAME
         fi
+        echo "$CONNECTED_ICON $CONNECTED_TEXT"
     else
-        echo "$DISCONNECTED_ICON File not found"
+        echo "$DISCONNECTED_ICON $DISCONNECTED_TEXT"
     fi
 }
 
 toggle() {
     check
-    if $EXIST; then
-        FULL_CONFIG_PATH="$(readlink -f "$CONFIG_PATH")"
-        if $CONNECTED; then
-            sudo wg-quick down "$FULL_CONFIG_PATH" 2>/dev/null
-            status
-        else
-            sudo wg-quick up "$FULL_CONFIG_PATH" 2>/dev/null
-            status
-        fi
+
+    FULL_CONFIG_PATH="$(readlink -f "$CONFIG_PATH")"
+
+    if $CONNECTED; then
+        sudo wg-quick down "$FULL_CONFIG_PATH" 2>/dev/null
     else
-        echo "$DISCONNECTED_ICON File not found"
+        sudo wg-quick up "$FULL_CONFIG_PATH" 2>/dev/null
     fi
+
+    status
 }
 
+is_exists
 case "$1" in
 --toggle)
     toggle
