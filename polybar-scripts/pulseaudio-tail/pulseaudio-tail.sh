@@ -1,34 +1,42 @@
 #!/bin/sh
 
-sink=0
+update_sink() {
+    sink=$(pacmd list-sinks | sed -n '/\* index:/ s/.*: //p')
+}
 
 volume_up() {
-    pactl set-sink-volume $sink +1%
+    update_sink
+    pactl set-sink-volume "$sink" +1%
 }
 
 volume_down() {
-    pactl set-sink-volume $sink -1%
+    update_sink
+    pactl set-sink-volume "$sink" -1%
 }
 
 volume_mute() {
-    pactl set-sink-mute $sink toggle
+    update_sink
+    pactl set-sink-mute "$sink" toggle
 }
 
 volume_print() {
-    if pacmd list-sinks | grep active | head -n 1 | grep -q speaker; then
+    update_sink
+
+    active_port=$(pacmd list-sinks | sed -n "/index: $sink/,/index:/p" | grep active)
+    if echo "$active_port" | grep -q speaker; then
         icon="#1"
-    elif pacmd list-sinks | grep active | head -n 1 | grep -q headphones; then
+    elif echo "$active_port" | grep -q headphones; then
         icon="#2"
     else
         icon="#3"
     fi
 
-    muted=$(pamixer --sink $sink --get-mute)
+    muted=$(pamixer --sink "$sink" --get-mute)
 
     if [ "$muted" = true ]; then
         echo "$icon --"
     else
-        echo "$icon $(pamixer --sink $sink --get-volume)"
+        echo "$icon $(pamixer --sink "$sink" --get-volume)"
     fi
 }
 
@@ -36,7 +44,7 @@ listen() {
     volume_print
 
     pactl subscribe | while read -r event; do
-        if echo "$event" | grep -q "#$sink"; then
+        if echo "$event" | grep -qv "Client"; then
             volume_print
         fi
     done
