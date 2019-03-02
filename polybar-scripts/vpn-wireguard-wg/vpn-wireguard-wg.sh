@@ -17,22 +17,26 @@ if [ ! -f $CONFIG_PATH ]; then
 fi
 
 CONFIG_NAME=$(basename "${CONFIG_PATH%.*}")
+WG_RESULT=$(sudo wg show "$CONFIG_NAME" 2>/dev/null | head -n 1 | awk '{print $NF }')
 
-check() {
-    WG_RESULT=$(sudo wg show "$CONFIG_NAME" 2>/dev/null | head -n 1 | awk '{print $NF }')
+if [ "$WG_RESULT" = "$CONFIG_NAME" ]; then
+    CONNECTED=true
+else
+    CONNECTED=false
+fi
 
-    if [ "$WG_RESULT" = "$CONFIG_NAME" ]; then
-        return 0
+case "$1" in
+--toggle)
+    FULL_CONFIG_PATH="$(readlink -f "$CONFIG_PATH")"
+
+    if $CONNECTED; then
+        sudo wg-quick down "$FULL_CONFIG_PATH" 2>/dev/null
     else
-        return 1
+        sudo wg-quick up "$FULL_CONFIG_PATH" 2>/dev/null
     fi
-}
-
-status() {
-    check
-    CONNECTED=$?
-
-    if [ $CONNECTED -eq "0" ]; then
+    ;;
+*)
+    if $CONNECTED; then
         if $SHOW_NAME; then
             CONNECTED_TEXT=$CONFIG_NAME
         fi
@@ -40,26 +44,5 @@ status() {
     else
         echo "$DISCONNECTED_ICON""$DISCONNECTED_TEXT"
     fi
-}
-
-toggle() {
-    FULL_CONFIG_PATH="$(readlink -f "$CONFIG_PATH")"
-
-    check
-    CONNECTED=$?
-
-    if [ $CONNECTED -eq "0" ]; then
-        sudo wg-quick down "$FULL_CONFIG_PATH" 2>/dev/null
-    else
-        sudo wg-quick up "$FULL_CONFIG_PATH" 2>/dev/null
-    fi
-}
-
-case "$1" in
---toggle)
-    toggle
-    ;;
-*)
-    status
     ;;
 esac
