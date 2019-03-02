@@ -22,16 +22,17 @@ check() {
     WG_RESULT=$(sudo wg show "$CONFIG_NAME" 2>/dev/null | head -n 1 | awk '{print $NF }')
 
     if [ "$WG_RESULT" = "$CONFIG_NAME" ]; then
-        CONNECTED=true
+        return 0
     else
-        CONNECTED=false
+        return 1
     fi
 }
 
 status() {
     check
+    CONNECTED=$?
 
-    if $CONNECTED; then
+    if [ $CONNECTED -eq "0" ]; then
         if $SHOW_NAME; then
             CONNECTED_TEXT=$CONFIG_NAME
         fi
@@ -42,17 +43,16 @@ status() {
 }
 
 toggle() {
-    check
-
     FULL_CONFIG_PATH="$(readlink -f "$CONFIG_PATH")"
 
-    if $CONNECTED; then 
+    check
+    CONNECTED=$?
+
+    if [ $CONNECTED -eq "0" ]; then
         sudo wg-quick down "$FULL_CONFIG_PATH" 2>/dev/null
     else
         sudo wg-quick up "$FULL_CONFIG_PATH" 2>/dev/null
     fi
-
-    status
 }
 
 case "$1" in
