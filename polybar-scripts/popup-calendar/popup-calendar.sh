@@ -8,6 +8,13 @@ DATE="$(date +"%a %d %H:%M")"
 
 case "$1" in
 --popup)
+
+    :'
+    As you seen above min yad size is 222x188 but this is not the full truth,
+    in fact min size be 226x192, because the yad increase given values by 4, so in the
+    formulas below you can see 2 (when yad width was divided on 2) or 4 (when width has not been divided).
+    '
+
     if [ "$(xdotool getwindowfocus getwindowname)" = "yad-calendar" ]; then
         exit 0
     fi
