@@ -1,10 +1,12 @@
 #!/bin/bash
 
 print_bytes() {
-    if [ "$1" -eq 0 ] || [ "$1" -lt 100 ]; then
+    #if [ "$1" -eq 0 ] || [ "$1" -lt 100 ]; then
+    #    bytes="0 kB/s"
+    #elif [ "$1" -lt 1000 ]; then
+    #    bytes="0$(echo "scale=1;$1/1000" | bc -l ) kB/s"
+    if [ "$1" -eq 0 ] || [ "$1" -lt 1000 ]; then
         bytes="0 kB/s"
-    elif [ "$1" -lt 1000 ]; then
-        bytes="0$(echo "scale=1;$1/1000" | bc -l ) kB/s"
     elif [ "$1" -lt 1000000 ]; then
         bytes="$(echo "scale=0;$1/1000" | bc -l ) kB/s"
     else
