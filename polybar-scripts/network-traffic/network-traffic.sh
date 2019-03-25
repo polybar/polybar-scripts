@@ -27,10 +27,8 @@ for interface in $INTERFACES; do
 done
 
 while true; do
-    sleep $INTERVAL
-
-    download=0
-    upload=0
+    down=0
+    up=0
 
     for interface in $INTERFACES; do
         bytes[now_rx_$interface]="$(cat /sys/class/net/"$interface"/statistics/rx_bytes)"
@@ -39,12 +37,14 @@ while true; do
         bytes_down=$((((${bytes[now_rx_$interface]} - ${bytes[past_rx_$interface]})) / INTERVAL))
         bytes_up=$((((${bytes[now_tx_$interface]} - ${bytes[past_tx_$interface]})) / INTERVAL))
 
-        download=$(((( "$download" + "$bytes_down" ))))
-        upload=$(((( "$upload" + "$bytes_up" ))))
+        down=$(((( "$down" + "$bytes_down" ))))
+        up=$(((( "$up" + "$bytes_up" ))))
 
         bytes[past_rx_$interface]=${bytes[now_rx_$interface]}
         bytes[past_tx_$interface]=${bytes[now_tx_$interface]}
     done
 
-    echo "Download: $(print_bytes $download) / Upload: $(print_bytes $upload)"
+    echo "Download: $(print_bytes $down) / Upload: $(print_bytes $up)"
+
+    sleep $INTERVAL
 done
