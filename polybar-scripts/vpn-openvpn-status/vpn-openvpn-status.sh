@@ -1,3 +1,11 @@
-#!/bin/sh
-
-printf "VPN: " && (pgrep -a openvpn$ | head -n 1 | awk '{print $NF }' | cut -d '.' -f 1 && echo down) | head -n 1
+#!/bin/env bash
+IFS=$'\n'
+out=""
+if [[ ! "$1" =~ "-noprefix" ]]; then
+    out="VPNs:";
+fi;
+for process in $(pgrep -a 'openvpn$'); do
+    out="$out $(echo \\"$process\\" | grep -Po '(?<=--remote\ )(\S*)|(?<=--config\ )(.*)(?=\.conf|\.ovpn)' | xargs basename)"
+done
+echo "$out"
+unset IFS
