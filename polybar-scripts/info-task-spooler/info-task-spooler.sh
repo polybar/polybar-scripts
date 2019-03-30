@@ -9,7 +9,7 @@
 get_tsp_count() {
     sock=/tmp/socket-ts.${1:-$(id -u)}
 
-    tsp_count=$(TS_SOCKET=$sock tsp|awk '$2 ~ /running|queued/ { count++ } END { print count }')
+    tsp_count=$(TS_SOCKET=$sock tsp|grep -E -c 'running|queued')
     echo "${tsp_count:-0}"
 }
 
