@@ -7,21 +7,21 @@
 # custom socket names will be generated as /tmp/ts-socket.SOCK_NAME, your TS_SOCKET will need to match
 
 get_tsp_count() {
-    sock=/tmp/socket-ts.${1:-$(id -u)}
+	sock=/tmp/socket-ts.${1:-$(id -u)}
 
-    tsp_count=$(TS_SOCKET=$sock tsp|grep -E -c 'running|queued')
-    echo "${tsp_count:-0}"
+	tsp_count=$(TS_SOCKET=$sock tsp|grep -E -c 'running|queued')
+	echo "${tsp_count:-0}"
 }
 
 # without argument, just show count of default socket
 if [ $# -lt 1 ]; then
-    get_tsp_count
+	get_tsp_count
 else
-    for t in "$@"; do
-        IFS=, read -r name sock_name <<- EOF
+	for t in "$@"; do
+		IFS=, read -r name sock_name <<- EOF
 		${t}
 		EOF
 
-        echo "${name} $(get_tsp_count "${sock_name}")"
-    done|sed 'N;s/\n/  /'
+		echo "${name} $(get_tsp_count "${sock_name}")"
+	done|sed 'N;s/\n/  /'
 fi
