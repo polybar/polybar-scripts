@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # USAGE:
 # No arguments: prints the job running/queued job count of the default tsp server
@@ -18,7 +18,9 @@ if [ $# -lt 1 ]; then
     get_tsp_count
 else
     for t in "$@"; do
-        IFS=, read -r name sock_name <<< "${t}"
+        IFS=, read -r name sock_name <<- EOF
+		${t}
+		EOF
 
         echo "${name} $(get_tsp_count "${sock_name}")"
     done|sed 'N;s/\n/  /'
