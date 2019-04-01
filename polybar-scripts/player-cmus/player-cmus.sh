@@ -9,12 +9,21 @@ if info=$(cmus-remote -Q 2> /dev/null); then
 		position=$(echo "$info" | grep -v "set " | grep -v "tag " | grep "position " | cut -d ' ' -f 2)
 		duration=$(echo "$info" | grep -v "set " | grep -v "tag " | grep "duration " | cut -d ' ' -f 2)
 		
+<<<<<<< HEAD
 		if [ "$duration" -ge 0 ]; then
 			pos_minutes=$(printf "%02d" $((position / 60)))
 			pos_seconds=$(printf "%02d" $((position % 60)))
 
 			dur_minutes=$(printf "%02d" $((duration / 60)))
 			dur_seconds=$(printf "%02d" $((duration % 60)))
+=======
+		if [ $duration -ge 0 ]; then
+			pos_minutes=$(printf "%02d" $(($position / 60)))
+			pos_seconds=$(printf "%02d" $(($position % 60)))
+
+			dur_minutes=$(printf "%02d" $(($duration / 60)))
+			dur_seconds=$(printf "%02d" $(($duration % 60)))
+>>>>>>> 27e3a421615bd3eb939f05f8d197447fdc273c08
 
 			info_string="| $pos_minutes:$pos_seconds / $dur_minutes:$dur_seconds" 
 		fi
@@ -22,11 +31,19 @@ if info=$(cmus-remote -Q 2> /dev/null); then
 		info_string="$artist - $title $info_string"
 		
 		if [ "$status" = "playing" ]; then
+<<<<<<< HEAD
 			echo " $info_string"
 		elif [ "$status" = "paused" ]; then
 			echo " $info_string"
 		elif [ "$status" = "stopped" ]; then
 			echo " $info_string"
+=======
+			echo "#1 $info_string"
+		elif [ "$status" = "paused" ]; then
+			echo "#2 $info_string"
+		elif [ "$status" = "stopped" ]; then
+			echo "#3 $info_string"
+>>>>>>> 27e3a421615bd3eb939f05f8d197447fdc273c08
 		else
 			echo ""
 		fi
