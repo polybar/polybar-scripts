@@ -1,0 +1,3 @@
+#!/bin/sh
+
+bash . /home/user/.config/polybar/network-networkmanager.sh --update
