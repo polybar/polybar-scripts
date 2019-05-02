@@ -1,6 +1,6 @@
 # Script: isrunning-docker
 
-A script that shows if te docker is running.
+A script that shows if the docker service is running.
 
 
 ## Module
