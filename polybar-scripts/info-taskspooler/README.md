@@ -1,8 +1,8 @@
-# Script: info-task-spooler
+# Script: info-taskspooler
 
 Show queued/running count for one or more task spooler servers.
 
-![skeleton](screenshots/1.png)
+![info-taskspooler](screenshots/1.png)
 
 
 ## Dependencies
@@ -15,6 +15,7 @@ Show queued/running count for one or more task spooler servers.
 No arguments required, by default the script will output the count of the default task-spooler server.
 
 If desired, arguments can be passed to show custom task-spooler servers by using the TS_SOCKET variable. These custom servers will need to use a socket filename format like /tmp/ts-socket.SOCK_NAME or the script will be unable to find the server. Arguments are passed as name,sock_name with sock_name being optional, e.g. `default yt,youtube p,podcast`.
+
 
 ## Module
 
