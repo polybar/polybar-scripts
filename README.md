@@ -56,6 +56,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![openweathermap-detailed](polybar-scripts/openweathermap-detailed/screenshots/1.png)](polybar-scripts/openweathermap-detailed/)
 [![info-hackspeed](polybar-scripts/info-hackspeed/screenshots/1.png)](polybar-scripts/info-hackspeed/)
 [![info-xampp](polybar-scripts/info-xampp/screenshots/1.png)](polybar-scripts/info-xampp/)
+[![info-taskspooler](polybar-scripts/info-taskspooler/screenshots/1.png)](polybar-scripts/info-taskspooler/)
 [![player-mpris-tail](polybar-scripts/player-mpris-tail/screenshots/1.png)](polybar-scripts/player-mpris-tail/)
 [![info-redshift-temp](polybar-scripts/info-redshift-temp/screenshots/1.png)](polybar-scripts/info-redshift-temp/)
 [![info-trash](polybar-scripts/info-trash/screenshots/1.png)](polybar-scripts/info-trash/)
@@ -72,8 +73,6 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-hlwm-workspaces](polybar-scripts/info-hlwm-workspaces/screenshots/1.png)](polybar-scripts/info-hlwm-workspaces/)
 [![info-hexdate](polybar-scripts/info-hexdate/screenshots/1.png)](polybar-scripts/info-hexdate/)
 
-
-info-hlwm-workspaces
 
 ## See also these other user repositories:
 
