@@ -89,3 +89,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [nivit/polybar-module-news](https://github.com/nivit/polybar-module-news): This polybar module displays RSS/Atom feeds
 * [HackeSta/polybar-kdeconnect](https://github.com/HackeSta/polybar-kdeconnect): KDEConnect module for Polybar
 * [zemmsoares/polybar-node-version](https://github.com/zemmsoares/polybar-node-version): Script to check Node.js version
+* [Jvanrhijn/polybar-spotify](https://github.com/Jvanrhijn/polybar-spotify): shows the current song playing on Spotify
