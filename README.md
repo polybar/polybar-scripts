@@ -90,3 +90,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [HackeSta/polybar-kdeconnect](https://github.com/HackeSta/polybar-kdeconnect): KDEConnect module for Polybar
 * [zemmsoares/polybar-node-version](https://github.com/zemmsoares/polybar-node-version): Script to check Node.js version
 * [Jvanrhijn/polybar-spotify](https://github.com/Jvanrhijn/polybar-spotify): shows the current song playing on Spotify
+* [HackeSta/polybar-browsermediacontrol](https://github.com/HackeSta/polybar-browsermediacontrol): Browser Media Control module for Polybar
