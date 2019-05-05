@@ -13,7 +13,7 @@ Symbols used:
 ## Module
 
 ```ini
-[module/controller]
+[module/battery-dualshock4]
 type= custom/script
 interval = 10
 format-prefix = " "
