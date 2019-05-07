@@ -2,6 +2,8 @@
 
 A shell script that shows the battery level of the DualShock 4 Controller
 
+![Indicator](screenshots/screenshot.png)
+
 ## Dependencies
 
 - Font Awesome (Free)
@@ -17,6 +19,5 @@ Symbols used:
 type= custom/script
 interval = 10
 format-prefix = " "
-exec = ~/.config/polybar/dualshock.sh
-
+exec = ~/polybar-scripts/battery-dualshock4.sh
 ```
