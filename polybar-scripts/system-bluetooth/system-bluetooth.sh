@@ -16,17 +16,17 @@ fi
 
 # no argument: switching state of the bluetooth
 if echo "$R" | grep -q "UP" ; then
-  echo "power off" | bluetoothctl
+  echo "power off" | bluetoothctl > /dev/null
   echo "%{F#888}#%{F-}"
 else
   if [ "$device" != "" ]; then
     sh -c "echo 'power on'
     sleep 0.5
     echo  \"connect $device\n\"
-    sleep 2" | bluetoothctl
+    sleep 2" | bluetoothctl > /dev/null
   else
     sh -c "echo 'power on'
-    sleep 0.5" | bluetoothctl
+    sleep 0.5" | bluetoothctl > /dev/null
   fi
   echo "%{F#458588}#%{F-}"
 fi
