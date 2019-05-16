@@ -1,8 +1,8 @@
 # polybar-scripts
 
-[![Build Status](https://travis-ci.org/x70b1/polybar-scripts.svg?branch=master)](https://travis-ci.org/x70b1/polybar-scripts)
-[![GitHub contributors](https://img.shields.io/github/contributors/x70b1/polybar-scripts.svg)](https://github.com/x70b1/polybar-scripts/graphs/contributors)
-[![license](https://img.shields.io/github/license/x70b1/polybar-scripts.svg)](https://github.com/x70b1/polybar-scripts/blob/master/LICENSE)
+[![Build Status](https://travis-ci.com/polybar/polybar-scripts.svg?branch=master)](https://travis-ci.com/polybar/polybar-scripts)
+[![GitHub contributors](https://img.shields.io/github/contributors/polybar/polybar-scripts.svg)](https://github.com/polybar/polybar-scripts/graphs/contributors)
+[![license](https://img.shields.io/github/license/polybar/polybar-scripts.svg)](https://github.com/polybar/polybar-scripts/blob/master/LICENSE)
 
 This is a community project. We write and collect scripts for Polybar!
 
