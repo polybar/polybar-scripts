@@ -10,7 +10,7 @@ outputs() {
 }
 
 inputs() {
-    INPUT=$(pactl list short sources | cut  -f 2 | grep input | rofi -dmenu -p "Output" -mesg "Select prefered input source" )
+    INPUT=$(pactl list short sources | cut  -f 2 | grep input | rofi -dmenu -p "Input" -mesg "Select prefered input source" )
     pacmd set-default-source "$INPUT" >/dev/null 2>&1
 
     for recording in $(pacmd list-source-outputs | awk '$1 == "index:" {print $2}'); do
