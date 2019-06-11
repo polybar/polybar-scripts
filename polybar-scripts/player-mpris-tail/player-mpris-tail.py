@@ -188,6 +188,7 @@ class Player:
             introspect_xml = self._introspect(self.bus_name, '/')
             if 'TrackMetadataChanged' in introspect_xml:
                 self._signals['track_metadata_changed'] = self._session_bus.add_signal_receiver(self.onMetadataChanged, 'TrackMetadataChanged', self.bus_name)
+            self._signals['seeked'] = self._player_interface.connect_to_signal('Seeked', self.onSeeked)
             self._signals['properties_changed'] = self._properties_interface.connect_to_signal('PropertiesChanged', self.onPropertiesChanged)
     
     def disconnect(self):
@@ -282,6 +283,8 @@ class Player:
                 self.checkPositionTimer()
                 self.updateIcon()
                 updated = True
+        if dbus.String('Rate') in properties and dbus.String('PlaybackStatus') not in properties:
+            self.refreshStatus()
         if NEEDS_POSITION and dbus.String('Rate') in properties:
             rate = properties[dbus.String('Rate')]
             if rate != self._rate:
@@ -296,6 +299,10 @@ class Player:
         if NEEDS_POSITION and self.status == 'playing' and not self._positionTimerRunning:
             self._positionTimerRunning = True
             GLib.timeout_add_seconds(1, self._positionTimer)
+
+    def onSeeked(self, position):
+        self.refreshPosition()
+        self.printStatus()
 
     def _positionTimer(self):
         self.printStatus()
