@@ -7,3 +7,14 @@ before_script:
 
 script:
     - source ${TRAVIS_BUILD_DIR}/build.sh
+
+notifications:
+  email: false
+  irc:
+    channels:
+      - secure: J4A0TPmEf+DdH2kQprzGghWINIQTdbQD99HyIW82iurzLaMmXyFZxeLT9Lw4B37HfqUqbToLCY6IzQqB+VRP4UEksLvUUAG4+vql2PICxR4xmafmssfI5KOTl+N1j8P4ls9ReKh+utySVJ8KQeNf/bqERc7CeIpbgdm7EMxvqiaEAxd3ub2oDFSDdeFSF+Z0imqvMfQ2YC0OlKUWJcqx5ej237EP55EHYfIQZVKEAwdVBlSQmtBYboI+PyiyR+AXN00XEddPQhnAHdu+fvhYP7RcpjZFMfO7PCc+vv7eBqL1Sde813EhZRhqC+ULIYYwsFTghtw9W0Tctvpxqr6yJYKHU9KzsBtn0GRLLOk/oIqoXCuIz0sxeAG4SrK5m22dXaBYaU0LLzzAoSERsXT86m2OxUGe2yJWOV0bHDNat3EMq54SVNJxpuKBi19pOA1wz6TrRBXqFpZz4/afqSZZELBhhontHr3NPHu0iCiP2AyxjYvMw2w+AI5nMUWX0Kp7bjS0DLeXsiu0dB1qa1EZKMnrOJez4z8lkt/nuccToxttJfAfaOOWI86xOH8gcN7IIpyOOV8i4bMB2hFvONepc3WFG9xjAA6eWA7lazfUtsszo3JoXOf0dlLnLjEhswDWdW78g2Zvxy9XhXSgrPPNT0Vlc0gcBvNJT4aTvuVs6ho=
+    template:
+      - " %{repository_slug}(%{branch})#%{build_number} | \"%{commit_subject}\" by %{author} | Commit #%{commit} %{result}"
+    use_notice: true
+    on_success: always
+    on_failure: never

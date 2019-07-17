@@ -91,4 +91,5 @@ Is this your first time here? You should definitely take a look at these scripts
 * [zemmsoares/polybar-node-version](https://github.com/zemmsoares/polybar-node-version): Script to check Node.js version
 * [Jvanrhijn/polybar-spotify](https://github.com/Jvanrhijn/polybar-spotify): shows the current song playing on Spotify
 * [HackeSta/polybar-browsermediacontrol](https://github.com/HackeSta/polybar-browsermediacontrol): Browser Media Control module for Polybar
+* [dietervanhoof/polybar-spotify-controls](https://github.com/dietervanhoof/polybar-spotify-controls): set of modules provides controls for spotify
 * [unode/polypomo](https://github.com/unode/polypomo): Minimalist pomodoro style timer
