@@ -15,7 +15,7 @@ If an interface named `cscotun` exists the IP address will be displayed. Otherwi
 
 ## Configuration
 
-You like that icon? It's `賓` from [FantasqueSansMono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FantasqueSansMono/Regular/complete).
+The Icon is `賓` from [FantasqueSansMono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FantasqueSansMono/Regular/complete).
 
 
 ## Module
