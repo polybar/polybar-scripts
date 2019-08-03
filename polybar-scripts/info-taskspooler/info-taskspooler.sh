@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # USAGE:
 # No arguments: prints the job running/queued job count of the default tsp server
