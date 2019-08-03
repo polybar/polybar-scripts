@@ -130,6 +130,12 @@ class Player:
             'title'  : '',
             'track'  : 0
         }
+
+        self._rate = 1.
+        self._positionAtLastUpdate = 0.
+        self._timeAtLastUpdate = time.time()
+        self._positionTimerRunning = False
+
         self._metadata = None
         self.status = 'stopped'
         self.icon = ICON_NONE
@@ -154,6 +160,7 @@ class Player:
         self._playerRaise     = self._media_interface.get_dbus_method('Raise', dbus_interface=None)
         self._signals = {}
 
+        self.refreshPosition()
         self.refreshStatus()
         self.refreshMetadata()
 
@@ -181,6 +188,7 @@ class Player:
             introspect_xml = self._introspect(self.bus_name, '/')
             if 'TrackMetadataChanged' in introspect_xml:
                 self._signals['track_metadata_changed'] = self._session_bus.add_signal_receiver(self.onMetadataChanged, 'TrackMetadataChanged', self.bus_name)
+            self._signals['seeked'] = self._player_interface.connect_to_signal('Seeked', self.onSeeked)
             self._signals['properties_changed'] = self._properties_interface.connect_to_signal('PropertiesChanged', self.onPropertiesChanged)
     
     def disconnect(self):
@@ -195,6 +203,7 @@ class Player:
         try:
             self.status = str(self._getProperty('org.mpris.MediaPlayer2.Player', 'PlaybackStatus')).lower()
             self.updateIcon()
+            self.checkPositionTimer()
         except dbus.exceptions.DBusException:
             self.disconnect()
 
@@ -271,11 +280,45 @@ class Player:
             status = str(properties[dbus.String('PlaybackStatus')]).lower()
             if status != self.status:
                 self.status = status
+                self.checkPositionTimer()
                 self.updateIcon()
                 updated = True
-        
+        if dbus.String('Rate') in properties and dbus.String('PlaybackStatus') not in properties:
+            self.refreshStatus()
+        if NEEDS_POSITION and dbus.String('Rate') in properties:
+            rate = properties[dbus.String('Rate')]
+            if rate != self._rate:
+                self._rate = rate
+                self.refreshPosition()
+
         if updated:
+            self.refreshPosition()
             self.printStatus()
+
+    def checkPositionTimer(self):
+        if NEEDS_POSITION and self.status == 'playing' and not self._positionTimerRunning:
+            self._positionTimerRunning = True
+            GLib.timeout_add_seconds(1, self._positionTimer)
+
+    def onSeeked(self, position):
+        self.refreshPosition()
+        self.printStatus()
+
+    def _positionTimer(self):
+        self.printStatus()
+        self._positionTimerRunning = self.status == 'playing'
+        return self._positionTimerRunning
+
+    def refreshPosition(self):
+        time_us = self._getProperty('org.mpris.MediaPlayer2.Player', 'Position')
+        self._timeAtLastUpdate = time.time()
+        self._positionAtLastUpdate = time_us / 1000000
+
+    def _getPosition(self):
+        if self.status == 'playing':
+            return self._positionAtLastUpdate + self._rate * (time.time() - self._timeAtLastUpdate)
+        else:
+            return self._positionAtLastUpdate
 
     def _statusReplace(self, match, metadata):
         tag = match.group('tag')
@@ -318,6 +361,8 @@ class Player:
     def printStatus(self):
         if self.status in [ 'playing', 'paused' ]:
             metadata = { **self.metadata, 'icon': self.icon, 'icon-reversed': self.icon_reversed }
+            if NEEDS_POSITION:
+                metadata['position'] = time.strftime("%M:%S", time.gmtime(self._getPosition()))
             # replace metadata tags in text
             text = re.sub(FORMAT_REGEX, lambda match: self._statusReplace(match, metadata), FORMAT_STRING)
             # restore polybar tag formatting and replace any remaining metadata tags after that
@@ -408,6 +453,8 @@ parser.add_argument('--icon-none', default='')
 args = parser.parse_args()
 
 FORMAT_STRING = re.sub(r'%\{(.*?)\}(.*?)%\{(.*?)\}', r'􏿿p􏿿\1􏿿p􏿿\2􏿿p􏿿\3􏿿p􏿿', args.format)
+NEEDS_POSITION = "{position}" in FORMAT_STRING
+
 TRUNCATE_STRING = args.truncate_text
 ICON_PLAYING = args.icon_playing
 ICON_PAUSED = args.icon_paused
