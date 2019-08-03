@@ -60,8 +60,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![player-mpris-tail](polybar-scripts/player-mpris-tail/screenshots/1.png)](polybar-scripts/player-mpris-tail/)
 [![info-redshift-temp](polybar-scripts/info-redshift-temp/screenshots/1.png)](polybar-scripts/info-redshift-temp/)
 [![info-trash](polybar-scripts/info-trash/screenshots/1.png)](polybar-scripts/info-trash/)
-[![pulseaudio-rofi](polybar-scripts/pulseaudio-rofi/screenshots/1.png)](polybar-scripts/pulseaudio-rofi/)
-[![pulseaudio-rofi](polybar-scripts/info-softwarecounter/screenshots/1.png)](polybar-scripts/info-softwarecounter/)
+[![info-softwarecounter](polybar-scripts/info-softwarecounter/screenshots/1.png)](polybar-scripts/info-softwarecounter/)
 [![info-twitch-countdown](polybar-scripts/info-twitch-countdown/screenshots/1.png)](polybar-scripts/info-twitch-countdown/)
 [![info-twitch-countdown](polybar-scripts/info-twitch-countdown/screenshots/2.png)](polybar-scripts/info-twitch-countdown/)
 [![vpn-anyconnect-status](polybar-scripts/vpn-anyconnect-status/screenshots/1.png)](polybar-scripts/vpn-anyconnect-status/)
@@ -91,4 +90,6 @@ Is this your first time here? You should definitely take a look at these scripts
 * [zemmsoares/polybar-node-version](https://github.com/zemmsoares/polybar-node-version): Script to check Node.js version
 * [Jvanrhijn/polybar-spotify](https://github.com/Jvanrhijn/polybar-spotify): shows the current song playing on Spotify
 * [HackeSta/polybar-browsermediacontrol](https://github.com/HackeSta/polybar-browsermediacontrol): Browser Media Control module for Polybar
-* [marioortizmanero/polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control): Feature-full pulseaudio control module
+* [dietervanhoof/polybar-spotify-controls](https://github.com/dietervanhoof/polybar-spotify-controls): set of modules provides controls for spotify
+* [unode/polypomo](https://github.com/unode/polypomo): Minimalist pomodoro style timer
+* [marioortizmanero/polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control): A feature-full polybar module to control pulseaudio
