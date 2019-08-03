@@ -1,6 +1,6 @@
 # Script: info-dualshock4
 
-A shell script that shows the battery level of the DualShock 4 Controller
+A shell script that shows the battery level of a DualShock 4 Controller.
 
 ![info-dualshock4](screenshots/1.png)
 
