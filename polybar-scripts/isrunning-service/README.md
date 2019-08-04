@@ -1,6 +1,6 @@
 # Script: isrunning-service
 
-A script that shows if a systemd service is running.
+A script that shows if a systemd service is running. It uses `journalctl` to get realtime output.
 
 
 ## Configuration
