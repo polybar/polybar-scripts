@@ -1,8 +1,6 @@
 #!/bin/sh
 
-if sudo /usr/bin/xbps-install -S > /dev/null 2>&1; then
-    updates=$(/usr/bin/xbps-install -un 2> /dev/null | wc -l)
-fi
+updates=$(xbps-install -Mun 2> /dev/null | wc -l)
 
 if [ -n "$updates" ] && [ "$updates" -gt 0 ]; then
     echo "# $updates"
