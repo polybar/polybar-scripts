@@ -75,6 +75,7 @@ Is this your first time here? You should definitely take a look at these scripts
 
 ## See also these other user repositories:
 
+* [budlabs/polify](https://github.com/budlabs/polify): A utility that makes it easier to manage and work with polybars IPC-modules.
 * [vyachkonovalov/polybar-gmail](https://github.com/vyachkonovalov/polybar-gmail): A Polybar module to show unread messages from Gmail
 * [0nse/now_playing](https://github.com/0nse/now_playing): Output the currently scrobbling song
 * [dakuten/taskwarrior-polybar](https://github.com/dakuten/taskwarrior-polybar): merely just a script showing the most urgent task and allowing it to be marked done
