@@ -28,6 +28,7 @@ KEY=""
 CITY=""
 UNITS="metric"
 SYMBOL="°"
+LANG="en"
 
 API="https://api.openweathermap.org/data/2.5"
 
@@ -38,7 +39,7 @@ if [ -n "$CITY" ]; then
         CITY_PARAM="q=$CITY"
     fi
 
-    weather=$(curl -sf "$API/weather?appid=$KEY&$CITY_PARAM&units=$UNITS")
+    weather=$(curl -sf "$API/weather?appid=$KEY&$CITY_PARAM&units=$UNITS&lang=$LANG")
 else
     location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
 
@@ -46,7 +47,7 @@ else
         location_lat="$(echo "$location" | jq '.location.lat')"
         location_lon="$(echo "$location" | jq '.location.lng')"
 
-        weather=$(curl -sf "$API/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
+        weather=$(curl -sf "$API/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS&lang=$LANG")
     fi
 fi
 
