@@ -5,7 +5,7 @@ wifionice=$(curl -sf https://iceportal.de/api1/rs/status)
 if [ "$(echo "$wifionice" | jq .connection)" = "true" ]; then
     wifionice_speed=$(echo "$wifionice" | jq .speed)
     if [ "$wifionice_speed" -ne 0 ]; then
-        wifionice_speed="$wifionice_speed km/h"
+        wifionice_speed=" - $wifionice_speed km/h"
     else
         wifionice_speed=""
     fi
@@ -26,5 +26,5 @@ if [ "$(echo "$wifionice" | jq .connection)" = "true" ]; then
         station_delay=""
     fi
 
-    echo "# $station_arrival$station_delay - $station_name, Gl. $station_track - $wifionice_speed"
+    echo "# $station_arrival$station_delay - $station_name, Gl. $station_track$wifionice_speed"
 fi
