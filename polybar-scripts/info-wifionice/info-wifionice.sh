@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$(iwgetid -r)" == "WIFIonICE" ]; then
+if [ "$(iwgetid -r)" = "WIFIonICE" ]; then
     wifionice=$(curl -sf https://iceportal.de/api1/rs/status)
 
     if [ "$(echo "$wifionice" | jq .connection)" = "true" ]; then
