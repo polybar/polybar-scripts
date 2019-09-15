@@ -20,6 +20,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [openweathermap-fullfeatured](polybar-scripts/openweathermap-fullfeatured)
 * [player-mpris-tail](polybar-scripts/player-mpris-tail)
 * [battery-combined-udev](polybar-scripts/battery-combined-udev)
+* [system-bluetooth-bluetoothctl](polybar-scripts/system-bluetooth-bluetoothctl)
 * [notification-reddit](polybar-scripts/notification-reddit)
 * [inbox-imap-shellnetrc](polybar-scripts/inbox-imap-shellnetrc)
 * [isrunning-service](polybar-scripts/isrunning-service)
