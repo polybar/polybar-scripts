@@ -52,7 +52,7 @@ class PlayerManager:
                 self.changePlayerOwner(bus_name, old_owner, new_owner)
 
     def busNameIsAPlayer(self, bus_name):
-        return bus_name.startswith('org.mpris.MediaPlayer2') and bus_name.split('.')[-1] not in self.blacklist
+        return bus_name.startswith('org.mpris.MediaPlayer2') and bus_name.split('.')[3] not in self.blacklist
 
     def refreshPlayerList(self):
         player_bus_names = [ bus_name for bus_name in self._session_bus.list_names() if self.busNameIsAPlayer(bus_name) ]
