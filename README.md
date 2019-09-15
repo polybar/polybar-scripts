@@ -17,10 +17,12 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 
 Is this your first time here? You should definitely take a look at these scripts:
 
-* [battery-combined-udev](polybar-scripts/battery-combined-udev)
 * [openweathermap-fullfeatured](polybar-scripts/openweathermap-fullfeatured)
 * [player-mpris-tail](polybar-scripts/player-mpris-tail)
-* [pulseaudio-tail](polybar-scripts/pulseaudio-tail)
+* [battery-combined-udev](polybar-scripts/battery-combined-udev)
+* [notification-reddit](polybar-scripts/notification-reddit)
+* [inbox-imap-shellnetrc](polybar-scripts/inbox-imap-shellnetrc)
+* [isrunning-service](polybar-scripts/isrunning-service)
 * [system-usb-udev](polybar-scripts/system-usb-udev)
 * [updates-arch-combined](polybar-scripts/updates-arch-combined)
 * [info-hackspeed](polybar-scripts/info-hackspeed)
