@@ -42,7 +42,7 @@ usb_update() {
     fi
 }
 
-path_pid="/home/user/.config/polybar/system-usb-udev.pid"
+path_pid="/tmp/polybar-system-usb-udev.pid"
 
 case "$1" in
     --update)
