@@ -62,7 +62,7 @@ network_update() {
     fi
 }
 
-path_pid="/home/user/.config/polybar/network-networkmanager.pid"
+path_pid="/tmp/polybar-network-networkmanager.pid"
 
 case "$1" in
     --update)
