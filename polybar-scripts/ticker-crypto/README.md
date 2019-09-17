@@ -1,8 +1,8 @@
-# Script: ticker-btceur
+# Script: ticker-crypto
 
-A script that displays the current Bitcoin price.
+A script that displays current Cryptocurrency quotes like Bitcoin.
 
-![ticker-btceur](screenshots/1.png)
+![ticker-crypto](screenshots/1.png)
 
 
 ## Dependencies
@@ -14,8 +14,8 @@ A script that displays the current Bitcoin price.
 ## Module
 
 ```ini
-[module/ticker-btceur]
+[module/ticker-crypto]
 type = custom/script
-exec = ~/polybar-scripts/ticker-btceur.sh
+exec = ~/polybar-scripts/ticker-crypto.sh
 interval = 600
 ```
