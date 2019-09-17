@@ -12,7 +12,7 @@ It allows you to count traffic from more then one interface.
 
 ## Configuration
 
-Change the values in `INTERVAL` and `INTERFACES`.
+Change the values in `INTERVAL` and `INTERFACES`. You can also choose between bit and byte output.
 
 
 ## Module

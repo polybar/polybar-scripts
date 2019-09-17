@@ -1,10 +1,6 @@
 #!/bin/bash
 
 print_bytes() {
-    #if [ "$1" -eq 0 ] || [ "$1" -lt 100 ]; then
-    #    bytes="0 kB/s"
-    #elif [ "$1" -lt 1000 ]; then
-    #    bytes="0$(echo "scale=1;$1/1000" | bc -l ) kB/s"
     if [ "$1" -eq 0 ] || [ "$1" -lt 1000 ]; then
         bytes="0 kB/s"
     elif [ "$1" -lt 1000000 ]; then
@@ -14,6 +10,20 @@ print_bytes() {
     fi
 
     echo "$bytes"
+}
+
+print_bit() {
+    if [ "$1" -eq 0 ] || [ "$1" -lt 10 ]; then
+        bit="0 B"
+    elif [ "$1" -lt 100 ]; then
+        bit="$(echo "scale=0;$1*8" | bc -l ) B"
+    elif [ "$1" -lt 100000 ]; then
+        bit="$(echo "scale=0;$1*8/1000" | bc -l ) K"
+    else
+        bit="$(echo "scale=1;$1*8/1000000" | bc -l ) M"
+    fi
+
+    echo "$bit"
 }
 
 INTERVAL=10
@@ -45,6 +55,7 @@ while true; do
     done
 
     echo "Download: $(print_bytes $down) / Upload: $(print_bytes $up)"
+    # echo "Download: $(print_bit $down) / Upload: $(print_bit $up)"
 
     sleep $INTERVAL
 done
