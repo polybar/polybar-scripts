@@ -26,3 +26,11 @@ type = custom/script
 exec = ~/polybar-scripts/vpn-openvpn-status.sh
 interval = 5
 ```
+
+In the quiet Module you will not see anything if there is no active VPN-Connection.
+```ini
+[module/vpn-openvpn-status-quiet]
+type = custom/script
+exec = ~/polybar-scripts/vpn-openvpn-status-quiet.sh
+interval = 5
+```
