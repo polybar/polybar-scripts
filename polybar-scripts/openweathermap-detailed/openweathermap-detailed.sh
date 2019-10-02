@@ -28,6 +28,7 @@ KEY=""
 CITY=""
 UNITS="metric"
 SYMBOL="°"
+weather=""
 
 API="https://api.openweathermap.org/data/2.5"
 
