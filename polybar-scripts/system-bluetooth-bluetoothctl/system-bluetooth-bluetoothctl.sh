@@ -23,7 +23,7 @@ bluetooth_print() {
                     counter=$((counter + 1))
                 fi
 
-                printf '\\n'
+                printf '\n'
             done
         else
             echo "#2"
