@@ -9,7 +9,7 @@ usbtoserial_print() {
         if [ $counter -gt 0 ]; then
             printf ", %s" "$device_name"
         else
-            printf "  %s" "$device_name"
+            printf "#1 %s" "$device_name"
         fi
 
         counter=$((counter + 1))
