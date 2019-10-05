@@ -1,3 +1,10 @@
 #!/bin/sh
 
-bash . /home/user/.config/polybar/network-networkmanager.sh --update
+case "$2" in
+        up)
+            sh /home/user/.config/polybar/network.sh --update
+        ;;
+        down)
+            sh /home/user/.config/polybar/network.sh --update
+        ;;
+esac
