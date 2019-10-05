@@ -1,6 +1,5 @@
 # Script: info-publicip
 
-
 This script shows the public IP of the current connection.
 
 ![info-publicip](screenshots/1.png)
