@@ -1,6 +1,6 @@
 # Script: vpn-openvpn-isrunning
 
-A script that shows if OpenVPN is running.
+A simple script which shows if OpenVPN is running.
 
 ![vpn-openvpn-isrunning](screenshots/1.png)
 
