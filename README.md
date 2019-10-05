@@ -66,6 +66,8 @@ Is this your first time here? You should definitely take a look at these scripts
 [![player-mpris-tail](polybar-scripts/player-mpris-tail/screenshots/1.png)](polybar-scripts/player-mpris-tail/)
 [![info-redshift-temp](polybar-scripts/info-redshift-temp/screenshots/1.png)](polybar-scripts/info-redshift-temp/)
 [![info-trash](polybar-scripts/info-trash/screenshots/1.png)](polybar-scripts/info-trash/)
+[![vpn-wireguard-wg](polybar-scripts/vpn-wireguard-wg/screenshots/1.png)](polybar-scripts/vpn-wireguard-wg/)
+[![vpn-wireguard-wg](polybar-scripts/vpn-wireguard-wg/screenshots/2.png)](polybar-scripts/vpn-wireguard-wg/)
 [![info-softwarecounter](polybar-scripts/info-softwarecounter/screenshots/1.png)](polybar-scripts/info-softwarecounter/)
 [![vpn-anyconnect-status](polybar-scripts/vpn-anyconnect-status/screenshots/1.png)](polybar-scripts/vpn-anyconnect-status/)
 [![player-cmus](polybar-scripts/player-cmus/screenshots/1.png)](polybar-scripts/player-cmus/)
