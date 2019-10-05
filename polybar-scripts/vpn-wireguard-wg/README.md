@@ -1,29 +1,18 @@
 # Script: vpn-wireguard-wg
 
-A script that shows status of chosen Wireguard connection and allows easy control it
+A script that shows the status of a chosen Wireguard connection.
 
-![up](screenshots/1.png) ![down](screenshots/2.png)
+![vpn-wireguard-wg](screenshots/1.png)
+![vpn-wireguard-wg](screenshots/2.png)
 
 
 ## Configuration
+
 You have to add the `wg` and `wg-quick` command to the `/etc/sudoers` NOPASSWD of your user:
 
-**IMPORTANT** replace `user` with your username
 ```ini
 user ALL=(ALL) NOPASSWD: /usr/bin/wg
 user ALL=(ALL) NOPASSWD: /usr/bin/wg-quick
-```
-
-```sh
-CONFIG_PATH=~/wg/wireguard.conf
-
-SHOW_NAME=false
-
-CONNECTED_ICON="#1 VPN:"
-CONNECTED_TEXT="up"
-
-DISCONNECTED_ICON="#2 VPN:"
-DISCONNECTED_TEXT="down"
 ```
 
 ## Module
@@ -32,6 +21,6 @@ DISCONNECTED_TEXT="down"
 [module/vpn-wireguard-wg]
 type = custom/script
 exec = ~/polybar-scripts/vpn-wireguard-wg.sh
-click-left = ~/polybar-scripts//vpn-wireguard-wg.sh --toggle
 interval = 5
+click-left = ~/polybar-scripts//vpn-wireguard-wg.sh --toggle
 ```
