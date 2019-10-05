@@ -7,3 +7,14 @@ before_script:
 
 script:
     - source ${TRAVIS_BUILD_DIR}/build.sh
+
+notifications:
+  email: false
+  irc:
+    channels:
+      - "irc.freenode.org#polybar"
+    template:
+      - " %{repository_slug}(%{branch})#%{build_number} | \"%{commit_subject}\" by %{author} | Commit #%{commit} %{result}: %{build_url}"
+    use_notice: true
+    on_success: change
+    on_failure: change

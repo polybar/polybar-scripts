@@ -1,7 +1,7 @@
 #!/bin/sh
 
-username=""
-games=$(curl -sf "https://api.chess.com/pub/player/$username/games/to-move" | jq ".[] | length")
+USERNAME=""
+games=$(curl -sf "https://api.chess.com/pub/player/$USERNAME/games/to-move" | jq ".[] | length")
 
 if [ "$games" -gt 0 ]; then
    echo "#1 $games"

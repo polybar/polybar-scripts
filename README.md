@@ -1,8 +1,8 @@
 # polybar-scripts
 
-[![Build Status](https://travis-ci.org/x70b1/polybar-scripts.svg?branch=master)](https://travis-ci.org/x70b1/polybar-scripts)
-[![GitHub contributors](https://img.shields.io/github/contributors/x70b1/polybar-scripts.svg)](https://github.com/x70b1/polybar-scripts/graphs/contributors)
-[![license](https://img.shields.io/github/license/x70b1/polybar-scripts.svg)](https://github.com/x70b1/polybar-scripts/blob/master/LICENSE)
+[![Build Status](https://travis-ci.com/polybar/polybar-scripts.svg?branch=master)](https://travis-ci.com/polybar/polybar-scripts)
+[![GitHub contributors](https://img.shields.io/github/contributors/polybar/polybar-scripts.svg)](https://github.com/polybar/polybar-scripts/graphs/contributors)
+[![license](https://img.shields.io/github/license/polybar/polybar-scripts.svg)](https://github.com/polybar/polybar-scripts/blob/master/LICENSE)
 
 This is a community project. We write and collect scripts for Polybar!
 
@@ -17,10 +17,13 @@ Your script isn't here yet? You have ideas to extend the scripts or descriptions
 
 Is this your first time here? You should definitely take a look at these scripts:
 
-* [battery-combined-udev](polybar-scripts/battery-combined-udev)
 * [openweathermap-fullfeatured](polybar-scripts/openweathermap-fullfeatured)
 * [player-mpris-tail](polybar-scripts/player-mpris-tail)
-* [pulseaudio-tail](polybar-scripts/pulseaudio-tail)
+* [battery-combined-udev](polybar-scripts/battery-combined-udev)
+* [system-bluetooth-bluetoothctl](polybar-scripts/system-bluetooth-bluetoothctl)
+* [notification-reddit](polybar-scripts/notification-reddit)
+* [inbox-imap-shellnetrc](polybar-scripts/inbox-imap-shellnetrc)
+* [isrunning-service](polybar-scripts/isrunning-service)
 * [system-usb-udev](polybar-scripts/system-usb-udev)
 * [updates-arch-combined](polybar-scripts/updates-arch-combined)
 * [info-hackspeed](polybar-scripts/info-hackspeed)
@@ -43,7 +46,8 @@ Is this your first time here? You should definitely take a look at these scripts
 [![vpn-openvpn-isrunning](polybar-scripts/vpn-openvpn-isrunning/screenshots/1.png)](polybar-scripts/vpn-openvpn-isrunning/)
 [![inbox-imap-pythongpg](polybar-scripts/inbox-imap-pythongpg/screenshots/1.png)](polybar-scripts/inbox-imap-pythongpg/)
 [![openweathermap-fullfeatured](polybar-scripts/openweathermap-fullfeatured/screenshots/1.png)](polybar-scripts/openweathermap-fullfeatured/)
-[![ticker-btceur](polybar-scripts/ticker-btceur/screenshots/1.png)](polybar-scripts/ticker-btceur/)
+[![ticker-crypto](polybar-scripts/ticker-crypto/screenshots/1.png)](polybar-scripts/ticker-crypto/)
+[![easteregg-pornhub](polybar-scripts/easteregg-pornhub/screenshots/1.png)](polybar-scripts/easteregg-pornhub/)
 [![info-airqualityindex](polybar-scripts/info-airqualityindex/screenshots/1.png)](polybar-scripts/info-airqualityindex/)
 [![player-mpris-simple](polybar-scripts/player-mpris-simple/screenshots/1.png)](polybar-scripts/player-mpris-simple/)
 [![battery-combined-tlp](polybar-scripts/battery-combined-tlp/screenshots/1.png)](polybar-scripts/battery-combined-tlp/)
@@ -56,6 +60,9 @@ Is this your first time here? You should definitely take a look at these scripts
 [![openweathermap-detailed](polybar-scripts/openweathermap-detailed/screenshots/1.png)](polybar-scripts/openweathermap-detailed/)
 [![info-hackspeed](polybar-scripts/info-hackspeed/screenshots/1.png)](polybar-scripts/info-hackspeed/)
 [![info-xampp](polybar-scripts/info-xampp/screenshots/1.png)](polybar-scripts/info-xampp/)
+[![info-taskspooler](polybar-scripts/info-taskspooler/screenshots/1.png)](polybar-scripts/info-taskspooler/)
+[![info-publicip](polybar-scripts/info-publicip/screenshots/1.png)](polybar-scripts/info-publicip/)
+[![system-thinklight](polybar-scripts/system-thinklight/screenshots/1.png)](polybar-scripts/system-thinklight/)
 [![player-mpris-tail](polybar-scripts/player-mpris-tail/screenshots/1.png)](polybar-scripts/player-mpris-tail/)
 [![info-redshift-temp](polybar-scripts/info-redshift-temp/screenshots/1.png)](polybar-scripts/info-redshift-temp/)
 [![info-trash](polybar-scripts/info-trash/screenshots/1.png)](polybar-scripts/info-trash/)
@@ -63,8 +70,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![vpn-wireguard-wg](polybar-scripts/vpn-wireguard-wg/screenshots/2.png)](polybar-scripts/vpn-wireguard-wg/)
 [![pulseaudio-rofi](polybar-scripts/pulseaudio-rofi/screenshots/1.png)](polybar-scripts/pulseaudio-rofi/)
 [![pulseaudio-rofi](polybar-scripts/info-softwarecounter/screenshots/1.png)](polybar-scripts/info-softwarecounter/)
-[![info-twitch-countdown](polybar-scripts/info-twitch-countdown/screenshots/1.png)](polybar-scripts/info-twitch-countdown/)
-[![info-twitch-countdown](polybar-scripts/info-twitch-countdown/screenshots/2.png)](polybar-scripts/info-twitch-countdown/)
+[![info-softwarecounter](polybar-scripts/info-softwarecounter/screenshots/1.png)](polybar-scripts/info-softwarecounter/)
 [![vpn-anyconnect-status](polybar-scripts/vpn-anyconnect-status/screenshots/1.png)](polybar-scripts/vpn-anyconnect-status/)
 [![player-cmus](polybar-scripts/player-cmus/screenshots/1.png)](polybar-scripts/player-cmus/)
 [![info-todotxt](polybar-scripts/info-todotxt/screenshots/1.png)](polybar-scripts/info-todotxt/)
@@ -74,8 +80,6 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-hlwm-workspaces](polybar-scripts/info-hlwm-workspaces/screenshots/1.png)](polybar-scripts/info-hlwm-workspaces/)
 [![info-hexdate](polybar-scripts/info-hexdate/screenshots/1.png)](polybar-scripts/info-hexdate/)
 
-
-info-hlwm-workspaces
 
 ## See also these other user repositories:
 
@@ -91,3 +95,10 @@ info-hlwm-workspaces
 * [nivit/polybar-module-earthquake](https://github.com/nivit/polybar-module-earthquake): Polybar module for showing the latest seismic event on Earth
 * [nivit/polybar-module-news](https://github.com/nivit/polybar-module-news): This polybar module displays RSS/Atom feeds
 * [HackeSta/polybar-kdeconnect](https://github.com/HackeSta/polybar-kdeconnect): KDEConnect module for Polybar
+* [zemmsoares/polybar-node-version](https://github.com/zemmsoares/polybar-node-version): Script to check Node.js version
+* [Jvanrhijn/polybar-spotify](https://github.com/Jvanrhijn/polybar-spotify): shows the current song playing on Spotify
+* [HackeSta/polybar-browsermediacontrol](https://github.com/HackeSta/polybar-browsermediacontrol): Browser Media Control module for Polybar
+* [dietervanhoof/polybar-spotify-controls](https://github.com/dietervanhoof/polybar-spotify-controls): set of modules provides controls for spotify
+* [unode/polypomo](https://github.com/unode/polypomo): Minimalist pomodoro style timer
+* [marioortizmanero/polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control): A feature-full polybar module to control pulseaudio
+* [budlabs/polify](https://github.com/budlabs/polify): A utility that makes it easier to manage and work with polybars IPC-modules

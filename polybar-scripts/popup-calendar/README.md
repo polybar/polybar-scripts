@@ -17,8 +17,9 @@ Change these values if you want:
 
 ```sh
 BAR_HEIGHT=22
-YAD_WIDTH=200
-YAD_HEIGHT=200
+BORDER_SIZE=1
+YAD_WIDTH=222
+YAD_HEIGHT=188
 DATE="$(date +"%a %d %H:%M")"
 ```
 
