@@ -3,7 +3,7 @@
 STATUS=$(nordvpn status | grep Status | tr -d ' ' | cut -d ':' -f2)
 
 if [ "$STATUS" = "Connected" ]; then
-    nordvpn status | grep IP | tr -d ' ' | cut -d ':' -f2
+    echo "%{F#82E0AA}%{A1:nordvpn d:}$(nordvpn status | grep City | cut -d ':' -f2)%{A}%{F-}"
 else
-    echo "#1 VPN DISCONNECTED"
+    echo "%{F#f00}%{A1:nordvpn c:}no vpn%{A}%{F-}"
 fi
