@@ -19,12 +19,7 @@ or run mpv with `--input-ipc-server=/tmp/mpvsocket` option.
 ### 2. Use narrow font like 'Fira Sans Compressed'
 
 It's recommended (but not required), especially for small size monitors.
-There's [ttf-fira-sans](https://www.archlinux.org/packages/community/any/ttf-fira-sans/) package for ArchLinux users.
-
-### 3. Don't forget to make scripts executable:
-```bash
-chmod 755 player-mpv.py mpv-control.sh
-```
+There's [ttf-fira-sans](https://www.archlinux.org/packages/community/any/ttf-fira-sans/) package for [ArchLinux](https://www.archlinux.org/) users.
 
 ## Module
 

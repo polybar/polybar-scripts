@@ -3,11 +3,11 @@
 SOCKET_PATH=/tmp/mpvsocket
 
 get_property () {
-  echo '{ "command": ["get_property", "'$1'"] }' | socat $SOCKET_PATH -
+  echo '{ "command": ["get_property", "'"$1"'"] }' | socat $SOCKET_PATH -
 }
 
 set_property () {
-  xargs -i echo '{ "command": ["set_property", "'$1'", {}] }' | socat $SOCKET_PATH -
+  xargs -i echo '{ "command": ["set_property", "'"$1"'", {}] }' | socat $SOCKET_PATH -
 }
 
 playlist_pos () {
@@ -20,7 +20,7 @@ time_pos () {
 
 case $1 in
   -time)
-    time_pos $2
+    time_pos "$2"
     ;;
   -pause)
     get_property pause | jq '.data | not' | set_property pause
