@@ -6,7 +6,7 @@ A python script that shows current music track or movie from [mpv player](https:
 
 ## Dependencies
 
-bash, python, jq
+bash, python, jq, socat
 
 ## Configuration
 
