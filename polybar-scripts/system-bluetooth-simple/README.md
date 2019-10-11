@@ -17,6 +17,6 @@ A small bluetooth icon to activate bluetooth and see the current status
 type = custom/script
 click-left = ~/polybar-scripts/bluetooth_ON-OFF.sh
 exec = ~/polybar-scripts/bluetooth_connected.sh
-label = %{T5}%output%%{T5}
+label = %output%
 interval = 10
 ```
