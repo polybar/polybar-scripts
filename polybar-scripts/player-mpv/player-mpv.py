@@ -2,13 +2,20 @@
 
 import socket
 import json
-import time
-import sys
 import argparse
-from threading import Thread
 
-def get_property_cmd(property, request_id):
-  return f'{{ "command": ["get_property", "{property}"], "request_id": {request_id} }}\n'.encode('utf-8')
+def get_property_cmd(property, request_id=None):
+  cmd = {'command': ['get_property', property]}
+  if isinstance(request_id, int):
+    cmd['request_id'] = request_id
+  return (json.dumps(cmd) + '\n').encode('utf-8')
+
+def update_property(property, get_new_value):
+  client.send(get_property_cmd(property))
+  msg = client.recv(BUFSIZE).decode('utf-8')
+  value = get_new_value(msg)
+  cmd = {'command': ['set_property', property, value]}
+  client.send((json.dumps(cmd) + '\n').encode('utf-8'))
 
 MPV_SOCKET = '/tmp/mpvsocket'
 BUFSIZE = 1024
@@ -20,7 +27,28 @@ PERCENT_POS_CMD = get_property_cmd('percent-pos', 3)
 parser = argparse.ArgumentParser()
 parser.add_argument('-t', '--truncate', metavar='N', type=int, help='truncate output to N characters')
 parser.add_argument('-c', '--color', default='#fff', metavar='C', help='set color of underline (progress bar)')
+parser.add_argument('-p', '--property', choices=['pause', 'time-pos', 'playlist-pos'], help='update mpv property and exit')
+parser.add_argument('args', nargs=argparse.REMAINDER)
 args = parser.parse_args()
+
+if args.property:
+  try:
+    client = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    client.connect(MPV_SOCKET)
+  except (FileNotFoundError, ConnectionRefusedError):
+    raise RuntimeError('Failed connecting to mpv socket.')
+
+  if args.property == 'pause':
+    update_property('pause', lambda msg: not json.loads(msg)['data'])
+  elif args.property in ['time-pos', 'playlist-pos']:
+    update_property(args.property, lambda msg: json.loads(msg)['data'] + int(args.args[0]))
+
+  client.close()
+  exit()
+
+import time
+import sys
+from threading import Thread
 
 def first_value(data, keys):
   for key in keys:

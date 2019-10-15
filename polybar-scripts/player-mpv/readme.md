@@ -1,12 +1,12 @@
 # Script: player-mpv
 
-A python script that shows current music track or movie from [mpv player](https://mpv.io/).
+A python script that shows current music track or movie title from [mpv player](https://mpv.io/).
 
 ![preview](preview.png)
 
 ## Dependencies
 
-bash, python, jq, socat
+python
 
 ## Configuration
 
@@ -29,12 +29,12 @@ font-1 = "Fira Sans Compressed:style=Regular:size=7;3"
 
 [module/mpv]
 type = custom/script
-exec = ~/.config/polybar/player-mpv/player-mpv.py -t 42 -c '#abb2bf'
+exec = ~/.config/polybar/player-mpv.py -t 42 -c '#abb2bf'
 label-font = 2
 tail = true
-click-left = ~/.config/polybar/player-mpv/mpv-control.sh -pause
-click-middle = ~/.config/polybar/player-mpv/mpv-control.sh -prev
-click-right = ~/.config/polybar/player-mpv/mpv-control.sh -next
-scroll-up = ~/.config/polybar/player-mpv/mpv-control.sh -time -10
-scroll-down = ~/.config/polybar/player-mpv/mpv-control.sh -time +10
+click-left = ~/.config/polybar/player-mpv.py -p pause
+click-middle = ~/.config/polybar/player-mpv.py -p playlist-pos -1
+click-right = ~/.config/polybar/player-mpv.py -p playlist-pos +1
+scroll-up = ~/.config/polybar/player-mpv.py -p time-pos -10
+scroll-down = ~/.config/polybar/player-mpv.py -p time-pos +10
 ```
