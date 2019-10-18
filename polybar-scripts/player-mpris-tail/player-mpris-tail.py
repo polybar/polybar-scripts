@@ -41,7 +41,18 @@ class PlayerManager:
     
     def connect(self):
         self._session_bus.add_signal_receiver(self.onOwnerChangedName, 'NameOwnerChanged')
+        self._session_bus.add_signal_receiver(self.onMPRISSignal, None, None, None, '/org/mpris/MediaPlayer2',
+            sender_keyword='sender', member_keyword='member')
     
+    def onMPRISSignal(self, interface, properties, signature, member = None, sender = None):
+        if (member == 'PropertiesChanged'):
+            if (sender in self.players):
+                player = self.players[sender]
+                # If we know this player, but haven't been able to set up a signal handler
+                if ('properties_changed' not in player._signals):
+                    # Then trigger the signal handler manually
+                    player.onPropertiesChanged(interface, properties, signature)
+
     def onOwnerChangedName(self, bus_name, old_owner, new_owner):
         if self.busNameIsAPlayer(bus_name):
             if new_owner and not old_owner:
