@@ -52,7 +52,7 @@ class PlayerManager:
                 self.changePlayerOwner(bus_name, old_owner, new_owner)
 
     def busNameIsAPlayer(self, bus_name):
-        return bus_name.startswith('org.mpris.MediaPlayer2') and bus_name.split('.')[-1] not in self.blacklist
+        return bus_name.startswith('org.mpris.MediaPlayer2') and bus_name.split('.')[3] not in self.blacklist
 
     def refreshPlayerList(self):
         player_bus_names = [ bus_name for bus_name in self._session_bus.list_names() if self.busNameIsAPlayer(bus_name) ]
@@ -431,10 +431,10 @@ else:
         current_player.printStatus()
     elif args.command == 'list':
         print("\n".join(sorted([
-            "{} : {}".format(player.bus_name.split('.')[-1], player.status)
+            "{} : {}".format(player.bus_name.split('.')[3], player.status)
             for player in player_manager.players.values() ])))
     elif args.command == 'current' and current_player:
-        print("{} : {}".format(current_player.bus_name.split('.')[-1], current_player.status))
+        print("{} : {}".format(current_player.bus_name.split('.')[3], current_player.status))
     elif args.command == 'metadata' and current_player:
         print(_dbusValueToPython(current_player._metadata))
     elif args.command == 'raise' and current_player:
