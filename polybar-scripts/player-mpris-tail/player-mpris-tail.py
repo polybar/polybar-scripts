@@ -67,8 +67,9 @@ class PlayerManager:
         self.players[player.owner] = player
         
     def removePlayer(self, owner):
-        self.players[owner].disconnect()
-        del self.players[owner]
+        if owner in self.players:
+            self.players[owner].disconnect()
+            del self.players[owner]
         if len(self.players) == 0:
             _printFlush(ICON_NONE)
 
