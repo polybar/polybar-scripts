@@ -221,10 +221,15 @@ class Player:
     def _parseMetadata(self):
         if self._metadata != None:
             artist = _getProperty(self._metadata, 'xesam:artist', [''])
-            if len(artist):
+            if artist != None and len(artist):
                 self.metadata['artist'] = re.sub(SAFE_TAG_REGEX, """\1\1""", artist[0])
             else:
-                self.metadata['artist'] = '';
+                artists = _getProperty(self._metadata, 'xesam:artists', [''])
+                if artists != None and len(artists):
+                    # Note: This only grabs the first artist
+                    self.metadata['artist'] = re.sub(SAFE_TAG_REGEX, """\1\1""", artist[0])
+                else:
+                    self.metadata['artist'] = '';
             self.metadata['album']  = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:album', ''))
             self.metadata['title']  = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:title', ''))
             self.metadata['track']  = _getProperty(self._metadata, 'xesam:trackNumber', '')
