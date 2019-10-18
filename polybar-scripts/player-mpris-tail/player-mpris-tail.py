@@ -41,7 +41,24 @@ class PlayerManager:
     
     def connect(self):
         self._session_bus.add_signal_receiver(self.onOwnerChangedName, 'NameOwnerChanged')
+        self._session_bus.add_signal_receiver(self.onMPRISSignal, path = '/org/mpris/MediaPlayer2',
+            sender_keyword='sender', member_keyword='member')
     
+    def onMPRISSignal(self, interface, properties, signature, member = None, sender = None):
+        if (member == 'PropertiesChanged'):
+            if (sender in self.players):
+                player = self.players[sender]
+                # If we know this player, but haven't been able to set up a signal handler
+                if ('properties_changed' not in player._signals):
+                    # Then trigger the signal handler manually
+                    player.onPropertiesChanged(interface, properties, signature)
+            else:
+                # If we don't know this player, get its name and add it
+                bus_name = self.getBusNameFromOwner(sender)
+                self.addPlayer(bus_name, sender)
+                player = self.players[sender]
+                player.onPropertiesChanged(interface, properties, signature)
+
     def onOwnerChangedName(self, bus_name, old_owner, new_owner):
         if self.busNameIsAPlayer(bus_name):
             if new_owner and not old_owner:
@@ -50,6 +67,13 @@ class PlayerManager:
                 self.removePlayer(old_owner)
             else:
                 self.changePlayerOwner(bus_name, old_owner, new_owner)
+
+    def getBusNameFromOwner(self, owner):
+        player_bus_names = [ bus_name for bus_name in self._session_bus.list_names() if self.busNameIsAPlayer(bus_name) ]
+        for player_bus_name in player_bus_names:
+            player_bus_owner = self._session_bus.get_name_owner(player_bus_name)
+            if owner == player_bus_owner:
+                return player_bus_name
 
     def busNameIsAPlayer(self, bus_name):
         return bus_name.startswith('org.mpris.MediaPlayer2') and bus_name.split('.')[3] not in self.blacklist
