@@ -70,8 +70,14 @@ class PlayerManager:
         if owner in self.players:
             self.players[owner].disconnect()
             del self.players[owner]
+        # If there are no more players, clear the output
         if len(self.players) == 0:
             _printFlush(ICON_NONE)
+        # Else, print the output of the next active player
+        else:
+            players = self.getSortedPlayerOwnerList()
+            if len(players) > 0:
+                self.players[players[0]].printStatus()
 
     def changePlayerOwner(self, bus_name, old_owner, new_owner):
         player = Player(self._session_bus, bus_name, owner = new_owner, connect = self._connect, _print = self.print)
