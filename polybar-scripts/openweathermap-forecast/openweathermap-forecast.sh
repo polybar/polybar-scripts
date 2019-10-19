@@ -31,7 +31,7 @@ SYMBOL="°"
 
 API="https://api.openweathermap.org/data/2.5"
 
-if [ ! -z $CITY ]; then
+if [ -n "$CITY" ]; then
     if [ "$CITY" -eq "$CITY" ] 2>/dev/null; then
         CITY_PARAM="id=$CITY"
     else
@@ -43,7 +43,7 @@ if [ ! -z $CITY ]; then
 else
     location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
 
-    if [ ! -z "$location" ]; then
+    if [ -n "$location" ]; then
         location_lat="$(echo "$location" | jq '.location.lat')"
         location_lon="$(echo "$location" | jq '.location.lng')"
 
@@ -52,7 +52,7 @@ else
     fi
 fi
 
-if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
+if [ -n "$current" ] && [ -n "$forecast" ]; then
     current_temp=$(echo "$current" | jq ".main.temp" | cut -d "." -f 1)
     current_icon=$(echo "$current" | jq -r ".weather[0].icon")
 

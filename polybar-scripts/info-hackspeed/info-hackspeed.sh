@@ -1,4 +1,5 @@
 #!/bin/sh
+# shellcheck disable=SC2016,SC2059
 
 KEYBOARD_ID="AT Translated Set 2 keyboard"
 
@@ -18,7 +19,8 @@ LAYOUT=qwerty
 case "$LAYOUT" in
 	qwerty) CONDITION='($3 >= 10 && $3 <= 19) || ($3 >= 24 && $3 <= 33) || ($3 >= 37 && $3 <= 53) || ($3 >= 52 && $3 <= 58)'; ;;
 	azerty) CONDITION='($3 >= 10 && $3 <= 19) || ($3 >= 24 && $3 <= 33) || ($3 >= 37 && $3 <= 54) || ($3 >= 52 && $3 <= 57)'; ;;
-	dontcare) CONDITION='1'; ;; # Just register all key presses, not only letters and numbers
+	qwertz) CONDITION='($3 >= 10 && $3 <= 20) || ($3 >= 24 && $3 <= 34) || ($3 == 36) || ($3 >= 38 && $3 <= 48) || ($3 >= 52 && $3 <= 58)'; ;;
+        dontcare) CONDITION='1'; ;; # Just register all key presses, not only letters and numbers
 	*) echo "Unsupported layout \"$LAYOUT\""; exit 1; ;;
 esac
 

@@ -23,11 +23,11 @@ class PlayerManager:
         self.blacklist = blacklist
         self._connect = connect
         self._session_bus = dbus.SessionBus()
-        self._last_status = ''
         self.players = {}
 
         self.print_queue = []
         self.connected = False
+        self.player_states = {}
         
         self.refreshPlayerList()
 
@@ -41,7 +41,24 @@ class PlayerManager:
     
     def connect(self):
         self._session_bus.add_signal_receiver(self.onOwnerChangedName, 'NameOwnerChanged')
+        self._session_bus.add_signal_receiver(self.onMPRISSignal, path = '/org/mpris/MediaPlayer2',
+            sender_keyword='sender', member_keyword='member')
     
+    def onMPRISSignal(self, interface, properties, signature, member = None, sender = None):
+        if (member == 'PropertiesChanged'):
+            if (sender in self.players):
+                player = self.players[sender]
+                # If we know this player, but haven't been able to set up a signal handler
+                if ('properties_changed' not in player._signals):
+                    # Then trigger the signal handler manually
+                    player.onPropertiesChanged(interface, properties, signature)
+            else:
+                # If we don't know this player, get its name and add it
+                bus_name = self.getBusNameFromOwner(sender)
+                self.addPlayer(bus_name, sender)
+                player = self.players[sender]
+                player.onPropertiesChanged(interface, properties, signature)
+
     def onOwnerChangedName(self, bus_name, old_owner, new_owner):
         if self.busNameIsAPlayer(bus_name):
             if new_owner and not old_owner:
@@ -51,8 +68,15 @@ class PlayerManager:
             else:
                 self.changePlayerOwner(bus_name, old_owner, new_owner)
 
+    def getBusNameFromOwner(self, owner):
+        player_bus_names = [ bus_name for bus_name in self._session_bus.list_names() if self.busNameIsAPlayer(bus_name) ]
+        for player_bus_name in player_bus_names:
+            player_bus_owner = self._session_bus.get_name_owner(player_bus_name)
+            if owner == player_bus_owner:
+                return player_bus_name
+
     def busNameIsAPlayer(self, bus_name):
-        return bus_name.startswith('org.mpris.MediaPlayer2') and bus_name.split('.')[-1] not in self.blacklist
+        return bus_name.startswith('org.mpris.MediaPlayer2') and bus_name.split('.')[3] not in self.blacklist
 
     def refreshPlayerList(self):
         player_bus_names = [ bus_name for bus_name in self._session_bus.list_names() if self.busNameIsAPlayer(bus_name) ]
@@ -100,10 +124,14 @@ class PlayerManager:
         return self.players[playing_players[0]] if playing_players else None
 
     def print(self, status, player):
+        self.player_states[player.bus_name] = status
+
         if self.connected:
             current_player = self.getCurrentPlayer()
-            if (current_player == None or current_player.owner == player.owner):
-                _printFlush(status)
+            if current_player != None:
+                _printFlush(self.player_states[current_player.bus_name])
+            else:
+                _printFlush(ICON_STOPPED)
         else:
             self.print_queue.append([status, player])
     
@@ -126,6 +154,12 @@ class Player:
             'title'  : '',
             'track'  : 0
         }
+
+        self._rate = 1.
+        self._positionAtLastUpdate = 0.
+        self._timeAtLastUpdate = time.time()
+        self._positionTimerRunning = False
+
         self._metadata = None
         self.status = 'stopped'
         self.icon = ICON_NONE
@@ -150,6 +184,7 @@ class Player:
         self._playerRaise     = self._media_interface.get_dbus_method('Raise', dbus_interface=None)
         self._signals = {}
 
+        self.refreshPosition()
         self.refreshStatus()
         self.refreshMetadata()
 
@@ -177,6 +212,7 @@ class Player:
             introspect_xml = self._introspect(self.bus_name, '/')
             if 'TrackMetadataChanged' in introspect_xml:
                 self._signals['track_metadata_changed'] = self._session_bus.add_signal_receiver(self.onMetadataChanged, 'TrackMetadataChanged', self.bus_name)
+            self._signals['seeked'] = self._player_interface.connect_to_signal('Seeked', self.onSeeked)
             self._signals['properties_changed'] = self._properties_interface.connect_to_signal('PropertiesChanged', self.onPropertiesChanged)
     
     def disconnect(self):
@@ -191,6 +227,7 @@ class Player:
         try:
             self.status = str(self._getProperty('org.mpris.MediaPlayer2.Player', 'PlaybackStatus')).lower()
             self.updateIcon()
+            self.checkPositionTimer()
         except dbus.exceptions.DBusException:
             self.disconnect()
 
@@ -272,11 +309,45 @@ class Player:
             status = str(properties[dbus.String('PlaybackStatus')]).lower()
             if status != self.status:
                 self.status = status
+                self.checkPositionTimer()
                 self.updateIcon()
                 updated = True
-        
+        if dbus.String('Rate') in properties and dbus.String('PlaybackStatus') not in properties:
+            self.refreshStatus()
+        if NEEDS_POSITION and dbus.String('Rate') in properties:
+            rate = properties[dbus.String('Rate')]
+            if rate != self._rate:
+                self._rate = rate
+                self.refreshPosition()
+
         if updated:
+            self.refreshPosition()
             self.printStatus()
+
+    def checkPositionTimer(self):
+        if NEEDS_POSITION and self.status == 'playing' and not self._positionTimerRunning:
+            self._positionTimerRunning = True
+            GLib.timeout_add_seconds(1, self._positionTimer)
+
+    def onSeeked(self, position):
+        self.refreshPosition()
+        self.printStatus()
+
+    def _positionTimer(self):
+        self.printStatus()
+        self._positionTimerRunning = self.status == 'playing'
+        return self._positionTimerRunning
+
+    def refreshPosition(self):
+        time_us = self._getProperty('org.mpris.MediaPlayer2.Player', 'Position')
+        self._timeAtLastUpdate = time.time()
+        self._positionAtLastUpdate = time_us / 1000000
+
+    def _getPosition(self):
+        if self.status == 'playing':
+            return self._positionAtLastUpdate + self._rate * (time.time() - self._timeAtLastUpdate)
+        else:
+            return self._positionAtLastUpdate
 
     def _statusReplace(self, match, metadata):
         tag = match.group('tag')
@@ -319,6 +390,8 @@ class Player:
     def printStatus(self):
         if self.status in [ 'playing', 'paused' ]:
             metadata = { **self.metadata, 'icon': self.icon, 'icon-reversed': self.icon_reversed }
+            if NEEDS_POSITION:
+                metadata['position'] = time.strftime("%M:%S", time.gmtime(self._getPosition()))
             # replace metadata tags in text
             text = re.sub(FORMAT_REGEX, lambda match: self._statusReplace(match, metadata), FORMAT_STRING)
             # restore polybar tag formatting and replace any remaining metadata tags after that
@@ -409,6 +482,8 @@ parser.add_argument('--icon-none', default='')
 args = parser.parse_args()
 
 FORMAT_STRING = re.sub(r'%\{(.*?)\}(.*?)%\{(.*?)\}', r'􏿿p􏿿\1􏿿p􏿿\2􏿿p􏿿\3􏿿p􏿿', args.format)
+NEEDS_POSITION = "{position}" in FORMAT_STRING
+
 TRUNCATE_STRING = args.truncate_text
 ICON_PLAYING = args.icon_playing
 ICON_PAUSED = args.icon_paused
