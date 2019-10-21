@@ -271,7 +271,7 @@ class Player:
                 artists = _getProperty(self._metadata, 'xesam:artists', [''])
                 if artists != None and len(artists):
                     # Note: This only grabs the first artist
-                    self.metadata['artist'] = re.sub(SAFE_TAG_REGEX, """\1\1""", artist[0])
+                    self.metadata['artist'] = re.sub(SAFE_TAG_REGEX, """\1\1""", artists[0])
                 else:
                     self.metadata['artist'] = '';
             self.metadata['album']  = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:album', ''))
