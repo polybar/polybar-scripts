@@ -506,10 +506,10 @@ else:
         current_player.printStatus()
     elif args.command == 'list':
         print("\n".join(sorted([
-            "{} : {}".format(player.bus_name.split('.')[-1], player.status)
+            "{} : {}".format(player.bus_name.split('.')[3], player.status)
             for player in player_manager.players.values() ])))
     elif args.command == 'current' and current_player:
-        print("{} : {}".format(current_player.bus_name.split('.')[-1], current_player.status))
+        print("{} : {}".format(current_player.bus_name.split('.')[3], current_player.status))
     elif args.command == 'metadata' and current_player:
         print(_dbusValueToPython(current_player._metadata))
     elif args.command == 'raise' and current_player:
