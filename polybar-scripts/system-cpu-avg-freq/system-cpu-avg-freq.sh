@@ -3,7 +3,6 @@
 c=0;
 t=0;
 
-#for i in $( awk '/MHz/ {print $4}' < /proc/cpuinfo )
 while read -r i
 do
     t=$( echo "$t + $i" | bc )
