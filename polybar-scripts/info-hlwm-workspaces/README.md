@@ -22,6 +22,6 @@ On its own the script is pretty plain as there are no colors. There are a bunch 
 type = custom/script
 exec = ~/polybar-scripts/info-hlwm-workspaces.sh
 tail = true
-scroll-up = herbstclient use_index -1 --skip-visible
-scroll-down = herbstclient use_index +1 --skip-visible
+scroll-up = herbstclient use_index -1 --skip-visible &
+scroll-down = herbstclient use_index +1 --skip-visible &
 ```

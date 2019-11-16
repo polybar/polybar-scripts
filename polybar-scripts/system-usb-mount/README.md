@@ -20,6 +20,6 @@ The mount option has a feature: You can also start a file manager and open the d
 type = custom/script
 exec = ~/polybar-scripts/system-usb-mount.sh
 interval = 5
-click-left = ~/polybar-scripts/system-usb-mount.sh --mount
-click-right = ~/polybar-scripts/system-usb-mount.sh --unmount
+click-left = ~/polybar-scripts/system-usb-mount.sh --mount &
+click-right = ~/polybar-scripts/system-usb-mount.sh --unmount &
 ```

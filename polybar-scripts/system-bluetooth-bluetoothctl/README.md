@@ -24,5 +24,5 @@ Use the `set-alias` feature of `bluetoothctl` to customize your device names.
 type = custom/script
 exec = ~/polybar-scripts/system-bluetooth-bluetoothctl.sh
 tail = true
-click-left = ~/polybar-scripts/system-bluetooth-bluetoothctl.sh --toggle
+click-left = ~/polybar-scripts/system-bluetooth-bluetoothctl.sh --toggle &
 ```

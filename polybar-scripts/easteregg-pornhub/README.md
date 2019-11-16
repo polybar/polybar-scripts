@@ -26,7 +26,7 @@ underline-size = 4
 type = custom/script
 exec = echo " hub "
 interval = 3600
-click-left = "firefox --private-window https://pornhub.com/random"
+click-left = "firefox --private-window https://pornhub.com/random" &
 
 format = <label>
 format-prefix = "  Porn "

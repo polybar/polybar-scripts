@@ -30,6 +30,6 @@ Copy `95-usb.rules` to `/etc/udev/rules.d/95-usb.rules`. Make sure that the path
 type = custom/script
 exec = ~/polybar-scripts/system-usb-udev.sh
 tail = true
-click-left = ~/polybar-scripts/system-usb-udev.sh --mount
-click-right = ~/polybar-scripts/system-usb-udev.sh --unmount
+click-left = ~/polybar-scripts/system-usb-udev.sh --mount &
+click-right = ~/polybar-scripts/system-usb-udev.sh --unmount &
 ```

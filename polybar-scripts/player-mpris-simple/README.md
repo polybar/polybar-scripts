@@ -17,7 +17,7 @@ A small script that shows the current track.
 type = custom/script
 exec = ~/polybar-scripts/player-mpris-simple.sh
 interval = 3
-click-left = playerctl previous
-click-right = playerctl next
-click-middle = playerctl play-pause
+click-left = playerctl previous &
+click-right = playerctl next &
+click-middle = playerctl play-pause &
 ```

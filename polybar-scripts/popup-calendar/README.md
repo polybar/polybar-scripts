@@ -37,5 +37,5 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 type = custom/script
 exec = ~/polybar-scripts/popup-calendar.sh
 interval = 5
-click-left = ~/polybar-scripts/popup-calendar.sh --popup
+click-left = ~/polybar-scripts/popup-calendar.sh --popup &
 ```

@@ -20,7 +20,7 @@ type = custom/script
 exec = ~/polybar-scripts/pulseaudio-tail.sh
 tail = true
 click-right = exec pavucontrol &
-click-left = ~/polybar-scripts/pulseaudio-tail.sh --mute
-scroll-up = ~/polybar-scripts/pulseaudio-tail.sh --up
-scroll-down = ~/polybar-scripts/pulseaudio-tail.sh --down
+click-left = ~/polybar-scripts/pulseaudio-tail.sh --mute &
+scroll-up = ~/polybar-scripts/pulseaudio-tail.sh --up &
+scroll-down = ~/polybar-scripts/pulseaudio-tail.sh --down &
 ```

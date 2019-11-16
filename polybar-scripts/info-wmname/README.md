@@ -17,5 +17,5 @@ The BSPWM window manger, and maybe some more, has some problems with java scalin
 type = custom/script
 exec = ~/polybar-scripts/info-wmname.sh
 interval = 5
-click-left = ~/polybar-scripts/info-wmname.sh --toggle
+click-left = ~/polybar-scripts/info-wmname.sh --toggle &
 ```

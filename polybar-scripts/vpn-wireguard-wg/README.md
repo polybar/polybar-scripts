@@ -22,5 +22,5 @@ user ALL=(ALL) NOPASSWD: /usr/bin/wg-quick
 type = custom/script
 exec = ~/polybar-scripts/vpn-wireguard-wg.sh
 interval = 5
-click-left = ~/polybar-scripts//vpn-wireguard-wg.sh --toggle
+click-left = ~/polybar-scripts//vpn-wireguard-wg.sh --toggle &
 ```

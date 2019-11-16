@@ -17,5 +17,5 @@ This only will work for notebook users with a dedicated NVIDIA card and an Intel
 type = custom/script
 exec = ~/polybar-scripts/system-nvidia-bbswitch.sh
 interval = 5
-click-left = "optirun -b none nvidia-settings -c :8"
+click-left = "optirun -b none nvidia-settings -c :8" &
 ```

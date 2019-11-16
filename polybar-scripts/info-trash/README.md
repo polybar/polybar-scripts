@@ -12,5 +12,5 @@ This script count the files in you trash directory.
 type = custom/script
 exec = ~/polybar-scripts/info-trash.sh
 interval = 60
-click-left = ~/polybar-scripts/info-trash.sh --clean
+click-left = ~/polybar-scripts/info-trash.sh --clean &
 ```

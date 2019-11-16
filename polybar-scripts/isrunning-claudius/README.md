@@ -12,5 +12,5 @@ Left click launches or closes claudius.
 type = custom/script
 exec = ~/polybar-scripts/isrunning-claudius.sh
 interval = 5
-click-left = ~/polybar-scripts/isrunning-claudius --toggle
+click-left = ~/polybar-scripts/isrunning-claudius --toggle &
 ```

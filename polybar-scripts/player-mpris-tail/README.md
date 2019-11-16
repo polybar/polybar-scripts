@@ -113,9 +113,9 @@ type = custom/script
 exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {artist} - {title}'
 tail = true
 label = %output%
-click-left = ~/polybar-scripts/player-mpris-tail.py previous
-click-right = ~/polybar-scripts/player-mpris-tail.py next
-click-middle = ~/polybar-scripts/player-mpris-tail.py play-pause
+click-left = ~/polybar-scripts/player-mpris-tail.py previous &
+click-right = ~/polybar-scripts/player-mpris-tail.py next &
+click-middle = ~/polybar-scripts/player-mpris-tail.py play-pause &
 ```
 Example: `⏵ Artist - Title`
 
@@ -127,9 +127,9 @@ type = custom/script
 exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {:artist:t5:{artist}:}{:artist: - :}{:t4:{title}:}'
 tail = true
 label = %output%
-click-left = ~/polybar-scripts/player-mpris-tail.py previous
-click-right = ~/polybar-scripts/player-mpris-tail.py next
-click-middle = ~/polybar-scripts/player-mpris-tail.py play-pause
+click-left = ~/polybar-scripts/player-mpris-tail.py previous &
+click-right = ~/polybar-scripts/player-mpris-tail.py next &
+click-middle = ~/polybar-scripts/player-mpris-tail.py play-pause &
 ```
 
 Example: `⏵ Artis… - Titl…` or `⏵ Titl…`

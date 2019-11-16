@@ -12,7 +12,7 @@ A script that displays information about the current track (artist, title, posit
 type = custom/script
 exec = ~/polybar-scripts/player-cmus.sh
 interval = 5
-click-left = cmus-remote -n
-click-right = cmus-remote -r
-click-middle = cmus-remote -u
+click-left = cmus-remote -n &
+click-right = cmus-remote -r &
+click-middle = cmus-remote -u &
 ```

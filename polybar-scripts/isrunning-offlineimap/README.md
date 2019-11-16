@@ -10,5 +10,5 @@ A script that shows if offlineimap is running. The scripts require you to have s
 type = custom/script
 exec = ~/polybar-scripts/offlineimap-isrunning.sh
 interval = 5
-click-left = ~/polybar-scripts/offlineimap-isrunning.sh --toggle
+click-left = ~/polybar-scripts/offlineimap-isrunning.sh --toggle &
 ```
