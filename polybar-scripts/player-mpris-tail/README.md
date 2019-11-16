@@ -2,14 +2,24 @@
 
 This script displays the current track and the play-pause status without polling. Information is obtained by listening to MPRIS events, so it is updated instantaneously on change.
 
+![player-mpris-tail](screenshots/1.png) ![player-mpris-tail](screenshots/2.png)
+
+
+## Dependencies
+
+* `python-dbus`
+* `python-gobject`
+* `python-gi`
+
+
+## Configuration
+
 The format of the output can be defined by passing an `-f` or `--format` argument. This argument supports metadata replacement using `{tag}` (e.g. `{title}`) as well as more advanced formatting, described below.
 
 Players can be blacklisted by passing a `-b` or `--blacklist` argument. As an example, VLC can be blacklisted by passing `-b vlc`. To get a list of the current running players (and their status), run the script as `player-mpris-tail.py list`.
 
-![player-mpris-tail](screenshots/1.png) ![player-mpris-tail](screenshots/2.png)
 
-
-## Commands
+### Commands
 
 The current player can be controlled by passing one of the following commands:
 
@@ -33,7 +43,7 @@ list     | List the detected players and their status
 metadata | Print the metadata object for the current track
 
 
-## Arguments
+### Arguments
 
 The following arguments are supported:
 
@@ -48,7 +58,7 @@ Argument | Description | Default
 --icon-none       | Use the given text as the icon for when no player is active | ``
 
 
-## Formatting
+### Formatting
 
 Tags can be printed by surrounding them with `{` and `}`. Polybar formatting can also be given and will be passed through, including substituted tags and formatters.
 
@@ -86,47 +96,42 @@ w     | Number | Limit the width of the string to `number` | `{:w3:Hello:}`     
 t     | Number | Truncate width of the string to `number`. If the string is shorter than or equal to `number` it is printed as given, else the string is truncated and appended a truncator text | `{:t3:Hello:}` | `He…`
 
 
-## Dependencies
-
-* `python-dbus`
-* `python-gobject`
-* `python-gi`
-
-
 ## Module
 
 ### Basic output
+
 ```ini
 [module/player-mpris-tail]
 type = custom/script
 exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {artist} - {title}'
 tail = true
-label = %output%
 ```
+
 Example: `⏵ Artist - Title`
 
 
-### Basic output + mouse controls
+### Basic output and mouse controls
+
 ```ini
 [module/player-mpris-tail]
 type = custom/script
 exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {artist} - {title}'
 tail = true
-label = %output%
 click-left = ~/polybar-scripts/player-mpris-tail.py previous &
 click-right = ~/polybar-scripts/player-mpris-tail.py next &
 click-middle = ~/polybar-scripts/player-mpris-tail.py play-pause &
 ```
+
 Example: `⏵ Artist - Title`
 
 
 ### Output using formatters
+
 ```ini
 [module/player-mpris-tail]
 type = custom/script
 exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {:artist:t5:{artist}:}{:artist: - :}{:t4:{title}:}'
 tail = true
-label = %output%
 click-left = ~/polybar-scripts/player-mpris-tail.py previous &
 click-right = ~/polybar-scripts/player-mpris-tail.py next &
 click-middle = ~/polybar-scripts/player-mpris-tail.py play-pause &
@@ -136,24 +141,24 @@ Example: `⏵ Artis… - Titl…` or `⏵ Titl…`
 
 
 ### Output using formatters and Polybar action handlers
+
 ```ini
 [module/player-mpris-tail]
 type = custom/script
 exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {:artist:t18:{artist}:}{:artist: - :}{:t20:{title}:}  %{A1:~/polybar-scripts/player-mpris-tail.py previous:} ⏮ %{A} %{A1:~/polybar-scripts/player-mpris-tail.py play-pause:} {icon-reversed} %{A} %{A1:~/polybar-scripts/player-mpris-tail.py next:} ⏭ %{A}'
 tail = true
-label = %output%
 ```
 
 Example: `⏵ Artis… - Titl…   ⏮  ⏸  ⏭ ` or `⏵ Titl…   ⏮  ⏸  ⏭ ` or `⏸ Titl…   ⏮  ⏵  ⏭ `
 
 
 ### Output using formatters, Polybar action handlers and blacklisting
+
 ```ini
 [module/player-mpris-tail]
 type = custom/script
 exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {:artist:t18:{artist}:}{:artist: - :}{:t20:{title}:}  %{A1:~/polybar-scripts/player-mpris-tail.py previous -b vlc -b plasma-browser-integration:} ⏮ %{A} %{A1:~/polybar-scripts/player-mpris-tail.py play-pause -b vlc -b plasma-browser-integration:} {icon-reversed} %{A} %{A1:~/polybar-scripts/player-mpris-tail.py next -b vlc -b plasma-browser-integration:} ⏭ %{A}' -b vlc -b plasma-browser-integration
 tail = true
-label = %output%
 ```
 
 Example: `⏵ Artis… - Titl…   ⏮  ⏸  ⏭ ` or `⏵ Titl…   ⏮  ⏸  ⏭ ` or `⏸ Titl…   ⏮  ⏵  ⏭ `
