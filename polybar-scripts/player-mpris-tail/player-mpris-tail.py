@@ -41,23 +41,23 @@ class PlayerManager:
 
     def connect(self):
         self._session_bus.add_signal_receiver(self.onOwnerChangedName, 'NameOwnerChanged')
-        self._session_bus.add_signal_receiver(self.onMPRISSignal, path = '/org/mpris/MediaPlayer2',
-            sender_keyword='sender', member_keyword='member')
+        self._session_bus.add_signal_receiver(self.onChangedProperties, 'PropertiesChanged',
+                                              path = '/org/mpris/MediaPlayer2',
+                                              sender_keyword='sender')
 
-    def onMPRISSignal(self, interface, properties, signature, member = None, sender = None):
-        if (member == 'PropertiesChanged'):
-            if (sender in self.players):
-                player = self.players[sender]
-                # If we know this player, but haven't been able to set up a signal handler
-                if ('properties_changed' not in player._signals):
-                    # Then trigger the signal handler manually
-                    player.onPropertiesChanged(interface, properties, signature)
-            else:
-                # If we don't know this player, get its name and add it
-                bus_name = self.getBusNameFromOwner(sender)
-                self.addPlayer(bus_name, sender)
-                player = self.players[sender]
+    def onChangedProperties(self, interface, properties, signature, sender = None):
+        if sender in self.players:
+            player = self.players[sender]
+            # If we know this player, but haven't been able to set up a signal handler
+            if 'properties_changed' not in player._signals:
+                # Then trigger the signal handler manually
                 player.onPropertiesChanged(interface, properties, signature)
+        else:
+            # If we don't know this player, get its name and add it
+            bus_name = self.getBusNameFromOwner(sender)
+            self.addPlayer(bus_name, sender)
+            player = self.players[sender]
+            player.onPropertiesChanged(interface, properties, signature)
 
     def onOwnerChangedName(self, bus_name, old_owner, new_owner):
         if self.busNameIsAPlayer(bus_name):
