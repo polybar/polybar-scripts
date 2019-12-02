@@ -1,11 +1,6 @@
 # Script: system-cpu-frequency
 
-A shell script which displays the cpu frequency.
-
-
-## Dependencies
-
-* `cpupower`
+A shell script that shows the average core frequency (average over number, not over time) in GHz.
 
 
 ## Module
@@ -14,5 +9,5 @@ A shell script which displays the cpu frequency.
 [module/system-cpu-frequency]
 type = custom/script
 exec = ~/polybar-scripts/system-cpu-frequency.sh
-interval = 5
+interval = 10
 ```
