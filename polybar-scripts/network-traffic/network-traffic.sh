@@ -26,7 +26,9 @@ print_bit() {
     echo "$bit"
 }
 
-INTERVAL=10
+INTERVAL=1
+DOWN_THRESHOLD=1000 # in bytes
+UP_THRESHOLD=1000 # in bytes
 INTERFACES="enp0s25 wlp3s0"
 
 declare -A bytes
@@ -36,6 +38,7 @@ for interface in $INTERFACES; do
     bytes[past_tx_$interface]="$(cat /sys/class/net/"$interface"/statistics/tx_bytes)"
 done
 
+iszero=""
 while true; do
     down=0
     up=0
@@ -54,8 +57,19 @@ while true; do
         bytes[past_tx_$interface]=${bytes[now_tx_$interface]}
     done
 
-    echo "Download: $(print_bytes $down) / Upload: $(print_bytes $up)"
-    # echo "Download: $(print_bit $down) / Upload: $(print_bit $up)"
+    if [ $down -gt $DOWN_THRESHOLD ] || [ $up -gt $UP_THRESHOLD ]
+    then
+    	echo "Download: $(print_bytes $down) / Upload: $(print_bytes $up)"
+        # echo "Download: $(print_bit $down) / Upload: $(print_bit $up)"
+    	# echo " $(print_bytes $down)  $(print_bytes $up)"
+	iszero=""
+    elif [ -z $iszero ]
+    then
+	    echo "Download: $(print_bytes $down) / Upload: $(print_bytes $up)"
+    	# echo "Download: $(print_bit $down) / Upload: $(print_bit $up)"
+	    # echo " $(print_bytes $down)  $(print_bytes $up)"
+	    iszero="1"
+    fi
 
     sleep $INTERVAL
 done
