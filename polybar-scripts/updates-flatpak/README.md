@@ -3,11 +3,6 @@
 A script that shows if there are updates for FlatPak.
 
 
-## Dependencies
-
-* `flatpak` to run `flatpak update`
-
-
 ## Module
 
 ```ini
