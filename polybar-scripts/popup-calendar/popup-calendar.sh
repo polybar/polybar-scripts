@@ -36,7 +36,7 @@ case "$1" in
         --title="yad-calendar" --borders=0 >/dev/null &
     ;;
 *)
-    if [[ -n $1 ]]; then
+    if [[ ! -z $1 ]]; then
         DATE=$( date "+$1" )
     fi
     echo "$DATE"
