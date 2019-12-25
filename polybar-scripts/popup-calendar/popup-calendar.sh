@@ -4,7 +4,11 @@ BAR_HEIGHT=22  # polybar height
 BORDER_SIZE=1  # border size from your wm settings
 YAD_WIDTH=222  # 222 is minimum possible value
 YAD_HEIGHT=193 # 193 is minimum possible value
-DATE="$(date +"%a %d %H:%M")"
+DATE=$(date +"%a %d %H:%M")
+
+POPUP=
+
+
 
 case "$1" in
 --popup)
@@ -36,6 +40,9 @@ case "$1" in
         --title="yad-calendar" --borders=0 >/dev/null &
     ;;
 *)
+    if [[ -n $1 ]]; then
+        DATE=$( date "+$1" )
+    fi
     echo "$DATE"
     ;;
 esac
