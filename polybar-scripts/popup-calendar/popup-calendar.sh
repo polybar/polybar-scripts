@@ -37,7 +37,7 @@ case "$1" in
     ;;
 *)
     if [ -n "$1" ]; then
-        DATE=$( date +$1 )
+        DATE=$( date "+$1" )
     fi
     echo "$DATE"
     ;;
