@@ -1,4 +1,4 @@
-# Script: einfo-thermine
+# Script: info-ethermine
 
 This script reports the current hashrate (in MH/s) for your ethermine account.
 
@@ -11,8 +11,8 @@ This script reports the current hashrate (in MH/s) for your ethermine account.
 ## Module
 
 ```ini
-[module/ethermine]
+[module/info-ethermine]
 type = custom/script
-exec = ~/polybar-scripts/ethermine.sh
+exec = ~/polybar-scripts/info-ethermine.sh
 interval = 60
 ```
