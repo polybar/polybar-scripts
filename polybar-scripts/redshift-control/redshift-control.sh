@@ -21,10 +21,10 @@ case $1 in
   toggle) 
     if [ "$REDSHIFT" = on ];
     then
-      changeMode REDSHIFT off
+      changeMode $REDSHIFT off
       redshift -x
     else
-      changeMode REDSHIFT on
+      changeMode $REDSHIFT on
       redshift -O REDSHIFT_TEMP
     fi
     ;;
