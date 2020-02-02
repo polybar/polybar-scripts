@@ -101,3 +101,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [unode/polypomo](https://github.com/unode/polypomo): Minimalist pomodoro style timer
 * [marioortizmanero/polybar-pulseaudio-control](https://github.com/marioortizmanero/polybar-pulseaudio-control): A feature-full polybar module to control pulseaudio
 * [budlabs/polify](https://github.com/budlabs/polify): A utility that makes it easier to manage and work with polybars IPC-modules
+* [polybar-redshift](https://github.com/VineshReddy/polybar-redshift): Change, display temperature and open/close Redshift
