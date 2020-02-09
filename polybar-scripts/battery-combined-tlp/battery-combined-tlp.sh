@@ -1,5 +1,5 @@
 #!/bin/sh
 
-battery=$(sudo tlp-stat -b | grep "Charge total" |  tr -d -c "[:digit:],.")
+battery=$(sudo tlp-stat -b | tac | grep -m 1 "Charge" |  tr -d -c "[:digit:],.")
 
 echo "# $battery %"
