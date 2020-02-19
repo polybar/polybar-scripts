@@ -1,6 +1,6 @@
 #!/bin/bash
 
-format() {
+units() {
     if [ "$1" -eq 0 ] || [ "$1" -lt 1000 ]; then
         bytes="0 kB/s"
     elif [ "$1" -lt 1000000 ]; then
@@ -20,8 +20,8 @@ up=`cat /sys/class/net/"$interface"/statistics/tx_bytes`
 
 case $1 in
     total)
-        echo `format $(( up+down ))` ;;
+        echo `units $(( up+down ))` ;;
     split)
-        echo `format $down`/`format $up` ;;
+        echo `units $down`/`units $up` ;;
 esac
 
