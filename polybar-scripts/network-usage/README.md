@@ -1,6 +1,6 @@
 # Script: netowrk-usage
 
-This script gets the total amount of data transfered since boot time.
+This script gets the total amount of data transferred since boot time.
 
 ## Dependencies
 * net-tools
@@ -10,7 +10,7 @@ This script gets the total amount of data transfered since boot time.
 ## Configuration
 The script can show output in two formats: 
 * down/up: shows both download and upload values and is chosen by passing `split` to the script
-* total: shows the sum of dowload and upload values and is chosen by passing `total` to the script
+* total: shows the sum of download and upload values and is chosen by passing `total` to the script
 
 
 ## Module
