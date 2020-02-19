@@ -12,16 +12,16 @@ units() {
     echo "$bytes"
 }
 
-interface=`ip route | grep -oPm1 "(?<=dev )[^ ]+"`
+interface=$(ip route | grep -oPm1 "(?<=dev )[^ ]+")
 declare -A bytes
 
-down=`cat /sys/class/net/"$interface"/statistics/rx_bytes`
-up=`cat /sys/class/net/"$interface"/statistics/tx_bytes`
+down=$(cat /sys/class/net/"$interface"/statistics/rx_bytes)
+up=$(cat /sys/class/net/"$interface"/statistics/tx_bytes)
 
 case $1 in
     total)
-        echo `units $(( up+down ))` ;;
+        echo "$(units $(( up+down )))" ;;
     split)
-        echo `units $down`/`units $up` ;;
+        echo "$(units $down)/$(units $up)" ;;
 esac
 
