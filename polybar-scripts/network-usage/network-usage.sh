@@ -1,6 +1,6 @@
 #!/bin/bash
 
-format() {
+units() {
     if [ "$1" -eq 0 ] || [ "$1" -lt 1000 ]; then
         bytes="off"
     elif [ "$1" -lt 1000000 ]; then
@@ -12,13 +12,13 @@ format() {
     echo "$bytes"
 }
 
-interface=`ip route | grep -oPm1 "(?<=dev )[^ ]+"`
+interface=$(ip route | grep -oPm1 "(?<=dev )[^ ]+")
 declare -A bytes
 down_file=/sys/class/net/"$interface"/statistics/rx_bytes
 up_file=/sys/class/net/"$interface"/statistics/tx_bytes
-if [ -f $down_file ];then
-    down=$(cat $down_file)
-    up=$(cat $up_file)
+if [ -f "$down_file" ];then
+    down=$(cat "$down_file")
+    up=$(cat "$up_file")
 else
     down=0
     up=0
@@ -26,8 +26,8 @@ fi
 
 case $1 in
     total)
-        echo $(format $(( up+down ))) ;;
+        echo "units $(( up+down ))" ;;
     split)
-        echo $(format $down)/$(format $up) ;;
+        echo "$(units $down)/$(units $up)" ;;
 esac
 
