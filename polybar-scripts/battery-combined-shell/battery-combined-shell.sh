@@ -1,61 +1,47 @@
 #!/bin/sh
 
-PATH_AC="/sys/class/power_supply/AC"
-PATH_BATTERY_0="/sys/class/power_supply/BAT0"
-PATH_BATTERY_1="/sys/class/power_supply/BAT1"
+PathAC='/sys/class/power_supply/AC'
+PathBat0='/sys/class/power_supply/BAT0'
+PathBat1='/sys/class/power_supply/BAT1'
 
-ac=0
-battery_level_0=0
-battery_level_1=0
-battery_max_0=0
-battery_max_1=0
+AC=0
+BatLvl_0=0
+BatLvl_1=0
+BatMax_0=0
+BatMax_1=0
 
-if [ -f "$PATH_AC/online" ]; then
-    ac=$(cat "$PATH_AC/online")
-fi
+[ -f "$PathAC/online" ] && read AC < "$PathAC/online"
+[ -f "$PathBat0/energy_now" ] && read BatLvl_0 < "$PathBat0/energy_now"
+[ -f "$PathBat0/energy_full" ] && read BatMax_0 < "$PathBat0/energy_full"
+[ -f "$PathBat1/energy_now" ] && read BatLvl_1 < "$PathBat1/energy_now"
+[ -f "$PathBat1/energy_full" ] && read BatMax_1 < "$PathBat1/energy_full"
 
-if [ -f "$PATH_BATTERY_0/energy_now" ]; then
-    battery_level_0=$(cat "$PATH_BATTERY_0/energy_now")
-fi
+BatLvl=$((BatLvl_0 + BatLvl_1))
+BatMax=$((BatMax_0 + BatMax_1))
 
-if [ -f "$PATH_BATTERY_0/energy_full" ]; then
-    battery_max_0=$(cat "$PATH_BATTERY_0/energy_full")
-fi
+BatPerc=$((BatLvl * 100))
+BatPerc=$((BatPerc / BatMax))
 
-if [ -f "$PATH_BATTERY_1/energy_now" ]; then
-    battery_level_1=$(cat "$PATH_BATTERY_1/energy_now")
-fi
+if [ $AC -eq 1 ]; then
+    Icon='#1'
 
-if [ -f "$PATH_BATTERY_1/energy_full" ]; then
-    battery_max_1=$(cat "$PATH_BATTERY_1/energy_full")
-fi
-
-battery_level=$(("$battery_level_0 + $battery_level_1"))
-battery_max=$(("$battery_max_0 + $battery_max_1"))
-
-battery_percent=$(("$battery_level * 100"))
-battery_percent=$(("$battery_percent / $battery_max"))
-
-if [ "$ac" -eq 1 ]; then
-    icon="#1"
-
-    if [ "$battery_percent" -gt 97 ]; then
-        echo "$icon"
+    if [ $BatPerc -gt 97 ]; then
+        printf '%s\n' "$Icon"
     else
-        echo "$icon $battery_percent %"
+        printf '%s %d%%\n' "$Icon" "$BatPerc"
     fi
 else
-    if [ "$battery_percent" -gt 85 ]; then
-        icon="#21"
-    elif [ "$battery_percent" -gt 60 ]; then
-        icon="#22"
-    elif [ "$battery_percent" -gt 35 ]; then
-        icon="#23"
-    elif [ "$battery_percent" -gt 10 ]; then
-        icon="#24"
+    if [ $BatPerc -gt 85 ]; then
+        Icon='#21'
+    elif [ $BatPerc -gt 60 ]; then
+        Icon='#22'
+    elif [ $BatPerc -gt 35 ]; then
+        Icon='#23'
+    elif [ $BatPerc -gt 10 ]; then
+        Icon='#24'
     else
-        icon="#25"
+        Icon='#25'
     fi
 
-    echo "$icon $battery_percent %"
+    printf '%s %d%%\n' "$Icon" "$BatPerc"
 fi
