@@ -1,55 +1,55 @@
 #!/bin/sh
 
-ICON_AC="#1"
-ICON_BATTERY_FULL="#21"
-ICON_BATTERY_GOOD="#22"
-ICON_BATTERY_LOW="#23"
-ICON_BATTERY_CAUTION="#24"
-ICON_BATTERY_EMPTY="#25"
+IconAC='#1'
+IconBatFull='#21'
+IconBatGood='#22'
+IconBatLow='#23'
+IconBatCaution='#24'
+IconBatEmpty='#25'
 
-SHOW_ESTIMATION=1
+ShowEst=1
 
-battery_print() {
-    battery_info="$(sudo pwrstat -status)"
-    battery_capacity="$(echo "$battery_info" | awk '/Capacity/{print $3}')"
-    battery_ac="$(echo "$battery_info" | awk '/Power Supply by/{print $4,$5}')"
-    battery_load="$(echo "$battery_info" | grep "Load" | cut -d \( -f 2 | tr -d ' %)')"
-    battery_remaining="$(echo "$battery_info" | awk '/Remaining Runtime/{print $3}')"
+BatPrint() {
+    BatInfo=$(sudo pwrstat -status)
+    BatCap=$(printf '%s\n' "$BatInfo" | awk '/Capacity/{print $3}')
+    BatAC=$(printf '%s\n' "$BatInfo" | awk '/Power Supply by/{print $4,$5}')
+    BatLoad=$(printf '%s\n' "$BatInfo" | grep 'Load' | cut -d '(' -f 2 | tr -d ' %)')
+    BatRemain=$(printf '%s\n' "$BatInfo" | awk '/Remaining Runtime/{print $3}')
 
-    output=""
+    Output=''
 
-    if [ "$battery_ac" = "Utility Power" ]; then
-        if [ "$battery_capacity" -gt 97 ]; then
-            output="$ICON_AC"
+    if [ "$BatAC" = 'Utility Power' ]; then
+        if [ $BatCap -gt 97 ]; then
+            Output=$IconAC
         else
-            output="$ICON_AC $battery_capacity %"
+            Output="$IconAC $BatCap %"
         fi
     else
-        if [ "$battery_capacity" -gt 85 ]; then
-            output="$ICON_BATTERY_FULL $battery_capacity %"
-        elif [ "$battery_capacity" -gt 60 ]; then
-            output="$ICON_BATTERY_GOOD $battery_capacity %"
-        elif [ "$battery_capacity" -gt 35 ]; then
-            output="$ICON_BATTERY_LOW $battery_capacity %"
-        elif [ "$battery_capacity" -gt 10 ]; then
-            output="$ICON_BATTERY_CAUTION $battery_capacity %"
+        if [ $BatCap -gt 85 ]; then
+            Output="$IconBatFull $BatCap %"
+        elif [ $BatCap -gt 60 ]; then
+            Output="$IconBatGood $BatCap %"
+        elif [ $BatCap -gt 35 ]; then
+            Output="$IconBatLow $BatCap %"
+        elif [ $BatCap -gt 10 ]; then
+            Output="$IconBatCaution $BatCap %"
         else
-            output="$ICON_BATTERY_EMPTY $battery_capacity %"
+            Output="$IconBatEmpty $BatCap %"
         fi
     fi
 
-    if [ "$SHOW_ESTIMATION" -eq 1 ]; then
-        output="$output ($battery_load % / $battery_remaining min)"
+    if [ "$ShowEst" -eq 1 ]; then
+        Output="$Output ($BatLoad % / $BatRemain min)"
     fi
 
-    echo "$output"
+    printf '%s\n' "$Output"
 }
 
 trap exit INT
-trap "echo" USR1
+trap "printf '\n'" USR1
 
 while true; do
-    battery_print "$@"
+    BatPrint "$@"
 
     sleep 30 &
     wait
