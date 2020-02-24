@@ -28,7 +28,7 @@ if [ $AC -eq 1 ]; then
     if [ $BatPerc -gt 97 ]; then
         printf '%s\n' "$Icon"
     else
-        printf '%s %d%%\n' "$Icon" "$BatPerc"
+        printf '%s %d %%\n' "$Icon" "$BatPerc"
     fi
 else
     if [ $BatPerc -gt 85 ]; then
@@ -43,5 +43,5 @@ else
         Icon='#25'
     fi
 
-    printf '%s %d%%\n' "$Icon" "$BatPerc"
+    printf '%s %d %%\n' "$Icon" "$BatPerc"
 fi
