@@ -265,6 +265,9 @@ class Player:
     def _parseMetadata(self):
         if self._metadata != None:
             artist = _getProperty(self._metadata, 'xesam:artist', [''])
+            # If we get a string, artist[0] returns the first character.
+            if type(artist) is str:
+                artist = [artist]
             if artist != None and len(artist):
                 self.metadata['artist'] = re.sub(SAFE_TAG_REGEX, """\1\1""", artist[0])
             else:
@@ -281,7 +284,8 @@ class Player:
             if not len(length):
                 length = str(_getProperty(self._metadata, 'mpris:length', ''))
             if len(length):
-                self.metadata['length'] = int(length)
+                # If we get a string formatted as a float, int(length) will ValueError, but int(float(length)) will not.
+                self.metadata['length'] = int(float(length))
             else:
                 self.metadata['length'] = 0
             self.metadata['genre']    = _getProperty(self._metadata, 'xesam:genre', '')
