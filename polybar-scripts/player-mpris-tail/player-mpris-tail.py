@@ -264,45 +264,34 @@ class Player:
 
     def _parseMetadata(self):
         if self._metadata != None:
-            artist = _getProperty(self._metadata, 'xesam:artist', [''])
-            # If we get a string, artist[0] returns the first character.
-            if type(artist) is str:
-                artist = [artist]
-            if artist != None and len(artist):
-                self.metadata['artist'] = re.sub(SAFE_TAG_REGEX, """\1\1""", artist[0])
-            else:
-                artists = _getProperty(self._metadata, 'xesam:artists', [''])
-                if artists != None and len(artists):
-                    # Note: This only grabs the first artist
-                    self.metadata['artist'] = re.sub(SAFE_TAG_REGEX, """\1\1""", artists[0])
-                else:
-                    self.metadata['artist'] = '';
-            self.metadata['album']  = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:album', ''))
-            self.metadata['title']  = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:title', ''))
-            self.metadata['track']  = _getProperty(self._metadata, 'xesam:trackNumber', '')
-            length = str(_getProperty(self._metadata, 'xesam:length', ''))
-            if not len(length):
-                length = str(_getProperty(self._metadata, 'mpris:length', ''))
-            if len(length):
-                # If we get a string formatted as a float, int(length) will ValueError, but int(float(length)) will not.
-                self.metadata['length'] = int(float(length))
-            else:
-                self.metadata['length'] = 0
-            self.metadata['genre']    = _getProperty(self._metadata, 'xesam:genre', '')
-            self.metadata['disc']     = _getProperty(self._metadata, 'xesam:discNumber', '')
-            self.metadata['date']     = re.sub(SAFE_TAG_REGEX, """\1\1""", _getProperty(self._metadata, 'xesam:contentCreated', ''))
-            self.metadata['year']     = re.sub(SAFE_TAG_REGEX, """\1\1""", self.metadata['date'][0:4])
-            self.metadata['url']      = _getProperty(self._metadata, 'xesam:url', '')
-            self.metadata['filename'] = os.path.basename(self.metadata['url'])
-            cover = _getProperty(self._metadata, 'xesam:artUrl', '')
-            if not len(cover):
-                cover = _getProperty(self._metadata, 'mpris:artUrl', '')
-            if len(cover):
-                self.metadata['cover'] = re.sub(SAFE_TAG_REGEX, """\1\1""", cover)
-            else:
-                self.metadata['cover'] = ''
-
-            self.metadata['duration'] = _getDuration(self.metadata['length'])
+            # Obtain properties from _metadata
+            _artist     = _getProperty(self._metadata, 'xesam:artist', [''])
+            _album      = _getProperty(self._metadata, 'xesam:album', '')
+            _title      = _getProperty(self._metadata, 'xesam:title', '')
+            _track      = _getProperty(self._metadata, 'xesam:trackNumber', '')
+            _genre      = _getProperty(self._metadata, 'xesam:genre', [''])
+            _disc       = _getProperty(self._metadata, 'xesam:discNumber', '')
+            _length     = _getProperty(self._metadata, 'xesam:length', 0) or _getProperty(self._metadata, 'mpris:length', 0)
+            _length_int = _length if type(_length) is int else int(float(_length))
+            _date       = _getProperty(self._metadata, 'xesam:contentCreated', '')
+            _year       = self.metadata['date'][0:4] if len(_date) else ''
+            _url        = _getProperty(self._metadata, 'xesam:url', '')
+            _cover      = _getProperty(self._metadata, 'xesam:artUrl', '') or _getProperty(self._metadata, 'mpris:artUrl', '')
+            _duration   = _getDuration(_length_int)
+            # Update metadata
+            self.metadata['artist']     = re.sub(SAFE_TAG_REGEX, """\1\1""", _firstIfList(_artist))
+            self.metadata['album']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _firstIfList(_album))
+            self.metadata['title']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _firstIfList(_title))
+            self.metadata['track']      = _track
+            self.metadata['genre']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _firstIfList(_genre))
+            self.metadata['disc']       = _disc
+            self.metadata['date']       = re.sub(SAFE_TAG_REGEX, """\1\1""", _date)
+            self.metadata['year']       = re.sub(SAFE_TAG_REGEX, """\1\1""", _year)
+            self.metadata['url']        = _url
+            self.metadata['filename']   = os.path.basename(_url)
+            self.metadata['length']     = _length_int
+            self.metadata['cover']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _firstIfList(_cover))
+            self.metadata['duration']   = _duration
 
     def onMetadataChanged(self, track_id, metadata):
         self.refreshMetadata()
@@ -459,6 +448,8 @@ def _getDuration(t: int):
         seconds = t / 1000000
         return time.strftime("%M:%S", time.gmtime(seconds))
 
+def _firstIfList(_value):
+    return _value[0] if type(_value) is list and len(_value) else _value
 
 class CleanSafeDict(dict):
     def __missing__(self, key):
