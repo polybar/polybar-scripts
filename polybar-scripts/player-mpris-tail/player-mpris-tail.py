@@ -274,7 +274,7 @@ class Player:
             _length     = _getProperty(self._metadata, 'xesam:length', 0) or _getProperty(self._metadata, 'mpris:length', 0)
             _length_int = _length if type(_length) is int else int(float(_length))
             _date       = _getProperty(self._metadata, 'xesam:contentCreated', '')
-            _year       = self.metadata['date'][0:4] if len(_date) else ''
+            _year       = _date[0:4] if len(_date) else ''
             _url        = _getProperty(self._metadata, 'xesam:url', '')
             _cover      = _getProperty(self._metadata, 'xesam:artUrl', '') or _getProperty(self._metadata, 'mpris:artUrl', '')
             _duration   = _getDuration(_length_int)
