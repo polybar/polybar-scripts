@@ -1,8 +1,8 @@
-# Script: info-localip
+# Script: network-localip
 
 This script shows the local IP of the current connection.
 
-![info-localip](screenshots/1.png)
+![network-localip](screenshots/1.png)
 
 
 ## Dependencies
@@ -15,7 +15,6 @@ This script shows the local IP of the current connection.
 ```ini
 [module/info-localip]
 type = custom/script
-exec = ~/polybar-scripts/info-localip.sh
+exec = ~/polybar-scripts/network-localip.sh
 interval = 60
 ```
-
