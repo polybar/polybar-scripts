@@ -1,8 +1,8 @@
-# Script: info-publicip
+# Script: network-publicip
 
 This script shows the public IP of the current connection.
 
-![info-publicip](screenshots/1.png)
+![network-publicip](screenshots/1.png)
 
 
 ## Dependencies
@@ -13,8 +13,8 @@ This script shows the public IP of the current connection.
 ## Module
 
 ```ini
-[module/info-publicip]
+[module/network-publicip]
 type = custom/script
-exec = ~/polybar-scripts/info-publicip.sh
+exec = ~/polybar-scripts/network-publicip.sh
 interval = 60
 ```
