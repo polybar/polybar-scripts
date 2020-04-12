@@ -8,7 +8,7 @@ It shows icons and temperatures for the current weather and the 3 hour forecast.
 ## Dependencies
 
 * [OpenWeatherMap-Key](https://openweathermap.org/appid)
-* [weather-icons](https://github.com/erikflowers/weather-icons)
+* [weather-icons](https://github.com/erikflowers/weather-icons) or [Font Awesome 5 Pro](https://fontawesome.com/changelog/latest)
 * `jq`
 
 
