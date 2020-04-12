@@ -74,6 +74,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-todotxt](polybar-scripts/info-todotxt/screenshots/1.png)](polybar-scripts/info-todotxt/)
 [![info-wifionice](polybar-scripts/info-wifionice/screenshots/1.png)](polybar-scripts/info-wifionice/)
 [![player-mpv-tail](polybar-scripts/player-mpv-tail/screenshots/1.png)](polybar-scripts/player-mpv-tail/)
+[![network-localip](polybar-scripts/network-localip/screenshots/1.png)](polybar-scripts/network-localip/)
 [![updates-fedora](polybar-scripts/updates-fedora/screenshots/1.png)](polybar-scripts/updates-fedora/)
 [![info-tmux-sessions](polybar-scripts/info-tmux-sessions/screenshots/1.png)](polybar-scripts/info-tmux-sessions/)
 [![info-hlwm-workspaces](polybar-scripts/info-hlwm-workspaces/screenshots/1.png)](polybar-scripts/info-hlwm-workspaces/)
