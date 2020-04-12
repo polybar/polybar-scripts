@@ -1,6 +1,6 @@
 # polybar-scripts
 
-[![Build Status](https://travis-ci.com/polybar/polybar-scripts.svg?branch=master)](https://travis-ci.com/polybar/polybar-scripts)
+[![Codecheck](https://github.com/polybar/polybar-scripts/workflows/Codecheck/badge.svg?branch=master)](https://github.com/polybar/polybar-scripts/actions)
 [![GitHub contributors](https://img.shields.io/github/contributors/polybar/polybar-scripts.svg)](https://github.com/polybar/polybar-scripts/graphs/contributors)
 [![license](https://img.shields.io/github/license/polybar/polybar-scripts.svg)](https://github.com/polybar/polybar-scripts/blob/master/LICENSE)
 
