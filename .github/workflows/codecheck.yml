@@ -1,0 +1,16 @@
+name: Codecheck
+on: [push]
+jobs:
+  ShellCheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install ShellCheck
+        run: |
+            wget -O /opt/shellcheck-stable.linux.x86_64.tar.xz https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz
+            tar xf /opt/shellcheck-stable.linux.x86_64.tar.xz -C /opt
+      - name: Print installed ShellCheck version
+        run: /opt/shellcheck-stable/shellcheck --version
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Run ShellCheck on all files
+        run: find . '(' -name '*.sh' ')' -exec /opt/shellcheck-stable/shellcheck {} +
