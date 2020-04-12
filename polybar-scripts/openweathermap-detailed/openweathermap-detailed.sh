@@ -41,12 +41,6 @@ get_icon() {
     echo $icon
 }
 
-get_icon() {
-
-
-    echo $icon
-}
-
 KEY=""
 CITY=""
 UNITS="metric"
