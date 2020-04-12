@@ -1,6 +1,6 @@
 #! /bin/sh
 
-if sessionlist=$(tmux ls); then
+if sessionlist=$(tmux ls 2>/dev/null); then
     printf "# "
 
     echo "$sessionlist" | while read -r line; do
