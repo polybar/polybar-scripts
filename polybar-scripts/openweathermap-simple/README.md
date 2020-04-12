@@ -9,8 +9,8 @@ It shows icons and temperatures for the current weather.
 
 ## Dependencies
 
-* [OpenWeatherMap-Key](https://openweathermap.org/appid)
-* [weather-icons](https://github.com/erikflowers/weather-icons)
+* [OpenWeatherMap Key](https://openweathermap.org/appid)
+* [weather-icons](https://github.com/erikflowers/weather-icons) or [Font Awesome 5 Pro](https://fontawesome.com/changelog/latest)
 * `jq`
 
 
