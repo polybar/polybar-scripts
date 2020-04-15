@@ -1,5 +1,5 @@
 name: Codecheck
-on: [push]
+on: [push, pull_request]
 jobs:
   ShellCheck:
     runs-on: ubuntu-latest
