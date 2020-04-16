@@ -81,8 +81,6 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-tmux-sessions](polybar-scripts/info-tmux-sessions/screenshots/1.png)](polybar-scripts/info-tmux-sessions/)
 [![info-hlwm-workspaces](polybar-scripts/info-hlwm-workspaces/screenshots/1.png)](polybar-scripts/info-hlwm-workspaces/)
 [![info-hexdate](polybar-scripts/info-hexdate/screenshots/1.png)](polybar-scripts/info-hexdate/)
-[![polybar-spotify-module](https://github.com/mihirlad55/polybar-spotify-module/raw/master/screenshots/capture.png)](https://github.com/mihirlad55/polybar-spotify-module)
-
 
 
 ## See also these other user repositories:
