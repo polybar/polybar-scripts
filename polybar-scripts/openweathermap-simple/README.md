@@ -10,7 +10,6 @@ It shows icons and temperatures for the current weather.
 ## Dependencies
 
 * [OpenWeatherMap Key](https://openweathermap.org/appid)
-* [weather-icons](https://github.com/erikflowers/weather-icons) or [Font Awesome 5 Pro](https://fontawesome.com/changelog/latest)
 * `jq`
 
 
@@ -31,16 +30,8 @@ SYMBOL="°"
 ## Module
 
 ```ini
-[bar/polybar]
-...
-font-2 = Weather Icons:size=12;1
-...
-```
-
-```ini
 [module/openweathermap-simple]
 type = custom/script
 exec = ~/polybar-scripts/openweathermap-simple.sh
 interval = 600
-label-font = 3
 ```
