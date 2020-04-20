@@ -31,7 +31,16 @@ get_duration() {
     osname=$(uname -s)
 
     case $osname in
-        *BSD) date -r "$1" -u +%H:%M;;
+        *BSD) date -r "$1" -u +%H:%M;;if [ "$current_temp" -gt "$forecast_temp" ]; then
+        # trend-down
+        trend="#18"
+    elif [ "$forecast_temp" -gt "$current_temp" ]; then
+        # trend-up
+        trend="#19"
+    else
+        # trend-nochange
+        trend="#20"
+    fi
         *) date --date="@$1" -u +%H:%M;;
     esac
 
@@ -87,11 +96,14 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
     now=$(date +%s)
 
     if [ "$sun_rise" -gt "$now" ]; then
-        daytime=" $(get_duration "$((sun_rise-now))")"
+        # sunrise
+        daytime="#21 $(get_duration "$((sun_rise-now))")"
     elif [ "$sun_set" -gt "$now" ]; then
-        daytime=" $(get_duration "$((sun_set-now))")"
+        # sunset
+        daytime="#22 $(get_duration "$((sun_set-now))")"
     else
-        daytime=" $(get_duration "$((sun_rise-now))")"
+        # sunrise
+        daytime="#21 $(get_duration "$((sun_rise-now))")"
     fi
 
     echo "$(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL   $daytime"
