@@ -2,40 +2,25 @@
 
 get_icon() {
     case $1 in
-        # Icons for weather-icons
-        01d) icon="";;
-        01n) icon="";;
-        02d) icon="";;
-        02n) icon="";;
-        03*) icon="";;
-        04*) icon="";;
-        09d) icon="";;
-        09n) icon="";;
-        10d) icon="";;
-        10n) icon="";;
-        11d) icon="";;
-        11n) icon="";;
-        13d) icon="";;
-        13n) icon="";;
-        50d) icon="";;
-        50n) icon="";;
-        *) icon="";
-
-        # Icons for Font Awesome 5 Pro
-        #01d) icon="";;
-        #01n) icon="";;
-        #02d) icon="";;
-        #02n) icon="";;
-        #03d) icon="";;
-        #03n) icon="";;
-        #04*) icon="";;
-        #09*) icon="";;
-        #10d) icon="";;
-        #10n) icon="";;
-        #11*) icon="";;
-        #13*) icon="";;
-        #50*) icon="";;
-        #*) icon="";
+        # Replace with weather icons from your font
+        # Icon code descriptions can be found at https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
+        01d) icon="#1";;
+        01n) icon="#2";;
+        02d) icon="#3";;
+        02n) icon="#4";;
+        03*) icon="#5";;
+        04*) icon="#6";;
+        09d) icon="#7";;
+        09n) icon="#8";;
+        10d) icon="#9";;
+        10n) icon="#10";;
+        11d) icon="#11";;
+        11n) icon="#12";;
+        13d) icon="#13";;
+        13n) icon="#14";;
+        50d) icon="#15";;
+        50n) icon="16";;
+        *) icon="#17";
     esac
 
     echo $icon
