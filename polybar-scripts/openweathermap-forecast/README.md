@@ -8,7 +8,6 @@ It shows icons and temperatures for the current weather and the 3 hour forecast.
 ## Dependencies
 
 * [OpenWeatherMap Key](https://openweathermap.org/appid)
-* [weather-icons](https://github.com/erikflowers/weather-icons) or [Font Awesome 5 Pro](https://fontawesome.com/changelog/latest)
 * `jq`
 
 
@@ -29,16 +28,8 @@ SYMBOL="°"
 ## Module
 
 ```ini
-[bar/polybar]
-...
-font-2 = Weather Icons:size=12;1
-...
-```
-
-```ini
 [module/openweathermap-forecast]
 type = custom/script
 exec = ~/polybar-scripts/openweathermap-forecast.sh
 interval = 600
-label-font = 3
 ```
