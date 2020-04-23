@@ -17,7 +17,7 @@ Just add the wanted status in the `status`-List in `docker-container.sh`.
 As default, you will see `running`, `exited` and `dead`.
 
 ## Screenshot
-![screenshot](screenshot.png)
+![screenshot](screenshots/screenshot.png)
 
 ## Config
 In your `~/.config/polybar/config` add
