@@ -17,7 +17,6 @@ status=(
 
 for stat in "${status[@]}"; do
   output+="$(docker ps -qf "status=$stat" | wc -l)|"
-
 done
 
 echo "|$output"

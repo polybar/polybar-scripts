@@ -1,6 +1,8 @@
 # Polybar - Docker Container
 Show the number of containers of a certain status
 
+**Requires docker without `sudo` see: https://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo**
+
 ## Status configuration
 You can decide which container of which status you want to be shown.
 Available status are:
