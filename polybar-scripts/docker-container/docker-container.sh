@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 # available container status:
 #   created
@@ -9,14 +9,10 @@
 #   exited
 #   dead
 
-status=(
-  running
-  exited
-  dead
-)
+STATUS="running exited dead"
 
-for stat in "${status[@]}"; do
-  output+="$(docker ps -qf "status=$stat" | wc -l)|"
+for stat in $STATUS; do
+  output="$output$(docker ps -qf "status=$stat" | wc -l)|"
 done
 
 echo "|$output"
