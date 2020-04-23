@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 # available container status:
 #   created
