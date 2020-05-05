@@ -7,7 +7,7 @@ HOURS_AGO="6"
 
 available_projects=$(curl -sH "Private-Token: $GITLAB_ACCESS_TOKEN" \
   "$GITLAB_SERVER/api/v4/projects?membership=true" | jq '.[] | .id')
-time=$(date -d "$HOURS_AGO" --iso-8601=seconds)
+time=$(date -d "$HOURS_AGO hours ago" -Iseconds)
 
 get_pipelines(){
   curl -sH "Private-Token: $GITLAB_ACCESS_TOKEN" \
