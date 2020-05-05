@@ -1,7 +1,6 @@
 # Script: pulseaudio-microphone
 
-A script that shows if the PulseAudio default source (microphone) is muted or
-not.
+A script that shows if the PulseAudio default source (microphone) is muted or not.
 
 Use left click to toggle the state.
 
