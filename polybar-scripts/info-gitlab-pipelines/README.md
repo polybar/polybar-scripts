@@ -1,7 +1,7 @@
 # Script: gitlab-pipelines
 Displays the number of succeeded, running and failed gitlab-pipelines triggered by a user.
 
-![screenshot](screenshots/gitlab-screenshot.png)
+![screenshot](screenshots/1.png)
 ## Dependencies
 * jq
 
