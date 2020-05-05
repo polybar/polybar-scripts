@@ -1,32 +1,24 @@
-# Polybar - Docker Container
-Show the number of containers of a certain status
+# Script: info-docker
 
-**Requires docker without `sudo` see: https://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo**
+Show the number of docker containers in a certain state.
 
-## Status configuration
-You can decide which container of which status you want to be shown.
-Available status are:
-* created
-* restarting
-* running
-* removing
-* paused
-* exited
-* dead
+![info-docker](screenshots/1.png)
 
-Just add the wanted status in the `status`-List in `docker-container.sh`.
 
-As default, you will see `running`, `exited` and `dead`.
+## Configuration
 
-## Screenshot
-![screenshot](screenshots/screenshot.png)
+You have to add the `docker` command to the `/etc/sudoers` NOPASSWD of your user:
 
-## Config
-In your `~/.config/polybar/config` add
+```ini
+user ALL=(ALL) NOPASSWD: /usr/bin/docker
+```
 
-```sh
-[module/docker-container]
-type = custom/Script
-exec = ~/polybar-scripts/docker-container.sh
-interval = 10
+
+## Module
+
+```ini
+[module/info-docker]
+type = custom/script
+exec = ~/polybar-scripts/info-docker.sh
+interval = 60
 ```
