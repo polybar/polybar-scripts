@@ -4,6 +4,7 @@ A script that shows if the PulseAudio default source (microphone) is muted or no
 
 Use left click to toggle the state.
 
+
 ## Module
 
 ```ini
