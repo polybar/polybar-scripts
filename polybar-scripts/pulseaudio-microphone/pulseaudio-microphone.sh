@@ -1,7 +1,7 @@
 #!/bin/sh
 
 status() {
-  MUTED=$(pacmd list-sources | awk '/*/,EOF {print}' | awk '/muted/ {print $2; exit}')
+  MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
 
   if [ "$MUTED" = "yes" ]; then
     echo "#1"
@@ -21,8 +21,8 @@ listen() {
 }
 
 toggle() {
-  MUTED=$(pacmd list-sources | awk '/*/,EOF {print}' | awk '/muted/ {print $2; exit}')
-  DEFAULT_SOURCE=$(pacmd list-sources | awk '/*/,EOF {print $3; exit}')
+  MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
+  DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
 
   if [ "$MUTED" = "yes" ]; then
       pacmd set-source-mute "$DEFAULT_SOURCE" 0
