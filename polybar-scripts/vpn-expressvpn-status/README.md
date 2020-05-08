@@ -1,14 +1,17 @@
 # Script: vpn-expressvpn-status
 
-A small script that shows the status of ExpressVPN. Includes a `--toggle` option
-to connect/disconnect.
+A small script that shows the status of ExpressVPN.
 
-![connected](screenshots/connected.png)
-![disconnected](screenshots/disconnected.png)
+It includes a `--toggle` option to connect/disconnect.
+
+![vpn-expressvpn-status](screenshots/1.png)
+![vpn-expressvpn-status](screenshots/2.png)
+
 
 ## Dependencies
 
-The [ExpressVPN client](https://www.expressvpn.com/vpn-software/vpn-linux)
+* [`ExpressVPN client`](https://www.expressvpn.com/vpn-software/vpn-linux)
+
 
 ## Module
 
@@ -16,6 +19,6 @@ The [ExpressVPN client](https://www.expressvpn.com/vpn-software/vpn-linux)
 [module/vpn-expressvpn-status]
 type = custom/script
 exec = ~/polybar-scripts/vpn-expressvpn-status.sh
-click-left = ~/polybar-scripts/vpn-expressvpn-status.sh --toggle
-interval = 5
+click-left = ~/polybar-scripts/vpn-expressvpn-status.sh --toggle &
+interval = 10
 ```
