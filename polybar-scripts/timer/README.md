@@ -1,11 +1,19 @@
 # Script: { name }
 
-{ A short description of what your script does. }
-
 ![screenshot](screenshots/1.png)
 ![screenshot](screenshots/2.png)
 ![screenshot](screenshots/3.png)
 
+This script implements a timer for your polybar.
+You can customize the controls and the appearance to your own needs.
+
+Features:
+- specific action to execute when timer expires (e.g. notification, shell script, ...)
+- interactive:
+  * e.g. scroll to increase / decrease
+  * click to start predefined timers
+  * notification that displays when the timer will expire while interacting
+- different icons for different timers
 
 ## Dependencies
 
