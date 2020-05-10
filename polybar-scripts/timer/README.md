@@ -1,4 +1,4 @@
-# Script: { name }
+# Script: polybar-timer
 
 ![screenshot](screenshots/1.png)
 ![screenshot](screenshots/2.png)
