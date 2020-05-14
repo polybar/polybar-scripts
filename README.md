@@ -25,7 +25,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [inbox-imap-shellnetrc](polybar-scripts/inbox-imap-shellnetrc)
 * [isrunning-service](polybar-scripts/isrunning-service)
 * [system-usb-udev](polybar-scripts/system-usb-udev)
-* [updates-arch-combined](polybar-scripts/updates-arch-combined)
+* [updates-pacman-aurhelper](polybar-scripts/updates-pacman-aurhelper)
 * [info-hackspeed](polybar-scripts/info-hackspeed)
 
 
@@ -39,7 +39,7 @@ Is this your first time here? You should definitely take a look at these scripts
 
 ## all colors are beautiful
 
-[![updates-arch-combined](polybar-scripts/updates-arch-combined/screenshots/1.png)](polybar-scripts/updates-arch-combined/)
+[![updates-pacman-aurhelper](polybar-scripts/updates-pacman-aurhelper/screenshots/1.png)](polybar-scripts/updates-pacman-aurhelper/)
 [![system-cpu-temppercore](polybar-scripts/system-cpu-temppercore/screenshots/1.png)](polybar-scripts/system-cpu-temppercore/)
 [![notification-chess](polybar-scripts/notification-chess/screenshots/1.png)](polybar-scripts/notification-chess/)
 [![notification-reddit](polybar-scripts/notification-reddit/screenshots/1.png)](polybar-scripts/notification-reddit/)
@@ -77,7 +77,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-wifionice](polybar-scripts/info-wifionice/screenshots/1.png)](polybar-scripts/info-wifionice/)
 [![player-mpv-tail](polybar-scripts/player-mpv-tail/screenshots/1.png)](polybar-scripts/player-mpv-tail/)
 [![network-localip](polybar-scripts/network-localip/screenshots/1.png)](polybar-scripts/network-localip/)
-[![updates-fedora](polybar-scripts/updates-fedora/screenshots/1.png)](polybar-scripts/updates-fedora/)
+[![updates-dnf](polybar-scripts/updates-dnf/screenshots/1.png)](polybar-scripts/updates-dnf/)
 [![system-eprivacy](polybar-scripts/system-eprivacy/screenshots/1.png)](polybar-scripts/system-eprivacy/)
 [![info-tmux-sessions](polybar-scripts/info-tmux-sessions/screenshots/1.png)](polybar-scripts/info-tmux-sessions/)
 [![info-hlwm-workspaces](polybar-scripts/info-hlwm-workspaces/screenshots/1.png)](polybar-scripts/info-hlwm-workspaces/)
