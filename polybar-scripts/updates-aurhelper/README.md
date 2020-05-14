@@ -1,4 +1,4 @@
-# Script: updates-arch-aur
+# Script: updates-aurhelper
 
 A script that shows if there are AUR updates for Arch Linux.
 
@@ -13,8 +13,8 @@ At the moment `yay`, `trizen`, `pikaur` and `cower` are documented. Take a look 
 ## Module
 
 ```ini
-[module/updates-arch-aur]
+[module/updates-aurhelper]
 type = custom/script
-exec = ~/polybar-scripts/updates-arch-aur.sh
+exec = ~/polybar-scripts/updates-aurhelper.sh
 interval = 600
 ```
