@@ -1,10 +1,10 @@
-# Script: updates-arch-combined
+# Script: updates-pacman-aurhelper
 
 A script that shows if there are updates for Arch Linux and AUR updates.
 
-See also [updates-arch](../updates-arch) and [updates-arch-aur](../updates-arch-aur).
+See also [updates-pacman](../updates-pacman) and [updates-aurhelper](../updates-aurhelper).
 
-![updates-arch-combined](screenshots/1.png)
+![updates-pacman-aurhelper](screenshots/1.png)
 
 
 ## Dependencies
@@ -19,8 +19,8 @@ At the moment `yay`, `trizen`, `pikaur` and `cower` are documented. Take a look 
 ## Module
 
 ```ini
-[module/updates-arch-combined]
+[module/updates-pacman-aurhelper]
 type = custom/script
-exec = ~/polybar-scripts/updates-arch-combined.sh
+exec = ~/polybar-scripts/updates-pacman-aurhelper.sh
 interval = 600
 ```
