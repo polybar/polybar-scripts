@@ -9,6 +9,8 @@ if [ -n "$spacex_launch" ]; then
 
     if [ "$spacex_precision" = "hour" ] && [ "$spacex_duration" -lt 43200 ]; then
         echo "# $(date +"%H:%M" -u --date @$spacex_duration)"
+    else
+        echo ""
     fi
 else
     echo ""
