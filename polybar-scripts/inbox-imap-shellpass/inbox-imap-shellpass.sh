@@ -17,6 +17,3 @@ if [ "$(gpg-connect-agent 'keyinfo --list' /bye | grep "$KEYGRIP" | awk '{ print
 else
     echo ""
 fi
-
-
-##
