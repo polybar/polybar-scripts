@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
+# Sometimes, when there is no Internet connection, curl will continue to retry. If the total time is longer than MAX_TIME we want to abort. 
+declare -r MAX_TIME=5 # seconds
+
 # In case we get throttled anyway, we try with a different service.
 throttled() {
-    response=$(curl -s -H "Accept: application/json" ifconfig.co/json)
+    response=$(curl -m "$MAX_TIME" -s -H "Accept: application/json" ifconfig.co/json)
     ip=$(echo "$response" | jq -r '.ip' 2>/dev/null)
     country=$(echo "$response" | jq -r '.country_iso' 2>/dev/null)
 
     if  [ -z "$ip" ] || echo "$ip" | grep -iq null; then
-
+	
 	return 1
     fi
 
@@ -38,7 +41,7 @@ while :; do
 	status=""
     fi
 
-    response=$(curl -s -H "Accept: application/json" ipinfo.io/json)
+    response=$(curl -m "$MAX_TIME" -s -H "Accept: application/json" ipinfo.io/json)
     if [ -n "$response" ] && ! echo "$response" | jq -r '.ip' | grep -iq null; then
 
 	ip=$(echo "$response" | jq -r '.ip')
@@ -48,14 +51,17 @@ while :; do
 	if ! throttled; then
 
 	    default_interface=$(ip route | awk '/^default/ { print $5 ; exit }')
-	    ip=$(ip addr show "$default_interface" | awk '/scope global/ {print $2; exit}' | cut -d/ -f1)
-	    country="local"
-
 	    # If there is no default interface, Internet is down.
 	    if [ -z "$default_interface" ]; then
+		
 		status=""
 		ip="127.0.0.1"
+	    else
+
+		ip=$(ip addr show "$default_interface" | awk '/scope global/ {print $2; exit}' | cut -d/ -f1)
 	    fi
+	    
+	    country="local"
 	fi
     fi
 
