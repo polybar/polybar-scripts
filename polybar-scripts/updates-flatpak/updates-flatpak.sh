@@ -1,11 +1,7 @@
 #!/bin/sh
 
-if ! updates=$(echo "n" | flatpak update 2> /dev/null | wc -l ); then
-    updates=0
-fi
-
-updates=$((updates - 5))
-
+# The first 3 lines and the 2 last lines in 'flatpak update' are garbage.
+updates=$(echo "n" | flatpak update 2>/dev/null | tail -n +4 | head -n 2 | wc -l)
 if [ "$updates" -gt 0 ]; then
     echo "flatpak: $updates"
 else
