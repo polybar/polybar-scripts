@@ -3,10 +3,10 @@
 # In case we get throttled anyway, we try with a different service.
 throttled() {
     response=$(curl -s -H "Accept: application/json" ifconfig.co/json)
-    ip=$(echo $response | jq -r '.ip' 2>/dev/null)
-    country=$(echo $response | jq -r '.country_iso' 2>/dev/null)
+    ip=$(echo "$response" | jq -r '.ip' 2>/dev/null)
+    country=$(echo "$response" | jq -r '.country_iso' 2>/dev/null)
 
-    if  [ -z "$ip" ] || echo $ip | grep -iq null; then
+    if  [ -z "$ip" ] || echo "$ip" | grep -iq null; then
 
 	return 1
     fi
@@ -15,8 +15,8 @@ throttled() {
 }
 
 connected() {
-    if [ -z "$(route | grep '^default' | grep -o '[^ ]*$')" ]; then
-	echo 1; exit 1; 
+    if ! route | grep '^default' | grep -qo '[^ ]*$'; then
+	echo 1; return 1; 
     fi
     
     echo 0;
@@ -39,16 +39,16 @@ while :; do
     fi
 
     response=$(curl -s -H "Accept: application/json" ipinfo.io/json)
-    if [ -n "$response" ] && ! echo $response | jq -r '.ip' | grep -iq null; then
+    if [ -n "$response" ] && ! echo "$response" | jq -r '.ip' | grep -iq null; then
 
-	ip=$(echo $response | jq -r '.ip')
-	country=$(echo $response | jq -r '.country')
+	ip=$(echo "$response" | jq -r '.ip')
+	country=$(echo "$response" | jq -r '.country')
     else
 
 	if ! throttled; then
 
 	    default_interface=$(ip route | awk '/^default/ { print $5 ; exit }')
-	    ip=$(ip addr show $default_interface | awk '/scope global/ {print $2; exit}' | cut -d/ -f1)
+	    ip=$(ip addr show "$default_interface" | awk '/scope global/ {print $2; exit}' | cut -d/ -f1)
 	    country="local"
 
 	    # If there is no default interface, Internet is down.
