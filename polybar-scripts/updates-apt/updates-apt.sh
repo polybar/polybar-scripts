@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pkcon refresh &>/dev/null
+pkcon refresh >/dev/null 2>&1
 
 updates=$(apt list --upgradable 2> /dev/null | grep -c upgradable);
 
