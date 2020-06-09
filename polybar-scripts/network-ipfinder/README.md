@@ -2,13 +2,13 @@
 
 Shows your public IP address (and country of origin) retrieved from `ipinfo.io`.
 
-![](screenshots/connected_vpn_up.png)
+![](screenshots/1.png)
 
 ## Dependencies
 
-```bash
-sudo apt install -y curl jq
-```
+* `curl`
+* `jq`
+
 
 ## Module
 
