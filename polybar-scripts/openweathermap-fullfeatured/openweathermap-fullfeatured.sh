@@ -102,9 +102,9 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
     now=$(date +%s)
 
     if [ "$sun_rise" -gt "$now" ]; then
-        daytime=" $(get_duration "$((sun_rise-now))")"
+        daytime=" $(get_duration "$sun_rise")"
     elif [ "$sun_set" -gt "$now" ]; then
-        daytime=" $(get_duration "$((sun_set-now))")"
+        daytime=" $(get_duration "$sun_set")"
     else
         daytime=" $(get_duration "$((sun_rise-now))")"
     fi
