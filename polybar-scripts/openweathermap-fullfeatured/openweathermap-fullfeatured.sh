@@ -46,8 +46,8 @@ get_duration() {
     osname=$(uname -s)
 
     case $osname in
-        *BSD) date -r "$1" -u +%H:%M;;
-        *) date --date="@$1" -u +%H:%M;;
+        *BSD) date -r "$1" +%H:%M;;
+        *) date --date="@$1" +%H:%M;;
     esac
 
 }
