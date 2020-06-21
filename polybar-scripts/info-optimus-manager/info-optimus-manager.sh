@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Simple script for displaying and switching gpus for optimus-manager and polybar.
 
