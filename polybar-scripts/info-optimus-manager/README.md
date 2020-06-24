@@ -1,4 +1,4 @@
-# polybar-optimus-manager
+# Script: info-optimus-manager
 
 A script that shows the current GPU in use, given that the GPUs are managed by [optimus-manager](https://github.com/Askannz/optimus-manager). The script also allows for switching GPU in one click, just **please** be aware that this will log you out of your session without asking for confirmation. See below how this can be enabled.
 
