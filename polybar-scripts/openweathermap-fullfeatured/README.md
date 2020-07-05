@@ -2,7 +2,7 @@
 
 A weather script that shows a lot of information.
 
-It shows icons and temperatures for the current weather and the 3 hour forecast. It displays information about the next sunrise or sunset.
+It shows icons and temperatures for the current weather and the 3 hour forecast. It displays the duration to the next sunrise or sunset.
 
 ![openweathermap-fullfeatured](screenshots/1.png)
 
