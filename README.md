@@ -118,3 +118,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [PrayagS/polybar-spotify](https://github.com/PrayagS/polybar-spotify): Spotify status and controls module for Polybar with text scrolling
 * [Hackesta/polybar-speedtest](https://github.com/HackeSta/polybar-speedtest): speedtest.net Module for Polybar
 * [MaxdSre/mpris-player-control](https://github.com/MaxdSre/mpris-player-control): Control player via MPRIS D-Bus interface 
+* [maksmeshkov/toggl_polybar](https://github.com/maksmeshkov/toggl_polybar): Information about current running task for toggl.com time tracker users
