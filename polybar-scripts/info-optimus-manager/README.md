@@ -7,7 +7,7 @@ A script that shows the current GPU in use, given that the GPUs are managed by [
 ## Configuration
 
 1. Edit the script and change the "Configuration" part to your liking. This is not necessary if you don't use the "Hybrid" mode in optimus-manager and you're happy with the default outputs. 
-2. (Optional, enables switching GPU when the module is left-clicked). Uncomment the line `;click-left = ~/polybar-scripts/info-optimus-manager.sh --switch` in the module.
+2. (Optional, enables switching GPU when the module is right-clicked). Uncomment the line `;click-right = ~/polybar-scripts/info-optimus-manager.sh --switch` in the module.
 
 
 ## Module
@@ -17,7 +17,7 @@ A script that shows the current GPU in use, given that the GPUs are managed by [
 type = custom/script
 exec = ~/polybar-scripts/info-optimus-manager.sh
 interval = 1200 
-;click-left = ~/polybar-scripts/info-optimus-manager.sh --switch
+;click-right = ~/polybar-scripts/info-optimus-manager.sh --switch
 
 ```
 
