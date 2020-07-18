@@ -80,6 +80,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![updates-dnf](polybar-scripts/updates-dnf/screenshots/1.png)](polybar-scripts/updates-dnf/)
 [![system-eprivacy](polybar-scripts/system-eprivacy/screenshots/1.png)](polybar-scripts/system-eprivacy/)
 [![network-ipinfo.io](polybar-scripts/network-ipinfo.io/screenshots/1.png)](polybar-scripts/network-ipinfo.io/)
+[![system-gpu-optimus](polybar-scripts/system-gpu-optimus/screenshots/1.png)](polybar-scripts/system-gpu-optimus/)
 [![info-tmux-sessions](polybar-scripts/info-tmux-sessions/screenshots/1.png)](polybar-scripts/info-tmux-sessions/)
 [![info-hlwm-workspaces](polybar-scripts/info-hlwm-workspaces/screenshots/1.png)](polybar-scripts/info-hlwm-workspaces/)
 [![info-hexdate](polybar-scripts/info-hexdate/screenshots/1.png)](polybar-scripts/info-hexdate/)
