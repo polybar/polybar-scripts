@@ -66,7 +66,7 @@ switch_gpu(){
 	elif [ "$(get_current)" = "hybrid" ]; then
 		next="nvidia"
 	fi	
-	eval "optimus-manager --switch $next --no-confirm"
+	optimus-manager --switch $next --no-confirm
 }
 
 # Handle arguments. 
