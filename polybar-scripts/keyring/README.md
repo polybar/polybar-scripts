@@ -1,7 +1,7 @@
 # Polybar-keyring
 
 A small collection of scripts that (un)locks a keyring (e.g. gnome-keyring)
-based on https://github.com/r-lib/keyring
+based on [r-lib/keyring](https://github.com/r-lib/keyring)
 
 ![keyring-unlocked](screenshots/unlocked.png)
 ![notify](screenshots/notification.png)
@@ -9,13 +9,9 @@ based on https://github.com/r-lib/keyring
 
 ## Motivation
 
-I use [zx2c4 pass](https://www.passwordstore.org/) to store all my passwords
-and since I am too lazy to always enter my passphrase before I can use it
-I save it on the gnome-keyring.
-
-Thus, I was searching for an easy way to lock/unlock my keyring
-w/o even firing up a command line.
-
+I use [zx2c4 pass](https://www.passwordstore.org/) to store all my passwords and
+since I am too lazy to always enter my gpg passphrase I have saved it on the gnome-keyring.
+Thus, I wanted an easy way to lock/unlock my keyring w/o even firing up a command line.
 And sometimes you just want to be sure that your keyring is locked.
 
 So enjoy!
@@ -37,8 +33,8 @@ install.packages("keyring")
 ```ini
 [module/keyring]
 type = custom/script
-exec = ~/polybar-scripts/polybar-keyring/keyring.sh
-click-left = notify-send "(un)locking gnome-keyring" && ~/polybar-scripts/polybar-keyring/keyring_toggle.r
+exec = ~/polybar-scripts/keyring/keyring.sh
+click-left = notify-send "(un)locking gnome-keyring" && ~/polybar-scripts/keyring/keyring_toggle.r
 interval = 5
 ```
 
