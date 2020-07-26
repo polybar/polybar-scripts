@@ -39,6 +39,6 @@ interval = 5
 ```
 
 ## Installation
-1. Install the Dependencies
+1. Install the dependencies
 2. Insert the module in your polybar config
 3. Change the path in polybar-keyring.conf
