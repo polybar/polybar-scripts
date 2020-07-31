@@ -1,6 +1,7 @@
 # Script: Display current window / application
 
 A shell script that shows your focused window/application
+
 ![sp](screenshots/sp.png)
 ![gc](screenshots/gc.png)
 ![term](screenshots/term.png)
