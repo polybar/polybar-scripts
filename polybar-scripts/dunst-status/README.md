@@ -2,10 +2,11 @@
 
 This is a simple script that displays dunst's `is-paused` status.
 It will display a crossed out bell icon
-![][screenshots/off.png]
 if the notifications are paused,
-or a regular bell otherwise
-![][screenshots/on.png].
+or a regular bell otherwise.
+
+![](screenshots/on.png)
+![](screenshots/off.png)
 
 The script sets up a trap to support immediate status update on mouse click.
 You can also create a script to bind to a key shortcut.
