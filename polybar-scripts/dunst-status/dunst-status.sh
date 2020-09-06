@@ -5,7 +5,7 @@ OFF=""
 
 toggle() {
     paused=$(dunstctl is-paused)
-    if [[ "$paused" == "true" ]]
+    if [ "$paused" = "true" ]
     then
         echo "$OFF"
     else
