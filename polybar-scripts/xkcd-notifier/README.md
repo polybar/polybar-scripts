@@ -9,7 +9,6 @@ For options see `notifier --help`.
 
 - Python 3
 - [requests](https://pypi.org/project/requests/)
-- [siji](https://github.com/stark/siji/) for the default prefix
 
 ## Module
 
