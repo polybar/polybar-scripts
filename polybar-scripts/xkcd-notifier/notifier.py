@@ -4,7 +4,7 @@ import requests
 from sys import argv
 
 latest_file = "latest"
-prefix = ""
+prefix = "#"
 read = False
 
 help = """xkcd-notifier: Display the current XKCD comic number, and show if there are any new ones.
