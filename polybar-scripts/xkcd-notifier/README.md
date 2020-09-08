@@ -15,7 +15,7 @@ For options see `notifier --help`.
 
 ## Module
 
-```
+```ini
 [module/xkcd]
 type = custom/script
 exec = ~/.config/polybar/xkcd-notifier/notifier.py -f ~/.config/polybar/xkcd-notifier/latest
