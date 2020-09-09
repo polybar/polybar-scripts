@@ -2,7 +2,7 @@
 
 Displays the current xkcd comic and whether there are any new ones in polybar, written in python.
 
-![Unread](/polybar-scripts/xkcd-notifier/screenshots/unread.png) ![Read](/polybar-scripts/xkcd-notifier//screenshots/read.png)
+![Unread](/screenshots/unread.png) ![Read](/screenshots/read.png)
 
 ## Dependencies
 
@@ -19,7 +19,7 @@ For options see `notifier.py --help`.
 [module/xkcd]
 type = custom/script
 exec = ~/.config/polybar/xkcd-notifier/notifier.py -f ~/.config/polybar/xkcd-notifier/latest
-click-left = xdg-open https://xkcd.com/ && ~/.config/polybar/xkcd-notifier/notifier.py -f ~/.config/polybar/xkcd-notifier/latest --read
-interval = 300
+click-left =  xdg-open https://xkcd.com/ && ~/.config/polybar/xkcd-notifier/notifier.py -f ~/.config/polybar/xkcd-notifier/latest --read
+interval = 60
 ```
 
