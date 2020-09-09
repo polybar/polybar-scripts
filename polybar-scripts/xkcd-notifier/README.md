@@ -11,7 +11,7 @@ Displays the current xkcd comic and whether there are any new ones in polybar, w
 
 ## Configuration
 
-For options see `notifier --help`.
+For options see `notifier.py --help`.
 
 ## Module
 
