@@ -1,6 +1,6 @@
 # Script: info-docker
 
-Show the number of docker containers in a certain state.
+Shows the number of Docker containers in one of the states: `created`, `restarting`, `running`, `removing`, `paused`, `exited`, `dead`
 
 ![info-docker](screenshots/1.png)
 
