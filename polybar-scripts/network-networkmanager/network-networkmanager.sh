@@ -6,10 +6,10 @@ network_print() {
 
     if [ -n "$connection_list" ] && [ "$(echo "$connection_list" | wc -l)" -gt 0  ]; then
         echo "$connection_list" | while read -r line; do
-            description=$(echo "$line" | cut -d ':' -f 1)
-            type=$(echo "$line" | cut -d ':' -f 2)
-            device=$(echo "$line" | cut -d ':' -f 3)
-            state=$(echo "$line" | cut -d ':' -f 4)
+            description=$(echo "$line" | sed -e 's/\\:/-/g' | cut -d ':' -f 1)
+            type=$(echo "$line" | sed -e 's/\\:/-/g' | cut -d ':' -f 2)
+            device=$(echo "$line" | sed -e 's/\\:/-/g' | cut -d ':' -f 3)
+            state=$(echo "$line" | sed -e 's/\\:/-/g' | cut -d ':' -f 4)
 
             if [ "$state" = "activated" ]; then
                 if [ "$type" = "802-11-wireless" ]; then
@@ -34,6 +34,10 @@ network_print() {
                     fi
 
                     description="$description ($speed)"
+                elif [ "$type" = "bluetooth" ]; then
+                    icon="#3"
+
+                    description="$description"
                 fi
             fi
 
