@@ -10,7 +10,9 @@ Show the number of docker containers in a certain state.
 You have to add the `docker` command to the `/etc/sudoers` NOPASSWD of your user:
 
 ```ini
-user ALL=(ALL) NOPASSWD: /usr/bin/docker
+user ALL=(ALL) NOPASSWD: /usr/bin/docker ps -qf status=running
+user ALL=(ALL) NOPASSWD: /usr/bin/docker ps -qf status=exited
+user ALL=(ALL) NOPASSWD: /usr/bin/docker ps -qf status=dead
 ```
 
 
