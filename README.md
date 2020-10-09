@@ -92,7 +92,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [vyachkonovalov/polybar-gmail](https://github.com/vyachkonovalov/polybar-gmail): A Polybar module to show unread messages from Gmail
 * [vyachkonovalov/bar-protonmail](https://github.com/vyachkonovalov/bar-protonmail): A Waybar/Polybar module for ProtonMail
 * [0nse/now_playing](https://github.com/0nse/now_playing): Output the currently scrobbling song
-* [DRKblade/polybar-warrior](https://github.com/DRKblade/polybar-warrior): A script to browse through your tasks and mark them as done. An improvement from taskwarrior-polybar
+* [DRKblade/polybar-warrior](https://github.com/DRKblade/polybar-warrior): A script to browse through your tasks and mark them as done.
 * [dakuten/taskwarrior-polybar](https://github.com/dakuten/taskwarrior-polybar): Merely just a script showing the most urgent task and allowing it to be marked done
 * [quelotic/polybarModules](https://github.com/quelotic/polybarModules): Scripts for mail and caffeine
 * [vyp/scripts](https://github.com/vyp/scripts): A script to show focused, occupied, free and urgent herbstluftwm tags in polybar
