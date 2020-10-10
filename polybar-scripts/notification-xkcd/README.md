@@ -13,8 +13,7 @@ Displays the current xkcd comic and whether there are any new ones in polybar, w
 
 ## Configuration
 
-To set the icon or the location of the save file, edit `icon` or `latest_file` in `notification-xkcd.py`.
-
+To set the icon or the location of the save file, edit `icon` or `latest_file` in `notification-xkcd.py`. Note that you cannot use `~` to indicate your home directory, as python needs a full path by default.
 
 ## Module
 

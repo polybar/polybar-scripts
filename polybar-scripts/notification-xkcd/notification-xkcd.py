@@ -3,7 +3,7 @@
 import requests
 from sys import argv
 
-latest_file = "~/polybar-scripts/notification-xkcd_latest"
+latest_file = "/home/kip/polybar/notification-xkcd/latest"
 icon = "#"
 
 
@@ -13,41 +13,44 @@ if len(argv) > 1:
 		read = True
 
 
-def useFile(doc, manner, write):
-	manners = ['r', 'a', 'w', 'w+']
-	if manner in manners:
-		f = open(doc, manner)
-		if manner == 'r':
-			doc = f.read()
-			f.close()
-			return doc
-		else:
-			f.write(write)
-			f.close()
+def useFile(doc, mode, write):
+	f = open(doc, mode)
+	if mode == 'r':
+		doc = f.read()
+		f.close()
+		return doc
 	else:
-		return "Invalid manner"
+		f.write(write)
+		f.close()
 
+try:
+	latest = int(useFile(latest_file, 'r', '')[0:4])
+except FileNotFoundError:
+	useFile(latest_file, 'x', "2350")
+	latest = 2350
 
-latest = int(useFile(latest_file, 'r', '')[0:4])
-
+newComic = False
 while True:
 	status = requests.get('https://www.xkcd.com/' + str(latest + 1) + '/').status_code
 
 	if status == 200:
 		latest += 1
-		useFile(latest_file, 'w', str(latest) + 'Unread')
+		newComic = True
 
 	elif status == 404:
 		toPrint = ""
 
 		if useFile(latest_file, 'r', '')[4:] == 'Unread':
-			toPrint += "New: "
+			toPrint = "New: "
 	
 		if read:
 			toPrint = ""
 			useFile(latest_file, 'w', str(latest) + 'Read')
+		elif newComic:
+			useFile(latest_file, 'w', str(latest) + 'Unread')
+			toPrint = "New: "
 		
 		toPrint += str(latest)
-		print(icon + " " + toPrint)
+		print(icon + toPrint)
 		break
 
