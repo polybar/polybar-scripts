@@ -3,7 +3,7 @@
 import requests
 from sys import argv
 
-latest_file = "/home/user/polybar-scripts/notification-xkcd/latest"
+latest_file = "/home/user/polybar-scripts/notification-xkcd-latest"
 icon = "#"
 
 
