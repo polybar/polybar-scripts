@@ -6,15 +6,15 @@ separator="|"
 useDesktopNames=true
 ###
 
-while true; do
-    checkForDesktopName() {
-        if [[ $useDesktopNames = true ]]; then
-            desktopLabel=$(wmctrl -d | awk '{$1=$2=$3=$4=$5=$6=$7=$8=$9="";print}' | sed 's/^[[:space:]]*//' | sed -n -e "${i}"p)
-        else
-            desktopLabel=$i
-        fi
-    }
+checkForDesktopName() {
+    if [[ $useDesktopNames = true ]]; then
+        desktopLabel=$(wmctrl -d | awk '{$1=$2=$3=$4=$5=$6=$7=$8=$9="";print}' | sed 's/^[[:space:]]*//' | sed -n -e "${i}"p)
+    else
+        desktopLabel=$i
+    fi
+}
 
+while true; do
     numberOfDesktops=$(wmctrl -d | wc -l)
     moduleText=""
     desktopLabel=""
