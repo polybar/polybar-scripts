@@ -44,8 +44,8 @@ while true; do
         bytes[now_rx_$interface]="$(cat /sys/class/net/"$interface"/statistics/rx_bytes)"
         bytes[now_tx_$interface]="$(cat /sys/class/net/"$interface"/statistics/tx_bytes)"
 
-        bytes_down=$((((${bytes[now_rx_$interface]} - ${bytes[past_rx_$interface]})) / INTERVAL))
-        bytes_up=$((((${bytes[now_tx_$interface]} - ${bytes[past_tx_$interface]})) / INTERVAL))
+        bytes_down=$((((${bytes[now_rx_$interface]} - ${bytes[past_rx_$interface]})) / (1/INTERVAL)))
+        bytes_up=$((((${bytes[now_tx_$interface]} - ${bytes[past_tx_$interface]})) / (1/INTERVAL)))
 
         down=$(((( "$down" + "$bytes_down" ))))
         up=$(((( "$up" + "$bytes_up" ))))
