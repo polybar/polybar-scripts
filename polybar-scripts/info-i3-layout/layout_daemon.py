@@ -15,8 +15,13 @@ previous = None
 def update_indicator(i3, _):
     global previous
     tree = i3.get_tree()
-    layout = tree.find_focused().parent.layout
-    
+    focused = tree.find_focused()
+    if focused.type == "workspace":
+        # empty workspace
+        layout = focused.layout
+    else:
+        layout = focused.parent.layout
+
     if layout == previous:
         return
     previous = layout
