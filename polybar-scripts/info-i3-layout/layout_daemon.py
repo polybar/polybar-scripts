@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 
-from i3ipc import Connection, Event
+import fcntl
+import os
+import sys
 import subprocess
-from tendo.singleton import SingleInstance, SingleInstanceException
+import tempfile
+
+from i3ipc import Connection, Event
 
 
 previous = None
@@ -33,10 +37,13 @@ def update_indicator(i3, _):
 
 
 def main():
+    lockfile = os.path.normpath(tempfile.gettempdir() + '/i3_layout_daemon.lock')
+    fp = open(lockfile, 'w')
     try:
-        me = SingleInstance()
-    except SingleInstanceException:
+        fcntl.lockf(fp, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except IOError:
         print("Layout daemon already running")
+        print("To kill, run 'pkill -f \"python.*layout_daemon.py\"'")
         exit(1)
 
     i3 = Connection()

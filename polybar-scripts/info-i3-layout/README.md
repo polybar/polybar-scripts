@@ -9,7 +9,7 @@ A basic indicator that shows the layout for the currently focused i3 window, use
 
 * i3wm
 * Python 3.6+
-* i3ipc and tendo Python packages (`pip3 install i3ipc tendo`)
+* i3ipc Python package (`pip3 install i3ipc`)
 
 
 ## Configuration
