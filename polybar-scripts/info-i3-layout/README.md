@@ -37,7 +37,7 @@ hook-2 = echo "T"
 hook-3 = echo "S"
 hook-4 = echo "?"
 initial = 1
-click-left = i3-msg layout toggle split; i3-msg -t SEND_TICK
-click-right = i3-msg layout tabbed; i3-msg -t SEND_TICK
+click-left = "i3-msg layout toggle split; i3-msg -t SEND_TICK"
+click-right = "i3-msg layout tabbed; i3-msg -t SEND_TICK"
 ```
 
