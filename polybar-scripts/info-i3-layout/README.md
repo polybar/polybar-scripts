@@ -14,7 +14,7 @@ A basic indicator that shows the layout for the currently focused i3 window, use
 
 ## Configuration
 
-Execute the `layout_daemon.py` script on startup, e.g. by adding `exec --no-startup-id path/to/layout_daemon.py` to `.config/i3/config`. (Remember to mark the script as executable first.) The script runs as a singleton, so to restart it you will first need to kill the running instance, e.g. by running `pkill -f "python.*layout_daemon.py"`.
+Execute the `i3_layout_indicator.py` script on startup, e.g. by adding `exec --no-startup-id path/to/i3_layout_indicator.py` to `.config/i3/config`. The script runs as a singleton, so to restart it you will first need to kill the running instance, e.g. by running `pkill -f "python.*i3_layout_indicator.py"`.
 
 
 ## Module
