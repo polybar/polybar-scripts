@@ -2,9 +2,8 @@
 
 import fcntl
 import os
-import sys
 import subprocess
-import tempfile
+from tempfile import gettempdir
 
 from i3ipc import Connection, Event
 
@@ -46,10 +45,9 @@ def update_indicator(i3, _):
 
 
 def main():
-    # Get a lock on a temporary file to prevent multiple instances from running,
-    # which would cause nasty race conditions
-    lockfile = os.path.normpath(tempfile.gettempdir() +
-            '/i3_layout_indicator.lock')
+    # Get a lock on a temporary file to prevent multiple instances from
+    # running, which would cause nasty race conditions
+    lockfile = os.path.normpath(gettempdir() + "/i3_layout_indicator.lock")
     fp = open(lockfile, 'w')
     try:
         fcntl.lockf(fp, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -73,4 +71,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
