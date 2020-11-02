@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
+"""Script to update Polybar i3 layout indicator module. Run this on startup,
+and add the module to the Polybar config file as shown in README.md."""
 
 import fcntl
 import os
 import subprocess
+import sys
 from tempfile import gettempdir
 
 from i3ipc import Connection, Event
@@ -12,6 +15,11 @@ PREVIOUS = None
 
 
 def update_indicator(i3, _):
+    """ Check if the layout has changed, and if so update the Polybar module
+
+    This function is called whenever a relevant i3 event is triggered. The
+    second argument contains the event data, which we don't care about.
+    """
     global PREVIOUS
     tree = i3.get_tree()
     focused = tree.find_focused()
@@ -44,6 +52,7 @@ def update_indicator(i3, _):
 
 
 def main():
+    """If indicator script is not already running, subscribe to events"""
     # Get a lock on a temporary file to prevent multiple instances from
     # running, which would cause nasty race conditions
     lockfile = os.path.normpath(gettempdir() + "/i3_layout_indicator.lock")
@@ -53,7 +62,7 @@ def main():
     except IOError:
         print("i3 layout indicator is already running")
         print("To kill, run 'pkill -f \"python.*i3_layout_indicator.py\"'")
-        exit(1)
+        sys.exit(1)
 
     # Bind events
     i3 = Connection()
