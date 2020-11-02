@@ -8,11 +8,11 @@ from tempfile import gettempdir
 from i3ipc import Connection, Event
 
 
-previous = None
+PREVIOUS = None
 
 
 def update_indicator(i3, _):
-    global previous
+    global PREVIOUS
     tree = i3.get_tree()
     focused = tree.find_focused()
     if focused.type == "workspace":
@@ -23,9 +23,9 @@ def update_indicator(i3, _):
         layout = focused.parent.layout
 
     # Only update indicator if the layout has changed
-    if layout == previous:
+    if layout == PREVIOUS:
         return
-    previous = layout
+    PREVIOUS = layout
 
     # Hook definitions
     if layout == "splith":
@@ -40,8 +40,7 @@ def update_indicator(i3, _):
         hook = "5"  # Fallback for unknown cases
 
     # Send Polybar message
-    p = subprocess.Popen(["polybar-msg", "hook", "layout", hook])
-    p.communicate()
+    subprocess.run(["polybar-msg", "hook", "layout", hook])
 
 
 def main():
