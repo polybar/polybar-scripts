@@ -31,7 +31,10 @@ except FileNotFoundError:
 
 newComic = False
 while True:
-	status = requests.get('https://www.xkcd.com/' + str(latest + 1) + '/').status_code
+	try:
+		status = requests.get('https://www.xkcd.com/' + str(latest + 1) + '/').status_code
+	except requests.exceptions.ConnectionError:
+		status = 404
 
 	if status == 200:
 		latest += 1
