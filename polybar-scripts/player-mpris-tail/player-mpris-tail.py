@@ -55,6 +55,8 @@ class PlayerManager:
         else:
             # If we don't know this player, get its name and add it
             bus_name = self.getBusNameFromOwner(sender)
+            if bus_name is None:
+                return
             self.addPlayer(bus_name, sender)
             player = self.players[sender]
             player.onPropertiesChanged(interface, properties, signature)
