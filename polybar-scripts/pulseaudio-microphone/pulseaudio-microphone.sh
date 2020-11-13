@@ -25,20 +25,20 @@ toggle() {
   DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
 
   if [ "$MUTED" = "yes" ]; then
-      pacmd set-source-mute "$DEFAULT_SOURCE" 0
+      pactl set-source-mute "$DEFAULT_SOURCE" 0
   else
-      pacmd set-source-mute "$DEFAULT_SOURCE" 1
+      pactl set-source-mute "$DEFAULT_SOURCE" 1
   fi
 }
 
 increase() {
   DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
-  pacmd set-source-volume "$DEFAULT_SOURCE" +5%
+  pactl set-source-volume "$DEFAULT_SOURCE" +5%
 }
 
 decrease() {
   DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
-  pacmd set-source-volume "$DEFAULT_SOURCE" -5%
+  pactl set-source-volume "$DEFAULT_SOURCE" -5%
 }
 
 case "$1" in
