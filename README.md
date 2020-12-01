@@ -39,6 +39,7 @@ Is this your first time here? You should definitely take a look at these scripts
 
 ## all colors are beautiful
 
+[![info-git](polybar-scripts/info-git/screenshots/1.png)](polybar-scripts/info-git/)
 [![updates-pacman-aurhelper](polybar-scripts/updates-pacman-aurhelper/screenshots/1.png)](polybar-scripts/updates-pacman-aurhelper/)
 [![system-cpu-temppercore](polybar-scripts/system-cpu-temppercore/screenshots/1.png)](polybar-scripts/system-cpu-temppercore/)
 [![notification-chess](polybar-scripts/notification-chess/screenshots/1.png)](polybar-scripts/notification-chess/)
