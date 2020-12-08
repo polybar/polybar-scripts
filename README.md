@@ -122,3 +122,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [MaxdSre/mpris-player-control](https://github.com/MaxdSre/mpris-player-control): Control player via MPRIS D-Bus interface
 * [maksmeshkov/toggl_polybar](https://github.com/maksmeshkov/toggl_polybar): Information about current running task for toggl.com time tracker users
 * [shervinsahba/polybar-vpn-controller](https://github.com/shervinsahba/polybar-vpn-controller): VPN controller (toggle VPN, display location or IP, choose location via rofi menu, copy IP to clipboard)
+* [sTiKyt/polybar-onlinestatus](https://github.com/sTiKyt/polybar-onlinestatus): Indicator of your internet connection
