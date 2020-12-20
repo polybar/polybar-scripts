@@ -72,7 +72,7 @@ if GUI:
         wlist = [l.split() for l in subprocess.check_output(["wmctrl", "-lp"])\
                  .decode("utf-8").splitlines()]
         validprocs = [
-            get_process(w[2]) for w in wlist if check_wtype(w[0]) == True
+            get_process(w[2]) for w in wlist if check_wtype(w[0]) == True and w[2] != '0'
         ]
 
         return validprocs
