@@ -44,7 +44,7 @@ tail)
     { tail -f /tmp/polybar-stopwatch 2>&1 >&3 3>&- | grep -v truncated >&2 3>&-;} 3>&1
     ;;
   cancel)
-    kill $(cat /tmp/polybar-stopwatch-pid)
+    kill "$(cat /tmp/polybar-stopwatch-pid)"
     ;;
   *)
     echo "Invalid Option"
