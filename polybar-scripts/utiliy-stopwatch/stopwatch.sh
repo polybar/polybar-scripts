@@ -21,13 +21,13 @@ startTimer () {
 			time="$min"'m'" $relSec"
 		fi
 
-		echo "祥 $time" >> /tmp/polybar-stopwatch
+		echo "$time" >> /tmp/polybar-stopwatch
 		sleep 1
 	done
 }
 
 initialize () {
-	echo 祥 > /tmp/polybar-stopwatch 
+	echo " " > /tmp/polybar-stopwatch 
 }
 
 initialize 
@@ -38,7 +38,7 @@ case $1 in
     startTimer
     ;;
 display)
-    echo 祥 >> /tmp/polybar-stopwatch 
+    echo " " >> /tmp/polybar-stopwatch 
     ;;
 tail)
     { tail -f /tmp/polybar-stopwatch 2>&1 >&3 3>&- | grep -v truncated >&2 3>&-;} 3>&1

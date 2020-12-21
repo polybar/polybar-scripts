@@ -15,4 +15,6 @@ tail = true
 
 click-left = ~/polybar-scripts/polybar-stopwatch.sh new
 click-right = ~/polybar-scripts/polybar-stopwatch.sh cancel ; ~/polybar-scripts/polybar-stopwatch.sh display
+
+format = # <label>
 ```
