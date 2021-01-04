@@ -281,18 +281,18 @@ class Player:
             _cover      = _getProperty(self._metadata, 'xesam:artUrl', '') or _getProperty(self._metadata, 'mpris:artUrl', '')
             _duration   = _getDuration(_length_int)
             # Update metadata
-            self.metadata['artist']     = re.sub(SAFE_TAG_REGEX, """\1\1""", _firstIfList(_artist))
-            self.metadata['album']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _firstIfList(_album))
-            self.metadata['title']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _firstIfList(_title))
-            self.metadata['track']      = _track
-            self.metadata['genre']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _firstIfList(_genre))
+            self.metadata['artist']     = re.sub(SAFE_TAG_REGEX, """\1\1""", _metadataGetFirstItem(_artist))
+            self.metadata['album']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _metadataGetFirstItem(_album))
+            self.metadata['title']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _metadataGetFirstItem(_title))
+            self.metadata['track']      = _traitem
+            self.metadata['genre']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _metadataGetFirstItem(_genre))
             self.metadata['disc']       = _disc
             self.metadata['date']       = re.sub(SAFE_TAG_REGEX, """\1\1""", _date)
             self.metadata['year']       = re.sub(SAFE_TAG_REGEX, """\1\1""", _year)
             self.metadata['url']        = _url
             self.metadata['filename']   = os.path.basename(_url)
             self.metadata['length']     = _length_int
-            self.metadata['cover']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _firstIfList(_cover))
+            self.metadata['cover']      = re.sub(SAFE_TAG_REGEX, """\1\1""", _metadataGetFirstItem(_cover))
             self.metadata['duration']   = _duration
 
     def onMetadataChanged(self, track_id, metadata):
@@ -450,8 +450,14 @@ def _getDuration(t: int):
         seconds = t / 1000000
         return time.strftime("%M:%S", time.gmtime(seconds))
 
-def _firstIfList(_value):
-    return _value[0] if type(_value) is list and len(_value) else _value
+def _metadataGetFirstItem(_value):
+    if type(_value) is list:
+        # Returns the string representation of the first item on _value if it has at least one item.
+        # Returns an empty string if _value is empty.
+        return str(_value[0]) if len(_value) else ''
+    else:
+        # If _value isn't a list just return the string representation of _value.
+        return str(_value)
 
 class CleanSafeDict(dict):
     def __missing__(self, key):
