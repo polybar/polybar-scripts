@@ -44,3 +44,26 @@ exec = ~/polybar-scripts/openweathermap-simple.sh
 interval = 600
 label-font = 3
 ```
+### Using with other fonts
+
+To use this with your own font, remove
+
+```ini
+label-font = 3
+```
+
+from the polybar configuration file.
+
+After that, go to `openweathermap-simple.sh` and replace
+
+```bash
+echo "$(get_icon "$weather_icon")" "$weather_temp$SYMBOL"
+```
+
+with
+
+```bash
+echo "%{T3}""$(get_icon "$weather_icon")" "%{T-}""$weather_temp$SYMBOL"
+```
+
+. This will use the 2nd font in your polybar config for the weather icon, but use your default font for the rest.
