@@ -11,23 +11,28 @@ fi
 left_click_menu() {
 
     container="$(docker ps --format \{\{.Names\}\} | rofi -dmenu -window-title 'Running Docker Containers')"
-    docker_action=$( printf "TTY\nStop\nPause\nResume\nRemove (force)\nLogs (follow)" | rofi -dmenu -window-title "Container Available Actions")
-    case "$docker_action" in
-        "TTY")  xterm -fa 'Monospace' -fs 14 -e bash -c "docker exec -it ${container} /bin/sh" 
-            ;;
-        "Stop") docker stop "${container}"
-            ;;
-        "Pause") docker pause "${container}"
-            ;;
-        "Resume") docker unpause "${container}"
-            ;;
-        "Remove (force)") docker rm -f "${container}"
-            ;;
-        "Logs (follow)") xterm -fa 'Monospace' -fs 14 -e bash -c "docker logs -f ${container} "
-            ;;
-        *) echo "Something Else"
-           ;;
-    esac
+    if test -z "$container" 
+    then
+        echo "\$container is empty"
+    else
+        docker_action=$( printf "TTY\nStop\nPause\nResume\nRemove (force)\nLogs (follow)" | rofi -dmenu -window-title "Container Available Actions")
+        case "$docker_action" in
+            "TTY")  xterm -fa 'Monospace' -fs 14 -e bash -c "docker exec -it ${container} /bin/sh" 
+                ;;
+            "Stop") docker stop "${container}"
+                ;;
+            "Pause") docker pause "${container}"
+                ;;
+            "Resume") docker unpause "${container}"
+                ;;
+            "Remove (force)") docker rm -f "${container}"
+                ;;
+            "Logs (follow)") xterm -fa 'Monospace' -fs 14 -e bash -c "docker logs -f ${container} "
+                ;;
+            *) echo "Something Else"
+                ;;
+        esac
+    fi
 }
 
 if [ "$docker_is_active" = "active" ]; then
