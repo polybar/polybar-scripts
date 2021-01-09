@@ -36,8 +36,8 @@ user ALL=(ALL) NOPASSWD: /usr/bin/docker ps -qf status=dead
 ```ini
 [module/info-docker]
 type = custom/script
-exec = ~/.config/polybar/scripts/docker.sh
+exec = ~/.config/polybar/scripts/info-docker-advance.sh
 interval = 10
-click-left = ~/.config/polybar/scripts/docker.sh rofi-left &
-click-right = ~/.config/polybar/scripts/docker.sh rofi-right &
+click-left = ~/.config/polybar/scripts/info-docker-advance.sh rofi-left &
+click-right = ~/.config/polybar/scripts/info-docker-advance.sh rofi-right &
 ```
