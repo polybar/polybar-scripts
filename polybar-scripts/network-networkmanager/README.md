@@ -18,5 +18,5 @@ If you want the left click functionality, uncomment the option and replace `your
 type = custom/script
 exec = ~/polybar-scripts/network-networkmanager.sh
 tail = true
-;left-click= yourterminal -e nmtui 
+;left-click= yourterminal -e 'nmtui' & 
 ```
