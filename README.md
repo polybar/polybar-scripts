@@ -123,3 +123,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [shervinsahba/polybar-vpn-controller](https://github.com/shervinsahba/polybar-vpn-controller): VPN controller (toggle VPN, display location or IP, choose location via rofi menu, copy IP to clipboard)
 * [madhat2r/polybar-i3-window](https://github.com/madhat2r/polybar-i3-window): A Polybar module to show i3 window title that can handle multi-monitors
 * [sTiKyt/polybar-onlinestatus](https://github.com/sTiKyt/polybar-onlinestatus): Indicator of your internet connection
+* [woutdp/polybar-clockify](https://github.com/woutdp/polybar-clockify): Control Clockify, a time tracking tool, through Polybar
