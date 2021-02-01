@@ -1,5 +1,8 @@
-# polymetals
+# Script: polymetals
 Custom polybar script that displays the price of silver, gold, and/or platinum.
+
+## Dependencies
+* 'python'
 
 ## Python Modules Needed
 * 'pandas'
@@ -7,7 +10,7 @@ Custom polybar script that displays the price of silver, gold, and/or platinum.
 * 'requests_html'
 * 'yahoo_fin'
 
-## Module Example
+## Module
 ```ini
 [module/polymetals]
 type = custom/script
