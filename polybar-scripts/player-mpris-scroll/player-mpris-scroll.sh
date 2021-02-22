@@ -5,7 +5,6 @@ icon_pos=$1
 max_width=$2
 scroll=$3
 step=$4
-start="0"
 
 
 player_status=$(playerctl status 2> /dev/null)
@@ -19,13 +18,17 @@ show(){
 }
 
 print(){
+    show=$2
     if [ ${#show} -gt "$max_width" ]; then
         omit=""
         "$scroll" != "false" || omit="..."
+
+        content=$(echo "$show" | awk -v start="$start" -v max="$max_width"  '{ content=substr($0, start, max); print content; }' )
+
         if [ "$icon_pos" = "left" ]; then
-            echo "$1${show: $start: $max_width}$omit"
+            echo "$1$content$omit"
         else
-            echo "${show: $start: $max_width}$omit$1"
+            echo "$content$omit$1"
         fi
     else
         if [ "$icon_pos" = "left" ]; then
@@ -45,32 +48,28 @@ if [ "$player_status" = "Playing" ]; then
         song_title="$(playerctl metadata title)"
         if [ "$currentsong" != "$song_title" ]; then
             start="0"
-            echo 0 &> ~/temp/currentsongindex
-            echo "$song_title" &> ~/temp/currentsong
+            echo 0 > ~/temp/currentsongindex 2>&1
+            echo "$song_title" > ~/temp/currentsong 2>&1
         else
             #update index
             currentsongindex=$(cat ~/temp/currentsongindex 2> /dev/null);
 
             start=$(("$currentsongindex" + "$step"))
-            while [ "${show: $start:1}" = " " ];
-            do
-                start=$(("$start" + "$step"))
-            done
             # reset index
             if [ $(( "$start" - "$step" + "$max_width" )) -gt  ${#show} ]; then
                 start="0"
             fi
-            echo "${start}" &> ~/temp/currentsongindex
+            echo "${start}" > ~/temp/currentsongindex 2>&1
         fi
     else
         start="0"
     fi
-    print " ⏸ "
+    print " ⏸ " "$show"
 
 elif [ "$player_status" = "Paused" ]; then
     show 
-    echo 0 &> ~/temp/currentsongindex
-    print " ⏵ "
+    echo 0 > ~/temp/currentsongindex 2>&1
+    print " ⏵ " "$show"
 else    
     echo ""
 fi
