@@ -125,3 +125,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [sTiKyt/polybar-onlinestatus](https://github.com/sTiKyt/polybar-onlinestatus): Indicator of your internet connection
 * [mt-inside/polybar-lmsensors](https://github.com/mt-inside/polybar-lmsensors): Print the values of specified lmsensors
 * [mt-inside/dbus-spotify](https://github.com/mt-inside/dbus-spotify): Print infos from Spotify over DBus
+* [daltroaugusto/polybar-i3-dynamic-trayoffset](https://github.com/daltroaugusto/polybar-i3-dynamic-trayoffset): A hackish way to get dynamic tray area in i3wm
