@@ -11,3 +11,4 @@ type = custom/script
 exec = ~/bin/show-mic-vol.sh
 interval = 5
 ```
+![Screenshot](Screenshot-Mic-Vol.png)
