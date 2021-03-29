@@ -8,7 +8,7 @@ A shell script that shows the mic volume
 ```ini
 [module/mic-volume]
 type = custom/script
-exec = ~/bin/show-mic-vol.sh
-interval = 5
+exec = echo "Mic Vol 🎙️: $(amixer sget Capture | grep "Front Left" | sed -n 2p | awk '{ print $5 }')"
+interval = 2
 ```
 ![Screenshot](Screenshot-Mic-Vol.png)
