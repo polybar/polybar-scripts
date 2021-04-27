@@ -24,4 +24,3 @@ exec = $HOME/.config/polybar/polybar-scripts/polybar-scripts/pipewire-microphone
 tail = true
 click-left = $HOME/.config/polybar/polybar-scripts/polybar-scripts/pipewire-microphone/pipewire-microphone.sh --toggle &
 ```
-

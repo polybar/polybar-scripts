@@ -7,7 +7,7 @@ get_mic_default() {
 is_mic_muted() {
     mic_name="$(get_mic_default)"
 
-    pactl list sources |
+    pactl list sources | \
         awk -v mic_name="${mic_name}" '{
             if ($0 ~ "Name: " mic_name) {
                 matched_mic_name = 1;
