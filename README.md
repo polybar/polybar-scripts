@@ -129,3 +129,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [daltroaugusto/polybar-i3-dynamic-trayoffset](https://github.com/daltroaugusto/polybar-i3-dynamic-trayoffset): A hackish way to get dynamic tray area in i3wm
 * [woutdp/polybar-clockify](https://github.com/woutdp/polybar-clockify): Control Clockify, a time tracking tool, through Polybar
 * [mikeri/polycmus](https://github.com/mikeri/polycmus): Show what song is playing in cmus
+* [pikulo-kama/polybar-quotation](https://github.com/pikulo-kama/polybar-quotation): Reads file with famous quotations and shows them
