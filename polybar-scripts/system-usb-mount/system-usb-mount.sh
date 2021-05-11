@@ -8,7 +8,7 @@ case "$1" in
             udisksctl mount --no-user-interaction -b "$mount"
 
             # mountpoint=$(udisksctl mount --no-user-interaction -b $mount)
-            # mountpoint=$(echo $mountpoint | cut -d " " -f 4 | tr -d ".")
+            # mountpoint=$(echo $mountpoint | cut -d " " -f 4- | tr -d ".")
             # terminal -e "bash -lc 'filemanager $mountpoint'" &
         done
         ;;

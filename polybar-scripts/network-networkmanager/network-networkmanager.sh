@@ -36,8 +36,6 @@ network_print() {
                     description="$description ($speed)"
                 elif [ "$type" = "bluetooth" ]; then
                     icon="#3"
-
-                    description="$description"
                 fi
             fi
 
