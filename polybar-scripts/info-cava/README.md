@@ -1,8 +1,8 @@
-# Script: cava-audiovis
+# Script: info-cava
 
 A simple script that runs a small audio visualizer using cava on your taskbar
 
-![cava-audiovis](screenshots/1.png)
+![info-cava](screenshots/1.png)
 
 
 ## Dependencies
@@ -19,17 +19,17 @@ Configuration can be made by providing the following command line arguments:
 
 Example config:
 ```ini
-[module/cava-audiovis]
+[module/info-cava]
 type = custom/script
-exec = ~/polybar-scripts/cava-audiovis.py -f 24 -b 12 -e fffdfc,fffafe,ffeafa,ffc3d2 -c average
+exec = ~/polybar-scripts/info-cava.py -f 24 -b 12 -e fffdfc,fffafe,ffeafa,ffc3d2 -c average
 tail = true
 ```
 
 ## Module
 
 ```ini
-[module/cava-audiovis]
+[module/info-cava]
 type = custom/script
-exec = ~/polybar-scripts/cava-audiovis.py
+exec = ~/polybar-scripts/info-cava.py
 tail = true
 ```
