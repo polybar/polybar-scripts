@@ -130,3 +130,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [woutdp/polybar-clockify](https://github.com/woutdp/polybar-clockify): Control Clockify, a time tracking tool, through Polybar
 * [mikeri/polycmus](https://github.com/mikeri/polycmus): Show what song is playing in cmus
 * [pikulo-kama/polybar-quotation](https://github.com/pikulo-kama/polybar-quotation): Reads file with famous quotations and shows them
+* [KevinThomas0/kde-virtual-desktops-polybar](https://github.com/KevinThomas0/kde-virtual-desktops-polybar): collection of scripts meant to be used in modules for Polybar
