@@ -19,8 +19,9 @@ FORMAT_TAG_REGEX = re.compile(r'(?P<format>[wt])(?P<formatlen>\d+)')
 SAFE_TAG_REGEX = re.compile(r'[{}]')
 
 class PlayerManager:
-    def __init__(self, blacklist = [], connect = True):
-        self.blacklist = blacklist
+    def __init__(self, filter_list, block_mode = True, connect = True):
+        self.filter_list = filter_list
+        self.block_mode = block_mode
         self._connect = connect
         self._session_bus = dbus.SessionBus()
         self.players = {}
@@ -78,7 +79,12 @@ class PlayerManager:
                 return player_bus_name
 
     def busNameIsAPlayer(self, bus_name):
-        return bus_name.startswith('org.mpris.MediaPlayer2') and bus_name.split('.')[3] not in self.blacklist
+        if bus_name.startswith('org.mpris.MediaPlayer2') is False:
+            return False
+        name = bus_name.split('.')[3]
+        if self.block_mode is True:
+            return name not in self.filter_list
+        return name in self.filter_list
 
     def refreshPlayerList(self):
         player_bus_names = [ bus_name for bus_name in self._session_bus.list_names() if self.busNameIsAPlayer(bus_name) ]
@@ -483,7 +489,11 @@ parser.add_argument('command', help="send the given command to the active player
                     choices=[ 'play', 'pause', 'play-pause', 'stop', 'previous', 'next', 'status', 'list', 'current', 'metadata', 'raise' ],
                     default=None,
                     nargs='?')
-parser.add_argument('-b', '--blacklist', help="ignore a player by it's bus name. Can be be given multiple times (e.g. -b vlc -b audacious)",
+parser.add_argument('-b', '--blacklist', help="ignore a player by it's bus name. Can be given multiple times (e.g. -b vlc -b audacious)",
+                    action='append',
+                    metavar="BUS_NAME",
+                    default=[])
+parser.add_argument('-w', '--whitelist', help="permit a player by it's bus name like --blacklist. will block --blacklist if given",
                     action='append',
                     metavar="BUS_NAME",
                     default=[])
@@ -504,10 +514,13 @@ ICON_PAUSED = args.icon_paused
 ICON_STOPPED = args.icon_stopped
 ICON_NONE = args.icon_none
 
+block_mode = len(args.whitelist) == 0
+filter_list = args.blacklist if block_mode else args.whitelist
+
 if args.command is None:
-    PlayerManager(blacklist = args.blacklist)
+    PlayerManager(filter_list = filter_list, block_mode = block_mode)
 else:
-    player_manager = PlayerManager(blacklist = args.blacklist, connect = False)
+    player_manager = PlayerManager(filter_list = filter_list, block_mode = block_mode, connect = False)
     current_player = player_manager.getCurrentPlayer()
     if args.command == 'play' and current_player:
         current_player.play()
