@@ -127,3 +127,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [mt-inside/dbus-spotify](https://github.com/mt-inside/dbus-spotify): Print infos from Spotify over DBus
 * [conor-f/spotibar](https://github.com/conor-f/spotibar): Polybar plugin for Spotify that uses the Spotify Web API
 * [daltroaugusto/polybar-i3-dynamic-trayoffset](https://github.com/daltroaugusto/polybar-i3-dynamic-trayoffset): A hackish way to get dynamic tray area in i3wm
+* [woutdp/polybar-clockify](https://github.com/woutdp/polybar-clockify): Control Clockify, a time tracking tool, through Polybar
