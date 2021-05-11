@@ -52,15 +52,11 @@ case "$1" in
         devices=$(lsblk -Jplno NAME,TYPE,RM,MOUNTPOINT)
 
         for mount in $(echo "$devices" | jq -r '.blockdevices[] | select(.type == "part") | select(.rm == true) | select(.mountpoint == null) | .name'); do
-            # udisksctl mount --no-user-interaction -b "$mount"
+            udisksctl mount --no-user-interaction -b "$mount"
 
             # mountpoint=$(udisksctl mount --no-user-interaction -b $mount)
-            # mountpoint=$(echo $mountpoint | cut -d " " -f 4 | tr -d ".")
+            # mountpoint=$(echo $mountpoint | cut -d " " -f 4- | tr -d ".")
             # terminal -e "bash -lc 'filemanager $mountpoint'"
-
-            mountpoint=$(udisksctl mount --no-user-interaction -b "$mount")
-            mountpoint=$(echo "$mountpoint" | cut -d " " -f 4 | tr -d ".")
-            termite -e "bash -lc 'mc $mountpoint'" &
         done
 
         usb_update
