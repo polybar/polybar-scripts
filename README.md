@@ -85,6 +85,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-hlwm-workspaces](polybar-scripts/info-hlwm-workspaces/screenshots/1.png)](polybar-scripts/info-hlwm-workspaces/)
 [![info-hexdate](polybar-scripts/info-hexdate/screenshots/1.png)](polybar-scripts/info-hexdate/)
 [![notification-spacex](polybar-scripts/notification-spacex/screenshots/1.png)](polybar-scripts/notification-spacex/)
+[![info-podman](polybar-scripts/info-podman/screenshots/1.png)](polybar-scripts/info-podman/)
 
 
 ## See also these other user repositories:
