@@ -1,13 +1,14 @@
 # Script: info-podman
+
 Shows the number of Podman containers in one of the states: `created`, `exited`, `paused`, `running`, `unknown`  
 
 ![info-podman](screenshots/1.png)  
 
-## Dependencies
-This script relies on Podman being installed on the local computer.  
 
-## Configuration
-Podman has to be configured for rootless use. See [Basic Setup and Use of Podman in a Rootless environment.](https://github.com/containers/podman/blob/master/docs/tutorials/rootless_tutorial.md)  
+## Dependencies
+
+* [`podman`](https://github.com/containers/podman)
+
 
 ## Module
 ```ini
