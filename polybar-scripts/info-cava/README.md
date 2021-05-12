@@ -17,19 +17,11 @@ Configuration can be made by providing the following command line arguments:
 * `-e`|`--extra_colors EXTRA_COLORS`: Color gradient used on higher values, separated by commas, default is `fdd,fcc,fbb,faa`, spaces and #s are ignored.
 * `-c`|`--channels {stereo,left,right,average}`: Audio channels to be used, defaults to stereo.
 
-Example config:
-```ini
-[module/info-cava]
-type = custom/script
-exec = ~/polybar-scripts/info-cava.py -f 24 -b 12 -e fffdfc,fffafe,ffeafa,ffc3d2 -c average
-tail = true
-```
-
 ## Module
 
 ```ini
 [module/info-cava]
 type = custom/script
-exec = ~/polybar-scripts/info-cava.py
+exec = ~/polybar-scripts/info-cava.py -f 24 -b 12 -e fffdfc,fffafe,ffeafa,ffc3d2 -c average
 tail = true
 ```
