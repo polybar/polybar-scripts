@@ -10,7 +10,7 @@ hybrid_switching=0
 gpu_current() {
 	mode=$(optimus-manager --print-mode)
 
-    echo "$mode" | cut -d ' ' -f 4
+    echo "$mode" | cut -d ' ' -f 5 | tr -d '[:space:]'
 }
 
 gpu_switch() {
