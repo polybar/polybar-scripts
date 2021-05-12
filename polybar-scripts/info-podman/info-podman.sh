@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-STATUS="running exited"
+STATUS="created exited paused running unknown"
 
 for stat in $STATUS; do
     output="$output $(podman ps -qf status="$stat" | wc -l) |"
