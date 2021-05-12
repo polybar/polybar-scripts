@@ -8,8 +8,8 @@ bluetooth_print() {
             devices_paired=$(bluetoothctl paired-devices | grep Device | cut -d ' ' -f 2)
             counter=0
 
-            echo "$devices_paired" | while read -r line; do
-                device_info=$(bluetoothctl info "$line")
+            for device in $devices_paired; do
+                device_info=$(bluetoothctl info "$device")
 
                 if echo "$device_info" | grep -q "Connected: yes"; then
                     device_alias=$(echo "$device_info" | grep "Alias" | cut -d ' ' -f 2-)
