@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/sh
+set -e
 
 echo "VPN $( mullvad status | cut -d' ' -f3 )"
