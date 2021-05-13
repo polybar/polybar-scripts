@@ -4,9 +4,9 @@ status() {
   MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
 
   if [ "$MUTED" = "yes" ]; then
-    echo "#1"
+    echo "muted"
   else
-    echo "#2"
+    pacmd list-sources | grep "\* index:" -A 7 | grep volume | awk -F/ '{print $2}' | tr -d ' '  
   fi
 }
 
@@ -25,15 +25,31 @@ toggle() {
   DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
 
   if [ "$MUTED" = "yes" ]; then
-      pacmd set-source-mute "$DEFAULT_SOURCE" 0
+      pactl set-source-mute "$DEFAULT_SOURCE" 0
   else
-      pacmd set-source-mute "$DEFAULT_SOURCE" 1
+      pactl set-source-mute "$DEFAULT_SOURCE" 1
   fi
+}
+
+increase() {
+  DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
+  pactl set-source-volume "$DEFAULT_SOURCE" +5%
+}
+
+decrease() {
+  DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
+  pactl set-source-volume "$DEFAULT_SOURCE" -5%
 }
 
 case "$1" in
     --toggle)
         toggle
+        ;;
+    --increase)
+        increase
+        ;;
+    --decrease)
+        decrease
         ;;
     *)
         listen
