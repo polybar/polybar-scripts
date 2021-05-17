@@ -18,26 +18,33 @@ herbstclient --idle "tag_*" 2>/dev/null | {
             for i in "${tags[@]}" ; do
                 # Read the prefix from each tag and render them according to that prefix
                 case ${i:0:1} in
-                    '#')
-                        # the tag is viewed on the bar's monitor and is focused
-                        # TODO Add your formatting tags for focused workspaces
-                        ;;
-                    '+')
-                        # the tag is viewed on the bar's monitor, but is not focused
-                        # TODO Add your formatting tags for viewed but unfocused tags
-                        ;;
-                    '!')
-                        # ! the tag contains an urgent window
-                        # TODO Add your formatting tags for workspaces with the urgent hint
-                        ;;
                     '.')
                         # the tag is empty
-                        # TODO Add your formatting tags for visible but not focused workspaces
+                        # TODO Add your formatting tags
                         ;;
-                    *)
-                        # default including not empty tags and tags viewed on another monitor (: - %)
-                        # TODO Add your formatting tags for tags that or not currently viewed
-                        # or displayed on another monitor
+                    ':')
+                        # the tag is not empty
+                        # TODO Add your formatting tags
+                        ;;
+                    '+')
+                        # the tag is viewed on the specified MONITOR, but this monitor is not focused.
+                        # TODO Add your formatting tags
+                        ;;
+                    '#')
+                        # the tag is viewed on the specified MONITOR and it is focused.
+                        # TODO Add your formatting tags
+                        ;;
+                    '-')
+                        # the tag is viewed on a different MONITOR, but this monitor is not focused.
+                        # TODO Add your formatting tags
+                        ;;
+                    '%')
+                        # the tag is viewed on a different MONITOR and it is focused.
+                        # TODO Add your formatting tags
+                        ;;
+                    '!')
+                        # the tag contains an urgent window
+                        # TODO Add your formatting tags
                         ;;
                 esac
 
