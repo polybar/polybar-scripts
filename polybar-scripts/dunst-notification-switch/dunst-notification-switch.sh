@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash
 
 # checking for one argument here
 if [ $# -eq 1 ]; then
@@ -23,9 +22,9 @@ status="$(dunstctl is-paused)"
 # if the status is false, dunst is paused
 # notifications will wait until you reenable dunst
 if [[ "$status" == "true" ]]; then
-    echo -e "\uf1f6"
+    echo -e "#1"
 # if the status returned false, dunst is running and active.
 # you can recieve notifications
 elif [[ "$status" == "false" ]]; then
-    echo -e "\uf0f3"
+    echo -e "#2"
 fi
