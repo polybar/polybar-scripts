@@ -1,9 +1,9 @@
-# Script: { name }
+# Script: dunst-notification-switch
 
-Disable or enable Dunst notifications. When disabled, notifications will still be created and saved by dunst until you enable it again.
+Disable or enable Dunst notifications. When disabled, notifications will still be created and saved by dunst until you enable it again.  
 
-![dunst-notifications-enabled](screenshots/1.png)
-![dunst-notifications-disabled](screenshots/2.png)
+![dunst-notifications-enabled](screenshots/1.png)  
+![dunst-notifications-disabled](screenshots/2.png)  
 
 
 ## Dependencies
