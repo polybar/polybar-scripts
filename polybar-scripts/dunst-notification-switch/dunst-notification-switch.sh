@@ -8,12 +8,12 @@ if [ $# -eq 1 ]; then
     # exit if something else is provided
     else
         echo "Wrong argument. Use \"toggle\""
-        $(exit 1); echo "$?"
+        exit 1
     fi
 # reject too many arguments
 elif [ $# -ge 2 ]; then
     echo "Too many arguments provided"
-    $(exit 1); echo "$?"
+    exit 1
 fi
 
 # get the paused status of dunst
