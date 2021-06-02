@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 # checking for one argument here
 if [ $# -eq 1 ]; then
     # check if the argument is "toggle"
-    if [[ "$1" == "toggle" ]]; then
+    if [ "$1" = "toggle" ]; then
         dunstctl set-paused toggle
     # exit if something else is provided
     else
@@ -21,10 +21,10 @@ status="$(dunstctl is-paused)"
 
 # if the status is false, dunst is paused
 # notifications will wait until you reenable dunst
-if [[ "$status" == "true" ]]; then
-    echo -e "#1"
+if [ "$status" = "true" ]; then
+    echo "#1"
 # if the status returned false, dunst is running and active.
 # you can recieve notifications
-elif [[ "$status" == "false" ]]; then
-    echo -e "#2"
+elif [ "$status" = "false" ]; then
+    echo "#2"
 fi
