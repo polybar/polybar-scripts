@@ -6,6 +6,8 @@ This is a simple module showing the remaining time for the next salah.
 Enter your country name, city name, and the username of your pc for home directory
 
 [[./Screenshots/code.png]]
+
+And make sure to check the "checkDate.py" file path in "salah-time.py" script.
 ** Screenshots
 [[./Screenshots/isha.png]]
 ** Module
