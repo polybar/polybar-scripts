@@ -8,6 +8,8 @@ Enter your country name, city name, and the username of your pc for home directo
 [[./Screenshots/code.png]]
 
 And make sure to check the "checkDate.py" file path in "salah-time.py" script.
+
+Optionally you can use any icon or colors you want.
 ** Screenshots
 [[./Screenshots/isha.png]]
 ** Module
