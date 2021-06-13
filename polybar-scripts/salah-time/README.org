@@ -9,7 +9,6 @@ Enter your country name, city name.
 
 And make sure to check the "checkDate.py" file path in "salah-time.py" script.
 
-Optionally you can use any icon or colors you want.
 ** Screenshots
 [[./Screenshots/isha.png]]
 ** Module
@@ -25,6 +24,8 @@ Use these fonts for the icons
 font-1 = "FontAwesome:size=10;0"
 font-2 = "FontAwesome5Free:style=Solid:size=11;0"
 #+end_src
+
+Optionally you can use any icon or colors you want.
 #+begin_src conf
 label-maxlen = 20
 format-padding = 1
