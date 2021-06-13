@@ -3,6 +3,7 @@
 from datetime import datetime
 import requests
 import pickle
+import os
 
 
 # Enter your country and city name
@@ -10,7 +11,7 @@ country = "Bangladesh"
 city = "Dhaka"
 
 # Username of pc
-user = "robin"
+user = os.getlogin()
 
 
 def calculateTime(salahN, salahTimeH, salahTimeM):
