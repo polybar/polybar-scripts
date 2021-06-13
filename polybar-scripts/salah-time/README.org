@@ -1,0 +1,16 @@
+#+TITLE: Readme
+
+* Salah Time
+This is a simple module showing the remaining time for the next salah.
+** Configuration
+Enter your country name, city name, and the username of your pc for home directory
+[[./Screenshots/code.png]]
+** Screenshots
+[[./Screenshots/isha.png]]
+** Module
+#+begin_src config
+[module/salah-time]
+type = custom/script
+exec = ~/polybar-scripts/salah-time.py
+interval = 60
+#+end_src
