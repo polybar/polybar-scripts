@@ -50,6 +50,7 @@ The following arguments are supported:
 Argument | Description | Default
 ---|---|---
 -b, --blacklist   | Blacklist / Ignore the given player
+-w, --whitelist   | Whitelist / Permit the given player
 -f, --format      | Use the given `format` string                               | `{icon} {artist} - {title}`
 --truncate-text   | Use the given string as the end of truncated text           | `…`
 --icon-playing    | Use the given text as the playing icon                      | `⏵`
