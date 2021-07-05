@@ -1,12 +1,6 @@
 # cmus-polybar
+![Screenshot](screenshots/preview_1.png) <br />
 A simple polybar module to show current song playing on cmus along with the progress icons
-
-
-Demo
---------------
-![Preview video](preview/preview.gif?raw=true)
-
-
 
 
 How to use it
@@ -44,3 +38,5 @@ e.g. if you want your song to displayed at max of 10 characters, you can use thi
 ```
  exec = sh location_of_cmus_wrapper/cmus_wrapper.sh 10 2>/dev/null
 ```
+
+
