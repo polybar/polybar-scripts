@@ -18,8 +18,6 @@ ICON_100PERC='󰪥'
 
 get_length=$1
 
-while true;
-do
   song="$(cmus-remote -Q 2> /dev/null| awk -F/ NR==2'{print $NF}'|awk -F. '{print $1}')"
        if [[ "$song" == "" || "$song" == "set aaa_mode all" ]]; then
               echo " "
@@ -73,4 +71,3 @@ do
        fi
        
        echo "$playing"
-done
