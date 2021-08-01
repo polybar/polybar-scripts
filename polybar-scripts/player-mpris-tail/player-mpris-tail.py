@@ -474,14 +474,43 @@ class CleanSafeDict(dict):
 Seems to assure print() actually prints when no terminal is connected
 """
 
+SCROLL_CHARACTER_LIMIT = 30
+currentScrollCharacter = 0
+timeoutReference = "" 
+SCROLL_SPEED = 250
 _last_status = ''
 def _printFlush(status, **kwargs):
     global _last_status
+    global SCROLL_CHARACTER_LIMIT
     if status != _last_status:
-        print(status, **kwargs)
-        sys.stdout.flush()
+        if SCROLL_CHARACTER_LIMIT != 0 and len(status)>SCROLL_CHARACTER_LIMIT:
+            if timeoutReference != "":
+                GLib.source_remove(timeoutReference)
+            _printScrolling(status +" ---", **kwargs)
+        else:
+            print(status, **kwargs)
+            sys.stdout.flush()
+
         _last_status = status
 
+def _printScrolling(string, **kwargs):
+    global SCROLL_CHARACTER_LIMIT
+    global currentScrollCharacter
+    global SCROLL_SPEED
+    global timeoutReference
+    printString = string[currentScrollCharacter:currentScrollCharacter+SCROLL_CHARACTER_LIMIT]
+
+    if SCROLL_CHARACTER_LIMIT + currentScrollCharacter  > len(string):
+       
+        rolloverAmmount =  SCROLL_CHARACTER_LIMIT + currentScrollCharacter - len(string)  +1
+        printString += string[0: rolloverAmmount]
+    print(printString,**kwargs)
+    sys.stdout.flush()
+    if(currentScrollCharacter<len(string)-1):
+        currentScrollCharacter += 1
+    else:
+        currentScrollCharacter = 1
+    timeoutReference = GLib.timeout_add(SCROLL_SPEED, _printScrolling,string)
 
 
 parser = argparse.ArgumentParser()
@@ -498,6 +527,8 @@ parser.add_argument('-w', '--whitelist', help="permit a player by it's bus name 
                     metavar="BUS_NAME",
                     default=[])
 parser.add_argument('-f', '--format', default='{icon} {:artist:{artist} - :}{:title:{title}:}{:-title:{filename}:}')
+parser.add_argument('-s', '--scroll', default='0',help="when the text is to long scroll trough it. Set to the number of characters that get shown")
+parser.add_argument('--scroll-speed', default='250',help="delay in ms until the next character is shown.")
 parser.add_argument('--truncate-text', default='…')
 parser.add_argument('--icon-playing', default='⏵')
 parser.add_argument('--icon-paused', default='⏸')
@@ -509,6 +540,8 @@ FORMAT_STRING = re.sub(r'%\{(.*?)\}(.*?)%\{(.*?)\}', r'􏿿p􏿿\1􏿿p􏿿\2�
 NEEDS_POSITION = "{position}" in FORMAT_STRING
 
 TRUNCATE_STRING = args.truncate_text
+SCROLL_CHARACTER_LIMIT = int(args.scroll)
+SCROLL_SPEED = int(args.scroll_speed)
 ICON_PLAYING = args.icon_playing
 ICON_PAUSED = args.icon_paused
 ICON_STOPPED = args.icon_stopped
