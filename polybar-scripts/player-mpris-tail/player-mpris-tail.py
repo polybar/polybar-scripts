@@ -482,10 +482,12 @@ _last_status = ''
 def _printFlush(status, **kwargs):
     global _last_status
     global SCROLL_CHARACTER_LIMIT
+    global timeoutReference
     if status != _last_status:
+        if timeoutReference != "":
+            GLib.source_remove(timeoutReference)
+            timeoutReference = ""
         if SCROLL_CHARACTER_LIMIT != 0 and len(status)>SCROLL_CHARACTER_LIMIT:
-            if timeoutReference != "":
-                GLib.source_remove(timeoutReference)
             _printScrolling(status +" ---", **kwargs)
         else:
             print(status, **kwargs)
@@ -502,14 +504,14 @@ def _printScrolling(string, **kwargs):
 
     if SCROLL_CHARACTER_LIMIT + currentScrollCharacter  > len(string):
        
-        rolloverAmmount =  SCROLL_CHARACTER_LIMIT + currentScrollCharacter - len(string)  +1
+        rolloverAmmount =  SCROLL_CHARACTER_LIMIT + currentScrollCharacter - len(string) 
         printString += string[0: rolloverAmmount]
     print(printString,**kwargs)
     sys.stdout.flush()
     if(currentScrollCharacter<len(string)-1):
         currentScrollCharacter += 1
     else:
-        currentScrollCharacter = 1
+        currentScrollCharacter =0 
     timeoutReference = GLib.timeout_add(SCROLL_SPEED, _printScrolling,string)
 
 
