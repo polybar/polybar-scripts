@@ -2,14 +2,12 @@
 
 # Put the class name and its icon here
 icon_map="
-Google-chrome 
-Brave-browser 
-Firefox 
-Code ﬏
-Slack 
-kitty 
-Alacritty 
-Nautilus 
+Google-chrome #1
+Brave-browser #2
+Firefox #3
+Code #4
+kitty #5
+Alacritty #5
 "
 
 # Put the names of windows you want to ignore here
@@ -27,9 +25,9 @@ underline_enabled="true"
 # must be "-" if there is no color specified.
 foreground_focused="-"
 background_focused="-"
-foreground_unfocused="#999"
+foreground_unfocused="-"
 background_unfocused="-"
-underline_color="#8bbaed"
+underline_color="-"
 
 
 # Enable underline
@@ -37,16 +35,16 @@ underline_color="#8bbaed"
 
 # Subscribe to events on which the window title will get updated
 bspc subscribe node_focus node_remove node_stack desktop_focus | while read -r _; do
-    # Get active monitor, all windows and the focused window
+    # Get active monitor, all windows, and the focused window
     monitor=$(bspc query -M -d focused --names)
     window_ids=$(bspc query -N -n .window -m .focused -d .active)
     window_focused_id=$(bspc query -N -n focused)
 
     for window_id in $window_ids; do
-        window_name=$(xdotool getwindowname $window_id)
+        window_name=$(xdotool getwindowname "$window_id")
 
-        if [ -z "$(echo "$ignore_list" | grep "$window_name")" ]; then
-            window_class=$(xdotool getwindowclassname $window_id)
+        if ! echo "$ignore_list" | grep -q "$window_name"; then
+            window_class=$(xdotool getwindowclassname "$window_id")
 
             # Cut the window name
             if [ "$display_name" = "name" ]; then
