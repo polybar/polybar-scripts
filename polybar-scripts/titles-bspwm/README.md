@@ -68,5 +68,6 @@ with window names, you don't want to see.
 [module/titles-bspwm]
 type = custom/ipc
 hook-0 = cat /tmp/bspwm_windows.$MONITOR
-initial = 1
+hook-1 = echo " "
+initial = 2
 ```
