@@ -14,5 +14,5 @@ done
 
 average=$(( AVG / CORES ))
 
-echo "🌡️ $average°C"
+echo "#1 $average°C"
 
