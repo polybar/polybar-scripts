@@ -28,7 +28,7 @@ set the argument (1000000) to the minimum in kB.
 ```ini
 [module/system-process-mostmemory]
 type = custom/script
-exec = "~/.config/polybar/system-process-mostmememory.sh 1000000"
+exec = "~/.config/polybar/system-process-mostmemory.sh 1000000"
 tail = true
 interval = 5
 format-prefix = " "
