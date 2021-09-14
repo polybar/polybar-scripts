@@ -10,12 +10,11 @@ Right click kills the process.
 
 
 
-![skeleton](screenshots/1.png)
-
-
 ## Dependencies
 
 Standard unix utilities. (ps, tail, sed)
+
+
 
 ## Configuration
 
