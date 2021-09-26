@@ -87,7 +87,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![notification-spacex](polybar-scripts/notification-spacex/screenshots/1.png)](polybar-scripts/notification-spacex/)
 [![info-podman](polybar-scripts/info-podman/screenshots/1.png)](polybar-scripts/info-podman/)
 [![isrunning-noisetorch](polybar-scripts/isrunning-noisetorch/screenshots/1.png)](polybar-scripts/isrunning-noisetorch/)
-[![system-drive-monitor](polybar-scripts/system-drive-monitor/screenshots/1.jpg)](polybar-scripts/system-drive-monitor/)
+[![system-drive-monitor](polybar-scripts/system-drive-monitor/screenshots/1.png)](polybar-scripts/system-drive-monitor/)
 
 
 ## See also these other user repositories:
