@@ -1,7 +1,7 @@
 # Script: system-disk-monitor
 A [shell script](https://github.com/makccr/disk-monitor-polybar) that checks the percentage of disk space used on /.
 
-![system-drive-monitor](screenshots/1.png)
+![system-drive-monitor](screenshots/1.jpg)
 
 The drive being monitored can easily be changed, as well as the output of information. For example you can, easily have the script output the amount of space remaining, or space used, rather than a percentage of volume used.
 
