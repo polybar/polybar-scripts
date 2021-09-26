@@ -87,6 +87,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![notification-spacex](polybar-scripts/notification-spacex/screenshots/1.png)](polybar-scripts/notification-spacex/)
 [![info-podman](polybar-scripts/info-podman/screenshots/1.png)](polybar-scripts/info-podman/)
 [![isrunning-noisetorch](polybar-scripts/isrunning-noisetorch/screenshots/1.png)](polybar-scripts/isrunning-noisetorch/)
+[![system-drive-monitor](polybar-scripts/system-drive-monitor/screenshots/1.jpg)](polybar-scripts/system-drive-monitor/)
 
 
 ## See also these other user repositories:
@@ -138,6 +139,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [mt-inside/polybar-lmsensors](https://github.com/mt-inside/polybar-lmsensors): Print the values of specified lmsensors
 * [daltroaugusto/polybar-i3-dynamic-trayoffset](https://github.com/daltroaugusto/polybar-i3-dynamic-trayoffset): A hackish way to get dynamic tray area in i3wm
 * [KevinThomas0/kde-virtual-desktops-polybar](https://github.com/KevinThomas0/kde-virtual-desktops-polybar): collection of scripts meant to be used in modules for Polybar
+* [makccr/disk-monitor-polybar](https://github.com/makccr/disk-monitor-polybar): A bash script to print the percentage of storage used on /
 
 #### Finance
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
