@@ -75,6 +75,7 @@ album         | The album of the current track
 title         | The title of the current track
 track         | The track number of the current track
 length        | The length of the current track
+fmt-length    | The formatted length of the current track ([hours:]minutes:seconds)
 genre         | The genre of the current track
 disc          | The disc number of the current track
 date          | The date of the current track
