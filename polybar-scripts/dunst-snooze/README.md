@@ -2,7 +2,7 @@
 
 A script to disable/enable Dunst notifications. When disabled, notifications will still be created and saved by dunst until you enable it again.  
 
-![dunst-pause](screenshots/1.png)  
+![dunst-pause](screenshots/1.png)
 ![dunst-pause](screenshots/2.png)  
 
 
