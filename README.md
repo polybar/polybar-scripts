@@ -72,7 +72,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-softwarecounter](polybar-scripts/info-softwarecounter/screenshots/1.png)](polybar-scripts/info-softwarecounter/)
 [![vpn-anyconnect-status](polybar-scripts/vpn-anyconnect-status/screenshots/1.png)](polybar-scripts/vpn-anyconnect-status/)
 [![dunst-snooze](polybar-scripts/dunst-snooze/screenshots/1.png)](polybar-scripts/dunst-snooze/)
-[![dunst-snooze](polybar-scripts/dunst-snooze/screenshots/1.png)](polybar-scripts/dunst-snooze/)
+[![dunst-snooze](polybar-scripts/dunst-snooze/screenshots/2.png)](polybar-scripts/dunst-snooze/)
 [![player-cmus](polybar-scripts/player-cmus/screenshots/1.png)](polybar-scripts/player-cmus/)
 [![info-todotxt](polybar-scripts/info-todotxt/screenshots/1.png)](polybar-scripts/info-todotxt/)
 [![vpn-networkmanager-status](polybar-scripts/vpn-networkmanager-status/screenshots/1.png)](polybar-scripts/vpn-networkmanager-status/)
