@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 get_mic_default() {
     pw-cat --record --list-targets | sed -n -E "1 s/^.*: (.*)/\1/p"
@@ -22,9 +22,9 @@ get_mic_status() {
     is_muted="$(is_mic_muted)"
 
     if [ "${is_muted}" = "yes" ]; then
-        printf "%s\n" ""
+        printf "%s\n" "#1"
     else
-        printf "%s\n" ""
+        printf "%s\n" "#2"
     fi
 }
 
@@ -42,15 +42,11 @@ toggle() {
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
 }
 
-main() {
-    case "${1}" in
-        --toggle)
-            toggle
-            ;;
-        *)
-            listen
-            ;;
-    esac
-}
-
-main "${@}"
+case "$1" in
+    --toggle)
+        toggle
+        ;;
+    *)
+        listen
+        ;;
+esac
