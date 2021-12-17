@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/bin/sh
 
 sleep_pid=0
 
