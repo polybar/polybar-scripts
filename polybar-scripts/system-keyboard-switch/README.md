@@ -2,6 +2,7 @@
 
 A shell script that shows the current keyboard layout and change it to another one
 
+![switch](screenshots/switch_layout.png)
 
 ## Module
 
@@ -26,21 +27,20 @@ If you need to switch between other ones just change the script with your needed
 I made a special module with script that do the trick.
 Alongside with the module `xkeyboard` it looks great in that order of module: `[ ... system-keyboard-menu xkeyboard ... ]`
 
+![menu-closed](screenshots/menu_layout_closed.png)
+![menu-opened](screenshots/menu_layout_opened.png)
+
 ```ini
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = ""
-format-prefix-foreground = ${colors.foreground-alt}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
 
 [module/system-keyboard-menu]
 type = custom/menu
@@ -49,12 +49,9 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = "  "
-label-open-foreground = #00ff00
-label-close =  cancel
-label-close-foreground = #00ff00
+label-open = " #1 "
+label-close = "#2 cancel"
 label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = us
 menu-0-0-exec = setxkbmap us -model pc105
