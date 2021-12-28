@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 import json
-import datetime
-import psutil
 import os
 import subprocess
 
