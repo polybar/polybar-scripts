@@ -11,7 +11,7 @@ __location__ = os.path.realpath(
 with open(os.path.join(__location__, "data.json"),'r+') as file:
     data = json.load(file)
 
-    if int(datetime.datetime.now().strftime("%S"))%5==0:
+    if int(datetime.datetime.now().strftime("%S"))%10==0:
         cpu_usage = psutil.cpu_percent(2)
         data["SpeedClock"] = round(cpu_usage,1)
     

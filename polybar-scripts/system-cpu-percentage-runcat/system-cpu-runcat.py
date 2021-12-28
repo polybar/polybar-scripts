@@ -36,9 +36,10 @@ with open(os.path.join(__location__, "data.json"),'r+') as file:
         elif cpu_usage>=70 and cpu_usage<100:
             keys = [0, 1, 2, 3, 4]
 
+        #print(keys[fotograma%len(keys)])
         print(icons_base[keys[fotograma%len(keys)]] + "  " + str(round(cpu_usage)) + "%")
         
-        data["Photogram"] = (fotograma + 1)%5
+        data["Photogram"] = (fotograma + 1)%20
 
     file.seek(0)
     json.dump(data, file, indent=4)

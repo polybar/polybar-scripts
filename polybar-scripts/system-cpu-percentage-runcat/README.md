@@ -15,6 +15,7 @@ A python script which displays CPU usage and an animated cat according to the pe
 - psutil (module for Python 3)
 - speedcpu.py (just include the file in your polybar scripts folder)
 - data.json (just include the file in your polybar scripts folder)
+- runcatfont.ttf (include the file in /usr/share/fonts/ folder)
 
 ## Configuration
 
