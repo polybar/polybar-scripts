@@ -1,4 +1,4 @@
-# Script: {system-cpu-percentage-runcat}
+# Script: system-cpu-percentage-runcat
 
 A python script which displays CPU usage and an animated cat according to the percentage.
 
@@ -26,7 +26,6 @@ You must add the new font to your system and include it in the Polybar config fi
 [module/runcat]
 type = custom/script
 exec = ~/polybar-scripts/system-cpu-runcat.py
-interval = 0.1
-...
+interval = 0.02
 ```
 Thanks to [Takuto Nakamura](https://github.com/Kyome22/menubar_runcat) for cat images and [Sergei Kolesnikov](https://github.com/win0err/gnome-runcat) for Gnome Version.
