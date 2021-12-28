@@ -27,6 +27,6 @@ You must add the new font to your system and include it in the Polybar config fi
 [module/runcat]
 type = custom/script
 exec = ~/polybar-scripts/system-cpu-runcat.py
-interval = 0.02
+interval = 0.2
 ```
 Thanks to [Takuto Nakamura](https://github.com/Kyome22/menubar_runcat) for cat images and [Sergei Kolesnikov](https://github.com/win0err/gnome-runcat) for Gnome Version.
