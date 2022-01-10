@@ -16,5 +16,7 @@ A script that outputs gpu usage for amd cards using radeontop.
 [module/system-ati-radeontop]
 type = custom/script
 exec = ~/polybar-scripts/system-ati-radeontop.sh
-interval = 3
+interval = 1
+tail = true
+format="<label>%"
 ```
