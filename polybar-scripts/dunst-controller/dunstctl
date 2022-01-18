@@ -1,0 +1,33 @@
+#! /usr/bin/env fish
+
+function mute
+    dunstctl set-paused false && \
+        dunstify 'dunst' 'Unmuted notifications.' -u low &
+end
+
+function unmute
+    dunstify 'dunst' 'Muting notifications...' -u low &
+    # We're about to mute notifications, so the above notification will
+    # effectively not show, since set-paused hides notifications. So, sleep
+    # for 3 seconds.
+    sleep 2
+    # Close all to prevent notification from showing up once we unmute.
+    dunstctl close-all
+    dunstctl set-paused true
+end
+
+if test (dunstctl is-paused) = "true"
+    switch $argv[1]
+    case 'toggle'
+        mute
+    case '*'
+        echo ' '(dunstctl count waiting)
+    end
+else
+    switch $argv[1]
+    case 'toggle'
+        unmute
+    case '*'
+        echo ''
+    end
+end
