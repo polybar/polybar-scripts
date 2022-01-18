@@ -1,11 +1,11 @@
 #! /usr/bin/env fish
 
-function mute
+function unmute
     dunstctl set-paused false && \
         dunstify 'dunst' 'Unmuted notifications.' -i polari -u low &
 end
 
-function unmute
+function mute
     dunstify 'dunst' 'Muting notifications...' -i polari -u low &
     # We're about to mute notifications, so the above notification will
     # effectively not show, since set-paused hides notifications. So, sleep
@@ -17,8 +17,7 @@ function unmute
 end
 
 function pop_all
-    set ids (dunstctl history | jq -r '.data[][].id.data')
-    for id in $ids
+    for id in (dunstctl history | jq -r '.data[][].id.data')
         dunstctl history-pop $id
     end
 end
@@ -26,7 +25,7 @@ end
 if test (dunstctl is-paused) = "true"
     switch $argv[1]
     case 'toggle'
-        mute
+        unmute
     case 'show-all'
         unmute
         pop_all
@@ -36,7 +35,7 @@ if test (dunstctl is-paused) = "true"
 else
     switch $argv[1]
     case 'toggle'
-        unmute
+        mute
     case 'show-all'
         pop_all
     case '*'
