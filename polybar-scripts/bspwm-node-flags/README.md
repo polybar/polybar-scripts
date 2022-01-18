@@ -1,4 +1,4 @@
-# dunstctl, a dunst controller script & module
+# bspwm-node-flags
 
 This script is written in [`fish`](https://fishshell.com/), and displays a
 bookmark icon, alongside a single character to be used in conjunction with
