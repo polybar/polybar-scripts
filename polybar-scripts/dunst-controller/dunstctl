@@ -2,24 +2,34 @@
 
 function mute
     dunstctl set-paused false && \
-        dunstify 'dunst' 'Unmuted notifications.' -u low &
+        dunstify 'dunst' 'Unmuted notifications.' -i polari -u low &
 end
 
 function unmute
-    dunstify 'dunst' 'Muting notifications...' -u low &
+    dunstify 'dunst' 'Muting notifications...' -i polari -u low &
     # We're about to mute notifications, so the above notification will
     # effectively not show, since set-paused hides notifications. So, sleep
-    # for 3 seconds.
+    # for 2 seconds.
     sleep 2
     # Close all to prevent notification from showing up once we unmute.
     dunstctl close-all
     dunstctl set-paused true
 end
 
+function pop_all
+    set ids (dunstctl history | jq -r '.data[][].id.data')
+    for id in $ids
+        dunstctl history-pop $id
+    end
+end
+
 if test (dunstctl is-paused) = "true"
     switch $argv[1]
     case 'toggle'
         mute
+    case 'show-all'
+        unmute
+        pop_all
     case '*'
         echo ' '(dunstctl count waiting)
     end
@@ -27,6 +37,8 @@ else
     switch $argv[1]
     case 'toggle'
         unmute
+    case 'show-all'
+        pop_all
     case '*'
         echo ''
     end
