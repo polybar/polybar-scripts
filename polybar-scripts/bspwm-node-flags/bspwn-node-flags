@@ -1,0 +1,7 @@
+#! /usr/bin/env sh
+
+bspc subscribe node | while read -a msg; do
+    event=$msg
+    node_tree=$(bspc query -T -n focused)
+    python $HOME/.config/polybar/scripts/bspwm-node-flags.py $event $node_tree
+done
