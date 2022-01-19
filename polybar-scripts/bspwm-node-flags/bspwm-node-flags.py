@@ -13,7 +13,7 @@ argparser.add_argument(
     'node_tree',
     type=str,
     help = 'JSON output of `bspc query -T -n focused`',
-    required = False
+    default = ''
 )
 args = argparser.parse_args()
 
