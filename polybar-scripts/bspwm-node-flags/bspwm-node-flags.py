@@ -7,7 +7,8 @@ argparser = argparse.ArgumentParser(description = 'Display `bspwm` node flags')
 argparser.add_argument(
     'node_tree',
     type = str,
-    help = 'JSON output of `bspc query -T -n focused`'
+    help = 'JSON output of `bspc query -T -n focused`',
+    default = ''
 )
 args = argparser.parse_args()
 
