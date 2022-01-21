@@ -40,9 +40,11 @@ battery_print() {
     battery_percent=$(("$battery_percent / $battery_max"))
 
     if [ "$ac" -eq 1 ]; then
-        icon="#6 "
+        icon="#6"
 
-        if [ "$battery_percent" -lt 97 ]; then
+        if [ "$battery_percent" -gt 97 ]; then
+            echo "$icon"
+        else
             for (( i=0; i<${#charging}; i++ )); do
                 echo "${charging:$i:1} $battery_percent%"
                 sleep 1
@@ -61,11 +63,11 @@ battery_print() {
             icon="#11"
         fi
 
-        echo "$icon $battery_percent%"
+        echo "$icon $battery_percent %"
     fi
 }
 
-path_pid="/tmp/polybar-battery-combined-ramp-udev.pid"
+path_pid="/tmp/polybar-battery-combined-udev.pid"
 
 case "$1" in
     --update)
@@ -84,7 +86,7 @@ case "$1" in
         while true; do
             battery_print
 
-            sleep 2 &
+            sleep 30 &
             wait
         done
         ;;
