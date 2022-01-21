@@ -42,7 +42,7 @@ battery_print() {
     if [ "$ac" -eq 1 ]; then
         icon=" "
 
-        if [ "$battery_percent" -lt 98 ]; then
+        if [ "$battery_percent" -lt 97 ]; then
             for (( i=0; i<${#charging}; i++ )); do
                 echo "${charging:$i:1} $battery_percent%"
                 sleep 1
