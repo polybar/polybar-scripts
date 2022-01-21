@@ -11,7 +11,7 @@ battery_print() {
     battery_max_0=0
     battery_max_1=0
 
-    charging=
+    charging=#1#2#3#4#5
 
     if [ -f "$PATH_AC/online" ]; then
         ac=$(cat "$PATH_AC/online")
@@ -40,7 +40,7 @@ battery_print() {
     battery_percent=$(("$battery_percent / $battery_max"))
 
     if [ "$ac" -eq 1 ]; then
-        icon=" "
+        icon="#6 "
 
         if [ "$battery_percent" -lt 97 ]; then
             for (( i=0; i<${#charging}; i++ )); do
@@ -50,22 +50,22 @@ battery_print() {
         fi
     else
         if [ "$battery_percent" -gt 85 ]; then
-            icon=""
+            icon="#7"
         elif [ "$battery_percent" -gt 60 ]; then
-            icon=""
+            icon="#8"
         elif [ "$battery_percent" -gt 35 ]; then
-            icon=""
+            icon="#9"
         elif [ "$battery_percent" -gt 10 ]; then
-            icon=""
+            icon="#10"
         else
-            icon=""
+            icon="#11"
         fi
 
         echo "$icon $battery_percent%"
     fi
 }
 
-path_pid="/tmp/polybar-battery-combined-udev.pid"
+path_pid="/tmp/polybar-battery-combined-ramp-udev.pid"
 
 case "$1" in
     --update)
