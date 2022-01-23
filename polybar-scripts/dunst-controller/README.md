@@ -21,9 +21,10 @@ and right-click to dismiss all.
 ```ini
 [module/dunstctl]
 click-left = dunstctl history-pop
-click-middle = $HOME/.config/polybar/scripts/dunstctl toggle
+click-middle = $HOME/.config/polybar/scripts/dunstctl.sh toggle
 click-right = dunstctl close-all
-exec = $HOME/.config/polybar/scripts/dunstctl
+double-click-left = $HOME/.config/polybar/scripts/dunstctl.sh show-all
+exec = $HOME/.config/polybar/scripts/dunstctl.sh
 interval = 1.6
 type = custom/script
 ```
