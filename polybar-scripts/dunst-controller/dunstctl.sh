@@ -17,8 +17,8 @@ mute() {
 }
 
 pop_all() {
-    for id in $(dunstctl history | while jq -r '.data[][].id.data'); do
-        dunstctl history-pop $id
+    dunstctl history | jq '.data[][].id.data' | while IFS= read -r id; do
+        dunstctl history-pop "$id"
     done
 }
 
