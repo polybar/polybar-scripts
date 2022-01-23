@@ -5,9 +5,9 @@ icon that can be used to interact with [`dunst`](https://github.com/dunst-projec
 via `dunstctl`, and utilises `dunstify` to send notifications.
 
 Click to show historic notifications, middle-click to mute/unmute notifications,
-and right-click to dismiss all.
+and right-click to dismiss all. Double left click will show all notification history.
 
-`chmod +x $HOME/.config/polybar/scripts/dunstctl` (or the path of your choice.)
+`chmod +x $HOME/.config/polybar/scripts/dunstctl.sh` (or the path of your choice.)
 
 ## Preview
 
