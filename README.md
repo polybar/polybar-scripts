@@ -139,7 +139,8 @@ Is this your first time here? You should definitely take a look at these scripts
 * [sTiKyt/polybar-onlinestatus](https://github.com/sTiKyt/polybar-onlinestatus): Indicator of your internet connection
 * [mt-inside/polybar-lmsensors](https://github.com/mt-inside/polybar-lmsensors): Print the values of specified lmsensors
 * [daltroaugusto/polybar-i3-dynamic-trayoffset](https://github.com/daltroaugusto/polybar-i3-dynamic-trayoffset): A hackish way to get dynamic tray area in i3wm
-* [KevinThomas0/kde-virtual-desktops-polybar](https://github.com/KevinThomas0/kde-virtual-desktops-polybar): collection of scripts meant to be used in modules for Polybar
+* [KevinThomas0/kde-virtual-desktops-polybar](https://github.com/KevinThomas0/kde-virtual-desktops-polybar): Collection of scripts meant to be used in modules for Polybar
+* [xi/polybar-status-indicators](https://github.com/xi/polybar-status-indicators): Implementation of the freedesktop StatusNotifierHost spec that supportes many different status indicators
 
 #### Finance
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
