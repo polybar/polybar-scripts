@@ -6,7 +6,7 @@ A shell script to control pipewire with your mouse buttons and scroll wheel.
 
 - pipewire, pipewire-pulse
 - pavucontrol
-
+- pamixer
 
 ## Module
 
