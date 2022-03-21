@@ -2,6 +2,8 @@
 
 A shell script to control pipewire with your mouse buttons and scroll wheel.
 
+![Example](screenshots/1.png)
+
 ## Dependencies
 
 - pipewire, pipewire-pulse
