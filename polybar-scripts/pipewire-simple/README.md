@@ -7,6 +7,7 @@ A script to control pipewire with your mouse buttons and scroll wheel.
 
 ## Dependencies
 
+* `pactl`
 * `pamixer`
 
 Maybe `pavucontrol` is a good idea. In the example it is opened with a right mouse click.

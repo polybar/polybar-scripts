@@ -1,8 +1,20 @@
 #!/bin/sh
 
-DEFAULT_SOURCE=$(pw-record --list-targets | sed -n 's/^*[[:space:]]*[[:digit:]]\+: source description="\(.*\)" prio=[[:digit:]]\+$/\1/p')
-DEFAULT_SINK=$(pw-play --list-targets | sed -n 's/^*[[:space:]]*[[:digit:]]\+: sink description="\(.*\)" prio=[[:digit:]]\+$/\1/p')
+getDefaultSink() {
+    defaultSink=$(pactl info | awk -F : '/Default Sink:/{print $2}')
+    description=$(pactl list sinks | sed -n "/${defaultSink}/,/Description/p; /Description/q" | sed -n 's/^.*Description: \(.*\)$/\1/p')
+    echo "${description}"
+}
+
+getDefaultSource() {
+    defaultSource=$(pactl info | awk -F : '/Default Source:/{print $2}')
+    description=$(pactl list sources | sed -n "/${defaultSource}/,/Description/p; /Description/q" | sed -n 's/^.*Description: \(.*\)$/\1/p')
+    echo "${description}"
+}
+
 VOLUME=$(pamixer --get-volume-human)
+SINK=$(getDefaultSink)
+SOURCE=$(getDefaultSource)
 
 case $1 in
     "--up")
@@ -15,5 +27,5 @@ case $1 in
         pamixer --toggle-mute
         ;;
     *)
-        echo "Source: ${DEFAULT_SOURCE} | Sink: ${VOLUME} ${DEFAULT_SINK}"
+        echo "Source: ${SOURCE} | Sink: ${VOLUME} ${SINK}"
 esac
