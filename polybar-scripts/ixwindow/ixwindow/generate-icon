@@ -1,0 +1,65 @@
+#!/bin/bash
+
+
+# Most of the code taken from 
+# https://unix.stackexchange.com/questions/48860/how-to-dump-the-icon-of-a-running-x-program
+
+
+SIZE=$$SIZE
+COLOR=$$COLOR
+
+wid="$2"
+# wid="$(xdotool selectwindow)"
+# class="$(bspc query -T -n "$wid" | jq -r '.client.className')"
+WM_CLASS="$(xprop -id "$wid" WM_CLASS | awk '{print $4}' | tr -d '"')"
+
+name="$WM_CLASS"
+
+
+CACHE="$1/$name"
+
+if [ -f "$CACHE.jpg" ]; then
+    exit 0
+fi
+
+
+# Check if there is an icon for us in xprop, 
+# so it won't break the behavior of the script 
+if [ -z "$(xprop -id "$wid" | grep "Icon")" ]; then
+    exit 0
+fi
+
+
+# Resize it in advance, so icons will look better, but it's not necessary, so
+# you can remove "-resize" flag if you prefer it the other way
+cmd=(convert -resize "$SIZE"x"$SIZE" -set 'filename:w' '%w' - "${name}.png")
+
+split_icons() {
+    xprop -id "$wid" -notype 32c _NET_WM_ICON |
+    awk -v RS=', | = ' '
+        NR == 1         { h  = $1; i++; next }
+        NR == i + 1     { x  = $1;        printf "%s = %s", h, x; next }
+        NR == i + 2     { s  = x * $1 } { printf ", %s", $1 }
+        NR == i + 2 + s { i += s + 2;     printf "\n" }
+    '
+}
+
+to_pam() {
+    perl -0777 -pe '@_=/\d+/g;
+    printf "P7\nWIDTH %d\nHEIGHT %d\n", splice@_,0,2;
+    printf "DEPTH 4\nMAXVAL 255\nTUPLTYPE RGB_ALPHA\nENDHDR\n";
+    $_=pack "N*", @_;
+    s/(.)(...)/$2$1/gs'
+}
+
+
+
+while read -r data; do to_pam <<< "$data" | "${cmd[@]}"; done < <(split_icons)
+
+convert "$name.png" -background $COLOR -flatten -alpha off "$name.jpg"
+mv "$name.jpg" "$CACHE.jpg" && rm "$name.png"
+
+
+
+
+
