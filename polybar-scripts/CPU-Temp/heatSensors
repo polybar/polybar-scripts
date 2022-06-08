@@ -1,0 +1,32 @@
+#!/bin/sh
+
+#
+# Copyright (C) 2022 Mahmoud Mohamed (Ozil)  <https://github.com/mmsaeed509>
+# Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+#
+
+heatSensors=$(sensors | grep -m 1 id | awk '{print substr($4, 2, length($4)-5)}')
+
+# from  0°C to 40°C print ->  
+if [[ "$heatSensors" -le 40 ]] 
+	then
+		
+		echo " $heatSensors°C"
+
+# from 40°C to 60°C print -> 
+elif [[ "$heatSensors" -le 60 ]] 
+	then
+		echo " $heatSensors°C"
+
+# from 60°C to 85°C print -> 
+elif [[ "$heatSensors" -le 85 ]]
+	then
+		echo " $heatSensors°C"
+
+# from 85°C to +... print ->  
+elif [[ "$heatSensors" -gt 85 ]] 
+	then
+		# the  ' "%{F#FF0008}"  ' -> red font as 85°C to +... is the default warn temperature
+		echo -n "%{F#FF0008} %{F#FF0008}$heatSensors°C"
+fi
+
