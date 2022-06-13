@@ -1,6 +1,6 @@
 # Polybar WakaTime status
 
-![](/img/screenshot.png)
+![](img/screenshot.png)
 
 Display your daily coding time in [Polybar](https://github.com/polybar/polybar).
 ## Prerequisites
@@ -10,31 +10,15 @@ Display your daily coding time in [Polybar](https://github.com/polybar/polybar).
 ## Dependencies
 
 - [jq](https://stedolan.github.io/jq/) for JSON parsing in bash
-- [openssl](https://www.openssl.org/)
 - curl 
 
 ## Security 
 
-There is provision for you to store your WakaTime API key as plain text in the script file but this is not recommended. 
+In the script file there is a `MYTOKEN` placeholder for you to replace with your WakaTime API key. It is not recommended that you store your key as plaintext in the script file but it is left up to the user to implement appropriate safeguards. 
 
-If you wish to encrypt your password and store it separately in another file there is a [helper script](./scripts/token_encrypt.sh) that does this for you. If you choose this option the script will source your password and decrypt it before making the request to WakaTime. This isn't 100% secure but it is safer than storing you unencrypted token in the Polybar script. Obviously store your public password and the file containing the encrypted token in another non-Git directory.  
-
-## Instructions 
-
-### I don't want to encrypt my token 
-* Use the script [polybar_wakatime_no-encrypt](/scripts/polybar_wakatime_no-encrypt.sh)
-* Change the string `MYTOKEN` to your WakaTime API key
-statusbar e
-### I want to encrypt my token 
-* Make the file [token_encrypt](/scripts/token_encrypt.sh) executable
-* Run it and make a note of your decryption password 
-* Use the script [polybar_wakatime_encrypt](/scripts/polybar_wakatime_encrypt.sh)
-* Change the variable `SECRET_LOC` to the location of the generated secret file
-* Change the variable `SSL_PASS` to your decryption password
-statusbar e
-### Final steps 
+## Installation
 Follow standard procedure:
-* Save the `polybar_wakatime...` script wherever you keep your scripts in `.config/polybar/`
+* Save the [polybar_wakatime.sh](./polybar_wakatime.sh) script wherever you keep your scripts in `.config/polybar/`
 * Make it executable
 * Add the module definition to `polybar/config.ini`:
 
