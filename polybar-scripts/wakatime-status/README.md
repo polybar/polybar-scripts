@@ -25,7 +25,7 @@ Follow standard procedure:
 ```ini
 [module/wakatime]
 type = custom/script
-exec = ~/dotfiles/polybar/polybar_scripts/wakatime_status/query_wakatime.sh
+exec = ~/dotfiles/polybar/polybar_scripts/wakatime_status/polybar_wakatime.sh
 interval = 10
 ; add yer own icon and preferred styling etc 
 format-prefix = " "
