@@ -1,4 +1,4 @@
-# Polybar WakaTime status
+# info-wakatime
 
 ![](img/screenshot.png)
 
