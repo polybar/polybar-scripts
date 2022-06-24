@@ -83,6 +83,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![network-ipinfo.io](polybar-scripts/network-ipinfo.io/screenshots/1.png)](polybar-scripts/network-ipinfo.io/)
 [![system-gpu-optimus](polybar-scripts/system-gpu-optimus/screenshots/1.png)](polybar-scripts/system-gpu-optimus/)
 [![info-cava](polybar-scripts/info-cava/screenshots/1.png)](polybar-scripts/info-cava/)
+[![info-wakatime](polybar-scripts/info-wakatime/screenshots/1.png)](polybar-scripts/info-wakatime/)
 [![info-tmux-sessions](polybar-scripts/info-tmux-sessions/screenshots/1.png)](polybar-scripts/info-tmux-sessions/)
 [![info-hlwm-workspaces](polybar-scripts/info-hlwm-workspaces/screenshots/1.png)](polybar-scripts/info-hlwm-workspaces/)
 [![info-hexdate](polybar-scripts/info-hexdate/screenshots/1.png)](polybar-scripts/info-hexdate/)
