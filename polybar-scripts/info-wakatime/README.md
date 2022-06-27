@@ -1,6 +1,6 @@
 # Script: info-wakatime
 
-![info-wakatim](screenshots/1.png)
+![info-wakatime](screenshots/1.png)
 
 Display your daily coding time from wakatime.
 
@@ -18,5 +18,5 @@ Display your daily coding time from wakatime.
 [module/info-wakatime]
 type = custom/script
 exec = ~/polybar-scripts/info-wakatime.sh
-interval = 10
+interval = 60
 ```
