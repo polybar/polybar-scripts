@@ -154,6 +154,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [mil-ad/polybar-wireguard](https://github.com/mil-ad/polybar-wireguard): Display and control Wireguard VPN interfaces
 * [mbugert/tailscale-polybar-rofi](https://github.com/mbugert/tailscale-polybar-rofi): Polybar module and rofi dmenu for tailscale VPN
 * [haideralipunjabi/polybar-protonvpn](https://github.com/haideralipunjabi/polybar-protonvpn) - ProtonVPN Module for Polybar
+* [totoroot/polybar-modules-mullvad](https://github.com/totoroot/polybar-modules-mullvad): Status and control of Mullvad VPN connection and tunnel settings
 
 #### Other
 * [nivit/polybar-module-earthquake](https://github.com/nivit/polybar-module-earthquake): Polybar module for showing the latest seismic event on Earth

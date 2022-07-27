@@ -14,3 +14,5 @@ type = custom/script
 exec = ~/polybar-scripts/vpn-mullvad-status.sh
 interval = 5
 ```
+
+For more advanced polybar modules to display and control Mullvad VPN connection state and tunnel settings, take a look at [totoroot/polybar-modules-mullvad](https://github.com/totoroot/polybar-modules-mullvad).
