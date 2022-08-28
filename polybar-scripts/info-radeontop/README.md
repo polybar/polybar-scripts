@@ -14,7 +14,7 @@ A script to show AMD GPU usage using radeontop
 ## Configuration
 
 Inside radeontop.py, there are 2 variables named `radeontop_fields` and `format_string`. You can edit these two according to your needs.
-
+Also don't forget to `chmod +x radeontop.py`.
 
 ## Module
 
