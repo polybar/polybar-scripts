@@ -1,4 +1,4 @@
-# Script: radeontop-status
+# Script: info-radeontop
 
 A script to show AMD GPU usage using radeontop
 
