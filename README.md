@@ -143,6 +143,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [KevinThomas0/kde-virtual-desktops-polybar](https://github.com/KevinThomas0/kde-virtual-desktops-polybar): Collection of scripts meant to be used in modules for Polybar
 * [xi/polybar-status-indicators](https://github.com/xi/polybar-status-indicators): Implementation of the freedesktop StatusNotifierHost spec that supportes many different status indicators
 * [andreykaere/ixwindow](https://github.com/andreykaere/ixwindow): ixwindow is an enhanced version of standard xwindow polybar module
+* [EmiliaTheGoddess/polybar-radeontop](https://github.com/EmiliaTheGoddess/polybar-radeontop): A module to show GPU utilization using radeontop for AMD GPUs
 
 #### Finance
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
