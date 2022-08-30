@@ -144,6 +144,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [xi/polybar-status-indicators](https://github.com/xi/polybar-status-indicators): Implementation of the freedesktop StatusNotifierHost spec that supportes many different status indicators
 * [andreykaere/ixwindow](https://github.com/andreykaere/ixwindow): ixwindow is an enhanced version of standard xwindow polybar module
 * [EmiliaTheGoddess/polybar-radeontop](https://github.com/EmiliaTheGoddess/polybar-radeontop): A module to show GPU utilization using radeontop for AMD GPUs
+* [imsosora/polybar-rofication](https://github.com/imsosora/polybar-rofication): Display a bell icon if there are no rofifications
 
 #### Finance
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
