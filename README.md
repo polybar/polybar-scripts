@@ -90,7 +90,6 @@ Is this your first time here? You should definitely take a look at these scripts
 [![notification-spacex](polybar-scripts/notification-spacex/screenshots/1.png)](polybar-scripts/notification-spacex/)
 [![info-podman](polybar-scripts/info-podman/screenshots/1.png)](polybar-scripts/info-podman/)
 [![isrunning-noisetorch](polybar-scripts/isrunning-noisetorch/screenshots/1.png)](polybar-scripts/isrunning-noisetorch/)
-[![info-radeontop](polybar-scripts/info-radeontop/screenshots/example.png)](polybar-scripts/info-radeontop/)
 
 ## See also these other user repositories:
 
@@ -144,7 +143,6 @@ Is this your first time here? You should definitely take a look at these scripts
 * [xi/polybar-status-indicators](https://github.com/xi/polybar-status-indicators): Implementation of the freedesktop StatusNotifierHost spec that supportes many different status indicators
 * [andreykaere/ixwindow](https://github.com/andreykaere/ixwindow): ixwindow is an enhanced version of standard xwindow polybar module
 * [EmiliaTheGoddess/polybar-radeontop](https://github.com/EmiliaTheGoddess/polybar-radeontop): A module to show GPU utilization using radeontop for AMD GPUs
-
 
 #### Finance
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
