@@ -2,7 +2,8 @@
 
 icon="#"
 
-if [ "$(iwgetid -r)" = "WIFIonICE" ]; then
+current_wifi=$(iwgetid -r)
+if { [ "$current_wifi" = "WIFIonICE" ] || [ "$current_wifi" = "WIFI@DB" ]; }; then
     # Obtain route info. Bail out if it cannot be obtained or if the response
     # is not valid JSON (based on jq's exit code).
     wifionice=$(curl -sf https://iceportal.de/api1/rs/status)
