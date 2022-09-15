@@ -8,13 +8,11 @@ if { [ "$current_wifi" = "WIFIonICE" ] || [ "$current_wifi" = "WIFI@DB" ]; }; th
 
     # Obtain route info. Bail out if it cannot be obtained or if the response
     # is not valid JSON (based on jq's exit code).
-    wifionice=$(curl -sf https://iceportal.de/api1/rs/status)
-    if [ $? != 0 ]; then
+    if ! { wifionice=$(curl -sf https://iceportal.de/api1/rs/status); } then
         echo "$icon In-train portal unreachable"
         exit 0
     fi
-    echo $wifionice | jq --exit-status > /dev/null 2>&1
-    if [ $? != 0 ]; then
+    if ! { echo "$wifionice" | jq --exit-status > /dev/null 2>&1; } then
         echo "$icon In-train portal unreachable"
         exit 0
     fi
@@ -50,13 +48,11 @@ elif [ "$current_wifi" = "NormandieTrainConnecte" ]; then
 
     # Obtain route info. Bail out if it cannot be obtained or if the response
     # is not valid JSON (based on jq's exit code).
-    circulation=$(curl --silent --fail https://wifi.normandie.fr/router/api/train/circulation)
-    if [ $? != 0 ]; then
+    if ! { circulation=$(curl --silent --fail https://wifi.normandie.fr/router/api/train/circulation); } then
         echo "$icon In-train portal unreachable"
         exit 0
     fi
-    echo $circulation | jq --exit-status > /dev/null 2>&1
-    if [ $? != 0 ]; then
+    if ! { echo "$circulation" | jq --exit-status > /dev/null 2>&1; } then
         echo "$icon In-train portal unreachable"
         exit 0
     fi
@@ -66,7 +62,7 @@ elif [ "$current_wifi" = "NormandieTrainConnecte" ]; then
     # either have a "progress" key showing 0% progress or which lack the
     # "progress" key entirely. Stops are ordered according to the itinerary, so
     # pick the first matching one to obtain the immediate next station.
-    station=$(echo $circulation | jq '[.stopList.stops[] |
+    station=$(echo "$circulation" | jq '[.stopList.stops[] |
         select(
             .arrival and (has("progress") | not) or .progress.progressPercentage == 0
         )][0]')
@@ -81,8 +77,8 @@ elif [ "$current_wifi" = "NormandieTrainConnecte" ]; then
     # compute current delay in minutes based on "date" and "realDate"
     scheduled_arrival=$(echo "$station" | jq -r '.arrival.date')
     actual_arrival=$(echo "$station" | jq -r '.arrival.realDate')
-    delay_minutes="($(date +%s -d $actual_arrival)-$(date +%s -d $scheduled_arrival))/60"
-    delay_minutes=$(echo $delay_minutes | bc)
+    delay_minutes="($(date +%s -d "$actual_arrival")-$(date +%s -d "$scheduled_arrival"))/60"
+    delay_minutes=$(echo "$delay_minutes" | bc)
 
     # pretty-print arrival and delay
     scheduled_arrival_pretty=$(date --date="$scheduled_arrival" +%H:%M)
