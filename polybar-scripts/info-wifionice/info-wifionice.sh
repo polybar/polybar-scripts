@@ -3,9 +3,15 @@
 icon="#"
 
 if [ "$(iwgetid -r)" = "WIFIonICE" ]; then
+    # Obtain route info. Bail out if it cannot be obtained or if the response
+    # is not valid JSON (based on jq's exit code).
     wifionice=$(curl -sf https://iceportal.de/api1/rs/status)
-
-    if [ "$(echo "$wifionice" | jq -e 2>/dev/null)" != 0 ]; then
+    if [ $? != 0 ]; then
+        echo "$icon In-train portal unreachable"
+        exit 0
+    fi
+    echo $wifionice | jq --exit-status > /dev/null 2>&1
+    if [ $? != 0 ]; then
         echo "$icon In-train portal unreachable"
         exit 0
     fi
