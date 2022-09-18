@@ -53,7 +53,7 @@ Variables            | Description
 
 ```sh
 # check connectivity with curl
-curl -sSL "http://google.com" && echo "$TEXT_CONNECTED" || echo "$TEXT_DISCONNECTED"
+curl -sSL "http://google.com" >/dev/null && echo "$TEXT_CONNECTED" || echo "$TEXT_DISCONNECTED"
 ```
 
 ```sh
@@ -97,7 +97,7 @@ tail = true
 ```ini
 [module/network-networkmanager-tail]
 type = custom/script
-exec = ~/polybar-scripts/network-networkmanager-tail.sh -f 'curl -sSL "http://google.com" && echo "$TEXT_CONNECTED" || echo "$TEXT_DISCONNECTED"' wlan0
+exec = ~/polybar-scripts/network-networkmanager-tail.sh -f 'curl -sSL "http://google.com" >/dev/null && echo "$TEXT_CONNECTED" || echo "$TEXT_DISCONNECTED"' wlan0
 tail = true
 ```
 
