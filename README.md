@@ -76,6 +76,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![player-cmus](polybar-scripts/player-cmus/screenshots/1.png)](polybar-scripts/player-cmus/)
 [![info-todotxt](polybar-scripts/info-todotxt/screenshots/1.png)](polybar-scripts/info-todotxt/)
 [![vpn-networkmanager-status](polybar-scripts/vpn-networkmanager-status/screenshots/1.png)](polybar-scripts/vpn-networkmanager-status/)
+[![info-wifinomadkronoplus](polybar-scripts/info-wifinomadkronoplus/screenshots/1.png)](polybar-scripts/info-wifinomadkronoplus/)
 [![info-wifionice](polybar-scripts/info-wifionice/screenshots/1.png)](polybar-scripts/info-wifionice/)
 [![network-localip](polybar-scripts/network-localip/screenshots/1.png)](polybar-scripts/network-localip/)
 [![updates-dnf](polybar-scripts/updates-dnf/screenshots/1.png)](polybar-scripts/updates-dnf/)

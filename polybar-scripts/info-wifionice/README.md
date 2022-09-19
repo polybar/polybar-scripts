@@ -4,11 +4,10 @@ This script shows some information about the current ICE train of Deutsche Bahn.
 
 ![info-wifionice](screenshots/1.png)
 
-
 ## Dependencies
 
-* You have to be logged in to the local SSID `WIFIonICE`.
-
+* `jq`, and `curl` need to be in `$PATH`
+* You have to be logged in to the local SSID `WIFIonICE`, see https://www.bahn.de/service/zug/wlan-im-zug.
 
 ## Module
 
