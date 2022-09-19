@@ -145,6 +145,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [andreykaere/ixwindow](https://github.com/andreykaere/ixwindow): ixwindow is an enhanced version of standard xwindow polybar module
 * [EmiliaTheGoddess/polybar-radeontop](https://github.com/EmiliaTheGoddess/polybar-radeontop): A module to show GPU utilization using radeontop for AMD GPUs
 * [imsosora/polybar-rofication](https://github.com/imsosora/polybar-rofication): Display a bell icon if there are no rofifications
+* [takase1121/network-networkmanager-tail](https://github.com/takase1121/dotfiles2/blob/next/dot_local/share/polybar/scripts/executable_network-networkmanager-tail.sh): Displays NetworkManager connection status when a connection is active or inactive
 
 #### Finance
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
