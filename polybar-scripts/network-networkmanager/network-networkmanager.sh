@@ -37,6 +37,10 @@ network_print() {
                 elif [ "$type" = "bluetooth" ]; then
                     icon="#3"
                 fi
+            elif [ "$state" = "activating" ]; then
+                icon="#4"
+            elif [ "$state" = "deactivating" ]; then
+                icon="#5"
             fi
 
             if [ $counter -gt 0 ]; then
@@ -50,35 +54,12 @@ network_print() {
 
         printf "\n"
     else
-        echo "#3"
+        echo "#6"
     fi
 }
 
-network_update() {
-    pid=$(cat "$path_pid")
+network_print
 
-    if [ "$pid" != "" ]; then
-        kill -10 "$pid"
-    fi
-}
-
-path_pid="/tmp/polybar-network-networkmanager.pid"
-
-case "$1" in
-    --update)
-        network_update
-        ;;
-    *)
-        echo $$ > $path_pid
-
-        trap exit INT
-        trap "echo" USR1
-
-        while true; do
-            network_print
-
-            sleep 60 &
-            wait
-        done
-        ;;
-esac
+nmcli monitor | while read -r; do
+    network_print
+done
