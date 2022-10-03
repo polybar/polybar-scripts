@@ -1,11 +1,25 @@
 #!/bin/sh
 
+bluetooth_devices() {
+    bluetooth_version=$(bluetoothctl --version | cut -d ' ' -f 2)
+    version_command='devices Paired'
+    new_version=5.65
+
+    version_compare=$(awk 'BEGIN{print "'$bluetooth_version'"<="'new_version'"}')
+
+    if [ "$version_compare" -eq 0 ]; then
+        version_command='paired-devices'
+    fi
+
+    echo $(bluetoothctl $version_command | grep Device | cut -d ' ' -f 2)
+}
+
 bluetooth_print() {
     bluetoothctl | while read -r; do
         if [ "$(systemctl is-active "bluetooth.service")" = "active" ]; then
             printf '#1'
 
-            devices_paired=$(bluetoothctl paired-devices | grep Device | cut -d ' ' -f 2)
+	    devices_paired=$(bluetooth_devices)
             counter=0
 
             for device in $devices_paired; do
@@ -36,12 +50,12 @@ bluetooth_toggle() {
         bluetoothctl power on >> /dev/null
         sleep 1
 
-        devices_paired=$(bluetoothctl paired-devices | grep Device | cut -d ' ' -f 2)
-        echo "$devices_paired" | while read -r line; do
-            bluetoothctl connect "$line" >> /dev/null
+	devices_paired=$(bluetooth_devices)
+	echo "$devices_paired" | while read -r line; do
+		bluetoothctl connect "$line" >> /dev/null
         done
     else
-        devices_paired=$(bluetoothctl paired-devices | grep Device | cut -d ' ' -f 2)
+	devices_paired=$(bluetooth_devices)
         echo "$devices_paired" | while read -r line; do
             bluetoothctl disconnect "$line" >> /dev/null
         done
