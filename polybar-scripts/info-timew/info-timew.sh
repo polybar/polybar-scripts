@@ -6,13 +6,10 @@ else
     printf "no tracking"
 fi
 
-if "${1}" -eq "toggle"; then
-    if timew;then
+if "${1}" -eq "--toggle"; then
+    if timew; then
         timew stop;
     else
         timew start;
     fi
 fi
-
-
-
