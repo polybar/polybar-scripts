@@ -1,13 +1,14 @@
-# Script: timew
+# Script: info-timew
 
 This script displays the daily tracked time. You can click it, to start tracking, using timew.
+
 
 ## Module
 
 ```ini
-[module/timew]
+[module/info-timew]
 type = custom/script
-exec = ~/.config/polybar/scripts/info-timew.sh
+exec = ~/polybar-scripts/info-timew.sh
 interval = 10
-click-left = "~/.config/polybar/scripts/info-timew.sh toggle"
+click-left = ~/polybar-scripts/info-timew.sh --toggle
 ```
