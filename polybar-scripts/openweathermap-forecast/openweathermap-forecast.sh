@@ -58,7 +58,7 @@ if [ -n "$CITY" ]; then
     current=$(curl -sf "$API/weather?appid=$KEY&$CITY_PARAM&units=$UNITS")
     forecast=$(curl -sf "$API/forecast?appid=$KEY&$CITY_PARAM&units=$UNITS&cnt=1")
 else
-    location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
+    location=$(curl -sf "https://location.services.mozilla.com/v1/geolocate?key=geoclue")
 
     if [ -n "$location" ]; then
         location_lat="$(echo "$location" | jq '.location.lat')"
