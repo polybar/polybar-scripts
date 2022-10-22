@@ -4,12 +4,12 @@ Scraps the weather.com site and displays the weather in the bar.
 
 
 ### weather_scraper.py
-Is the same as the openweathermap scripts but can display up to 48h forecasts and has much more weather info.
+Is the same as the openweathermap scripts but can display up to 48h forecasts and has much more weather info.  
 The `weather_scraper.py` scraps the weather.com site and returns the forecasts in json format for the given location.
 
 ### weather.sh
-The weather.sh script uses the python script to get the next two hourly forecasts and displays the temp, the icon for the weather state (sunny, foggy, ...)  
-and the diff between the temperatures by an arrow (see example in README.md).
+The weather.sh script uses the python script to get the next two hourly forecasts and  
+and returns the string to be used by polybar.
 
 
 
