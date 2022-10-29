@@ -11,7 +11,9 @@ In the directory where your polybar config file resides, run:
 
 Replace `UTC-0` with the timezone of your choice. You can add as many timezones as you desire.
 
-Copy `tz-switcher.sh` into your config directory
+To change the date format, replace `FORMAT` variable in tz-switcher.sh with the format of your choice.
+
+Formatting sequences can be found in `man date`.
 
 ## Module
 
@@ -22,6 +24,4 @@ exec = ~/.config/polybar/tz-switcher.sh
 tail = true
 click-left = kill -USR1 %pid%
 ```
-To change the date format, replace `FORMAT` variable in tz-switcher.sh with the format of your choice.
 
-Formatting sequences can be found in `man date`.
