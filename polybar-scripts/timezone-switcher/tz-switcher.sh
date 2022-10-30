@@ -1,9 +1,10 @@
 #!/bin/sh
 
+FORMAT="%I:%M %p"
 tzcount=1
 
 print_date() {
-  TZ=$(sed -n ${tzcount}p ~/.config/polybar/timezones) date +"%I:%M %p" | echo "$(sed -n ${tzcount}p ~/.config/polybar/timezones): $(cat -)"
+  TZ=$(sed -n ${tzcount}p ~/.config/polybar/timezones) date +"${FORMAT}" | echo "$(sed -n ${tzcount}p ~/.config/polybar/timezones): $(cat -)"
 }
 
 update_tzcount() {
