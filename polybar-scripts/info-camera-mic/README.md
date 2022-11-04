@@ -1,13 +1,8 @@
 # Script: info-camera-mic
 
-A shell script for displaying an indicator of camera and microphone usage
+A shell script for displaying an indicator of camera and microphone usage.
 
 ![info-camera-mic](screenshots/1.png)
-
-
-## Dependencies
-
-* pulseaudio
 
 
 ## Module
@@ -16,5 +11,5 @@ A shell script for displaying an indicator of camera and microphone usage
 [module/info-camera-mic]
 type = custom/script
 exec = ~/polybar-scripts/info-camera-mic.sh
-interval = 1
+interval = 5
 ```
