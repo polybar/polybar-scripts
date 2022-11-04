@@ -58,8 +58,14 @@ network_print() {
     fi
 }
 
-network_print
+trap exit INT
 
-nmcli monitor | while read -r; do
+while true; do
     network_print
+
+    timeout 60s nmcli monitor | while read -r; do
+        network_print
+    done &
+
+    wait
 done
