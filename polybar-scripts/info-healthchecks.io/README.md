@@ -1,8 +1,8 @@
-# Script: info-healthcheck
+# Script: info-healthchecks.io
 
 Shows the health of your services registered with [healthchecks.io](https://healthchecks.io).
 
-![screenshot](screenshots/info-healthchecks.png)
+![screenshot](screenshots/info-healthchecks.io.png)
 
 
 ## Dependencies
@@ -22,8 +22,8 @@ Modify any of the all-caps variables to configure the script:
 ## Module
 
 ```ini
-[module/info-healthchecks]
+[module/info-healthchecks.io]
 type = custom/script
-exec = ~/polybar-scripts/info-healthchecks.sh
+exec = ~/polybar-scripts/info-healthchecks.io.sh
 interval = 30
 ```
