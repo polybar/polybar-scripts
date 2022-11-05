@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Your API Key
-API_KEY="pPi37pxsjljbQRDjYoKkFtwrRikrdnZy"
+API_KEY=""
 # URL of the checks api endpoint. Change if self-hosting the service.
 CHECK_ENDPOINT="https://healthchecks.io/api/v1/checks/"
 
