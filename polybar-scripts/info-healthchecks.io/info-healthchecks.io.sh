@@ -23,7 +23,7 @@ function build_url {
     echo "$url"
 }
 
-response=$(curl --silent --header "X-Api-Key: ${API_KEY}" $(build_url))
+response=$(curl --silent --header "X-Api-Key: ${API_KEY}" "$(build_url)")
 
 declare -A stati
 
@@ -31,12 +31,12 @@ for status in "up" "down"; do
     stati[$status]=0
 done
 
-for status in $(echo $response | jq -r '.checks[].status'); do
+for status in $(echo "$response" | jq -r '.checks[].status'); do
     stati[$status]=$((stati[$status] + 1))
 done
 
 output=""
-for status in ${STATES[*]}; do
+for status in "${STATES[@]}"; do
     count=${stati[$status]}
     if [ ${COLORS[$status]+_} ]; then
         color=${COLORS[$status]}
