@@ -2,13 +2,14 @@
 
 Shows the health of your services registered with [healthchecks.io](https://healthchecks.io).
 
-![screenshot](screenshots/info-healthchecks.io.png)
+![info-healthchecks.io](screenshots/1.png)
 
 
 ## Dependencies
 
 * `jq`
 * `curl`
+
 
 ## Configuration
 
@@ -19,11 +20,12 @@ Modify any of the all-caps variables to configure the script:
 * `COLORS`: Associative array that maps a color to each configured state. Defaults to white (#ffffff).
 * `SHOWN_TAGS`: Array of tags to show. Leave empty to disable filtering based on tags.
 
+
 ## Module
 
 ```ini
 [module/info-healthchecks.io]
 type = custom/script
 exec = ~/polybar-scripts/info-healthchecks.io.sh
-interval = 30
+interval = 60
 ```
