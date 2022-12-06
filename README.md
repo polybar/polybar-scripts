@@ -93,6 +93,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![isrunning-noisetorch](polybar-scripts/isrunning-noisetorch/screenshots/1.png)](polybar-scripts/isrunning-noisetorch/)
 [![info-camera-mic](polybar-scripts/info-camera-mic/screenshots/1.png)](polybar-scripts/info-camera-mic/)
 [![info-healthchecks.io](polybar-scripts/info-healthchecks.io/screenshots/1.png)](polybar-scripts/info-healthchecks.io/)
+[![network-huawei-modem](polybar-scripts/network-huawei-modem/screenshots/1.png)](polybar-scripts/network-huawei-modem/)
 
 
 ## See also these other user repositories:
