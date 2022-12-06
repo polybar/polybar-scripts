@@ -22,6 +22,6 @@ Just insert your modem ip and credentials into heading of script.
 ```ini
 [module/network-huawei-modem]
 type = custom/script
-exec = ~/.config/polybar/scripts/network-huawei-modem/network-huawei-modem.py
+exec = ~/polybar-scripts/network-huawei-modem.py
 interval = 5
 ```
