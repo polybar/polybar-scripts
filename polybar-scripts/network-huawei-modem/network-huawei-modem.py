@@ -3,10 +3,13 @@
 
 from huawei_lte_api.Client import Client
 from huawei_lte_api.Connection import Connection
-import huawei
 
+# Configuration
+host = '192.168.8.1'
+username = 'admin'
+password = ''
 
-MODEM_URL = f"http://{huawei.username}:{huawei.password}@{huawei.host}/"
+MODEM_URL = f"http://{username}:{password}@{host}/"
 
 
 def scale_units(rate):

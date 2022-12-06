@@ -3,13 +3,16 @@
 
 import requests
 from binascii import unhexlify
-import luci
 
+# Configuration
+host = '192.168.8.1'
+username = 'root'
+password = ''
 
-LOGIN_URL = f"http://{luci.host}/cgi-bin/luci/"
-MODEM_URL = f"http://{luci.host}/cgi-bin/luci/?status=1"
-SMS_URL = f"http://{luci.host}/cgi-bin/luci/admin/services/modem_read_sms/all?block=0"
-BW_URL = f"http://{luci.host}/cgi-bin/luci/admin/status/realtime/bandwidth_status/wwan0"
+LOGIN_URL = f"http://{host}/cgi-bin/luci/"
+MODEM_URL = f"http://{host}/cgi-bin/luci/?status=1"
+SMS_URL = f"http://{host}/cgi-bin/luci/admin/services/modem_read_sms/all?block=0"
+BW_URL = f"http://{host}/cgi-bin/luci/admin/status/realtime/bandwidth_status/wwan0"
 
 
 def scale_units(rate):
@@ -57,7 +60,7 @@ def sms_decode(sms):
 if __name__ == '__main__':
     # setup session and authenticate
     s = requests.Session()
-    s.post(LOGIN_URL, data={'luci_username': luci.username, 'luci_password': luci.password})
+    s.post(LOGIN_URL, data={'luci_username': username, 'luci_password': password})
     s.headers.update({'Content-Type': 'application/json'})
 
     # get lte modem stats (luci-mod-microdrive)
