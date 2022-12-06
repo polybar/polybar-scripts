@@ -1,6 +1,8 @@
 # Script: network-huawei-modem
 
-Print stats from Huawei modem sticks. Such as signal levels, sms count and traffic bandwidth. Tested with E3372h-320, but should work with others.
+Print stats from Huawei modem sticks. Such as signal levels, sms count and traffic bandwidth.
+
+Tested with E3372h-320, but should work with others.
 
 ![network-huawei-modem](screenshots/1.png)
 
