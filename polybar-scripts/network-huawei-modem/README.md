@@ -15,7 +15,7 @@ Tested with E3372h-320, but should work with others.
 
 ## Configuration
 
-Just insert your modem ip and credentials to [huawei.py](huawei.py)
+Just insert your modem ip and credentials into heading of script.
 
 ## Module
 

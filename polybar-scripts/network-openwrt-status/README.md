@@ -15,7 +15,7 @@ Written for Microdrive Tandem-4GT-OEM modem, but can be adopted to work with all
 
 ## Configuration
 
-Just insert your router ip and credentials to [luci.py](luci.py)
+Just insert your router ip and credentials into heading of script.
 
 ## Module
 
