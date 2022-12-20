@@ -56,7 +56,7 @@ with open(cava_conf, 'w') as cava_conf_file:
         'method=raw\n'
         'data_format=ascii\n'
        f'ascii_max_range={conf_ascii_max_range}\n'
-        'bar_delimiter=32'
+        'bar_delimiter=32\n'
         + conf_channels
     )
 
