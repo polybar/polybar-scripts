@@ -19,12 +19,16 @@ bluetooth_print() {
             _info=$(bluetoothctl info $_device)
             _type=$(echo "$_info" | awk '/Icon/ {printf $2}')
             _name=$(echo "$_info" | awk '/Alias/ {for (i=2; i<NF; i++) printf $i " "; print $NF}')
-
+            
             case $_type in
                 audio*)
                     _icon=''
                     _battery=$(echo "$_info" | awk '/Battery/ {gsub(/[()]/,"",$4); printf $4}')
-                    _label="$_icon $_name, $_battery%"
+                    if [ -z "$_battery" ]; then
+                        _label="$_icon $_name"
+                    else
+                        _label="$_icon $_name, $_battery%"
+                    fi
                     break
                     ;;
                 *)
