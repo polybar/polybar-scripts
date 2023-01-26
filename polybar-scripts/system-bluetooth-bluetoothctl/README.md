@@ -22,6 +22,33 @@ If there are several connections, then one is selected in the following order:
 
 Use the `set-alias` feature of `bluetoothctl` to customize your device names.
 
+Bluez config example /etc/bluetooth/main.conf:
+```
+[General]
+
+# Default adapter name
+# Defaults to 'BlueZ X.YZ'
+Name = <your-pc-name>
+
+# How long to stay in discoverable mode before going back to non-discoverable
+# The value is in seconds. Default is 180, i.e. 3 minutes.
+# 0 = disable timer, i.e. stay discoverable forever
+DiscoverableTimeout = 0
+
+# Enables D-Bus experimental interfaces
+# Possible values: true or false
+Experimental = true
+
+[Policy]
+
+# AutoEnable defines option to enable all controllers when they are found.
+# This includes adapters present on start as well as adapters that are plugged
+# in later on. Defaults to 'true'.
+AutoEnable=false
+```
+
+Enabling Experimental adds a battery level to your audio headset
+
 To send file with obexftp use:
 ```Shell
 # check with bluetoothctl devices Connected
