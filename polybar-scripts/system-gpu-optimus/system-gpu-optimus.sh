@@ -28,7 +28,7 @@ gpu_switch() {
 		next="nvidia"
 	fi
 
-	optimus-manager --switch $next --no-confirm
+	optimus-manager --switch "$next" --no-confirm
 }
 
 gpu_display(){

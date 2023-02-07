@@ -46,4 +46,4 @@ for status in "${STATES[@]}"; do
     output+="|%{F${color}}${count}%{F-}"
 done
 
-echo ${output:1}
+echo "${output:1}"
