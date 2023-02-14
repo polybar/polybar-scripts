@@ -6,7 +6,7 @@ KEYBOARD_ID="AT Translated Set 2 keyboard"
 # cpm: characters per minute
 # wpm: words per minute (1 word = 5 characters)
 METRIC=cpm
-FORMAT="%d $METRIC"
+FORMAT="# %d $METRIC"
 
 INTERVAL=1
 
@@ -63,7 +63,7 @@ while true; do
 	# then divide
 	value=$((lines * multiply_by / divide_by))
 
-	if [ "${#arr[@]}" -gt "60" ]; then 
+	if [ "${#array[@]}" -gt "60" ]; then 
 		array=("${array[@]:1}")
 	fi
 
