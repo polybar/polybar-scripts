@@ -5,17 +5,17 @@ action=$(yad --width 300 --entry --undecorated --title "System Logout" \
     --button="ok:0" --button="cancel:1" \
     --text "Choose action:" \
     --entry-text \
-    "Power Off" "Reboot" "Logout" "Suspend" )
+    "Shutdown" "Reboot" "Logout" "Suspend" )
 
 ret=$?
 [[ $ret -eq 1 ]] && exit 0
 
 
 case $action in
-    Power*) cmd="poweroff" ;;
+    Shutdown*) cmd="poweroff" ;;
     Reboot*) cmd="reboot" ;;
-    Logout*) cmd="bspc quit";;
-    Suspend*) cmd="echo suspend" ;;#change the command for suspend and logging out wrt to your convenience
+    Logout*) cmd="echo logout";;
+    Suspend*) cmd="echo suspend" ;;
     *) exit 1 ;;    
 esac
 
