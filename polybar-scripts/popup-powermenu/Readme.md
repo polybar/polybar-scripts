@@ -5,7 +5,7 @@ A popup menu made with Yad that provides a window giving options to shutdown, re
 
 ## Requirements
 
-This script assumes you have installed the [yad](https://github.com/v1cont/yad) package installed.
+This script assumes you have the [yad](https://github.com/v1cont/yad) package installed.
 
 
 ## Configuration
