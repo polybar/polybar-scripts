@@ -16,5 +16,3 @@ format-prefix-foreground = ${colors.primary}
 tail = true
 click-left = "kill -USR1 %pid%"
 label=%output%
-...
-
