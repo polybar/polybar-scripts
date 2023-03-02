@@ -2,7 +2,7 @@
 
 Display all HWMON temperatures. Show name for each sensor on toggle.
 
-![system-alltemps](screenshots/temps)
+![system-alltemps](screenshots/temps.gif)
 
 
 ## Module
