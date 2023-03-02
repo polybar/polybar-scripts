@@ -1,4 +1,4 @@
-# Script: { system-alltemps }
+# Script: system-alltemps 
 
 Display all HWMON temperatures. Show name for each sensor on toggle.
 
