@@ -8,7 +8,7 @@ A custom ![polybar](https://github.com/polybar/polybar) script to easily switch 
 
 Replace the `TIMEZONES` list in the script with the timezones of your choice. You can add as many timezones as you desire.
 
-To change the date format, replace `FORMAT` variable in tz-switcher.sh with the format of your choice.
+To change the date format, replace `FORMAT` variable in info-timezone.sh with the format of your choice.
 
 Formatting sequences can be found in `man date`.
 
