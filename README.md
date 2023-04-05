@@ -117,6 +117,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [mikeri/polycmus](https://github.com/mikeri/polycmus): Show what song is playing in cmus
 
 #### Tasks/Timers
+* [zemmsoares/polybar-notion](https://github.com/zemmsoares/polybar-notion): Notion todo / task manager display module.
 * [DRKblade/polybar-warrior](https://github.com/DRKblade/polybar-warrior): A script to browse through your tasks and mark them as done.
 * [dakuten/taskwarrior-polybar](https://github.com/dakuten/taskwarrior-polybar): Merely just a script showing the most urgent task and allowing it to be marked done
 * [unode/polypomo](https://github.com/unode/polypomo): Minimalist pomodoro style timer
