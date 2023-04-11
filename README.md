@@ -106,6 +106,7 @@ Is this your first time here? You should definitely take a look at these scripts
 
 #### Media/Spotify
 * [0nse/now_playing](https://github.com/0nse/now_playing): Output the currently scrobbling song
+* [mikeboiko/spotidry](https://github.com/mikeboiko/spotidry): Show/toggle Liked/Saved status of currently playing Spotify song along (with basic controls)
 * [Jvanrhijn/polybar-spotify](https://github.com/Jvanrhijn/polybar-spotify): Shows the current song playing on Spotify
 * [HackeSta/polybar-browsermediacontrol](https://github.com/HackeSta/polybar-browsermediacontrol): Browser Media Control module for Polybar
 * [dietervanhoof/polybar-spotify-controls](https://github.com/dietervanhoof/polybar-spotify-controls): Set of modules provides controls for spotify
