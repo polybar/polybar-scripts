@@ -10,7 +10,7 @@ TIMEZONES_LENGTH=$#
 current_idx=1
 
 print_date() {
-  TZ=${current_timezone} date +"${FORMAT}" | echo "${current_timezone}: $(cat -)"
+  TZ=${current_timezone:?} date +"${FORMAT}" | echo "${current_timezone:?}: $(cat -)"
 }
 
 update_current_timezone() {
