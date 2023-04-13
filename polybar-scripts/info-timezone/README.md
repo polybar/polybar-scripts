@@ -6,7 +6,7 @@ A custom ![polybar](https://github.com/polybar/polybar) script to easily switch 
 
 ## Configuration
 
-Replace the `TIMEZONES` list in the script with the timezones of your choice. You can add as many timezones as you desire.
+Add the timezones of your choice inside `info-timezone.sh`. You can add as many timezones as you desire.
 
 To change the date format, replace `FORMAT` variable in info-timezone.sh with the format of your choice.
 
