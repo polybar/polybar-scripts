@@ -94,6 +94,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-camera-mic](polybar-scripts/info-camera-mic/screenshots/1.png)](polybar-scripts/info-camera-mic/)
 [![info-healthchecks.io](polybar-scripts/info-healthchecks.io/screenshots/1.png)](polybar-scripts/info-healthchecks.io/)
 [![network-huawei-modem](polybar-scripts/network-huawei-modem/screenshots/1.png)](polybar-scripts/network-huawei-modem/)
+[![info-timezone](polybar-scripts/info-timezone/screenshots/1.gif)](polybar-scripts/info-timezone/)
 
 
 ## See also these other user repositories:
@@ -106,6 +107,7 @@ Is this your first time here? You should definitely take a look at these scripts
 
 #### Media/Spotify
 * [0nse/now_playing](https://github.com/0nse/now_playing): Output the currently scrobbling song
+* [mikeboiko/spotidry](https://github.com/mikeboiko/spotidry): Show/toggle Liked/Saved status of currently playing Spotify song along (with basic controls)
 * [Jvanrhijn/polybar-spotify](https://github.com/Jvanrhijn/polybar-spotify): Shows the current song playing on Spotify
 * [HackeSta/polybar-browsermediacontrol](https://github.com/HackeSta/polybar-browsermediacontrol): Browser Media Control module for Polybar
 * [dietervanhoof/polybar-spotify-controls](https://github.com/dietervanhoof/polybar-spotify-controls): Set of modules provides controls for spotify
@@ -165,6 +167,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [mbugert/tailscale-polybar-rofi](https://github.com/mbugert/tailscale-polybar-rofi): Polybar module and rofi dmenu for tailscale VPN
 * [haideralipunjabi/polybar-protonvpn](https://github.com/haideralipunjabi/polybar-protonvpn) - ProtonVPN Module for Polybar
 * [totoroot/polybar-modules-mullvad](https://github.com/totoroot/polybar-modules-mullvad): Status and control of Mullvad VPN connection and tunnel settings
+* [EhsanAramide/polybar_v2ray](https://github.com/EhsanAramide/polybar_v2ray): Simple and easy to use plugin for lazy v2ray VPN clients who use polybar
 
 #### Other
 * [nivit/polybar-module-earthquake](https://github.com/nivit/polybar-module-earthquake): Polybar module for showing the latest seismic event on Earth
