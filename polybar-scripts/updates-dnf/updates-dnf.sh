@@ -1,9 +1,16 @@
 #!/bin/sh
 
-updates=$(dnf updateinfo -q --list | wc -l)
+routedefault=$(ip r | grep -c default)
 
-if [ "$updates" -gt 0 ]; then
-    echo "# $updates"
+if [ $routedefault -eq 1 ]; then
+updates=$(sudo dnf updateinfo -q --list | wc -l)
+    
+    if [ "$updates" -gt 0 ]; then
+        echo " $updates"
+    else
+        echo ""
+    fi
 else
-    echo ""
+    echo "No Internet"
 fi
+
