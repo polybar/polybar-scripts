@@ -1,5 +1,4 @@
 #!/bin/sh
-
 routedefault=$(ip r | grep -c default)
 
 if [ $routedefault -eq 1 ]; then
