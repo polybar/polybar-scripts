@@ -10,7 +10,6 @@ Displays the name of the current WiFi network in the Polybar. Updates the networ
 ```ini
 [module/wifi-shell]
 type = custom/script
-
 exec = ~/polybar-scripts/wifi-ssid.sh
 
 interval = 10
