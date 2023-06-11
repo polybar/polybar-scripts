@@ -63,7 +63,7 @@ trap exit INT
 while true; do
     network_print
 
-    timeout 60s nmcli monitor | while read -r; do
+    timeout 60s nmcli monitor | while read -r REPLY; do
         network_print
     done &
 
