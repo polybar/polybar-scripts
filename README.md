@@ -123,6 +123,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [DRKblade/polybar-warrior](https://github.com/DRKblade/polybar-warrior): A script to browse through your tasks and mark them as done.
 * [dakuten/taskwarrior-polybar](https://github.com/dakuten/taskwarrior-polybar): Merely just a script showing the most urgent task and allowing it to be marked done
 * [unode/polypomo](https://github.com/unode/polypomo): Minimalist pomodoro style timer
+* [metent/uair](https://github.com/metent/uair): Extensible pomodoro timer written in rust, with support for multiple synchronized timers
 * [jbirnick/polybar-timer](https://github.com/jbirnick/polybar-timer): Simple & customizable timer (can be used for pomodoro tracking).
 * [jbirnick/polybar-todoist](https://github.com/jbirnick/polybar-todoist): Displays amount of Todoist tasks of each priority.
 * [maksmeshkov/toggl_polybar](https://github.com/maksmeshkov/toggl_polybar): Information about current running task for toggl.com time tracker users
