@@ -131,7 +131,6 @@ Is this your first time here? You should definitely take a look at these scripts
 * [woutdp/polybar-clockify](https://github.com/woutdp/polybar-clockify): Control Clockify, a time tracking tool, through Polybar
 
 #### News/Feeds
-* [zemmsoares/polybar-hackernews](https://github.com/zemmsoares/polybar-hackernews): Hackernews on your polybar
 * [zemmsoares/polybar-news](https://github.com/zemmsoares/polybar-news): Read news on your polybar
 * [nivit/polybar-module-news](https://github.com/nivit/polybar-module-news): This polybar module displays RSS/Atom feeds
 
