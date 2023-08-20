@@ -178,3 +178,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [pikulo-kama/polybar-quotation](https://github.com/pikulo-kama/polybar-quotation): Reads file with famous quotations and shows them
 * [Kuuhhl/polybar-corona-widget](https://github.com/Kuuhhl/polybar-corona-widget): Show the current Coronavirus cases in your area
 * [FromWau/WeatherScraper](https://github.com/FromWau/WeatherScraper): Scraps the weather.com site and returns a up to 48h weather forecast in json format
+* [lgtome/polybar-npm](https://github.com/lgtome/polybar-npm): A polybar script to get updates of specific packages from the npm
