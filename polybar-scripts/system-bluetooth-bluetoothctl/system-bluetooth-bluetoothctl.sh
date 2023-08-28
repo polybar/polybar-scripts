@@ -13,11 +13,24 @@ bluetooth_print() {
 
                 if echo "$device_info" | grep -q "Connected: yes"; then
                     device_alias=$(echo "$device_info" | grep "Alias" | cut -d ' ' -f 2-)
+                    device_address=$(echo "$device" | sed -r 's/[:]+/_/g')
+                    device_battery=$(dbus-send --print-reply=literal --system --dest=org.bluez /org/bluez/hci0/dev_"$device_address" org.freedesktop.DBus.Properties.Get string:"org.bluez.Battery1" string:"Percentage" | sed 's/.*byte //')
 
-                    if [ $counter -gt 0 ]; then
-                        printf ", %s" "$device_alias"
+                    if [ "$device_battery" -gt 90 ]; then
+                        battery_icon="#21"
+                    elif [ "$device_battery" -gt 60 ]; then
+                        battery_icon="#22"
+                    elif [ "$device_battery" -gt 35 ]; then
+                        battery_icon="#23"
+                    elif [ "$device_battery" -gt 10 ]; then
+                        battery_icon="#24"
                     else
-                        printf " %s" "$device_alias"
+                        battery_icon="#25"
+                    fi
+                    if [ $counter -gt 0 ]; then
+                        printf ", %s %s  %s%%" "$device_alias" "$battery_icon" "$device_battery"
+                    else
+                        printf " %s %s  %s%%" "$device_alias" "$battery_icon" "$device_battery"
                     fi
 
                     counter=$((counter + 1))
