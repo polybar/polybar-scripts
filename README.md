@@ -157,6 +157,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [takase1121/network-networkmanager-tail](https://github.com/takase1121/dotfiles2/blob/next/dot_local/share/polybar/scripts/executable_network-networkmanager-tail.sh): Displays NetworkManager connection status when a connection is active or inactive
 * [mbvissers/polybar-minimal-bluetooth-module](https://github.com/mbvissers/polybar-minimal-bluetooth-module): A minimalistic Bluetooth module that shows if any device is currently connected
 * [hulutouer/polybar-fcitx5-module](https://github.com/hulutouer/polybar-fcitx5-module): This module is used to display the status of fcitx5 input method
+* [i3-wsman/i3-wsman](https://github.com/i3-wsman/i3-wsman): Create, reorder, group, and focus workspaces easily in i3
 
 #### Finance
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
