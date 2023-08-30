@@ -1,7 +1,7 @@
 #!/bin/sh
 
 bluetooth_print() {
-    bluetoothctl | while read -r REPLY; do
+    bluetoothctl | grep --line-buffered 'Device\|#' | while read -r REPLY; do
         if [ "$(systemctl is-active "bluetooth.service")" = "active" ]; then
             printf '#1'
 
