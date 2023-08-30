@@ -13,7 +13,22 @@ bluetooth_print() {
 
                 if echo "$device_info" | grep -q "Connected: yes"; then
                     device_alias=$(echo "$device_info" | grep "Alias" | cut -d ' ' -f 2-)
+                    device_battery=$(echo "$device_info" | grep "Battery" | awk -F'[()]' '{print $2}')
 
+                    if [ -n "$device_battery" ]; then
+                        if [ "$device_battery" -gt 90 ]; then
+                            battery_icon="#21"
+                        elif [ "$device_battery" -gt 60 ]; then
+                            battery_icon="#22"
+                        elif [ "$device_battery" -gt 35 ]; then
+                            battery_icon="#23"
+                        elif [ "$device_battery" -gt 10 ]; then
+                            battery_icon="#24"
+                        else
+                            battery_icon="#25"
+                        fi
+                        device_alias="${device_alias} $battery_icon   $device_battery%"
+                    fi
                     if [ $counter -gt 0 ]; then
                         printf ", %s" "$device_alias"
                     else
