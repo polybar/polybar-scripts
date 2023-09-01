@@ -4,8 +4,6 @@ A shell script which displays the status of bluetooth and the paired devices.
 
 Use the toggle option to power on the controller and try to connect to all paired devices or to disconnect all connections and turn off the controller.
 
-Note that bluetooth battery level reporting is an experimental feature which needs to be enabled by uncommenting and setting the `Experimental` line in `/etc/bluetooth/main.conf` to `true` and then restarting the `bluetooth.service`.
-
 ![system-bluetooth-bluetoothctl](screenshots/1.png)
 
 
@@ -17,6 +15,8 @@ Note that bluetooth battery level reporting is an experimental feature which nee
 ## Configuration
 
 Use the `set-alias` feature of `bluetoothctl` to customize your device names.
+
+To enable battery level detection set `Experimental = true` in `/etc/bluetooth/main.conf`.
 
 
 ## Module
