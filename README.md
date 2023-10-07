@@ -100,8 +100,8 @@ Is this your first time here? You should definitely take a look at these scripts
 ## See also these other user repositories:
 
 #### Email
-* [vyachkonovalov/polybar-gmail](https://github.com/vyachkonovalov/polybar-gmail): A Polybar module to show unread messages from Gmail
-* [vyachkonovalov/bar-protonmail](https://github.com/vyachkonovalov/bar-protonmail): A Waybar/Polybar module for ProtonMail
+* [crabvk/bar-gmail](https://github.com/crabvk/bar-gmail): A Waybar/Polybar module for Gmail
+* [crabvk/bar-protonmail](https://github.com/crabvk/bar-protonmail): A Waybar/Polybar module for ProtonMail
 * [quelotic/polybarModules](https://github.com/quelotic/polybarModules): Scripts for mail and caffeine
 * [DanaruDev/UnseenMail](https://framagit.org/DanaruDev/UnseenMail): Polybar Python script for viewing unread email from multi accounts
 
