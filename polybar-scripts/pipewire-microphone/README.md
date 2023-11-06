@@ -6,7 +6,6 @@ A script for showing and toggling the mute state of the PipeWire default microph
 ## Dependencies
 
 * pactl (libpulse)
-* pw-cat (pipewire)
 
 
 ## Module
