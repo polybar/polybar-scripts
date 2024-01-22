@@ -158,6 +158,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [mbvissers/polybar-minimal-bluetooth-module](https://github.com/mbvissers/polybar-minimal-bluetooth-module): A minimalistic Bluetooth module that shows if any device is currently connected
 * [hulutouer/polybar-fcitx5-module](https://github.com/hulutouer/polybar-fcitx5-module): This module is used to display the status of fcitx5 input method
 * [i3-wsman/i3-wsman](https://github.com/i3-wsman/i3-wsman): Create, reorder, group, and focus workspaces easily in i3
+* [tuurep/windowlist](https://github.com/tuurep/windowlist/): List all open windows, click to switch focus or minimize
 
 #### Finance
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
