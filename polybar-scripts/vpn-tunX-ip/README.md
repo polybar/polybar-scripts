@@ -8,7 +8,7 @@ A script that shows the IP address for each active tun adapter, or a message if 
 
 ## Dependencies
 
-Requires extremely common standard commands: ip, jq and wc.
+Requires extremely common standard commands: ip, jq and grep.
 
 
 ## Configuration
