@@ -1,6 +1,6 @@
-# Script: { vpn-tunX-ip }
+# Script: vpn-tunX-ip
 
-{ A script that shows the IP address for each active tun adapter, if one is active, or if not indicates the VPN connection is down. }
+A script that shows the IP address for each active tun adapter, or a message if ther are no active tun adapters.
 
 ![skeleton](screenshots/1.png) 
 ![skeleton](screenshots/2.png)
@@ -8,12 +8,12 @@
 
 ## Dependencies
 
-{ Requires extremely common standard commands: ip, jq and wc. }
+Requires extremely common standard commands: ip, jq and wc.
 
 
 ## Configuration
 
-{ You can edit the format lines in the script according to your taste. }
+You can edit the format variables in the script according to your taste.
 
 
 ## Module
