@@ -16,6 +16,6 @@ A script that shows the IP address for each active tun adapter.
 ```ini
 [module/vpn-tun-status]
 type = custom/script
-exec = ~/polybar-scripts/vpn-tunX-ip.sh
+exec = ~/polybar-scripts/vpn-tun-status.sh
 interval = 10
 ```
