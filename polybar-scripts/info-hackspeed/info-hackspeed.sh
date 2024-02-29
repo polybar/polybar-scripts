@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # shellcheck disable=SC2016,SC2059
 
 KEYBOARD_ID="AT Translated Set 2 keyboard"
@@ -8,7 +8,10 @@ KEYBOARD_ID="AT Translated Set 2 keyboard"
 METRIC=cpm
 FORMAT="# %d $METRIC"
 
-INTERVAL=20
+INTERVAL=1
+
+# The amount of INTERVAL which must be 0 to reset the rolling average
+RESET_INTERVAL=10
 
 # If you have a keyboard layout that is not listed here yet, create a condition
 # yourself. $3 is the key index. Use `xinput test "AT Translated Set 2 keyboard"`
@@ -43,6 +46,8 @@ printf '' > "$hackspeed_cache"
 xinput test "$KEYBOARD_ID" | \
 	stdbuf -o0 awk '$1 == "key" && $2 == "press" && ('"$CONDITION"') {printf "."}' >> "$hackspeed_cache" &
 
+array=()
+
 while true; do
 	# Ask the kernel how big the file is with the command `stat`. The number we
 	# get is the file size in bytes, which equals the amount of dots the file
@@ -58,7 +63,36 @@ while true; do
 	# then divide
 	value=$((lines * multiply_by / divide_by))
 
-	printf "$FORMAT\\n" "$value"
+	if [ "${#array[@]}" -gt "60" ]; then 
+		array=("${array[@]:1}")
+	fi
+
+	reset="1";
+
+	for (( i=1; i<=$RESET_INTERVAL; i++ ))
+	do
+		if [ "${#array[@]}" -ge "$i" ]; then
+			if [ "${array[${#array[@]} - $i]}" -ne "0" ]; then
+				reset="0"
+				break
+			fi
+		fi
+	done
+
+	if [ "$reset" -eq "1" ]; then 
+	  array=()
+	fi
+
+	array+=($value)
+
+	avg=0
+	for n in "${array[@]}"
+	do
+		avg=$((avg+n))
+	done 
+	avg=$((avg/${#array[@]}))
+
+	printf "$FORMAT\\n" "$avg"
 
 	sleep $INTERVAL
 done
