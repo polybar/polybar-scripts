@@ -164,6 +164,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
 * [zack-ashen/polystock](https://github.com/zack-ashen/polystock): Simple stock ticker displayer for displaying stock prices.
 * [Skyclad0bserver/polymetals](https://github.com/Skyclad0bserver/polymetals): Displays the price of silver, gold, platinum, palladium, and/or copper
+* [axxml/stop](https://github.com/axxml/stop): Stock position tracker for status bars
 
 #### VPN
 * [shervinsahba/polybar-vpn-controller](https://github.com/shervinsahba/polybar-vpn-controller): Manage your VPN via this polybar module
