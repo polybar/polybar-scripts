@@ -129,6 +129,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [jbirnick/polybar-todoist](https://github.com/jbirnick/polybar-todoist): Displays amount of Todoist tasks of each priority.
 * [maksmeshkov/toggl_polybar](https://github.com/maksmeshkov/toggl_polybar): Information about current running task for toggl.com time tracker users
 * [woutdp/polybar-clockify](https://github.com/woutdp/polybar-clockify): Control Clockify, a time tracking tool, through Polybar
+* [jamessouth/polybar-time-bar](https://github.com/jamessouth/polybar-time-bar): A time module for Polybar that displays a day progress bar
 
 #### News/Feeds
 * [zemmsoares/polybar-news](https://github.com/zemmsoares/polybar-news): Read news on your polybar
@@ -159,6 +160,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [hulutouer/polybar-fcitx5-module](https://github.com/hulutouer/polybar-fcitx5-module): This module is used to display the status of fcitx5 input method
 * [i3-wsman/i3-wsman](https://github.com/i3-wsman/i3-wsman): Create, reorder, group, and focus workspaces easily in i3
 * [tuurep/windowlist](https://github.com/tuurep/windowlist/): List all open windows, click to switch focus or minimize
+* [jamessouth/polybar-binary-clock-fonts](https://github.com/jamessouth/polybar-binary-clock-fonts): Fonts to display time as dots like on a binary clock
 
 #### Finance
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
