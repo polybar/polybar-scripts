@@ -118,6 +118,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [conor-f/spotibar](https://github.com/conor-f/spotibar): Polybar plugin for Spotify that uses the Spotify Web API
 * [mikeri/polycmus](https://github.com/mikeri/polycmus): Show what song is playing in cmus
 * [MiksuR/spot-on](https://github.com/MiksuR/spot-on): Resource efficient plugin with text scrolling, written in Haskell.
+* [monadplus/polybar-tidal](https://github.com/monadplus/polybar-tidal): Tidal status and controls
 
 #### Tasks/Timers
 * [zemmsoares/polybar-notion](https://github.com/zemmsoares/polybar-notion): Notion todo / task manager display module.
