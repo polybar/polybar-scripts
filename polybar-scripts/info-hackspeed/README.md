@@ -16,6 +16,8 @@ A small script that shows your typing speed. Happy Hacking!
 
 * `KEYBOARD_ID`: name of your keyboard. See Setup above. Default: `AT Translated Set 2 keyboard`
 * `METRIC`: either `cpm` (characters per minute) of `wpm` ([words per minute, 1 word = 5 characters](https://en.wikipedia.org/wiki/Words_per_minute)). Default: `cpm`
+* `TARGET`: value at which to change from FORMAT to TARGET_FORMAT, useful if you have a specific wpm or cpm goal you want to know that you have hit while typing. Default: 80
+* `TARGET_FORMAT`: format string according to which the metric will be output when on target. Default `#%d $METRIC`  
 * `FORMAT`: format string according to which the metric will be output. Default: `# %d $METRIC`
 * `INTERVAL`: amount of seconds to gather data. Default: 20
 * `LAYOUT`: keyboard layout, to be able to only count letters and numbers. Currently supported are `qwerty`, `azerty`, `qwertz` and `dvorak`. If you have a different layout, please contribute a condition for it! See the script's source code. Use the special value `dontcare` to count all keys, not just letters and numbers. Default: `qwerty`

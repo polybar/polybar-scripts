@@ -7,7 +7,8 @@ KEYBOARD_ID="AT Translated Set 2 keyboard"
 # wpm: words per minute (1 word = 5 characters)
 METRIC=cpm
 FORMAT="# %d $METRIC"
-
+TARGET_FORMAT="# %d $METRIC"
+TARGET=80
 INTERVAL=20
 
 # If you have a keyboard layout that is not listed here yet, create a condition
@@ -58,7 +59,11 @@ while true; do
 	# then divide
 	value=$((lines * multiply_by / divide_by))
 
-	printf "$FORMAT\\n" "$value"
-
+	# if we are on target, print the alternate format
+	if [ $value -gt $TARGET ]; then
+	    printf "$TARGET_FORMAT\\n" "$value"
+	else	
+	    printf "$FORMAT\\n" "$value"
+        fi 
 	sleep $INTERVAL
 done
