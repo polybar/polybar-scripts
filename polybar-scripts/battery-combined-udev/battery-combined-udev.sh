@@ -11,31 +11,36 @@ battery_print() {
     battery_max_0=0
     battery_max_1=0
 
+    get_battery_level() {
+        battery_path="$1"
+        battery_level=0
+        battery_max=0
+
+        if [ -f "$battery_path/energy_now" ]; then
+            battery_level=$(cat "$battery_path/energy_now")
+            battery_max=$(cat "$battery_path/energy_full")
+        elif [ -f "$battery_path/charge_now" ]; then
+            battery_level=$(cat "$battery_path/charge_now")
+            battery_max=$(cat "$battery_path/charge_full")
+        fi
+
+        echo "$battery_level $battery_max"
+    }
+
     if [ -f "$PATH_AC/online" ]; then
         ac=$(cat "$PATH_AC/online")
     fi
 
-    if [ -f "$PATH_BATTERY_0/energy_now" ]; then
-        battery_level_0=$(cat "$PATH_BATTERY_0/energy_now")
-    fi
-
-    if [ -f "$PATH_BATTERY_0/energy_full" ]; then
-        battery_max_0=$(cat "$PATH_BATTERY_0/energy_full")
-    fi
-
-    if [ -f "$PATH_BATTERY_1/energy_now" ]; then
-        battery_level_1=$(cat "$PATH_BATTERY_1/energy_now")
-    fi
-
-    if [ -f "$PATH_BATTERY_1/energy_full" ]; then
-        battery_max_1=$(cat "$PATH_BATTERY_1/energy_full")
-    fi
+    read battery_level_0 battery_max_0 <<< $(get_battery_level "$PATH_BATTERY_0")
+    read battery_level_1 battery_max_1 <<< $(get_battery_level "$PATH_BATTERY_1")
 
     battery_level=$(("$battery_level_0 + $battery_level_1"))
     battery_max=$(("$battery_max_0 + $battery_max_1"))
 
-    battery_percent=$(("$battery_level * 100"))
-    battery_percent=$(("$battery_percent / $battery_max"))
+    battery_percent=0
+    if [ "$battery_max" -ne 0 ]; then
+        battery_percent=$(("$battery_level * 100 / $battery_max"))
+    fi
 
     if [ "$ac" -eq 1 ]; then
         icon="#1"
