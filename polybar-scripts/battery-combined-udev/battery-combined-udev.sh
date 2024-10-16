@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 battery_print() {
     PATH_AC="/sys/class/power_supply/AC"
@@ -31,8 +31,8 @@ battery_print() {
         ac=$(cat "$PATH_AC/online")
     fi
 
-    read battery_level_0 battery_max_0 <<< $(get_battery_level "$PATH_BATTERY_0")
-    read battery_level_1 battery_max_1 <<< $(get_battery_level "$PATH_BATTERY_1")
+    read -r battery_level_0 battery_max_0 <<< "$(get_battery_level "$PATH_BATTERY_0")"
+    read -r battery_level_1 battery_max_1 <<< "$(get_battery_level "$PATH_BATTERY_1")"
 
     battery_level=$(("$battery_level_0 + $battery_level_1"))
     battery_max=$(("$battery_max_0 + $battery_max_1"))
