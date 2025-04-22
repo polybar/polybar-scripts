@@ -17,7 +17,7 @@ if { [ "$current_wifi" = "WIFIonICE" ] || [ "$current_wifi" = "WIFI@DB" ]; }; th
 
     if [ "$(echo "$wifionice" | jq .connection)" = "true" ]; then
         wifionice_speed=$(echo "$wifionice" | jq .speed)
-        if [ "$wifionice_speed" -ne 0 ]; then
+        if [ $(echo "${wifionice_speed} != 0" | bc) -eq 1 ]; then
             wifionice_speed=" - $wifionice_speed km/h"
         else
             wifionice_speed=""
