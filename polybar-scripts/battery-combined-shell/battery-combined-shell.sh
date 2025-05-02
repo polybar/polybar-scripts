@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PATH_ACs=$(find /sys/class/power_supply/ -regex ".*A\(C\|DP\)0")
+PATH_ACs=$(find /sys/class/power_supply/ -regex ".*A\(C\|DP\).*")
 PATH_BATTERIES=$(find /sys/class/power_supply/BAT*)
 
 ac=0
