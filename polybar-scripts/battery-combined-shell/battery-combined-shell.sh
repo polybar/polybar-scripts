@@ -1,42 +1,32 @@
 #!/bin/sh
 
-PATH_AC="/sys/class/power_supply/AC"
-PATH_BATTERY_0="/sys/class/power_supply/BAT0"
-PATH_BATTERY_1="/sys/class/power_supply/BAT1"
+PATH_ACs=$(find /sys/class/power_supply/ -regex ".*A\(C\|DP\).*")
+PATH_BATTERIES=$(find /sys/class/power_supply/BAT*)
 
 ac=0
-battery_level_0=0
-battery_level_1=0
-battery_max_0=0
-battery_max_1=0
+battery_level=0
+battery_max=0
 
-if [ -f "$PATH_AC/online" ]; then
-    ac=$(cat "$PATH_AC/online")
-fi
+for PATH_AC in $PATH_ACs; do
+    if [ -f "$PATH_AC/online" ]; then
+        ac=$(("$ac + $(cat "$PATH_AC/online")"))
+    fi
+done;
 
-if [ -f "$PATH_BATTERY_0/energy_now" ]; then
-    battery_level_0=$(cat "$PATH_BATTERY_0/energy_now")
-fi
+for PATH_BATTERY in $PATH_BATTERIES; do
+    if [ -f "$PATH_BATTERY/energy_now" ]; then
+        battery_level=$(("$batteries_level + $(cat "$PATH_BATTERY/energy_now")"))
+    fi
 
-if [ -f "$PATH_BATTERY_0/energy_full" ]; then
-    battery_max_0=$(cat "$PATH_BATTERY_0/energy_full")
-fi
-
-if [ -f "$PATH_BATTERY_1/energy_now" ]; then
-    battery_level_1=$(cat "$PATH_BATTERY_1/energy_now")
-fi
-
-if [ -f "$PATH_BATTERY_1/energy_full" ]; then
-    battery_max_1=$(cat "$PATH_BATTERY_1/energy_full")
-fi
-
-battery_level=$(("$battery_level_0 + $battery_level_1"))
-battery_max=$(("$battery_max_0 + $battery_max_1"))
+    if [ -f "$PATH_BATTERY/energy_full" ]; then
+        battery_max=$(cat "$PATH_BATTERY/energy_full")
+    fi
+done;
 
 battery_percent=$(("$battery_level * 100"))
 battery_percent=$(("$battery_percent / $battery_max"))
 
-if [ "$ac" -eq 1 ]; then
+if [ "$ac" -gt 0 ]; then
     icon="#1"
 
     if [ "$battery_percent" -gt 97 ]; then
