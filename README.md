@@ -162,6 +162,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [i3-wsman/i3-wsman](https://github.com/i3-wsman/i3-wsman): Create, reorder, group, and focus workspaces easily in i3
 * [tuurep/windowlist](https://github.com/tuurep/windowlist/): List all open windows, click to switch focus or minimize
 * [jamessouth/polybar-binary-clock-fonts](https://github.com/jamessouth/polybar-binary-clock-fonts): Fonts to display numbers as dots like on a binary clock
+* [Anohkka/polywinner](https://github.com/Anohkka/polywinner): Scrollable, interactive list of open windows.
 
 #### Finance
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
