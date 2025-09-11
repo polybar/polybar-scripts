@@ -13,7 +13,7 @@ jobs:
         run: /opt/shellcheck-stable/shellcheck --version
 
       - name: Check out the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Run ShellCheck on all files
         run: find . '(' -name '*.sh' ')' -exec /opt/shellcheck-stable/shellcheck {} +
