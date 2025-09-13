@@ -11,7 +11,7 @@ import time
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
 DBusGMainLoop(set_as_default=True)
-
+import threading
 
 FORMAT_STRING = '{icon} {artist} - {title}'
 FORMAT_REGEX = re.compile(r'(\{:(?P<tag>.*?)(:(?P<format>[wt])(?P<formatlen>\d+))?:(?P<text>.*?):\})', re.I)
@@ -34,10 +34,15 @@ class PlayerManager:
 
         if self._connect:
             self.connect()
+
+            # keep writing the latest players to the file
+            threading.Thread(target=self.saveCurrentPlayersToFile).start()
+
             loop = GLib.MainLoop()
             try:
                 loop.run()
             except KeyboardInterrupt:
+                self.connected = False
                 print("interrupt received, stopping…")
 
     def connect(self):
@@ -116,17 +121,38 @@ class PlayerManager:
         self.players[new_owner] = player
         del self.players[old_owner]
 
+    def saveCurrentPlayersToFile(self):
+        while self.connected:
+            player_owners = self.getSortedPlayerOwnerList()
+            current_folder = os.path.dirname(os.path.abspath(__file__))
+            with open(os.path.join(current_folder, 'players.txt'), 'w') as f:
+                for player_owner in player_owners:
+                    f.write(player_owner + '\n')
+            time.sleep(0.2)
+
+    def readCurrentPlayersFromFile(self):
+        players = []
+        current_folder = os.path.dirname(os.path.abspath(__file__))
+        try:
+            with open(os.path.join(current_folder, 'players.txt'), 'r') as f:
+                for line in f:
+                    players.append(line.strip())
+        except FileNotFoundError:
+            pass
+        return players
+
     # Get a list of player owners sorted by current status and age
     def getSortedPlayerOwnerList(self):
         players = [
             {
                 'number': int(owner.split('.')[-1]),
                 'status': 2 if player.status == 'playing' else 1 if player.status == 'paused' else 0,
-                'owner': owner
+                'owner': owner,
+                'lastChanged': player._timeStatusChanged
             }
             for owner, player in self.players.items()
         ]
-        return [ info['owner'] for info in reversed(sorted(players, key=itemgetter('status', 'number'))) ]
+        return [ info['owner'] for info in reversed(sorted(players, key=itemgetter('status', 'lastChanged', 'number'))) ]
 
     # Get latest player that's currently playing
     def getCurrentPlayer(self):
@@ -169,6 +195,9 @@ class Player:
             'title'  : '',
             'track'  : 0
         }
+
+        # time when the player's status was last changed
+        self._timeStatusChanged = time.time()
 
         self._rate = 1.
         self._positionAtLastUpdate = 0.
@@ -335,6 +364,7 @@ class Player:
                 self.refreshPosition()
 
         if updated:
+            self._timeStatusChanged = time.time()
             self.refreshPosition()
             self.printStatus()
 
@@ -527,7 +557,13 @@ if args.command is None:
     PlayerManager(filter_list = filter_list, block_mode = block_mode)
 else:
     player_manager = PlayerManager(filter_list = filter_list, block_mode = block_mode, connect = False)
-    current_player = player_manager.getCurrentPlayer()
+    players = player_manager.readCurrentPlayersFromFile()
+    # enumerate the players, get the most recent one that is also in the player_manager
+    current_player = None
+    for player in players:
+        if player in player_manager.players.keys():
+            current_player = player_manager.players[player]
+            break
     if args.command == 'play' and current_player:
         current_player.play()
     elif args.command == 'pause' and current_player:
