@@ -186,4 +186,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [Kuuhhl/polybar-corona-widget](https://github.com/Kuuhhl/polybar-corona-widget): Show the current Coronavirus cases in your area
 * [FromWau/WeatherScraper](https://github.com/FromWau/WeatherScraper): Scraps the weather.com site and returns a up to 48h weather forecast in json format
 * [lgtome/polybar-npm](https://github.com/lgtome/polybar-npm): A polybar script to get updates of specific packages from the npm
-* [exaroth/programming-wisdom](https://github.com/exaroth/programming-wisdom) I3/Sway plugin containing programming wisdom to meditate over during long coding sessions. 
+* [exaroth/programming-wisdom](https://github.com/exaroth/programming-wisdom) Polybar plugin containing programming wisdom to meditate over during long coding sessions. 
