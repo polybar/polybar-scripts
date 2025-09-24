@@ -135,7 +135,7 @@ Is this your first time here? You should definitely take a look at these scripts
 #### News/Feeds
 * [zemmsoares/polybar-news](https://github.com/zemmsoares/polybar-news): Read news on your polybar
 * [nivit/polybar-module-news](https://github.com/nivit/polybar-module-news): This polybar module displays RSS/Atom feeds
-* [exaroth/i3-news](https://github.com/exaroth/i3-news): Add interactive news headlines from your favorite RSS feeds to Polybar.
+* [exaroth/i3-news](https://github.com/exaroth/i3-news): Add interactive news headlines from your favorite RSS feeds to Polybar
 
 #### Blue light filter
 * [VineshReddy/polybar-redshift](https://github.com/VineshReddy/polybar-redshift): Change, display temperature and open/close Redshift
