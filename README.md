@@ -95,6 +95,8 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-healthchecks.io](polybar-scripts/info-healthchecks.io/screenshots/1.png)](polybar-scripts/info-healthchecks.io/)
 [![network-huawei-modem](polybar-scripts/network-huawei-modem/screenshots/1.png)](polybar-scripts/network-huawei-modem/)
 [![info-timezone](polybar-scripts/info-timezone/screenshots/1.gif)](polybar-scripts/info-timezone/)
+[![pihole-status](polybar-scripts/pihole-status/screenshots/1.png)](polybar-scripts/pihole-status/)
+[![pihole-status](polybar-scripts/pihole-status/screenshots/2.png)](polybar-scripts/pihole-status/)
 
 
 ## See also these other user repositories:
