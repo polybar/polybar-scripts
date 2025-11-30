@@ -188,3 +188,4 @@ Is this your first time here? You should definitely take a look at these scripts
 * [FromWau/WeatherScraper](https://github.com/FromWau/WeatherScraper): Scraps the weather.com site and returns a up to 48h weather forecast in json format
 * [lgtome/polybar-npm](https://github.com/lgtome/polybar-npm): A polybar script to get updates of specific packages from the npm
 * [exaroth/programming-wisdom](https://github.com/exaroth/programming-wisdom) Polybar plugin containing programming wisdom to meditate over during long coding sessions. 
+* [open_nvim](polybar-scripts/open_nvim) Polybar module for open nvim choice folder to open
