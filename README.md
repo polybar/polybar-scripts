@@ -95,6 +95,7 @@ Is this your first time here? You should definitely take a look at these scripts
 [![info-healthchecks.io](polybar-scripts/info-healthchecks.io/screenshots/1.png)](polybar-scripts/info-healthchecks.io/)
 [![network-huawei-modem](polybar-scripts/network-huawei-modem/screenshots/1.png)](polybar-scripts/network-huawei-modem/)
 [![info-timezone](polybar-scripts/info-timezone/screenshots/1.gif)](polybar-scripts/info-timezone/)
+[![libreoffice-on-your-polybar](polybar-scripts/libreoffice-on-your-polybar/screenshots/1.png)](polybar-scripts/libreoffice-on-your-polybar/)
 
 
 ## See also these other user repositories:
