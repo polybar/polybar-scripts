@@ -52,6 +52,8 @@ Argument | Description | Default
 -b, --blacklist   | Blacklist / Ignore the given player
 -w, --whitelist   | Whitelist / Permit the given player
 -f, --format      | Use the given `format` string                               | `{icon} {artist} - {title}`
+-s, --scroll      | set when to start scrolling, 0 means no scrolling           | 0
+--scroll-speed    | delay in ms until the next character is shown.              | 250
 --truncate-text   | Use the given string as the end of truncated text           | `…`
 --icon-playing    | Use the given text as the playing icon                      | `⏵`
 --icon-paused     | Use the given text as the paused icon                       | `⏸`
@@ -112,6 +114,16 @@ tail = true
 
 Example: `⏵ Artist - Title`
 
+### Basic output that starts to scroll if the output is longer than 30 characters
+
+```ini
+[module/player-mpris-tail]
+type = custom/script
+exec = ~/polybar-scripts/player-mpris-tail.py -f '{icon} {artist} - {title}' --scroll=30 --scroll-speed=300
+tail = true
+```
+
+Example: `tist - Title --- A`
 
 ### Basic output and mouse controls
 
