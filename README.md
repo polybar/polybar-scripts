@@ -165,6 +165,7 @@ Is this your first time here? You should definitely take a look at these scripts
 * [jamessouth/polybar-binary-clock-fonts](https://github.com/jamessouth/polybar-binary-clock-fonts): Fonts to display numbers as dots like on a binary clock
 * [Anohkka/polywinner](https://github.com/Anohkka/polywinner): Scrollable, interactive list of open windows.
 * [maahumada/ccoverseer](https://github.com/maahumada/ccoverseer): Per-workspace status of parallel Claude Code agents in i3, plus a rate-limit bar
+* [tipharez-allmighty/polybar-world-clock](https://github.com/tipharez-allmighty/polybar-world-clock): Clock that cycles through time zones on click, with custom labels and a date toggle
 
 #### Finance
 * [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto): A polybar script that displays the price of crypto-currencies
