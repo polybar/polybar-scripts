@@ -1,6 +1,6 @@
 #!/bin/sh
 
-API="https://api.exchangeratesapi.io/latest"
+API="https://allratestoday.com/api/compat/exchangeratesapi/latest"
 
 CURRENCY_BASE="EUR"
 CURRENCY_QUOTE="PLN"
